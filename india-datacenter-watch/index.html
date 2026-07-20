@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India AI Datacenter — Power &amp; Policy Watch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+
+    <header class="app-shell">
+      <div class="topline">
+        <div class="brand">
+          <p class="eyebrow">Monthly intelligence brief · India</p>
+          <h1>AI Datacenter — Power &amp; Policy Watch</h1>
+        </div>
+        <div class="topline-tools">
+          <div class="as-of">As of <strong id="as-of-date">—</strong></div>
+          <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light / dark theme" title="Toggle theme">☀</button>
+        </div>
+      </div>
+
+      <nav class="view-nav" aria-label="Dashboard sections">
+        <button class="nav-pill is-active" type="button" data-view-target="brief">Brief</button>
+        <button class="nav-pill" type="button" data-view-target="trends">Trends</button>
+        <button class="nav-pill" type="button" data-view-target="pipeline">Pipeline</button>
+        <button class="nav-pill" type="button" data-view-target="grid">Grid Access</button>
+        <button class="nav-pill" type="button" data-view-target="power">Clean Power</button>
+        <button class="nav-pill" type="button" data-view-target="policy">Policy</button>
+        <button class="nav-pill" type="button" data-view-target="sources">Sources</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ============================ BRIEF ============================ -->
+      <section class="view is-active" id="view-brief" aria-labelledby="brief-title">
+        <div class="hero">
+          <div class="panel hero-statement">
+            <p class="eyebrow">System read</p>
+            <h2 id="brief-title">AI load is moving from announcement theatre to power-system fact.</h2>
+            <p id="scope-note" class="lede"></p>
+            <div class="hero-chips" id="hero-chips"></div>
+          </div>
+        </div>
+
+        <div class="metric-rack" id="metric-rack" aria-label="Headline metrics"></div>
+
+        <details class="panel methodology" id="methodology">
+          <summary>How to read this dashboard — the five rules behind the numbers</summary>
+          <div class="method-grid">
+            <div>
+              <h4>Two load layers, one buildout</h4>
+              <p><strong>Filed grid connectivity</strong> (the Grid Access tab) is what a datacenter has formally asked the grid for — MW quantum + a start date, filed with a transmission utility. It covers the whole site (cooling and growth headroom included), so it can exceed the press-reported IT MW for the same project. <strong>Tracked IT load</strong> is what press and company statements disclose. Filings are the authoritative layer; press is the enrichment layer.</p>
+            </div>
+            <div>
+              <h4>Speculative MW never leaks into headlines</h4>
+              <p>MoU-stage projects are shown but excluded from headline counts until land, financing, a grid connection, or construction evidence appears. IT-load MW is recorded only when a source discloses it — nothing is imputed.</p>
+            </div>
+            <div>
+              <h4>Clean-power claims sit on a firmness ladder</h4>
+              <p>A corporate renewable pledge is not a site power plan. Every project is placed on a ladder from “undisclosed” up to hourly clean-firm supply, and site power is never inferred from a group-level claim.</p>
+            </div>
+            <div>
+              <h4>Provenance is tiered and enforced</h4>
+              <p>Every source is tagged <span class="prov-badge" data-prov="primary">✓ Primary</span> (government / regulator instrument), official (company), or media. Policy items, connectivity filings, and grid denominators must cite a primary source — the build refuses silence on violations, and cited documents are archived locally for audit.</p>
+            </div>
+            <div>
+              <h4>Dates and history say what they are</h4>
+              <p>Trend history is reconstructed from first-report dates until real monthly snapshots accumulate — it is labelled as such. Power-flow dates from filings are marked <em>declared</em> or <em>estimated</em>; estimated dates render dashed. Stale records (not re-verified in 60+ days) carry an amber dot.</p>
+            </div>
+          </div>
+        </details>
+
+        <div class="chart-card" id="card-funnel">
+          <div class="ch-head"><h3>Pipeline by stage — firm vs. speculative</h3></div>
+          <p class="ch-sub">Known IT-load MW by project stage. MoU rows are shown but held out of the firm headline until land, financing, grid connection, or construction evidence appears.</p>
+          <div class="chart-mount" id="chart-funnel" style="height: 150px;"></div>
+          <div class="chart-foot" id="foot-funnel"></div>
+        </div>
+
+        <div class="grid-2-wide" style="margin-top: 16px;">
+          <div class="panel">
+            <div class="section-title-row">
+              <div><p class="eyebrow">This month</p><h3>What changed &amp; signals to read</h3></div>
+              <span class="fine-print">Newest first</span>
+            </div>
+            <div id="change-block"></div>
+            <div class="card-grid" id="monthly-signals" style="margin-top: 12px;"></div>
+          </div>
+          <div class="panel">
+            <div class="section-title-row">
+              <div><p class="eyebrow">Reading between the lines</p><h3>System implications</h3></div>
+            </div>
+            <div class="card-grid" id="implication-list"></div>
+          </div>
+        </div>
+
+        <div class="section-head is-hidden" id="watchlist-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Tripwires</p><h3>Watchlist — what would change this read</h3></div>
+            <span class="fine-print">Each item names the condition, the register to check, and the next check date</span>
+          </div>
+        </div>
+        <div class="card-grid cols-2 is-hidden" id="watchlist-list"></div>
+
+        <div class="section-head is-hidden" id="persona-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">So what</p><h3>Takeaways by seat</h3></div>
+            <div class="seg-toggle" id="persona-toggle" role="group" aria-label="Persona"></div>
+          </div>
+        </div>
+        <div class="card-grid cols-3 is-hidden" id="persona-list"></div>
+
+        <div class="section-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Market baseline</p><h3>National context</h3></div>
+            <span class="fine-print">Separate from the curated registry counts</span>
+          </div>
+        </div>
+        <div class="card-grid cols-3" id="baseline-list"></div>
+      </section>
+
+      <!-- ============================ TRENDS ============================ -->
+      <section class="view" id="view-trends" aria-labelledby="trends-title">
+        <div class="page-heading">
+          <p class="eyebrow">Trajectory</p>
+          <h2 id="trends-title">Trends</h2>
+          <p>How the tracked pipeline has built up, and where independent analysts expect India's datacenter power footprint to land. The historical line is reconstructed from each project's earliest public report — directional, not a live measured series — until enough monthly snapshots accumulate to replace it.</p>
+        </div>
+
+        <div class="chart-card">
+          <div class="ch-head"><h3>Tracked pipeline IT load over time</h3></div>
+          <p class="ch-sub">Cumulative known IT-load MW, coloured by each project's current stage, dated to when it first entered the public record.</p>
+          <div class="chart-mount" id="chart-timeline" style="height: 360px;"></div>
+          <div class="chart-foot" id="foot-timeline"></div>
+        </div>
+
+        <div class="chart-card" style="margin-top: 16px;">
+          <div class="ch-head"><h3>Where analysts expect India's datacenter capacity to land</h3></div>
+          <p class="ch-sub">Independent forecasts of total India datacenter capacity (GW). The ~3× spread between the low and high cases is itself the policy story.</p>
+          <div class="chart-mount" id="chart-forecast" style="height: 300px;"></div>
+          <div class="chart-foot" id="foot-forecast"></div>
+        </div>
+      </section>
+
+      <!-- ============================ PIPELINE ============================ -->
+      <section class="view" id="view-pipeline" aria-labelledby="pipeline-title">
+        <div class="page-heading">
+          <p class="eyebrow">Datacenter registry</p>
+          <h2 id="pipeline-title">Pipeline</h2>
+          <p>Operational, under-construction, announced, and MoU-stage rows are deliberately separated so speculative capacity never leaks into the headline. Where a host state's peak demand is known, tracked load is shown against it.</p>
+        </div>
+
+        <div class="chart-card">
+          <div class="ch-head">
+            <h3>Tracked load by state</h3>
+            <div class="seg-toggle" id="state-view-toggle" role="group" aria-label="State view">
+              <button type="button" data-state-view="bars" class="is-active">Ranked bars</button>
+              <button type="button" data-state-view="map">Map</button>
+            </div>
+          </div>
+          <p class="ch-sub" id="state-sub">Known IT-load MW by state, segmented by stage. Bars carry the magnitude; the map shows the spatial clustering story.</p>
+          <div class="chart-mount" id="chart-state" style="height: 360px;"></div>
+          <div class="map-wrap is-hidden" id="map-block">
+            <div id="choropleth" role="img" aria-label="Choropleth of India datacenter IT load by state"></div>
+            <div class="map-legend" id="map-legend"></div>
+          </div>
+          <div class="chart-foot" id="foot-state">Click a state (bars or map) for its full picture: projects, grid filings, peak share, and policies.</div>
+        </div>
+
+        <aside class="panel drill-panel is-hidden" id="state-drill" aria-live="polite"></aside>
+
+        <div class="chart-card" style="margin-top: 16px;">
+          <div class="ch-head"><h3>How big is this against each state's grid?</h3></div>
+          <p class="ch-sub">Tracked firm IT load and filed connectivity quantum as a share of the host state's recorded peak demand. This is the chart a grid planner reads first — a single campus can be a double-digit share of a state's peak.</p>
+          <div class="chart-mount" id="chart-state-share" style="height: 280px;"></div>
+          <div class="chart-foot" id="foot-state-share"></div>
+        </div>
+
+        <div class="toolbar" style="margin-top: 16px;">
+          <label class="search-box">
+            <span>Search registry</span>
+            <input id="project-search" type="search" placeholder="Firm, state, hyperscaler, tag" />
+          </label>
+          <div class="filter-row" id="status-filters" aria-label="Status filters"></div>
+          <button class="filter-chip" id="export-projects" type="button" title="Download the registry as CSV">⇩ CSV</button>
+        </div>
+
+        <div class="pipeline-layout">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr id="project-thead"></tr>
+              </thead>
+              <tbody id="project-table"></tbody>
+            </table>
+          </div>
+          <aside class="detail-panel" id="project-detail" aria-live="polite"></aside>
+        </div>
+      </section>
+
+      <!-- ============================ GRID ACCESS ============================ -->
+      <section class="view" id="view-grid" aria-labelledby="grid-title">
+        <div class="page-heading">
+          <p class="eyebrow">Authoritative load · grid connectivity</p>
+          <h2 id="grid-title">Grid Access</h2>
+          <p>The connectivity / GNA register — what each datacenter has actually asked the grid for: the MW quantum and the start date of power flow, filed with the transmission utility. CTUIL handles inter-state (ISTS) connectivity; the largest loads (like Lodha's ~3 GW) connect intra-state via a state utility. This is the dashboard's most authoritative load signal — a regulatory filing, not a press release.</p>
+        </div>
+
+        <div class="metric-rack" id="grid-metrics" aria-label="Connectivity totals"></div>
+
+        <div class="section-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Executive read</p><h3>Power access table</h3></div>
+            <span class="fine-print" id="grid-exec-count"></span>
+          </div>
+        </div>
+        <p class="ch-sub">A plain register view for leadership: who asked for power, who sits behind the applicant, where drawal lands, whether the transmission path is ready, and which flow dates are actually approved rather than estimated.</p>
+        <div class="table-wrap exec-table-wrap">
+          <table>
+            <thead>
+              <tr id="grid-exec-thead"></tr>
+            </thead>
+            <tbody id="grid-exec-table"></tbody>
+          </table>
+        </div>
+
+        <div class="chart-card">
+          <div class="ch-head"><h3>Forward load curve — connectivity quantum by power-flow start</h3></div>
+          <p class="ch-sub">Cumulative MW of tracked datacenter grid connectivity expected online by the declared start date of power flow. Granted (firm) vs total (granted + applied).</p>
+          <div class="chart-mount" id="chart-grid-forward" style="height: 300px;"></div>
+          <div class="chart-foot" id="foot-grid-forward"></div>
+        </div>
+
+        <div class="chart-card" style="margin-top: 16px;">
+          <div class="ch-head"><h3>Press vs filings — the reconciliation bridge</h3></div>
+          <p class="ch-sub">The same buildout measured two ways. Press-tracked IT MW is what companies disclose; filed connectivity quantum is what they asked the grid for (whole-site draw incl. cooling and headroom). The gap is the story: filings run ahead of disclosures.</p>
+          <div class="chart-mount" id="chart-bridge" style="height: 200px;"></div>
+          <div id="bridge-table"></div>
+          <div class="chart-foot" id="foot-bridge"></div>
+        </div>
+
+        <div class="section-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Register</p><h3>Connectivity &amp; GNA filings</h3></div>
+            <span class="fine-print" id="grid-count"></span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <label class="search-box">
+            <span>Search filings</span>
+            <input id="grid-search" type="search" placeholder="Operator, utility, state, status" />
+          </label>
+          <button class="filter-chip" id="export-grid" type="button" title="Download the register as CSV">⇩ CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr id="grid-thead"></tr>
+            </thead>
+            <tbody id="grid-table"></tbody>
+          </table>
+        </div>
+        <div id="grid-delivery-assets"></div>
+      </section>
+
+      <!-- ============================ CLEAN POWER ============================ -->
+      <section class="view" id="view-power" aria-labelledby="power-title">
+        <div class="page-heading">
+          <p class="eyebrow">Source of power</p>
+          <h2 id="power-title">Clean Power</h2>
+          <p>A renewable claim is only as good as how it is procured and matched. Every tracked project is placed on a firmness ladder from "local power undisclosed" up to genuine 24/7 clean-firm supply — and most of the announced load sits at the bottom.</p>
+        </div>
+
+        <div class="chart-card">
+          <div class="ch-head"><h3>Procurement firmness of tracked load</h3></div>
+          <p class="ch-sub">Known IT-load MW by the credibility of its disclosed clean-power plan. Annual renewable matching is not the same as hourly clean supply; "undisclosed" means no site-specific plan is on the public record.</p>
+          <div class="chart-mount" id="chart-firmness" style="height: 260px;"></div>
+          <div class="chart-foot" id="foot-firmness"></div>
+        </div>
+
+        <div class="panel" id="openaccess-card" style="margin-top: 16px;"></div>
+
+        <div class="section-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Demand-side pressure</p><h3>Hyperscaler energy standards</h3></div>
+            <span class="fine-print">Corporate targets, not local procurement</span>
+          </div>
+        </div>
+        <div class="card-grid cols-2" id="standard-grid"></div>
+      </section>
+
+      <!-- ============================ POLICY ============================ -->
+      <section class="view" id="view-policy" aria-labelledby="policy-title">
+        <div class="page-heading">
+          <p class="eyebrow">Regulatory cadence</p>
+          <h2 id="policy-title">Policy Watch</h2>
+          <p>Both hard datacenter policy and the adjacent rules that shape the real power stack: open access, group captive, banking, tariffs, diesel backup, water, AI incentives, and data-governance demand. Each item's source of record is the primary government instrument — the gazette notification or regulator order — with media kept only as a pointer.</p>
+        </div>
+        <div class="panel" id="policy-coverage"></div>
+        <div class="panel" id="uptime-standards"></div>
+        <div class="filter-row" id="policy-filters" aria-label="Policy track filters"></div>
+        <div id="policy-body"></div>
+      </section>
+
+      <!-- ============================ SOURCES ============================ -->
+      <section class="view" id="view-sources" aria-labelledby="sources-title">
+        <div class="page-heading">
+          <p class="eyebrow">Evidence layer</p>
+          <h2 id="sources-title">Source Ledger</h2>
+          <p>Every project, policy item, grid figure, and hyperscaler standard points back here. Monthly refreshes should improve source quality before they improve visual polish.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-box">
+            <span>Filter sources</span>
+            <input id="source-search" type="search" placeholder="Publisher, company, project, policy" />
+          </label>
+        </div>
+        <div class="card-grid cols-3" id="source-ledger"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span id="generated-at"></span>
+      <span>Curated dataset, not an automatic web scrape. Agent-drafted, human-approved.</span>
+    </footer>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/india-geo.generated.js"></script>
+    <script src="js/vendor/echarts.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

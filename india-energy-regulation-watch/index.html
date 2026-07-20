@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India Energy Regulation Watch</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      // Apply theme before first paint: stored preference wins, else system default.
+      (function () {
+        var theme = null;
+        try { theme = localStorage.getItem("energyregwatch-theme"); } catch (e) {}
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        if (theme === "light") document.documentElement.classList.add("light");
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+
+    <header class="app-shell">
+      <div class="topline">
+        <div class="brand">
+          <p class="eyebrow">Policy intelligence · India</p>
+          <h1 id="site-title">India Energy Regulation Watch</h1>
+          <p class="byline" id="site-byline"></p>
+        </div>
+        <div class="topline-tools">
+          <label class="edition-select">
+            <span>Edition</span>
+            <select id="edition-select" aria-label="Select edition"></select>
+          </label>
+          <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light / dark theme" title="Toggle theme">
+            <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+            <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="is-hidden">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="view-nav" aria-label="Dashboard sections">
+        <button class="nav-pill is-active" type="button" data-view-target="brief">Brief</button>
+        <button class="nav-pill" type="button" data-view-target="tracks">Tracks</button>
+        <button class="nav-pill" type="button" data-view-target="watchlist">Watchlist</button>
+        <button class="nav-pill" type="button" data-view-target="sources">Sources</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ============================ BRIEF ============================ -->
+      <section class="view is-active" id="view-brief" aria-labelledby="brief-title">
+        <div class="panel hero">
+          <p class="eyebrow" id="edition-label">—</p>
+          <h2 id="brief-title"></h2>
+          <p class="lede" id="edition-note"></p>
+          <div class="hero-meta" id="hero-meta"></div>
+        </div>
+
+        <details class="panel methodology" id="methodology">
+          <summary>How to read this dashboard — the rules behind every claim</summary>
+          <div class="method-grid">
+            <div>
+              <h4>Every rendered claim carries its sources</h4>
+              <p>The numbered chips (e.g. <span class="src-chip">12</span>) link into the Source Ledger, which links out to the public document itself. A claim without a public source does not appear here at all — it sits in the data store, held back, until one exists.</p>
+            </div>
+            <div>
+              <h4>Fact and analysis are visibly separated</h4>
+              <p>Sentences that interpret — rather than report — carry an <span class="analysis-badge">analysis</span> badge. Interpretation is the point of this product, but it is never dressed up as fact.</p>
+            </div>
+            <div>
+              <h4>Confidence is graded</h4>
+              <p>Parameters resting on official instruments are tagged <span class="conf-tag" data-conf="confirmed">confirmed</span>; figures that so far exist only in reputable press reporting are tagged <span class="conf-tag" data-conf="reported">reported</span> and treated as provisional.</p>
+            </div>
+            <div>
+              <h4>Editions preserve memory</h4>
+              <p>Each dated edition is a cut of the landscape. "What moved this edition" is the changelog; the track dossiers keep the full dated event trail, so the story never resets between briefings.</p>
+            </div>
+          </div>
+        </details>
+
+        <div class="section-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Changelog</p><h3>What moved this edition</h3></div>
+            <span class="fine-print">Grouped by vertical · newest first</span>
+          </div>
+        </div>
+        <div id="moved-block"></div>
+
+        <div class="section-head">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Stage board</p><h3>Where every track stands</h3></div>
+            <span class="fine-print">Click a card to open its dossier</span>
+          </div>
+        </div>
+        <div class="stage-board" id="stage-board"></div>
+      </section>
+
+      <!-- ============================ TRACKS ============================ -->
+      <section class="view" id="view-tracks" aria-labelledby="tracks-title">
+        <div class="page-heading">
+          <p class="eyebrow">Dossiers</p>
+          <h2 id="tracks-title">Tracks</h2>
+          <p>Long-lived policy dossiers: the current-state read, the operative parameters with their sources, the dated event trail, and the open tripwires. This is the memory layer — what a newsletter forgets, a track keeps.</p>
+        </div>
+        <div class="track-grid" id="track-grid"></div>
+        <article class="panel dossier is-hidden" id="dossier" aria-live="polite"></article>
+      </section>
+
+      <!-- ============================ WATCHLIST ============================ -->
+      <section class="view" id="view-watchlist" aria-labelledby="watchlist-title">
+        <div class="page-heading">
+          <p class="eyebrow">Tripwires</p>
+          <h2 id="watchlist-title">Watchlist</h2>
+          <p>Forward-looking conditions, sorted by next-check date: what to watch, where the register of record lives, and why it matters. Each item names a concrete public register — this list is checkable, not vibes.</p>
+        </div>
+        <div class="watch-grid" id="watch-grid"></div>
+      </section>
+
+      <!-- ============================ SOURCES ============================ -->
+      <section class="view" id="view-sources" aria-labelledby="sources-title">
+        <div class="page-heading">
+          <p class="eyebrow">Evidence layer</p>
+          <h2 id="sources-title">Source Ledger</h2>
+          <p>Every chip on this dashboard resolves to a row below, and every row links out to the public document. Classes: <span class="class-badge" data-class="primary-official">primary-official</span> (gazette, ministry, regulator, tender document) &gt; <span class="class-badge" data-class="secondary-press">secondary-press</span> (reputable business/trade press) &gt; <span class="class-badge" data-class="analysis">analysis</span>.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-box">
+            <span>Filter sources</span>
+            <input id="source-search" type="search" placeholder="Publisher, title, id" />
+          </label>
+          <div class="filter-row" id="source-class-filters" aria-label="Source class filters"></div>
+        </div>
+        <div class="sources-table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Source</th><th>Publisher</th><th>Date</th><th>Class</th><th>Link</th></tr>
+            </thead>
+            <tbody id="source-table"></tbody>
+          </table>
+        </div>
+        <p class="empty-note is-hidden" id="source-empty">No sources match the current filter.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span id="generated-at"></span>
+      <span class="disclaimer" id="site-disclaimer"></span>
+    </footer>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
