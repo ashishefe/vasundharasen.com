@@ -10,6 +10,11 @@ window.GREEN_HYDROGEN_WATCH = {
   },
   "editions": [
     {
+      "id": "2026-09-01",
+      "label": "Monthly flow · 1 Sep 2026",
+      "note": "Public-source flow update covering 1–31 August 2026; one announced PEM-electrolyser technology collaboration is proposed."
+    },
+    {
       "id": "2026-07-20",
       "label": "Baseline · 20 Jul 2026",
       "note": "A dated stocktake of public policy, awards, prices, projects and commercial commitments. The first monthly flow edition will cover 21–31 July."
@@ -356,8 +361,8 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "International Linkages",
       "instrument": "tracking",
       "stage": "operational",
-      "stageNote": "Capital equipment, technology licensing and export offtake are the clearest entry routes.",
-      "summary": "Foreign participation is already commercial, but not homogeneous: an operating factory, a licence, an equipment order and an offtake agreement imply different levels of commitment.",
+      "stageNote": "Capital equipment, technology licensing, strategic technology tie-ups and export offtake are the clearest entry routes.",
+      "summary": "Foreign participation is already commercial, but not homogeneous: an operating factory, a licence, a signed technology tie-up, an equipment order and an offtake agreement imply different levels of commitment and execution evidence.",
       "parameters": [
         {
           "label": "Ohmium",
@@ -391,6 +396,14 @@ window.GREEN_HYDROGEN_WATCH = {
           "sourceIds": [
             "S17"
           ]
+        },
+        {
+          "label": "Hystar",
+          "value": "Signed PEM technology tie-up with BHEL; capacity and site undisclosed",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "S24"
+          ]
         }
       ],
       "authorities": [],
@@ -399,11 +412,24 @@ window.GREEN_HYDROGEN_WATCH = {
         "S17",
         "S18",
         "S19",
-        "S20"
+        "S20",
+        "S24"
       ]
     }
   ],
   "events": [
+    {
+      "id": "evt-bhel-hystar-pem-tie-up",
+      "trackId": "foreign-participation",
+      "date": "2026-08-13",
+      "title": "BHEL and Hystar announce PEM-electrolyser tie-up",
+      "detail": "BHEL and Norway's Hystar signed a strategic tie-up intended to enable phased indigenisation and local manufacturing of PEM electrolyser systems for green-hydrogen projects in India. The announcement discloses neither a named factory nor capacity, firm equipment order, licensing terms or production date.",
+      "significance": "A signed technology collaboration is stronger than a general market intention, but it is not a commissioned manufacturing asset or SIGHT-delivery evidence.",
+      "sourceIds": [
+        "S24"
+      ],
+      "editionId": "2026-09-01"
+    },
     {
       "id": "evt-certification-portal",
       "trackId": "standards-certification",
@@ -536,9 +562,29 @@ window.GREEN_HYDROGEN_WATCH = {
         "S01",
         "S08"
       ]
+    },
+    {
+      "id": "watch-bhel-hystar-implementation",
+      "trackId": "foreign-participation",
+      "condition": "BHEL or Hystar discloses the Indian manufacturing site, capacity, contractual technology scope, order book, construction or commissioning milestone",
+      "register": "BHEL and Hystar official releases; BHEL investor and tender disclosures",
+      "nextCheck": "2026-10-01",
+      "why": "The August agreement states a phased manufacturing intention but gives no plant, capacity, timing or firm-order evidence.",
+      "sourceIds": [
+        "S24"
+      ]
     }
   ],
   "sources": [
+    {
+      "id": "S24",
+      "title": "BHEL enters strategic PEM-electrolyser tie-up with Hystar",
+      "publisher": "Bharat Heavy Electricals Limited",
+      "date": "2026-08-13",
+      "url": "https://www.bhel.com/bhel-enters-strategic-tie-hystar-norway-pem-electrolyser-systems",
+      "class": "primary-official",
+      "num": 1
+    },
     {
       "id": "S01",
       "title": "NGHM award and auction tables",
@@ -546,7 +592,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-20",
       "url": "https://www.seci.co.in/nghm",
       "class": "primary-official",
-      "num": 1
+      "num": 2
     },
     {
       "id": "S22",
@@ -555,7 +601,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-02",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2280506&lang=1&reg=48",
       "class": "primary-official",
-      "num": 2
+      "num": 3
     },
     {
       "id": "S06",
@@ -564,7 +610,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-06-17",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274212&lang=1&reg=3",
       "class": "primary-official",
-      "num": 3
+      "num": 4
     },
     {
       "id": "S21",
@@ -573,7 +619,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-05-28",
       "url": "https://www.ohmium.com/press-release/ohmium-and-insolare-collaborate-to-deliver-a-multi-application-green-hydrogen-project-for-nlc-india-limited",
       "class": "primary-official",
-      "num": 4
+      "num": 5
     },
     {
       "id": "S08",
@@ -582,7 +628,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-24",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244663&lang=1&reg=3",
       "class": "primary-official",
-      "num": 5
+      "num": 6
     },
     {
       "id": "S07",
@@ -591,7 +637,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-02-27",
       "url": "https://mnre.gov.in/en/notice/green-ammonia-standard-for-india/",
       "class": "primary-official",
-      "num": 6
+      "num": 7
     },
     {
       "id": "S14",
@@ -600,7 +646,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-08-18",
       "url": "https://www.iocl.com/uploads/ConcallTranscriptQ1FY25-26.pdf",
       "class": "primary-official",
-      "num": 7
+      "num": 8
     },
     {
       "id": "S11",
@@ -609,7 +655,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-23",
       "url": "https://www.adani.com/newsroom/media-releases/adani-commissions-indias-first-off-grid-green-hydrogen-pilot-plant-of-5-mw-capacity",
       "class": "primary-official",
-      "num": 8
+      "num": 9
     },
     {
       "id": "S10",
@@ -618,7 +664,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-19",
       "url": "https://ntpc.co.in/media/press-releases/ntpc-hands-over-five-hydrogen-fuel-cell-buses-leh-administration",
       "class": "primary-official",
-      "num": 9
+      "num": 10
     },
     {
       "id": "S13",
@@ -627,7 +673,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-05-30",
       "url": "https://iocl.com/NewsDetails/59411",
       "class": "primary-official",
-      "num": 10
+      "num": 11
     },
     {
       "id": "S05",
@@ -636,7 +682,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-04-29",
       "url": "https://mnre.gov.in/en/notice/green-hydrogen-certification-scheme-of-india/",
       "class": "primary-official",
-      "num": 11
+      "num": 12
     },
     {
       "id": "S15",
@@ -645,7 +691,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-01-07",
       "url": "https://ntpc.co.in/media/press-releases/pm-lay-foundation-stone-ntpc-green-energy-limited-green-hydrogen-hub-project",
       "class": "primary-official",
-      "num": 12
+      "num": 13
     },
     {
       "id": "S18",
@@ -654,7 +700,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-10-30",
       "url": "https://johncockerill.com/en/press-and-news/news/am-green-entrusts-john-cockerill-with-indias-largest-electrolyzer-order-for-its-green-ammonia-complex-one-of-the-worlds-largest/",
       "class": "primary-official",
-      "num": 13
+      "num": 14
     },
     {
       "id": "S03",
@@ -663,7 +709,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-30",
       "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/jul/doc2024730360201.pdf",
       "class": "primary-official",
-      "num": 14
+      "num": 15
     },
     {
       "id": "S16",
@@ -672,7 +718,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-19",
       "url": "https://www.ohmium.com/press-release/ohmium-launches-newest-pem-electrolyzer-gigafactory",
       "class": "primary-official",
-      "num": 15
+      "num": 16
     },
     {
       "id": "S09",
@@ -681,7 +727,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-24",
       "url": "https://www.gailonline.com/PressRelease24052024.html",
       "class": "primary-official",
-      "num": 16
+      "num": 17
     },
     {
       "id": "S20",
@@ -690,7 +736,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-21",
       "url": "https://nelhydrogen.com/press-release/nel-asa-has-signed-a-licensing-agreement-with-reliance/",
       "class": "primary-official",
-      "num": 17
+      "num": 18
     },
     {
       "id": "S04",
@@ -699,7 +745,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-08-19",
       "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1950421&lang=2&reg=48",
       "class": "primary-official",
-      "num": 18
+      "num": 19
     },
     {
       "id": "S17",
@@ -708,7 +754,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-03-22",
       "url": "https://www.larsentoubro.com/pressreleases/2023/2023-03-22-lt-signs-agreement-with-mcphy-for-electrolyzer-manufacturing",
       "class": "primary-official",
-      "num": 19
+      "num": 20
     },
     {
       "id": "S19",
@@ -717,7 +763,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-02-02",
       "url": "https://johncockerill.com/en/press-and-news/news/john-cockerill-records-indias-largest-140mw-electrolysers-order-from-greenko-for-the-first-indian-green-ammonia-plant/",
       "class": "primary-official",
-      "num": 20
+      "num": 21
     },
     {
       "id": "S02",
@@ -726,7 +772,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-01-04",
       "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1888545&lang=2&reg=48",
       "class": "primary-official",
-      "num": 21
+      "num": 22
     },
     {
       "id": "S12",
@@ -735,7 +781,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2022-08-20",
       "url": "https://www.larsentoubro.com/pressreleases/2022/2022-08-20-lt-commissions-green-hydrogen-plant-at-its-manufacturing-complex-in-hazira",
       "class": "primary-official",
-      "num": 22
+      "num": 23
     }
   ],
   "market": {
@@ -1416,22 +1462,34 @@ window.GREEN_HYDROGEN_WATCH = {
         "sourceIds": [
           "S21"
         ]
+      },
+      {
+        "company": "BHEL",
+        "counterparty": "Hystar AS (Norway)",
+        "instrument": "Strategic technology tie-up",
+        "subject": "PEM electrolyser systems and phased local manufacturing",
+        "scale": "No capacity, factory, firm order or production date disclosed",
+        "date": "2026-08-13",
+        "note": "Signed collaboration. It is not described as a technology licence, commissioned factory, SIGHT award or firm equipment order.",
+        "sourceIds": [
+          "S24"
+        ]
       }
     ]
   },
   "derived": {
-    "generatedAt": "2026-07-20T14:30:13Z",
-    "latestEditionId": "2026-07-20",
+    "generatedAt": "2026-09-01T09:45:12Z",
+    "latestEditionId": "2026-09-01",
     "counts": {
       "tracks": 8,
-      "events": 5,
-      "watch": 6,
-      "sources": 22,
+      "events": 6,
+      "watch": 7,
+      "sources": 23,
       "productionAwards": 19,
       "electrolyserAwards": 21,
       "ammoniaAuctions": 13,
       "assets": 6,
-      "commercialMoves": 6
+      "commercialMoves": 7
     }
   }
 };
