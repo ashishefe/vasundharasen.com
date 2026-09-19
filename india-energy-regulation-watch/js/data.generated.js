@@ -10,6 +10,11 @@ window.ENERGY_REG_WATCH = {
   },
   "editions": [
     {
+      "id": "2026-09-19",
+      "label": "September 2026 refresh",
+      "note": "Official-source refresh covering CBG scheme and pricing, SHANTI subordinate legislation, coal-gasification and green-methanol procurement signals, and the data-centre grid register."
+    },
+    {
       "id": "2026-07-19",
       "label": "Edition 1 · 19 July 2026",
       "note": "Founding edition. The full v1 seed enters as 'what moved': seven tracks across bioenergy, green fuels, nuclear, coal gasification, carbon markets, industrial policy and grid connectivity, source-checked against public documents."
@@ -18,51 +23,66 @@ window.ENERGY_REG_WATCH = {
   "tracks": [
     {
       "id": "cbg-integrated-policy",
-      "title": "Compressed Biogas: pricing, subsidies and the reported 'Sampoorn' consolidation",
+      "title": "Compressed biogas: the unified GOBARdhan scale-up",
       "vertical": "Bioenergy",
       "instrument": "scheme",
       "stage": "operational",
-      "stageNote": "Pricing formula and blending mandate operative; the reported 'Sampoorn' consolidation is not officially notified.",
-      "summary": "CBG economics currently rest on three levers: an administered procurement price, capital-subsidy windows that lapsed with FY 2025-26, and a blending obligation that turned mandatory in FY 2025-26 and steps up to 3% this fiscal year. Press reporting points to a consolidation ('Sampoorn') that would raise offtake prices and refresh subsidies, but nothing official has issued. Until MoPNG notifies, the operative documents remain the May 2025 price notification, the lapsed CFA/MDA scheme terms, and PNGRB's February 2026 pipeline-injection guidelines.",
+      "stageNote": "Cabinet approved the unified ₹23,731-crore scheme on 6 Aug 2026; revised procurement pricing followed on 29 Aug.",
+      "summary": "The CBG policy stack is now official and consolidated. The unified GOBARdhan scheme combines stable procurement pricing, demand creation, capital support, pipeline connectivity and finance over FY 2026-27 to FY 2035-36. The near-term test is conversion of a large registered pipeline into commissioned plants and contracted gas volumes.",
       "parameters": [
         {
-          "label": "CBG procurement price",
-          "value": "₹1,478/MMBTU (≈ ₹77.4/kg), 1 Jun – 31 Oct 2025 window",
-          "note": "Formula moved to 85% (from 80%) of avg CNG retail of GAIL-associated CGDs; floor ₹770/MMBTU; delivered ≤50 km incl. ₹8/kg compression, excl. GST; transport support ₹1.5/kg (50–75 km), ₹2.5/kg (>75 km).",
+          "label": "Unified scheme outlay and window",
+          "value": "₹23,731 crore · FY 2026-27 to FY 2035-36",
+          "note": "Cabinet-approved national framework covering pricing, demand, capital assistance, pipeline connectivity and finance.",
           "confidence": "confirmed",
           "sourceIds": [
-            "src-dte-cbg-price",
-            "src-bet-cbg-price"
+            "src-pib-gobardhan-2026"
           ]
         },
         {
-          "label": "Central financial assistance (CFA)",
-          "value": "Max ₹10 Cr/project under MNRE Waste-to-Energy",
-          "note": "₹4.0 Cr per 4,800 kg/day (new plants), ₹3.0 Cr (existing); +20% for special-category states/gaushalas; full CFA needs 80% PLF over 3 months. Programme window ended FY 2025-26.",
+          "label": "CBG procurement price",
+          "value": "₹2,110/MMBtu producer price; ₹10/kg government support; ₹1,895/MMBtu effective cost recovered through the domestic gas pool",
+          "note": "The official release equates the support to about ₹215/MMBtu and says the revision expands the addressable gas pool by 2.5-3 times.",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "src-pib-cbg-price-2026-08"
+          ]
+        },
+        {
+          "label": "Implementation pipeline at approval",
+          "value": "1,908 registered · 217 commissioned · 339 under construction · about 0.4 MMSCMD operating output",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "src-pib-gobardhan-backgrounder-2026"
+          ]
+        },
+        {
+          "label": "CBG blending obligation",
+          "value": "Mandatory 1% FY 2025-26 → 3% FY 2026-27 → 4% FY 2027-28 → 5% from FY 2028-29",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "src-pngrb-cbg-whitepaper",
+            "src-cgdindia-cbo",
+            "src-mercom-cbo"
+          ]
+        },
+        {
+          "label": "Prior MNRE Waste-to-Energy CFA window",
+          "value": "Max ₹10 crore/project under the programme window ending FY 2025-26",
+          "note": "Historical predecessor support: ₹4 crore per 4,800 kg/day for new plants and ₹3 crore for existing plants, with scheme-specific conditions.",
           "confidence": "confirmed",
           "sourceIds": [
             "src-mnre-wte"
           ]
         },
         {
-          "label": "Market development assistance (MDA)",
-          "value": "₹1,500/MT for FOM/LFOM/PROM from biogas/CBG plants",
-          "note": "Via the Unified GOBARdhan Portal; FCO 1985 compliance required. Primary guidelines PDF unfetchable; scheme window nominally ended FY 2025-26.",
+          "label": "Prior market development assistance window",
+          "value": "₹1,500/MT for FOM/LFOM/PROM from biogas and CBG plants",
+          "note": "Historical predecessor support through the Unified GOBARdhan Portal; the nominal scheme window ended FY 2025-26.",
           "confidence": "reported",
           "sourceIds": [
             "src-kip-mda",
             "src-cse-fom"
-          ]
-        },
-        {
-          "label": "CBG blending obligation (CBO)",
-          "value": "Mandatory 1% FY 2025-26 → 3% FY 2026-27 → 4% FY 2027-28 → 5% from FY 2028-29",
-          "note": "Voluntary until FY 2024-25; PNGRB's Aug 2025 whitepaper confirms the mandate is operative.",
-          "confidence": "confirmed",
-          "sourceIds": [
-            "src-pngrb-cbg-whitepaper",
-            "src-cgdindia-cbo",
-            "src-mercom-cbo"
           ]
         }
       ],
@@ -80,14 +100,16 @@ window.ENERGY_REG_WATCH = {
         "State governments"
       ],
       "sourceIds": [
-        "src-dte-cbg-price",
-        "src-pngrb-injection",
-        "src-bet-sampoorn"
+        "src-pib-gobardhan-2026",
+        "src-pib-gobardhan-backgrounder-2026",
+        "src-pib-cbg-price-2026-08",
+        "src-pngrb-injection"
       ],
       "editionsActive": [
-        "2026-07-19"
+        "2026-07-19",
+        "2026-09-19"
       ],
-      "lastEventDate": "2026-07-10"
+      "lastEventDate": "2026-08-29"
     },
     {
       "id": "green-methanol-sight2c",
@@ -95,7 +117,7 @@ window.ENERGY_REG_WATCH = {
       "vertical": "Green Fuels",
       "instrument": "tender",
       "stage": "notified",
-      "stageNote": "Draft RfS issued 6 May 2026; bids closed 8 Jun 2026; allocation results awaited.",
+      "stageNote": "SIGHT Mode-2C allocation results remain awaited; SECI's separate CO2-source EOI closed 17 Sep 2026.",
       "summary": "SECI has taken green methanol from taxonomy to procurement: a 5,00,000-MTPA cost-based tender under the National Green Hydrogen Mission, wrapped in a 10-year offtake agreement. Bids closed on 8 June 2026, so allocation is the next real signal. In parallel, Kandla hosted India's first shore-to-ship methanol bunkering trial in April 2026, and the EU's RED III / ISCC EU certification framework defines the export-market bar Indian producers must clear for RFNBO-grade product.",
       "parameters": [
         {
@@ -157,20 +179,22 @@ window.ENERGY_REG_WATCH = {
       "sourceIds": [
         "src-sq-sight2c",
         "src-dte-methanol",
-        "src-iscc-eu"
+        "src-iscc-eu",
+        "src-seci-co2-eoi-2026"
       ],
       "editionsActive": [
-        "2026-07-19"
+        "2026-07-19",
+        "2026-09-19"
       ],
-      "lastEventDate": "2026-06-08"
+      "lastEventDate": "2026-08-03"
     },
     {
       "id": "nuclear-shanti",
       "title": "SHANTI Act 2025: India rewires nuclear liability and opens the operator market",
       "vertical": "Nuclear",
       "instrument": "act",
-      "stage": "notified",
-      "stageNote": "Assent 20 Dec 2025; Rules/Regulations pending — minister says 'weeks or months' (May 2026).",
+      "stage": "consultation",
+      "stageNote": "Draft SHANTI Rules and Regulations were published for consultation; comments closed 4 Sep 2026 and final notification remains pending.",
       "summary": "The SHANTI Act 2025 repeals and replaces both the Atomic Energy Act 1962 and CLNDA 2010 in a single statute: private companies and government-private JVs may now be licensed by the Central Government to build, own and operate nuclear plants, operator liability is graded by thermal capacity under a 300-million-SDR incident ceiling, and supplier recourse survives only where expressly contracted. The market signal is loud — large conglomerates are already staking claims. The binding constraint has shifted to subordinate legislation: no Rules or AERB regulations have issued yet, and every private project waits on them.",
       "parameters": [
         {
@@ -245,21 +269,23 @@ window.ENERGY_REG_WATCH = {
       "sourceIds": [
         "src-prs-shanti",
         "src-wnn-shanti",
-        "src-mpidsa-shanti"
+        "src-mpidsa-shanti",
+        "src-dae-shanti-draft-consultation-2026"
       ],
       "editionsActive": [
-        "2026-07-19"
+        "2026-07-19",
+        "2026-09-19"
       ],
-      "lastEventDate": "2026-05-13"
+      "lastEventDate": "2026-09-04"
     },
     {
       "id": "coal-gasification-scheme",
-      "title": "₹37,500 Cr coal gasification push: scheme notified, Round-1 bidding open",
+      "title": "₹37,500 crore coal-gasification push: current application round open",
       "vertical": "Coal & Gas",
       "instrument": "scheme",
       "stage": "operational",
-      "stageNote": "Scheme OM + Guidelines issued 25 Jun 2026; Round-1 RfP live — applications due 7 Sep 2026.",
-      "summary": "A second, much larger gasification scheme is now operational: ₹37,500 Cr against the ₹8,500 Cr of the January 2024 scheme (which has 8 projects underway), structured as 20% capital support on plant-and-machinery cost with per-project, per-product and per-group caps. The fiscal reality is back-loaded — the FY 2026-27 allocation is nil and the first tranche lands in FY 2027-28 — but the selection clock is tight, running from a July 2026 RfP to a January 2027 project agreement.",
+      "stageNote": "The Ministry's current Category-II round moved through RFP, application opening and pre-application conference steps in Aug-Sep 2026; selections remain pending.",
+      "summary": "The ₹37,500-crore scheme is operational and in procurement. The current official mission page records another Category-II application cycle in August and September 2026. The decisive next evidence is applicant depth, named selections and project-agreement conversion, not the published outlay alone.",
       "parameters": [
         {
           "label": "Total outlay",
@@ -339,12 +365,14 @@ window.ENERGY_REG_WATCH = {
       "sourceIds": [
         "src-moc-om",
         "src-moc-rfp",
-        "src-ncgm"
+        "src-ncgm",
+        "src-moc-gasification-rounds-2026"
       ],
       "editionsActive": [
-        "2026-07-19"
+        "2026-07-19",
+        "2026-09-19"
       ],
-      "lastEventDate": "2026-07-07"
+      "lastEventDate": "2026-09-03"
     },
     {
       "id": "ccts-carbon-market",
@@ -471,16 +499,34 @@ window.ENERGY_REG_WATCH = {
       "vertical": "Grid & Load",
       "instrument": "register",
       "stage": "tracking",
-      "stageNote": "Register-watch track: RPC agendas, CTUIL's GNA register, and the CEA critical-load draft.",
+      "stageNote": "CTUIL live register checked 19 Sep 2026; active CTUIL-tracked DC load is 2,980 MW, while official installed capacity is about 1,575 MW.",
       "summary": "A deliberately thin track. The canonical public register for data-centre grid connectivity is CTUIL's GNA register, and the deep reconciliation of applicants, quanta and states lives in the sibling India AI Datacenter Watch. What this track holds is the regulatory surface: data-centre connectivity items surfacing through regional power committee agendas, transmission tendering around expected DC clusters, and the CEA's draft move to classify data centres as Critical Loads with 100% redundancy.",
       "parameters": [
         {
           "label": "Canonical public register",
-          "value": "CTUIL GNA register — status of applications + granted list (bulk consumers ≥50 MW)",
-          "note": "Register last updated 14 Jul 2026.",
+          "value": "CTUIL GNA register — status of applications and granted list (bulk consumers ≥50 MW)",
+          "note": "Live register checked 19 Sep 2026; the portal showed a last-update date of 17 Sep 2026.",
           "confidence": "confirmed",
           "sourceIds": [
-            "src-ctuil-gna"
+            "src-ctuil-gna",
+            "src-ctuil-live-2026-09-19"
+          ]
+        },
+        {
+          "label": "Official installed-capacity baseline",
+          "value": "About 1,575 MW, up from 375 MW in 2020",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "src-pib-dc-capacity-2026-08"
+          ]
+        },
+        {
+          "label": "Active CTUIL-tracked data-centre load",
+          "value": "2,980 MW on 19 Sep 2026",
+          "note": "Live Reg. 20 reconciliation; detailed applicant table remains in the sibling India AI Datacenter Watch.",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "src-ctuil-live-2026-09-19"
           ]
         }
       ],
@@ -498,7 +544,10 @@ window.ENERGY_REG_WATCH = {
       ],
       "sourceIds": [
         "src-ctuil-gna",
-        "src-srpc-58"
+        "src-srpc-58",
+        "src-ctuil-live-2026-09-19",
+        "src-pib-dc-capacity-2026-08",
+        "src-pib-dc-environment-2026-08"
       ],
       "crossLinks": [
         {
@@ -507,12 +556,100 @@ window.ENERGY_REG_WATCH = {
         }
       ],
       "editionsActive": [
-        "2026-07-19"
+        "2026-07-19",
+        "2026-09-19"
       ],
-      "lastEventDate": "2026-07-15"
+      "lastEventDate": "2026-09-19"
     }
   ],
   "events": [
+    {
+      "id": "evt-2026-09-19-ctuil-dc-queue",
+      "trackId": "dc-grid-power",
+      "date": "2026-09-19",
+      "title": "CTUIL live register adds two 100 MW data-centre applications and closes a 50 MW filing",
+      "detail": "The DATA search returned 32 rows and 2,980 MW of active CTUIL-tracked data-centre load. A dashboard reconciliation against the July saved state gives a net increase of 150 MW after adding Avrenta and Vardhexa and excluding the now-closed CtrlS application.",
+      "significance": "Gross applications overstate the live queue unless closed records are removed; Talegaon and Maheshwaram now carry new named load signals.",
+      "sourceIds": [
+        "src-ctuil-gna",
+        "src-ctuil-live-2026-09-19"
+      ],
+      "editionId": "2026-09-19"
+    },
+    {
+      "id": "evt-2026-09-04-shanti-draft-consultation",
+      "trackId": "nuclear-shanti",
+      "date": "2026-09-04",
+      "title": "DAE closes consultation on draft SHANTI Rules and Regulations",
+      "detail": "DAE published draft subordinate legislation for public consultation; the consultation closed on 4 Sep 2026. Final Rules and Regulations were not located in the official record during this refresh.",
+      "significance": "The implementation bottleneck has moved from drafting to final notification. Private-project licensing still depends on the final subordinate framework.",
+      "sourceIds": [
+        "src-dae-shanti-draft-consultation-2026"
+      ],
+      "editionId": "2026-09-19"
+    },
+    {
+      "id": "evt-2026-09-03-gasification-round2-open",
+      "trackId": "coal-gasification-scheme",
+      "date": "2026-09-03",
+      "title": "Coal-gasification scheme advances into the next application round",
+      "detail": "The Ministry of Coal's mission page records an RFP dated 13 Aug, application opening on 3 Sep, responses on 8 Sep and a pre-application-conference notice on 16 Sep for the current Category-II round.",
+      "significance": "The scheme remains in procurement rather than award conversion; bidder depth and named selections are the next evidence threshold.",
+      "sourceIds": [
+        "src-moc-gasification-rounds-2026"
+      ],
+      "editionId": "2026-09-19"
+    },
+    {
+      "id": "evt-2026-08-29-cbg-price",
+      "trackId": "cbg-integrated-policy",
+      "date": "2026-08-29",
+      "title": "Government revises CBG procurement pricing",
+      "detail": "The producer procurement price was set at ₹2,110/MMBtu with government support of ₹10/kg, described as about ₹215/MMBtu, leaving an effective cost of ₹1,895/MMBtu recovered through the wider domestic gas pool.",
+      "significance": "The new pricing directly changes project revenue and expands the gas-pool economics cited by the ministry; it replaces the dashboard's outdated 2025 price window.",
+      "sourceIds": [
+        "src-pib-cbg-price-2026-08"
+      ],
+      "editionId": "2026-09-19"
+    },
+    {
+      "id": "evt-2026-08-06-gobardhan-unified",
+      "trackId": "cbg-integrated-policy",
+      "date": "2026-08-06",
+      "title": "Cabinet approves a unified national GOBARdhan scheme",
+      "detail": "The ₹23,731-crore scheme runs from FY 2026-27 to FY 2035-36 and combines stable pricing, demand creation, capital assistance, pipeline connectivity and financing support for CBG.",
+      "significance": "The official scheme supersedes the dashboard's earlier watch for a separately named 'Sampoorn' consolidation and moves the CBG track from reported intent to a funded national framework.",
+      "sourceIds": [
+        "src-pib-gobardhan-2026",
+        "src-pib-gobardhan-backgrounder-2026"
+      ],
+      "editionId": "2026-09-19"
+    },
+    {
+      "id": "evt-2026-08-06-dc-capacity-environment",
+      "trackId": "dc-grid-power",
+      "date": "2026-08-06",
+      "title": "Government reports 1,575 MW installed data-centre capacity and clarifies the environmental-clearance path",
+      "detail": "MeitY reported capacity rising from 375 MW in 2020 to about 1,575 MW. MoEFCC said data centres are not separately EIA-notified, while large building and township thresholds can still trigger prior environmental clearance and water-management conditions.",
+      "significance": "The official baseline separates installed stock from the much larger application pipeline and adds an approvals constraint beyond grid connectivity.",
+      "sourceIds": [
+        "src-pib-dc-capacity-2026-08",
+        "src-pib-dc-environment-2026-08"
+      ],
+      "editionId": "2026-09-19"
+    },
+    {
+      "id": "evt-2026-08-03-seci-co2-eoi",
+      "trackId": "green-methanol-sight2c",
+      "date": "2026-08-03",
+      "title": "SECI seeks CO2 sources for green urea and RFNBO-compliant green methanol",
+      "detail": "SECI issued EOI SECI000266 to identify suitable CO2 sources; submissions closed on 17 Sep 2026.",
+      "significance": "This is input-side market development for future projects, not a methanol capacity award or an offtake result.",
+      "sourceIds": [
+        "src-seci-co2-eoi-2026"
+      ],
+      "editionId": "2026-09-19"
+    },
     {
       "id": "evt-2026-07-31-first-compliance",
       "trackId": "ccts-carbon-market",
@@ -874,149 +1011,6 @@ window.ENERGY_REG_WATCH = {
   ],
   "watch": [
     {
-      "id": "watch-gasification-preapp",
-      "trackId": "coal-gasification-scheme",
-      "condition": "Round-1 pre-application conference held (20 Jul 2026) — read bidder depth and clarification pressure points",
-      "register": "MoC CCT Section notices (coal.gov.in)",
-      "nextCheck": "2026-07-20",
-      "why": "First public read on how many serious bidders the ₹37,500 Cr scheme is drawing, and which RfP clauses they push back on.",
-      "sourceIds": [
-        "src-moc-rfp"
-      ]
-    },
-    {
-      "id": "watch-srpc-minutes",
-      "trackId": "dc-grid-power",
-      "condition": "58th SRPC meetings held (24 & 28 Jul 2026) — minutes on the data-centre connectivity items",
-      "register": "srpc.gov.in meetings page",
-      "nextCheck": "2026-07-24",
-      "why": "The agenda items (Adani Hyderabad LILO, CTRLS Rangareddy, CEA critical-load draft) either advance or stall here.",
-      "sourceIds": [
-        "src-srpc-58"
-      ]
-    },
-    {
-      "id": "watch-ctuil-updates",
-      "trackId": "dc-grid-power",
-      "condition": "CTUIL GNA register update (applications / grants touching data-centre or bulk-consumer load)",
-      "register": "ctuil.in/gna",
-      "nextCheck": "2026-08-14",
-      "why": "The canonical public register; last updated 14 Jul 2026. Deep reconciliation lives in the sibling datacenter watch.",
-      "sourceIds": [
-        "src-ctuil-gna"
-      ]
-    },
-    {
-      "id": "watch-100products-lists",
-      "trackId": "indigenisation-100-items",
-      "condition": "Working-group product lists reach the Cabinet Secretariat / a Cabinet decision is announced",
-      "register": "DPIIT releases and press; Cabinet decisions",
-      "nextCheck": "2026-08-15",
-      "why": "The lists were due within three weeks of 4 Jun 2026; whatever surfaces defines which products India actually bets on.",
-      "sourceIds": [
-        "src-knn-groups"
-      ]
-    },
-    {
-      "id": "watch-ccts-compliance-outcome",
-      "trackId": "ccts-carbon-market",
-      "condition": "Outcome of the 31 Jul 2026 first CCTS compliance deadline (compliance rates, banked entitlements)",
-      "register": "BEE / ICM portal announcements",
-      "nextCheck": "2026-08-15",
-      "why": "The first true-up will show whether targets bind in year one or whether the surplus story dominates from the start.",
-      "sourceIds": [
-        "src-icap-force"
-      ]
-    },
-    {
-      "id": "watch-sight2c-results",
-      "trackId": "green-methanol-sight2c",
-      "condition": "SECI announces bid results / capacity allocation for the SIGHT Mode-2C green methanol tender",
-      "register": "SECI tender documents page",
-      "nextCheck": "2026-08-15",
-      "why": "Allocation depth across the 50k–250k MTPA bid band is the first real price-and-appetite signal for Indian green methanol.",
-      "sourceIds": [
-        "src-sq-sight2c"
-      ]
-    },
-    {
-      "id": "watch-bsr-outcome",
-      "trackId": "nuclear-shanti",
-      "condition": "NPCIL announces the Bharat Small Reactor RFP outcome (deadline was 31 Mar 2026)",
-      "register": "NPCIL announcements",
-      "nextCheck": "2026-08-31",
-      "why": "The first concrete test of private appetite for the 220 MW BSR model under the new statute.",
-      "sourceIds": [
-        "src-wnn-corporate"
-      ]
-    },
-    {
-      "id": "watch-ccc-first-trading",
-      "trackId": "ccts-carbon-market",
-      "condition": "First CCC exchange trading session held",
-      "register": "IEX / PXIL / HPX circulars; CERC",
-      "nextCheck": "2026-08-31",
-      "why": "Trading was targeted for mid-2026 per the minister; the date is not notified. Until a session happens, the market half of the market is theoretical.",
-      "sourceIds": [
-        "src-sq-icm"
-      ]
-    },
-    {
-      "id": "watch-qco-register",
-      "trackId": "indigenisation-100-items",
-      "condition": "Further QCO notifications or rescissions posted on the DCPC register",
-      "register": "chemicals.gov.in/bis-standard",
-      "nextCheck": "2026-08-31",
-      "why": "The revocation wave is the observable half of the indigenisation rebalance; the DCPC page is its register of record.",
-      "sourceIds": [
-        "src-dcpc-bis"
-      ]
-    },
-    {
-      "id": "watch-sampoorn-notification",
-      "trackId": "cbg-integrated-policy",
-      "condition": "MoPNG (or PIB) officially notifies the reported 'Sampoorn' integrated CBG programme",
-      "register": "MoPNG website / PIB releases",
-      "nextCheck": "2026-08-31",
-      "why": "The reported consolidation would reset CBG project economics; only an official notification converts it from press signal to policy.",
-      "sourceIds": [
-        "src-bet-sampoorn"
-      ]
-    },
-    {
-      "id": "watch-shanti-rules",
-      "trackId": "nuclear-shanti",
-      "condition": "SHANTI Rules notified in the gazette",
-      "register": "eGazette / DAE",
-      "nextCheck": "2026-08-31",
-      "why": "Nothing moves — licensing, private entry, BSR awards — until subordinate legislation exists. Minister said 'weeks or months' in May 2026.",
-      "sourceIds": [
-        "src-newkerala-rules"
-      ]
-    },
-    {
-      "id": "watch-ccts-floor-price",
-      "trackId": "ccts-carbon-market",
-      "condition": "CERC notifies floor / forbearance price for CCC trading",
-      "register": "CERC orders page / gazette",
-      "nextCheck": "2026-09-01",
-      "why": "Expected oversupply in the first compliance year makes the floor price the binding design question; the regulations contain no price-stability mechanism.",
-      "sourceIds": [
-        "src-reclimatize-ccc"
-      ]
-    },
-    {
-      "id": "watch-gasification-apps",
-      "trackId": "coal-gasification-scheme",
-      "condition": "Round-1 applications close (7 Sep 2026) — application count and named applicants",
-      "register": "MoC CCT Section notices (coal.gov.in)",
-      "nextCheck": "2026-09-07",
-      "why": "Application depth against the ₹12,000 Cr entity-group cap shows whether the scheme draws portfolios or single projects.",
-      "sourceIds": [
-        "src-moc-rfp"
-      ]
-    },
-    {
       "id": "watch-aerb-regs",
       "trackId": "nuclear-shanti",
       "condition": "AERB design-safety regulations for the new operator classes issued",
@@ -1090,6 +1084,50 @@ window.ENERGY_REG_WATCH = {
       ]
     },
     {
+      "id": "watch-ctuil-updates",
+      "trackId": "dc-grid-power",
+      "condition": "CTUIL GNA register update (applications / grants touching data-centre or bulk-consumer load)",
+      "register": "ctuil.in/gna",
+      "nextCheck": "2026-10-15",
+      "why": "The canonical public register; last updated 14 Jul 2026. Deep reconciliation lives in the sibling datacenter watch.",
+      "sourceIds": [
+        "src-ctuil-live-2026-09-19"
+      ]
+    },
+    {
+      "id": "watch-gasification-apps",
+      "trackId": "coal-gasification-scheme",
+      "condition": "Current coal-gasification application round publishes applicant count, named selections or the next formal milestone",
+      "register": "MoC CCT Section notices (coal.gov.in)",
+      "nextCheck": "2026-10-15",
+      "why": "Application depth against the ₹12,000 Cr entity-group cap shows whether the scheme draws portfolios or single projects.",
+      "sourceIds": [
+        "src-moc-gasification-rounds-2026"
+      ]
+    },
+    {
+      "id": "watch-sight2c-results",
+      "trackId": "green-methanol-sight2c",
+      "condition": "SECI announces bid results / capacity allocation for the SIGHT Mode-2C green methanol tender",
+      "register": "SECI tender documents page",
+      "nextCheck": "2026-10-15",
+      "why": "Allocation depth across the 50k–250k MTPA bid band is the first real price-and-appetite signal for Indian green methanol.",
+      "sourceIds": [
+        "src-sq-sight2c"
+      ]
+    },
+    {
+      "id": "watch-srpc-minutes",
+      "trackId": "dc-grid-power",
+      "condition": "58th SRPC meetings held (24 & 28 Jul 2026) — minutes on the data-centre connectivity items",
+      "register": "srpc.gov.in meetings page",
+      "nextCheck": "2026-10-15",
+      "why": "The agenda items (Adani Hyderabad LILO, CTRLS Rangareddy, CEA critical-load draft) either advance or stall here.",
+      "sourceIds": [
+        "src-srpc-58"
+      ]
+    },
+    {
       "id": "watch-gasification-selection",
       "trackId": "coal-gasification-scheme",
       "condition": "Round-1 selection declared (21 Oct 2026)",
@@ -1098,6 +1136,83 @@ window.ENERGY_REG_WATCH = {
       "why": "Selection reveals the technology tie-up mix — the 10-mark Schedule-II lever — and which downstream products won.",
       "sourceIds": [
         "src-moc-rfp"
+      ]
+    },
+    {
+      "id": "watch-100products-lists",
+      "trackId": "indigenisation-100-items",
+      "condition": "Working-group product lists reach the Cabinet Secretariat / a Cabinet decision is announced",
+      "register": "DPIIT releases and press; Cabinet decisions",
+      "nextCheck": "2026-10-31",
+      "why": "The lists were due within three weeks of 4 Jun 2026; whatever surfaces defines which products India actually bets on.",
+      "sourceIds": [
+        "src-knn-groups"
+      ]
+    },
+    {
+      "id": "watch-bsr-outcome",
+      "trackId": "nuclear-shanti",
+      "condition": "NPCIL announces the Bharat Small Reactor RFP outcome (deadline was 31 Mar 2026)",
+      "register": "NPCIL announcements",
+      "nextCheck": "2026-10-31",
+      "why": "The first concrete test of private appetite for the 220 MW BSR model under the new statute.",
+      "sourceIds": [
+        "src-wnn-corporate"
+      ]
+    },
+    {
+      "id": "watch-ccc-first-trading",
+      "trackId": "ccts-carbon-market",
+      "condition": "First CCC exchange trading session held",
+      "register": "IEX / PXIL / HPX circulars; CERC",
+      "nextCheck": "2026-10-31",
+      "why": "Trading was targeted for mid-2026 per the minister; the date is not notified. Until a session happens, the market half of the market is theoretical.",
+      "sourceIds": [
+        "src-sq-icm"
+      ]
+    },
+    {
+      "id": "watch-ccts-compliance-outcome",
+      "trackId": "ccts-carbon-market",
+      "condition": "Outcome of the 31 Jul 2026 first CCTS compliance deadline (compliance rates, banked entitlements)",
+      "register": "BEE / ICM portal announcements",
+      "nextCheck": "2026-10-31",
+      "why": "The first true-up will show whether targets bind in year one or whether the surplus story dominates from the start.",
+      "sourceIds": [
+        "src-icap-force"
+      ]
+    },
+    {
+      "id": "watch-ccts-floor-price",
+      "trackId": "ccts-carbon-market",
+      "condition": "CERC notifies floor / forbearance price for CCC trading",
+      "register": "CERC orders page / gazette",
+      "nextCheck": "2026-10-31",
+      "why": "Expected oversupply in the first compliance year makes the floor price the binding design question; the regulations contain no price-stability mechanism.",
+      "sourceIds": [
+        "src-reclimatize-ccc"
+      ]
+    },
+    {
+      "id": "watch-qco-register",
+      "trackId": "indigenisation-100-items",
+      "condition": "Further QCO notifications or rescissions posted on the DCPC register",
+      "register": "chemicals.gov.in/bis-standard",
+      "nextCheck": "2026-10-31",
+      "why": "The revocation wave is the observable half of the indigenisation rebalance; the DCPC page is its register of record.",
+      "sourceIds": [
+        "src-dcpc-bis"
+      ]
+    },
+    {
+      "id": "watch-shanti-rules",
+      "trackId": "nuclear-shanti",
+      "condition": "Final SHANTI Rules and Regulations are notified after the consultation",
+      "register": "eGazette / DAE",
+      "nextCheck": "2026-10-31",
+      "why": "Nothing moves — licensing, private entry, BSR awards — until subordinate legislation exists. Minister said 'weeks or months' in May 2026.",
+      "sourceIds": [
+        "src-dae-shanti-draft-consultation-2026"
       ]
     },
     {
@@ -1125,6 +1240,91 @@ window.ENERGY_REG_WATCH = {
   ],
   "sources": [
     {
+      "id": "src-ctuil-live-2026-09-19",
+      "title": "CTUIL live GNA application register — DATA search",
+      "publisher": "Central Transmission Utility of India",
+      "date": "2026-09-19",
+      "url": "https://www.ctuil.in/nswsapi/gna",
+      "class": "primary-official",
+      "note": "Live Reg. 20 register; portal showed last update 17 Sep 2026.",
+      "num": 1
+    },
+    {
+      "id": "src-moc-gasification-rounds-2026",
+      "title": "National Coal Gasification Mission — current application rounds",
+      "publisher": "Ministry of Coal",
+      "date": "2026-09-16",
+      "url": "https://www.coal.gov.in/major-statistics/national-coal-gasification-mission",
+      "class": "primary-official",
+      "note": "Official page carries the Aug-Sep 2026 RFP, application-opening, response and pre-application-conference notices.",
+      "num": 2
+    },
+    {
+      "id": "src-dae-shanti-draft-consultation-2026",
+      "title": "Public consultation on draft SHANTI Rules and Regulations",
+      "publisher": "Department of Atomic Energy",
+      "date": "2026-09-04",
+      "url": "https://dae.gov.in/public-consultation-on-draft-shanti-rules-and-draft-shanti-regulations/",
+      "class": "primary-official",
+      "note": "Consultation closing date; final rules and regulations had not been notified at the time of this refresh.",
+      "num": 3
+    },
+    {
+      "id": "src-pib-cbg-price-2026-08",
+      "title": "Revised CBG procurement pricing and government support",
+      "publisher": "Press Information Bureau / Ministry of Petroleum and Natural Gas",
+      "date": "2026-08-29",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2304467&lang=1&reg=48",
+      "class": "primary-official",
+      "num": 4
+    },
+    {
+      "id": "src-pib-gobardhan-backgrounder-2026",
+      "title": "GOBARdhan unified scheme backgrounder",
+      "publisher": "Press Information Bureau / Ministry of Petroleum and Natural Gas",
+      "date": "2026-08-06",
+      "url": "https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&NoteId=159462&id=159462&lang=1&reg=3",
+      "class": "primary-official",
+      "num": 5
+    },
+    {
+      "id": "src-pib-gobardhan-2026",
+      "title": "Cabinet approves unified GOBARdhan scheme",
+      "publisher": "Press Information Bureau / Cabinet Committee on Economic Affairs",
+      "date": "2026-08-06",
+      "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2295480&lang=2&reg=48",
+      "class": "primary-official",
+      "num": 6
+    },
+    {
+      "id": "src-pib-dc-environment-2026-08",
+      "title": "Lok Sabha answer: environmental safeguards for data centres",
+      "publisher": "Press Information Bureau / Ministry of Environment, Forest and Climate Change",
+      "date": "2026-08-06",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2295675&lang=1&reg=3",
+      "class": "primary-official",
+      "num": 7
+    },
+    {
+      "id": "src-pib-dc-capacity-2026-08",
+      "title": "Lok Sabha answer: data-centre capacity and infrastructure expansion",
+      "publisher": "Press Information Bureau / Ministry of Electronics and IT",
+      "date": "2026-08-06",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2295483&lang=1&reg=6",
+      "class": "primary-official",
+      "num": 8
+    },
+    {
+      "id": "src-seci-co2-eoi-2026",
+      "title": "EOI for identifying CO2 sources for Green Urea and RFNBO-compliant Green Methanol",
+      "publisher": "Solar Energy Corporation of India",
+      "date": "2026-08-03",
+      "url": "https://seci.co.in/tender-details/YmRx",
+      "class": "primary-official",
+      "note": "SECI tender SECI000266; submission closed 17 Sep 2026.",
+      "num": 9
+    },
+    {
       "id": "src-srpc-58",
       "title": "58th SRPC / 55th TCC meeting agenda",
       "publisher": "SRPC",
@@ -1132,7 +1332,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://srpc.gov.in/wp-content/uploads/2026/07/58SRPCAGUpload.pdf",
       "class": "primary-official",
       "note": "Agenda for meetings on 24 & 28 Jul 2026; published July 2026, accessed 19 Jul 2026.",
-      "num": 1
+      "num": 10
     },
     {
       "id": "src-rsustain-ccts",
@@ -1142,7 +1342,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://rsustain.org/ccts-guide/",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026. Offset registry noted as in development (27 May 2026).",
-      "num": 2
+      "num": 11
     },
     {
       "id": "src-prs-shanti-summary",
@@ -1152,7 +1352,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://prsindia.org/billtrack/prs-products/prs-bill-summary-1766036475",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026.",
-      "num": 3
+      "num": 12
     },
     {
       "id": "src-prs-shanti",
@@ -1162,7 +1362,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://prsindia.org/billtrack/the-sustainable-harnessing-and-advancementof-nuclear-energy-for-transforming-india-bill-2025",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026; tracks introduction (15 Dec 2025), passage (17/18 Dec) and assent (20 Dec 2025).",
-      "num": 4
+      "num": 13
     },
     {
       "id": "src-nrf-shanti",
@@ -1172,7 +1372,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/dbff80e4/shanti-act-2025-rewiring-india-s-nuclear-liability-and-regulatory-architecture",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026.",
-      "num": 5
+      "num": 14
     },
     {
       "id": "src-ncgm",
@@ -1182,7 +1382,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://coal.nic.in/index.php/major-statistics/national-coal-gasification-mission",
       "class": "primary-official",
       "note": "Accessed 19 Jul 2026.",
-      "num": 6
+      "num": 15
     },
     {
       "id": "src-mnre-wte",
@@ -1192,7 +1392,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://mnre.gov.in/en/waste-to-energy/",
       "class": "primary-official",
       "note": "Undated programme page; accessed 19 Jul 2026. Programme window FY 2021-22 to FY 2025-26.",
-      "num": 7
+      "num": 16
     },
     {
       "id": "src-mercom-cbo",
@@ -1202,7 +1402,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.mercomindia.com/government-mandates-biogas-in-cng-and-png",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026. Documents the NBCC blending-obligation decision of Nov 2023.",
-      "num": 8
+      "num": 17
     },
     {
       "id": "src-kip-mda",
@@ -1212,7 +1412,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://kipfinancial.com/market-development-assistance-for-promotion-of-organic-fertilizers/",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026. The primary DoF guidelines PDF (20-09-2023, fert.nic.in) was unreachable at verification.",
-      "num": 9
+      "num": 18
     },
     {
       "id": "src-iscc-eu",
@@ -1222,7 +1422,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://iscc-system.org/certification/certification-schemes/iscc-eu/",
       "class": "primary-official",
       "note": "Certification body's own scheme page; accessed 19 Jul 2026.",
-      "num": 10
+      "num": 19
     },
     {
       "id": "src-icap-ets",
@@ -1232,7 +1432,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://icapcarbonaction.com/en/ets/indian-carbon-credit-trading-scheme",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026.",
-      "num": 11
+      "num": 20
     },
     {
       "id": "src-envint-offsets",
@@ -1242,7 +1442,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://envintglobal.com/indias-carbon-credit-offset-mechanism-bees-new-guidelines-for-a-credible-carbon-market/",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026. Covers the BEE Offset Mechanism Detailed Procedure v1 (March 2025).",
-      "num": 12
+      "num": 21
     },
     {
       "id": "src-enviliance-gei",
@@ -1252,7 +1452,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://enviliance.com/regions/south-asia/in/report_14511",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026.",
-      "num": 13
+      "num": 22
     },
     {
       "id": "src-dte-methanol",
@@ -1262,7 +1462,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.downtoearth.org.in/energy/from-definition-to-deployment-indias-evolving-green-methanol-ecosystem-a-crucial-addition-to-countrys-green-taxonomy-stride-across-sectors",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026. Documents the MNRE ≤0.44 kgCO2e/kg definition and the Kandla shore-to-ship bunkering trial of 2 Apr 2026.",
-      "num": 14
+      "num": 23
     },
     {
       "id": "src-dcpc-bis",
@@ -1272,7 +1472,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://chemicals.gov.in/bis-standard",
       "class": "primary-official",
       "note": "Accessed 19 Jul 2026. Lists the QCO withdrawal notifications of Oct–Dec 2025.",
-      "num": 15
+      "num": 24
     },
     {
       "id": "src-cse-fom",
@@ -1282,7 +1482,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.cseindia.org/decoding-fermented-organic-manure-fom--11815",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026.",
-      "num": 16
+      "num": 25
     },
     {
       "id": "src-cgdindia-cbo",
@@ -1292,7 +1492,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://cgdindia.net/government-mandates-cbg-blending-in-natural-gas/",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026. Documents the NBCC blending-obligation decision of Nov 2023.",
-      "num": 17
+      "num": 26
     },
     {
       "id": "src-angelone-sight2c",
@@ -1302,7 +1502,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.angelone.in/news/economy/seci-issues-tender-for-5-lakh-tonnes-of-green-methanol-under-sight-scheme",
       "class": "secondary-press",
       "note": "Accessed 19 Jul 2026; documents the May 2026 tender terms (EMD/PBG, bid band).",
-      "num": 18
+      "num": 27
     },
     {
       "id": "src-ctuil-gna",
@@ -1312,7 +1512,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://ctuil.in/gna/",
       "class": "primary-official",
       "note": "Bulk consumers ≥50 MW; register last updated 14 Jul 2026.",
-      "num": 19
+      "num": 28
     },
     {
       "id": "src-dte-cg-cbg",
@@ -1322,7 +1522,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.downtoearth.org.in/energy/chhattisgarhs-new-biogas-policy-picks-up-where-others-left-off",
       "class": "secondary-press",
       "note": "Dated to the 10 Jul 2026 gazette it documents; state gazette not fetched.",
-      "num": 20
+      "num": 29
     },
     {
       "id": "src-moc-rfp",
@@ -1331,7 +1531,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-07-07",
       "url": "https://coal.gov.in/sites/default/files/2026-07/07-07-2026-rpf.pdf",
       "class": "primary-official",
-      "num": 21
+      "num": 30
     },
     {
       "id": "src-moc-om",
@@ -1340,7 +1540,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-06-25",
       "url": "https://coal.gov.in/sites/default/files/2026-06/25-06-2026a-wn.pdf",
       "class": "primary-official",
-      "num": 22
+      "num": 31
     },
     {
       "id": "src-moc-draft-rfp",
@@ -1349,7 +1549,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-06-05",
       "url": "https://coal.gov.in/sites/default/files/2026-06/04-06-2026b-wn%20.pdf",
       "class": "primary-official",
-      "num": 23
+      "num": 32
     },
     {
       "id": "src-inkl-sampoorn",
@@ -1359,7 +1559,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.inkl.com/news/india-set-to-hike-biogas-prices-subsidies-under-new-program",
       "class": "secondary-press",
       "note": "Bloomberg reporting citing people familiar with the matter; no official notification as of 19 Jul 2026.",
-      "num": 24
+      "num": 33
     },
     {
       "id": "src-bet-sampoorn",
@@ -1369,7 +1569,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://bioenergytimes.com/centre-plans-higher-biogas-prices-and-fresh-incentives-to-accelerate-cbg-production/",
       "class": "secondary-press",
       "note": "Business Standard-derived reporting citing unnamed sources; no official notification as of 19 Jul 2026.",
-      "num": 25
+      "num": 34
     },
     {
       "id": "src-knn-groups",
@@ -1379,7 +1579,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://knnindia.co.in/news/newsdetails/sectors/manufacturing/govt-forms-six-working-groups-to-identify-100-products-for-import-substitution",
       "class": "secondary-press",
       "note": "PTI-syndicated.",
-      "num": 26
+      "num": 35
     },
     {
       "id": "src-fpj-groups",
@@ -1389,7 +1589,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.freepressjournal.in/business/govt-forms-six-sector-specific-panels-to-boost-domestic-manufacturing",
       "class": "secondary-press",
       "note": "PTI-syndicated.",
-      "num": 27
+      "num": 36
     },
     {
       "id": "src-dte-steel-ccts",
@@ -1399,7 +1599,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.downtoearth.org.in/economy/indias-iron-and-steel-sector-moves-closer-to-ccts-compliance-will-larger-decarbonisation-follow",
       "class": "secondary-press",
       "note": "Dated to the June 2026 revised-draft stage it documents (day not pinned).",
-      "num": 28
+      "num": 37
     },
     {
       "id": "src-moc-deck",
@@ -1408,7 +1608,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-05-29",
       "url": "https://www.coal.nic.in/sites/default/files/2026-05/29-05-2026a-wn.pdf",
       "class": "primary-official",
-      "num": 29
+      "num": 38
     },
     {
       "id": "src-newkerala-rules",
@@ -1418,7 +1618,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.newkerala.com/news/a/union-minister-jitendra-singh-says-shanti-act-rules-673.htm",
       "class": "secondary-press",
       "note": "Published 13 May 2026, updated 19 Jul 2026.",
-      "num": 30
+      "num": 39
     },
     {
       "id": "src-sq-sight2c",
@@ -1427,7 +1627,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-05-07",
       "url": "https://solarquarter.com/2026/05/07/seci-issues-draft-rfs-for-5-lakh-mt-green-methanol-production-under-national-green-hydrogen-mission/",
       "class": "secondary-press",
-      "num": 31
+      "num": 40
     },
     {
       "id": "src-dte-mh-cbg",
@@ -1437,7 +1637,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.downtoearth.org.in/energy/maharashtra-state-compressed-biogas-cbg-policy-2026-is-expected-to-open-a-new-growth-path",
       "class": "secondary-press",
       "note": "Dated to the 5 May 2026 state-cabinet approval it documents; state gazette not fetched.",
-      "num": 32
+      "num": 41
     },
     {
       "id": "src-nbp-nuclear",
@@ -1447,7 +1647,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.nuclearbusiness-platform.com/media/insights/india-private-nuclear-sector-opened",
       "class": "secondary-press",
       "note": "Insight published c. 2 May 2026.",
-      "num": 33
+      "num": 42
     },
     {
       "id": "src-reclimatize-ccc",
@@ -1457,7 +1657,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://reclimatize.in/india-ccc-carbon-credit-market-ccts-trading/",
       "class": "secondary-press",
       "note": "Floor/forbearance-price analysis as of 7 Apr 2026; cites CEEW abatement-vs-demand estimates.",
-      "num": 34
+      "num": 43
     },
     {
       "id": "src-sq-icm",
@@ -1467,7 +1667,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://solarquarter.com/2026/03/23/union-power-minister-launches-indian-carbon-market-portal-at-prakriti-2026/",
       "class": "secondary-press",
       "note": "Launch-event date 23 Mar 2026 rendered; ICAP records portal debut as 21 Mar 2026 — two-day discrepancy pending reconciliation.",
-      "num": 35
+      "num": 44
     },
     {
       "id": "src-icap-force",
@@ -1477,7 +1677,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://icapcarbonaction.com/en/news/compliance-obligations-under-indias-carbon-credit-trading-scheme-enter-force-seven-sectors",
       "class": "secondary-press",
       "note": "Dated to the March 2026 entry-into-force it documents (day not pinned).",
-      "num": 36
+      "num": 45
     },
     {
       "id": "src-mercom-cerc",
@@ -1487,7 +1687,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.mercomindia.com/cerc-issues-rules-to-operationalize-carbon-credit-trading-on-power-exchanges",
       "class": "secondary-press",
       "note": "Dated to the CERC notification of 27 Feb 2026 it documents.",
-      "num": 37
+      "num": 46
     },
     {
       "id": "src-indialaw-cerc",
@@ -1497,7 +1697,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.indialaw.in/blog/environment/cerc-carbon-credit-certificates-regulations-2026/",
       "class": "secondary-press",
       "note": "Regulations notified 27 Feb 2026. Secondaries conflict on the gazette publication date (3 Mar vs 27 Apr 2026) — gazette check pending.",
-      "num": 38
+      "num": 47
     },
     {
       "id": "src-mpidsa-shanti",
@@ -1507,7 +1707,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://idsa.in/wp-content/uploads/2026/02/Issue-Brief-Niranjan-C-Oak-Bhawna-Budhwar-17-Feb-2026.pdf",
       "class": "secondary-press",
       "note": "Reproduces the Second Schedule liability tiers verbatim from Bill No. 196 of 2025.",
-      "num": 39
+      "num": 48
     },
     {
       "id": "src-pngrb-injection",
@@ -1516,7 +1716,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-02-11",
       "url": "https://pngrb.gov.in/pdf/CBG/20260211_CBG_NGPL.pdf",
       "class": "primary-official",
-      "num": 40
+      "num": 49
     },
     {
       "id": "src-recpdcl-rfp",
@@ -1525,7 +1725,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2026-02-04",
       "url": "https://www.recpdcl.in/assets/data/pdf/RFP_Vizag_04022026.pdf",
       "class": "primary-official",
-      "num": 41
+      "num": 50
     },
     {
       "id": "src-icap-nine",
@@ -1535,7 +1735,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme",
       "class": "secondary-press",
       "note": "Dated to the second-tranche notification (16 Jan 2026) it documents. Headline reflects the nine-sector target architecture; as of Jul 2026 seven sectors carry final notified targets.",
-      "num": 42
+      "num": 51
     },
     {
       "id": "src-wnn-shanti",
@@ -1544,7 +1744,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2025-12-22",
       "url": "https://www.world-nuclear-news.org/articles/indias-shanti-bill-completes-legislative-process",
       "class": "secondary-press",
-      "num": 43
+      "num": 52
     },
     {
       "id": "src-wnn-corporate",
@@ -1554,7 +1754,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.world-nuclear-news.org/articles/indian-companies-show-interest-in-nuclear",
       "class": "secondary-press",
       "note": "Documents the NPCIL BSR RFP deadline extension to 31 Mar 2026 and Jindal Nuclear's stated ambition.",
-      "num": 44
+      "num": 53
     },
     {
       "id": "src-wts-gei",
@@ -1564,7 +1764,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://worldtradescanner.com/Greenhouse%20Gases%20Emission%20Intensity%20Target%20Rules,%202025.htm",
       "class": "secondary-press",
       "note": "Dated to the final rules notification of 8 Oct 2025; final gazette G.S.R. 739(E) not fetched.",
-      "num": 45
+      "num": 54
     },
     {
       "id": "src-pngrb-cbg-whitepaper",
@@ -1573,7 +1773,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2025-08-26",
       "url": "https://pngrb.gov.in/pdf/CBG/20250826_CBG.pdf",
       "class": "primary-official",
-      "num": 46
+      "num": 55
     },
     {
       "id": "src-moej-jcm",
@@ -1582,7 +1782,7 @@ window.ENERGY_REG_WATCH = {
       "date": "2025-08-07",
       "url": "https://www.env.go.jp/en/press/press_00320.html",
       "class": "primary-official",
-      "num": 47
+      "num": 56
     },
     {
       "id": "src-dte-cbg-price",
@@ -1592,7 +1792,7 @@ window.ENERGY_REG_WATCH = {
       "url": "https://www.downtoearth.org.in/renewable-energy/petroleum-ministrys-latest-price-revision-a-breather-for-compressed-biogas-sector",
       "class": "secondary-press",
       "note": "Dated to the MoPNG price notification of 15 May 2025 that it documents.",
-      "num": 48
+      "num": 57
     },
     {
       "id": "src-bet-cbg-price",
@@ -1602,18 +1802,18 @@ window.ENERGY_REG_WATCH = {
       "url": "https://bioenergytimes.com/biogas-boost-mopng-revises-procurement-price-to-rs-1478-mmbtu-industry-body-welcomes-decision/",
       "class": "secondary-press",
       "note": "Dated to the MoPNG price notification of 15 May 2025 that it documents.",
-      "num": 49
+      "num": 58
     }
   ],
   "derived": {
-    "generatedAt": "2026-07-19T13:53:09Z",
-    "latestEditionId": "2026-07-19",
+    "generatedAt": "2026-09-19T11:07:36Z",
+    "latestEditionId": "2026-09-19",
     "counts": {
       "tracks": 7,
-      "events": 30,
-      "watch": 23,
-      "sources": 49,
-      "primaryOfficial": 14
+      "events": 37,
+      "watch": 21,
+      "sources": 58,
+      "primaryOfficial": 23
     }
   }
 };

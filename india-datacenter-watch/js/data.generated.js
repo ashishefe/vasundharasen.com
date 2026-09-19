@@ -1,11 +1,11 @@
 window.INDIA_DC_WATCH = {
   "meta": {
     "title": "India AI Datacenter Power Demand & Policy Watch",
-    "asOf": "2026-07-09",
+    "asOf": "2026-09-19",
     "audience": "Monthly intelligence brief for regulatory and energy-policy review",
     "scopeNote": "This starter dataset tracks major hyperscaler, AI, and large third-party datacenter signals. It is not yet a verified census of every colocation facility in India.",
     "methodNote": "Headline counts use the curated project registry below. National baseline metrics are shown separately when a credible market-level source exists.",
-    "nextRefresh": "2026-08-01"
+    "nextRefresh": "2026-10-01"
   },
   "exchangeRates": {
     "usdInrAssumption": 85,
@@ -65,6 +65,17 @@ window.INDIA_DC_WATCH = {
       "detail": "JLL: India operational IT-load stock 1,123 MW in H1 2025 (net take-up +48% YoY); 2,073 MW projected by 2027; capex to 2027 ~USD 6.3B.",
       "sourceIds": [
         "src-jll-dc-2025"
+      ]
+    },
+    {
+      "id": "baseline-meity-2026-capacity",
+      "metric": "Government-reported installed data-centre capacity",
+      "value": "About 1,575 MW; up from 375 MW in 2020",
+      "date": "2026-08-06",
+      "quality": "official government estimate",
+      "detail": "MeitY's Lok Sabha answer reported installed capacity of about 1,575 MW and noted new facilities emerging in Andhra Pradesh, Madhya Pradesh, Chhattisgarh and West Bengal.",
+      "sourceIds": [
+        "src-pib-dc-capacity-2026-08"
       ]
     }
   ],
@@ -1127,6 +1138,36 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-et-digital-edge-palava-2026-07",
         "src-merc-lodha-2026"
+      ]
+    },
+    {
+      "id": "signal-ctuil-data-queue-sep2026",
+      "date": "2026-09-19",
+      "type": "grid",
+      "headline": "CTUIL's live register adds two 100 MW data-centre applications and closes CtrlS's 50 MW application; active CTUIL-tracked DC load rises by a net 150 MW.",
+      "whyItMatters": "The active CTUIL data-centre queue is now 2,980 MW. The two new applicants widen the geography to Talegaon and add another Maheshwaram load, while a closed application shows why gross filings must not be treated as a live pipeline.",
+      "sourceIds": [
+        "src-ctuil-live-2026-09-19"
+      ]
+    },
+    {
+      "id": "signal-dc-official-capacity-2026-08",
+      "date": "2026-08-06",
+      "type": "market baseline",
+      "headline": "The Government reported about 1,575 MW of installed Indian data-centre capacity, up from 375 MW in 2020.",
+      "whyItMatters": "This is an official system-wide baseline, distinct from the dashboard's project and connectivity pipeline. It also points to geographic expansion beyond the established metros.",
+      "sourceIds": [
+        "src-pib-dc-capacity-2026-08"
+      ]
+    },
+    {
+      "id": "signal-dc-environment-2026-08",
+      "date": "2026-08-06",
+      "type": "policy",
+      "headline": "Data centres are not separately listed under the EIA Notification, but large building or township thresholds can still trigger prior environmental clearance.",
+      "whyItMatters": "Power is only one delivery gate. At large campuses, built-up area, land footprint, water balance and recycling commitments can create a parallel approvals path.",
+      "sourceIds": [
+        "src-pib-dc-environment-2026-08"
       ]
     }
   ],
@@ -2956,6 +2997,51 @@ window.INDIA_DC_WATCH = {
       "date": "2026-07-02",
       "type": "project / energy",
       "tier": "secondary"
+    },
+    {
+      "id": "src-ctuil-live-2026-09-19",
+      "label": "CTUIL live GNA application portal — Reg. 20 DATA search, 19 Sep 2026",
+      "url": "https://www.ctuil.in/nswsapi/gna",
+      "publisher": "Central Transmission Utility of India (CTUIL)",
+      "date": "2026-09-19",
+      "type": "live grid connectivity register",
+      "tier": "primary"
+    },
+    {
+      "id": "src-ctuil-reg17-aug26",
+      "label": "CTUIL — GNA granted to entities other than STU under Reg. 17, Aug 2026",
+      "url": "https://www.ctuil.in/uploads/assets/178955619025Approved_GNA_%20Reg%2017_Aug26.pdf",
+      "publisher": "Central Transmission Utility of India (CTUIL)",
+      "date": "2026-08-31",
+      "type": "approved demand-side GNA register",
+      "tier": "primary"
+    },
+    {
+      "id": "src-pib-dc-capacity-2026-08",
+      "label": "Lok Sabha answer: data-centre capacity and infrastructure expansion",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2295483&lang=1&reg=6",
+      "publisher": "Press Information Bureau / Ministry of Electronics and IT",
+      "date": "2026-08-06",
+      "type": "official parliamentary answer",
+      "tier": "primary"
+    },
+    {
+      "id": "src-pib-dc-environment-2026-08",
+      "label": "Lok Sabha answer: environmental safeguards for data centres",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2295675&lang=1&reg=3",
+      "publisher": "Press Information Bureau / Ministry of Environment, Forest and Climate Change",
+      "date": "2026-08-06",
+      "type": "official parliamentary answer",
+      "tier": "primary"
+    },
+    {
+      "id": "src-pib-dc-roundtable-2026-09",
+      "label": "MeitY CEO roundtable on data-centre ease of doing business",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2305918&lang=1&reg=3",
+      "publisher": "Press Information Bureau / Ministry of Electronics and IT",
+      "date": "2026-09-02",
+      "type": "official policy release",
+      "tier": "primary"
     }
   ],
   "firmnessLadder": [
@@ -3235,13 +3321,14 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
+        "src-ctuil-live-2026-09-19",
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
         "src-cmets-sr-38-pendurthi"
       ],
       "confidence": "high",
       "notes": "ISTS bulk-consumer GNA (Reg 17.1(iii)). Power-flow year estimated from the hub's ~2028 target; exact GNA-effective date TBD.",
-      "lastVerified": "2026-07-09",
+      "lastVerified": "2026-09-19",
       "gridDelivery": {
         "packageId": "asset-pendurthi-vizag-gh-tbcb",
         "stationReadiness": "Pendurthi/Vizag delivery package in TBCB bidding",
@@ -3288,13 +3375,14 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
+        "src-ctuil-live-2026-09-19",
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
         "src-cmets-sr-38-pendurthi"
       ],
       "confidence": "high",
       "notes": "ISTS bulk-consumer GNA. Power-flow year estimated; exact GNA-effective date TBD.",
-      "lastVerified": "2026-07-09",
+      "lastVerified": "2026-09-19",
       "gridDelivery": {
         "packageId": "asset-pendurthi-vizag-gh-tbcb",
         "stationReadiness": "Pendurthi/Vizag delivery package in TBCB bidding",
@@ -3341,13 +3429,14 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
+        "src-ctuil-live-2026-09-19",
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
         "src-cmets-sr-38-pendurthi"
       ],
       "confidence": "high",
       "notes": "ISTS bulk-consumer GNA. Corroborated by AP environmental clearance for Rambilli. Power-flow year estimated.",
-      "lastVerified": "2026-07-09",
+      "lastVerified": "2026-09-19",
       "gridDelivery": {
         "packageId": "asset-pendurthi-vizag-gh-tbcb",
         "stationReadiness": "Pendurthi/Vizag delivery package in TBCB bidding",
@@ -3393,11 +3482,12 @@ window.INDIA_DC_WATCH = {
       "linkedProjectId": "hypervault-telangana",
       "sourceIds": [
         "src-ctuil-gna-portal",
-        "src-ctuil-live-2026-07-09"
+        "src-ctuil-live-2026-07-09",
+        "src-ctuil-live-2026-09-19"
       ],
       "confidence": "high",
       "notes": "ISTS bulk-consumer GNA. Power-flow year estimated; exact GNA-effective date TBD.",
-      "lastVerified": "2026-07-09",
+      "lastVerified": "2026-09-19",
       "gridDelivery": {
         "packageId": "asset-maheshwaram-service-watch",
         "stationReadiness": "Maheshwaram service route under watch",
@@ -3430,16 +3520,17 @@ window.INDIA_DC_WATCH = {
       "utility": "CTUIL",
       "substation": "Maheswaram",
       "state": "Telangana",
-      "status": "applied",
-      "applicationRef": "CTUIL GNA app 2200002559, 3 Dec 2025 (Under Process)",
+      "status": "closed",
+      "applicationRef": "CTUIL GNA app 2200002559, 3 Dec 2025 (CLOSED in live register on 19 Sep 2026)",
       "linkedProjectId": "",
       "sourceIds": [
         "src-ctuil-gna-portal",
-        "src-ctuil-live-2026-07-09"
+        "src-ctuil-live-2026-07-09",
+        "src-ctuil-live-2026-09-19"
       ],
       "confidence": "high",
-      "notes": "ISTS bulk-consumer GNA. First 50 MW of a 250 MW (→900 MW) Chandanvelly campus. Power-flow year estimated.",
-      "lastVerified": "2026-07-09",
+      "notes": "The live CTUIL register now marks this 50 MW application CLOSED. It is retained as historical evidence but excluded from active queue totals.",
+      "lastVerified": "2026-09-19",
       "gridDelivery": {
         "packageId": "asset-maheshwaram-service-watch",
         "stationReadiness": "Maheshwaram service route under watch",
@@ -3455,7 +3546,7 @@ window.INDIA_DC_WATCH = {
       },
       "parentCompany": "CtrlS Datacenters",
       "drawalState": "Telangana",
-      "transmissionStatus": "Maheswaram service route remains under watch; no public CTUIL TBCB package located for this exact 50 MW load in the latest calendar checked.",
+      "transmissionStatus": "CLOSED in the CTUIL live register; no longer counted in the active connectivity queue.",
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "not approved",
@@ -3478,11 +3569,13 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
-        "src-ctuil-reg17-may26"
+        "src-ctuil-reg17-may26",
+        "src-ctuil-live-2026-09-19",
+        "src-ctuil-reg17-aug26"
       ],
       "confidence": "high",
       "notes": "First DC grant in CTUIL's Reg-17 register. GNA-RE = renewable network access; register-level evidence of green drawal. Live portal still shows Under Process, so the approved register is the source of record.",
-      "lastVerified": "2026-07-09",
+      "lastVerified": "2026-09-19",
       "dateConfidence": "declared",
       "drawalState": "Delhi",
       "parentCompany": "ST Telemedia Global Data Centres / ST Telemedia",
@@ -3491,6 +3584,64 @@ window.INDIA_DC_WATCH = {
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "2026-07-10",
       "approvedPowerFlowEnd": "not published"
+    },
+    {
+      "id": "conn-avrenta-maheshwaram",
+      "applicant": "AVRENTA DATA CENTRE PRIVATE LIMITED",
+      "operator": "Avrenta Data Centre Private Limited",
+      "useType": "datacenter",
+      "quantumMW": 100,
+      "powerFlowStart": null,
+      "dateConfidence": "not_published",
+      "tier": "ISTS",
+      "utility": "CTUIL",
+      "substation": "MAHESHWARAM",
+      "state": "Telangana",
+      "status": "applied",
+      "applicationRef": "CTUIL GNA app 2200004325, 18 Sep 2026 (Under Process)",
+      "linkedProjectId": "",
+      "sourceIds": [
+        "src-ctuil-live-2026-09-19"
+      ],
+      "confidence": "high",
+      "notes": "Live CTUIL register record; the applicant's ultimate parent and exact power-flow dates are not published in the register.",
+      "lastVerified": "2026-09-19",
+      "parentCompany": "Not established from the public register",
+      "drawalState": "Telangana",
+      "transmissionStatus": "Under Process",
+      "requestedPowerFlowStart": "not published",
+      "requestedPowerFlowEnd": "not published",
+      "approvedPowerFlowStart": "not approved",
+      "approvedPowerFlowEnd": "not approved"
+    },
+    {
+      "id": "conn-vardhexa-talegaon",
+      "applicant": "VARDHEXA DATA CENTRE PRIVATE LIMITED",
+      "operator": "Vardhexa Data Centre Private Limited",
+      "useType": "datacenter",
+      "quantumMW": 100,
+      "powerFlowStart": null,
+      "dateConfidence": "not_published",
+      "tier": "ISTS",
+      "utility": "CTUIL",
+      "substation": "PUNE (TALEGAON)",
+      "state": "Maharashtra",
+      "status": "applied",
+      "applicationRef": "CTUIL GNA app 2200004328, 16 Sep 2026 (Under Process)",
+      "linkedProjectId": "",
+      "sourceIds": [
+        "src-ctuil-live-2026-09-19"
+      ],
+      "confidence": "high",
+      "notes": "Live CTUIL register record; the applicant's ultimate parent and exact power-flow dates are not published in the register.",
+      "lastVerified": "2026-09-19",
+      "parentCompany": "Not established from the public register",
+      "drawalState": "Maharashtra",
+      "transmissionStatus": "Under Process",
+      "requestedPowerFlowStart": "not published",
+      "requestedPowerFlowEnd": "not published",
+      "approvedPowerFlowStart": "not approved",
+      "approvedPowerFlowEnd": "not approved"
     }
   ],
   "watchlist": [
@@ -3502,12 +3653,12 @@ window.INDIA_DC_WATCH = {
       "whyItMatters": "This is the delivery bottleneck behind the 2,323 MW Vizag connectivity queue: if the package slips, the GNA status alone will overstate serviceability.",
       "checkWhere": "CTUIL Bidding Calendar; CTUIL Status of ISTS RTM and TBCB Projects; RECPDCL/PFCCL tender or SPV notices",
       "checkUrl": "https://www.ctuil.in/bidding-calendar",
-      "nextCheck": "2026-07-21",
+      "nextCheck": "2026-10-15",
       "status": "armed",
       "sourceIds": [
         "src-ctuil-bidding-calendar-may26"
       ],
-      "lastChecked": "2026-07-09"
+      "lastChecked": "2026-09-19"
     },
     {
       "id": "watch-indiaai-uptime-definition",
@@ -3517,11 +3668,12 @@ window.INDIA_DC_WATCH = {
       "whyItMatters": "This is the live government definition of AI-cloud service availability. It should inform dashboard serviceability notes, but it is not the same as a universal statutory datacenter uptime mandate.",
       "checkWhere": "IndiaAI compute capacity hub; IndiaAI / MeitY RFE and empanelment documents",
       "checkUrl": "https://indiaai.gov.in/hub/indiaai-compute-capacity",
-      "nextCheck": "2026-07-30",
+      "nextCheck": "2026-10-31",
       "status": "armed",
       "sourceIds": [
         "src-indiaai-rfe-cloud-2025"
-      ]
+      ],
+      "lastChecked": "2026-09-19"
     }
   ],
   "personaTakeaways": [],
@@ -3638,7 +3790,7 @@ window.INDIA_DC_WATCH = {
     }
   ],
   "derived": {
-    "generatedAt": "2026-07-09T11:54:05+00:00",
+    "generatedAt": "2026-09-19T11:07:36+00:00",
     "statusOrder": {
       "operational": 0,
       "under_construction": 1,
@@ -3829,11 +3981,11 @@ window.INDIA_DC_WATCH = {
       ]
     ],
     "sourceTierMix": {
-      "primary": 35,
+      "primary": 40,
       "official": 14,
       "secondary": 66,
-      "total": 115,
-      "secondaryPct": 57
+      "total": 120,
+      "secondaryPct": 55
     },
     "timeline": [
       {
@@ -4044,30 +4196,57 @@ window.INDIA_DC_WATCH = {
           "announced": 1271.0,
           "mou_speculative": 300.0
         }
+      },
+      {
+        "month": "2026-08",
+        "cumulativeProjects": 20,
+        "cumulativeKnownMw": 2599.0,
+        "headlineCumulativeMw": 2299.0,
+        "byCurrentStatusMw": {
+          "operational": 28.0,
+          "under_construction": 1000.0,
+          "announced": 1271.0,
+          "mou_speculative": 300.0
+        }
+      },
+      {
+        "month": "2026-09",
+        "cumulativeProjects": 20,
+        "cumulativeKnownMw": 2599.0,
+        "headlineCumulativeMw": 2299.0,
+        "byCurrentStatusMw": {
+          "operational": 28.0,
+          "under_construction": 1000.0,
+          "announced": 1271.0,
+          "mou_speculative": 300.0
+        }
       }
     ],
     "connectivity": {
       "summary": {
-        "totalMW": 5780.0,
+        "totalMW": 5930.0,
         "grantedMW": 1457.0,
-        "appliedMW": 4323.0,
+        "appliedMW": 4473.0,
         "byTier": {
           "intra-state": 2957.0,
-          "ISTS": 2823.0
+          "ISTS": 2973.0
         },
         "byStatusMw": {
           "granted": 1457.0,
-          "applied": 4323.0
+          "applied": 4473.0,
+          "closed": 50.0
         },
         "byStateMw": {
-          "Maharashtra": 2950.0,
+          "Maharashtra": 3050.0,
           "Andhra Pradesh": 2323.0,
-          "Telangana": 500.0,
+          "Telangana": 550.0,
           "Delhi": 7.0
         },
-        "count": 8,
+        "count": 9,
+        "closedCount": 1,
         "declaredDateCount": 1,
-        "estimatedDateCount": 7
+        "estimatedDateCount": 6,
+        "unpublishedDateCount": 2
       },
       "forward": [
         {
@@ -4078,13 +4257,13 @@ window.INDIA_DC_WATCH = {
         },
         {
           "year": "2027",
-          "cumulativeMW": 57.0,
+          "cumulativeMW": 7.0,
           "cumulativeGrantedMW": 7.0,
           "cumulativeDeclaredMW": 7.0
         },
         {
           "year": "2028",
-          "cumulativeMW": 5780.0,
+          "cumulativeMW": 5730.0,
           "cumulativeGrantedMW": 1457.0,
           "cumulativeDeclaredMW": 7.0
         }
@@ -4093,7 +4272,7 @@ window.INDIA_DC_WATCH = {
     "reconciliation": {
       "totals": {
         "pressHeadlineMw": 2299.0,
-        "filedMw": 5780.0,
+        "filedMw": 5930.0,
         "grantedMw": 1457.0,
         "commissionedMw": 0
       },
@@ -4128,18 +4307,25 @@ window.INDIA_DC_WATCH = {
       ],
       "unlinked": [
         {
-          "id": "conn-ctrls",
-          "operator": "CtrlS Datacenters (Chandanvelly campus)",
-          "quantumMW": 50,
-          "status": "applied",
-          "state": "Telangana"
-        },
-        {
           "id": "conn-stt",
           "operator": "ST Telemedia Global Data Centres",
           "quantumMW": 7,
           "status": "granted",
           "state": "Delhi"
+        },
+        {
+          "id": "conn-avrenta-maheshwaram",
+          "operator": "Avrenta Data Centre Private Limited",
+          "quantumMW": 100,
+          "status": "applied",
+          "state": "Telangana"
+        },
+        {
+          "id": "conn-vardhexa-talegaon",
+          "operator": "Vardhexa Data Centre Private Limited",
+          "quantumMW": 100,
+          "status": "applied",
+          "state": "Maharashtra"
         }
       ]
     },
@@ -4156,17 +4342,17 @@ window.INDIA_DC_WATCH = {
         "state": "Maharashtra",
         "peakMW": 32000,
         "itLoadMw": 0.0,
-        "connectivityMW": 2950.0,
+        "connectivityMW": 3050.0,
         "itPctOfPeak": 0.0,
-        "connPctOfPeak": 9.2
+        "connPctOfPeak": 9.5
       },
       {
         "state": "Telangana",
         "peakMW": 18139,
         "itLoadMw": 0.0,
-        "connectivityMW": 500.0,
+        "connectivityMW": 550.0,
         "itPctOfPeak": 0.0,
-        "connPctOfPeak": 2.8
+        "connPctOfPeak": 3.0
       },
       {
         "state": "Gujarat",
@@ -4189,20 +4375,20 @@ window.INDIA_DC_WATCH = {
       "trackedItMw": "2,299",
       "undisclosedMw": "2,403",
       "undisclosedPct": "92",
-      "connTotalMw": "5,780",
+      "connTotalMw": "5,930",
       "connGrantedMw": "1,457",
-      "connAppliedMw": "4,323",
-      "connFilings": "8",
-      "connIstsMw": "2,823",
+      "connAppliedMw": "4,473",
+      "connFilings": "9",
+      "connIstsMw": "2,973",
       "connIntraMw": "2,957",
-      "connEstimatedDates": "7 of 8",
+      "connEstimatedDates": "6 of 9",
       "nationalPeakGw": "271",
       "itPctOfNationalPeak": "0.8",
-      "connPctOfNationalPeak": "2.1",
+      "connPctOfNationalPeak": "2.2",
       "mouMw": "300",
       "mouCount": "3",
       "projectCount": "20",
-      "secondarySourcePct": "57"
+      "secondarySourcePct": "55"
     },
     "snapshotHistory": [
       {
@@ -4454,23 +4640,168 @@ window.INDIA_DC_WATCH = {
           "declaredDateCount": 1,
           "estimatedDateCount": 7
         }
+      },
+      {
+        "month": "2026-09",
+        "asOf": "2026-09-19",
+        "generatedAt": "2026-09-19T11:07:36+00:00",
+        "headlineCounts": {
+          "operational": 8,
+          "under_construction": 2,
+          "announced": 7
+        },
+        "counts": {
+          "operational": 8,
+          "under_construction": 2,
+          "announced": 7,
+          "mou_speculative": 3
+        },
+        "capacityByStatusMw": {
+          "operational": 28.0,
+          "under_construction": 1000.0,
+          "announced": 1271.0,
+          "mou_speculative": 300.0
+        },
+        "headlineKnownCapacityMw": 2299.0,
+        "stateDemand": [
+          {
+            "state": "Andhra Pradesh",
+            "knownItLoadMw": 2300.0,
+            "projectCount": 4,
+            "byStatusMw": {
+              "under_construction": 1000.0,
+              "announced": 1000.0,
+              "mou_speculative": 300.0
+            }
+          },
+          {
+            "state": "Gujarat",
+            "knownItLoadMw": 168.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "announced": 168.0
+            }
+          },
+          {
+            "state": "Maharashtra / Tamil Nadu",
+            "knownItLoadMw": 103.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "announced": 103.0
+            }
+          },
+          {
+            "state": "Haryana",
+            "knownItLoadMw": 28.0,
+            "projectCount": 2,
+            "byStatusMw": {
+              "operational": 28.0,
+              "mou_speculative": 0.0
+            }
+          },
+          {
+            "state": "Telangana",
+            "knownItLoadMw": 0.0,
+            "projectCount": 3,
+            "byStatusMw": {
+              "operational": 0.0,
+              "announced": 0.0
+            }
+          },
+          {
+            "state": "Maharashtra",
+            "knownItLoadMw": 0.0,
+            "projectCount": 5,
+            "byStatusMw": {
+              "operational": 0.0,
+              "under_construction": 0.0
+            }
+          },
+          {
+            "state": "Delhi NCR",
+            "knownItLoadMw": 0.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "operational": 0.0
+            }
+          },
+          {
+            "state": "Tamil Nadu",
+            "knownItLoadMw": 0.0,
+            "projectCount": 2,
+            "byStatusMw": {
+              "operational": 0.0,
+              "announced": 0.0
+            }
+          },
+          {
+            "state": "Multiple",
+            "knownItLoadMw": 0.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "announced": 0.0
+            }
+          }
+        ],
+        "connectivitySummary": {
+          "totalMW": 5930.0,
+          "grantedMW": 1457.0,
+          "appliedMW": 4473.0,
+          "byTier": {
+            "intra-state": 2957.0,
+            "ISTS": 2973.0
+          },
+          "byStatusMw": {
+            "granted": 1457.0,
+            "applied": 4473.0,
+            "closed": 50.0
+          },
+          "byStateMw": {
+            "Maharashtra": 3050.0,
+            "Andhra Pradesh": 2323.0,
+            "Telangana": 550.0,
+            "Delhi": 7.0
+          },
+          "count": 9,
+          "closedCount": 1,
+          "declaredDateCount": 1,
+          "estimatedDateCount": 6,
+          "unpublishedDateCount": 2
+        }
       }
     ],
     "changeLog": {
-      "previousMonth": "2026-06",
+      "previousMonth": "2026-07",
       "added": [],
       "removed": [],
       "statusChanged": [],
       "mwChanged": [],
       "connectivity": {
-        "added": [],
+        "added": [
+          {
+            "id": "conn-avrenta-maheshwaram",
+            "operator": "Avrenta Data Centre Private Limited",
+            "quantumMW": 100,
+            "status": "applied",
+            "tier": "ISTS",
+            "powerFlowStart": null
+          },
+          {
+            "id": "conn-vardhexa-talegaon",
+            "operator": "Vardhexa Data Centre Private Limited",
+            "quantumMW": 100,
+            "status": "applied",
+            "tier": "ISTS",
+            "powerFlowStart": null
+          }
+        ],
         "removed": [],
         "statusChanged": [
           {
-            "id": "conn-stt",
-            "operator": "ST Telemedia Global Data Centres",
+            "id": "conn-ctrls",
+            "operator": "CtrlS Datacenters (Chandanvelly campus)",
             "from": "applied",
-            "to": "granted"
+            "to": "closed"
           }
         ],
         "quantumChanged": []

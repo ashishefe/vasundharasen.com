@@ -101,6 +101,7 @@
   function isEstimatedDate(rec) {
     if (rec.dateConfidence === "declared") return false;
     if (rec.dateConfidence === "estimated") return true;
+    if (rec.dateConfidence === "not_published" || !rec.powerFlowStart) return false;
     return String(rec.powerFlowStart || "").length < 7;
   }
 
@@ -207,14 +208,15 @@
     const peakGw = gc.nationalPeakMW ? Math.round(gc.nationalPeakMW / 1000) : null;
     const share = gc.dcShareOfElectricity || {};
     const p = palette();
-    const connPrimary = primaryCount(data.connectivity || []);
+    const activeConnectivity = (data.connectivity || []).filter((r) => r.status !== "closed");
+    const connPrimary = primaryCount(activeConnectivity);
     const connBadge = conn.count
       ? `<span class="prov-badge" data-prov="${connPrimary === conn.count ? "primary" : "media"}">${connPrimary === conn.count ? "✓ All primary filings" : connPrimary + "/" + conn.count + " primary"}</span>`
       : "";
     const cards = [
       {
         label: "Filed grid connectivity", value: num(conn.totalMW || 0), unit: "MW",
-        foot: `${connBadge}<span class="m-note">${num(conn.grantedMW || 0)} granted · ${num(conn.appliedMW || 0)} applied — the headline load figure</span>`,
+        foot: `${connBadge}<span class="m-note">${num(conn.grantedMW || 0)} granted · ${num(conn.appliedMW || 0)} applied${conn.closedCount ? ` · ${conn.closedCount} closed record retained` : ""} — active load only</span>`,
       },
       {
         label: "Tracked IT load", value: num(d.headlineKnownCapacityMw), unit: "MW",
@@ -479,7 +481,7 @@
     const aliasBack = Object.fromEntries(Object.entries(stateAlias).map(([k, v]) => [v, k]));
     const canonical = aliasBack[stateName] || stateName;
     const projects = data.projects.filter((pr) => ((pr.location || {}).state || "").includes(canonical));
-    const filings = (data.connectivity || []).filter((r) => (r.state || "") === canonical);
+    const filings = (data.connectivity || []).filter((r) => (r.state || "") === canonical && r.status !== "closed");
     const policies = (data.policyWatch || []).filter((po) => (po.jurisdiction || "").includes(canonical));
     const peak = ((data.gridContext || {}).statePeakMW || {})[canonical];
     const share = (data.derived.stateShareOfPeak || []).find((r) => r.state === canonical);
@@ -600,6 +602,7 @@
     agreement: { label: "Agreement", v: "--status-uc" },
     commissioned: { label: "Commissioned", v: "--status-uc" },
     applied: { label: "Applied", v: "--status-an" },
+    closed: { label: "Closed", v: "--muted" },
   };
   function connBadge(status) {
     const s = CONN_STATUS[status] || { label: status || "—", v: "--muted" };
@@ -669,9 +672,10 @@
         { name: "Incl. estimated dates", type: "line", step: "end", symbol: "circle", symbolSize: 6, lineStyle: { width: 2, type: "dashed" }, itemStyle: { color: p.an }, data: fwd.map((f) => f.cumulativeMW) },
       ],
     });
-    const estNote = sum.estimatedDateCount
-      ? `${sum.estimatedDateCount} of ${sum.count} filings carry ESTIMATED power-flow dates (dashed) — the curve firms up as real register dates are pulled.`
-      : "All power-flow dates are register-declared.";
+    const dateNotes = [];
+    if (sum.estimatedDateCount) dateNotes.push(`${sum.estimatedDateCount} of ${sum.count} active filings carry ESTIMATED power-flow dates (dashed)`);
+    if (sum.unpublishedDateCount) dateNotes.push(`${sum.unpublishedDateCount} active filing${sum.unpublishedDateCount === 1 ? " has" : "s have"} no published power-flow date and ${sum.unpublishedDateCount === 1 ? "is" : "are"} excluded from the curve`);
+    const estNote = dateNotes.length ? `${dateNotes.join("; ")} — the curve firms up as register dates are published.` : "All active power-flow dates are register-declared.";
     qs("#foot-grid-forward").innerHTML = footLine(["src-ctuil-gna-portal", "src-merc-lodha-2026"], estNote);
   }
 
@@ -732,7 +736,7 @@
     { key: "status", label: "Status", num: false },
     { key: "sources", label: "Source", num: false, nosort: true },
   ];
-  const CONN_STATUS_ORDER = { commissioned: 0, agreement: 1, granted: 2, applied: 3 };
+  const CONN_STATUS_ORDER = { commissioned: 0, agreement: 1, granted: 2, applied: 3, closed: 4 };
   function gridVal(r, key) {
     switch (key) {
       case "operator": return r.operator || r.applicant || "";
