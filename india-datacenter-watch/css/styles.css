@@ -478,6 +478,23 @@ td strong { display: block; font-weight: 600; margin-bottom: 2px; }
 /* ---- baseline -------------------------------------------------------------- */
 .baseline-value { font-family: var(--mono); color: var(--fg); font-size: 1.3rem; font-weight: 600; display: inline-block; margin-bottom: 6px; }
 
+/* ---- Asia context --------------------------------------------------------- */
+.regional-section { margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--border-strong); }
+.regional-intro { max-width: 75ch; margin: 8px 0 20px; color: var(--muted); font-size: 0.88rem; }
+.regional-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 42px); }
+.regional-column { min-width: 0; }
+.regional-column > h4 { padding-bottom: 9px; border-bottom: 1px solid var(--border-strong); color: var(--primary); font-size: 0.93rem; letter-spacing: 0.02em; }
+.regional-item { padding: 16px 0 17px; border-bottom: 1px solid var(--border); }
+.regional-meta { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 0.69rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.regional-item h5 { margin: 6px 0; color: var(--fg); font-size: 0.94rem; line-height: 1.3; }
+.regional-item p { margin: 0 0 7px; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.regional-analysis { color: var(--fg) !important; }
+.regional-analysis span { margin-right: 7px; color: var(--status-op); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.regional-item .regional-caveat { color: var(--muted); font-size: 0.76rem; }
+.regional-item .source-links { margin-top: 8px; }
+.regional-item .source-links a { font-size: 0.75rem; }
+@media (max-width: 760px) { .regional-grid { grid-template-columns: 1fr; } }
+
 /* ---- sources --------------------------------------------------------------- */
 .source-card a { display: inline-block; margin-top: 8px; font-size: 0.78rem; overflow-wrap: anywhere; }
 
@@ -594,6 +611,7 @@ footer {
     border-color: #ddd; box-shadow: none; break-inside: avoid;
   }
   .methodology { display: none; }
+  .regional-item { break-inside: avoid; }
   a { color: inherit; text-decoration: none; }
   .chart-foot a::after { content: ""; }
   footer { border-top: 1px solid #ddd; }

@@ -340,6 +340,30 @@
       </article>`).join("");
   }
 
+  function renderRegionalSignals() {
+    const groups = [
+      ["south-asia", "South Asia"],
+      ["southeast-asia", "Southeast Asia"],
+    ];
+    const signals = data.regionalSignals || [];
+    const checked = data.regionalCheckedAt;
+    qs("#regional-checked").textContent = checked ? `Checked ${formatDate(checked)}` : "";
+    qs("#regional-signals").innerHTML = groups.map(([key, label]) => {
+      const rows = signals.filter((item) => item.region === key);
+      return `<section class="regional-column" aria-label="${label}">
+        <h4>${label}</h4>
+        ${rows.map((item) => `<article class="regional-item">
+          <div class="regional-meta"><span>${escapeHtml(item.country)}</span><time datetime="${escapeHtml(item.date)}">${escapeHtml(formatDate(item.date))}</time></div>
+          <h5>${escapeHtml(item.title)}</h5>
+          <p>${escapeHtml(item.fact)}</p>
+          <p class="regional-analysis"><span>Analysis</span>${escapeHtml(item.analysis)}</p>
+          <p class="regional-caveat">${escapeHtml(item.caveat)}</p>
+          <div class="source-links">${sourceLinks(item.sourceIds)}</div>
+        </article>`).join("")}
+      </section>`;
+    }).join("");
+  }
+
   // ---- charts --------------------------------------------------------------
   function chartFunnel() {
     const c = mount("chart-funnel"); if (!c) return;
@@ -1218,6 +1242,7 @@
     renderWatchlist();
     renderPersonas();
     renderBaseline();
+    renderRegionalSignals();
     renderOpenAccess();
     renderStandards();
     renderGrid();

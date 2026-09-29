@@ -3042,6 +3042,51 @@ window.INDIA_DC_WATCH = {
       "date": "2026-09-02",
       "type": "official policy release",
       "tier": "primary"
+    },
+    {
+      "id": "src-imda-green-dc-roadmap-2024",
+      "label": "Singapore IMDA — Green Data Centre Roadmap, 30 May 2024",
+      "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2024/charting-green-growth-for-data-centres-in-sg",
+      "publisher": "Infocomm Media Development Authority, Singapore",
+      "date": "2024-05-30",
+      "type": "government data-centre roadmap",
+      "tier": "primary"
+    },
+    {
+      "id": "src-mida-johor-sites-2024",
+      "label": "MIDA / Bernama — Johor data-centre status, Nov 2024",
+      "url": "https://www.mida.gov.my/mida-news/rm141-7b-worth-of-digital-investments-approved-in-2024-41078-jobs-created-and-10-data-centres-operating-in-johor-says-gobind/",
+      "publisher": "Malaysian Investment Development Authority / Bernama",
+      "date": "2024-11-12",
+      "type": "reported ministerial statement",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-tnb-dc-3qfy2025",
+      "label": "TNB — 3Q FY2025 analyst briefing, page 19",
+      "url": "https://www.tnb.com.my/assets/quarterly_results/Analyst_Briefing_3QFY2025_Deck.pdf",
+      "publisher": "Tenaga Nasional Berhad",
+      "date": "2025-12-01",
+      "type": "electricity utility investor presentation",
+      "tier": "official"
+    },
+    {
+      "id": "src-srilanka-budget-2026-dc",
+      "label": "Sri Lanka — 2026 Budget Speech, data-centre measures",
+      "url": "https://media.gov.lk/media-gallery/latest-news/3497-full-budget-speech-2026",
+      "publisher": "Government of Sri Lanka",
+      "date": "2025-11-07",
+      "type": "government budget speech",
+      "tier": "primary"
+    },
+    {
+      "id": "src-pakistan-pid-dc-2026",
+      "label": "Pakistan PID — CDWP emerging-technologies data-centre proposal, 25 Jun 2026",
+      "url": "https://pid.gov.pk/site/press_detail/33093",
+      "publisher": "Press Information Department, Government of Pakistan",
+      "date": "2026-06-25",
+      "type": "government planning announcement",
+      "tier": "primary"
     }
   ],
   "firmnessLadder": [
@@ -3789,8 +3834,76 @@ window.INDIA_DC_WATCH = {
       "lastVerified": "2026-07-06"
     }
   ],
+  "regionalSignals": [
+    {
+      "id": "reg-sri-lanka-dc-incentives-2026",
+      "region": "south-asia",
+      "country": "Sri Lanka",
+      "date": "2025-11-07",
+      "title": "Budget proposes data-centre incentives",
+      "fact": "Sri Lanka's 2026 budget proposes LKR 500 million as an initial step to attract data-centre investment, citing green-energy incentives, low-cost electricity at the initial stage and land provision.",
+      "analysis": "Power price and clean supply are being treated as siting tools, a policy choice relevant to India's state-level competition for projects.",
+      "caveat": "Budget proposal; no operating data-centre MW is stated.",
+      "sourceIds": [
+        "src-srilanka-budget-2026-dc"
+      ]
+    },
+    {
+      "id": "reg-pakistan-sovereign-ai-dc-2026",
+      "region": "south-asia",
+      "country": "Pakistan",
+      "date": "2026-06-25",
+      "title": "Sovereign AI facility advances one approval stage",
+      "fact": "Pakistan's planning body gave in-principle approval to a Rs 7,930 million Emerging Technologies Data Centre proposal for government-owned AI and high-performance computing, then referred it for further consideration.",
+      "analysis": "The immediate regional signal is public compute infrastructure policy, rather than a measured commercial data-centre load.",
+      "caveat": "Further approval, construction and power demand are not established by this announcement.",
+      "sourceIds": [
+        "src-pakistan-pid-dc-2026"
+      ]
+    },
+    {
+      "id": "reg-singapore-green-dc-roadmap-2024",
+      "region": "southeast-asia",
+      "country": "Singapore",
+      "date": "2024-05-30",
+      "title": "Growth is tied to energy efficiency",
+      "fact": "Singapore's IMDA reported more than 1.4 GW of data-centre capacity and a roadmap for at least 300 MW of additional capacity in the near term, with more growth linked to green-energy pathways.",
+      "analysis": "Singapore shows how a power-constrained market can release new capacity conditionally instead of treating every proposal as committed supply.",
+      "caveat": "The 300 MW is a roadmap ambition, not commissioned load or a dated delivery schedule.",
+      "sourceIds": [
+        "src-imda-green-dc-roadmap-2024"
+      ]
+    },
+    {
+      "id": "reg-johor-status-2024",
+      "region": "southeast-asia",
+      "country": "Johor, Malaysia",
+      "date": "2024-11-12",
+      "title": "A cluster beside Singapore takes shape",
+      "fact": "Malaysia's digital minister reported 10 operating Johor data centres, seven in development and 36 applications under state review as of October 2024.",
+      "analysis": "The cluster makes grid connections, land and water a concrete regional comparison for India's proposed campuses.",
+      "caveat": "These are site and application counts, not IT-load or grid-demand MW.",
+      "sourceIds": [
+        "src-mida-johor-sites-2024"
+      ]
+    },
+    {
+      "id": "reg-malaysia-tnb-demand-gap-2025",
+      "region": "southeast-asia",
+      "country": "Peninsular Malaysia",
+      "date": "2025-12-01",
+      "title": "Power commitments run ahead of use",
+      "fact": "TNB reported 49 secured data-centre projects with about 7.1 GW of total maximum demand, while actual data-centre load utilisation was 710 MW in September 2025.",
+      "analysis": "This gap shows why filed or contracted power should be tracked separately from electricity already consumed.",
+      "caveat": "TNB's figures cover its market, not Johor alone; maximum demand and actual load are different measures.",
+      "sourceIds": [
+        "src-tnb-dc-3qfy2025"
+      ]
+    }
+  ],
+  "regionalCheckedAt": "2026-09-29",
   "derived": {
-    "generatedAt": "2026-09-19T11:07:36+00:00",
+    "generatedAt": "2026-09-29T11:10:36+00:00",
     "statusOrder": {
       "operational": 0,
       "under_construction": 1,
@@ -3981,11 +4094,11 @@ window.INDIA_DC_WATCH = {
       ]
     ],
     "sourceTierMix": {
-      "primary": 40,
-      "official": 14,
-      "secondary": 66,
-      "total": 120,
-      "secondaryPct": 55
+      "primary": 43,
+      "official": 15,
+      "secondary": 67,
+      "total": 125,
+      "secondaryPct": 54
     },
     "timeline": [
       {
@@ -4388,7 +4501,7 @@ window.INDIA_DC_WATCH = {
       "mouMw": "300",
       "mouCount": "3",
       "projectCount": "20",
-      "secondarySourcePct": "55"
+      "secondarySourcePct": "54"
     },
     "snapshotHistory": [
       {
