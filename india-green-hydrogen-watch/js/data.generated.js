@@ -10,6 +10,11 @@ window.GREEN_HYDROGEN_WATCH = {
   },
   "editions": [
     {
+      "id": "2026-10-01",
+      "label": "Monthly flow · 1 Oct 2026",
+      "note": "Public-source flow update covering 1–30 September 2026; it records a commissioned 300 kW industrial pilot and a new 54,000-tonnes/year green-ammonia tender."
+    },
+    {
       "id": "2026-09-01",
       "label": "Monthly flow · 1 Sep 2026",
       "note": "Public-source flow update covering 1–31 August 2026; one announced PEM-electrolyser technology collaboration is proposed."
@@ -167,7 +172,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Demand & Offtake",
       "instrument": "tender",
       "stage": "concluded",
-      "stageNote": "724,000 tonnes/year across 13 fertiliser sites; discovered tariffs span ₹49.75–₹64.74/kg.",
+      "stageNote": "724,000 tonnes/year across 13 concluded fertiliser-site contracts; a separate 54,000-tonnes/year Mode 2A Tranche II tender opened in September 2026.",
       "summary": "Ammonia is India’s clearest public price-discovery market for a green-hydrogen derivative. The 13 contracts are comparable within this tender—not a general hydrogen price index.",
       "parameters": [
         {
@@ -208,7 +213,8 @@ window.GREEN_HYDROGEN_WATCH = {
         "MNRE"
       ],
       "sourceIds": [
-        "S01"
+        "S01",
+        "S28"
       ]
     },
     {
@@ -261,7 +267,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Supply & Infrastructure",
       "instrument": "tracking",
       "stage": "operational",
-      "stageNote": "Four unambiguously operating examples are tracked separately from awards and announced hubs.",
+      "stageNote": "Five unambiguously operating examples are tracked separately from awards and announced hubs.",
       "summary": "Publicly evidenced operating production remains pilot-scale. These projects validate applications; they do not yet demonstrate mission-scale output.",
       "parameters": [
         {
@@ -295,6 +301,14 @@ window.GREEN_HYDROGEN_WATCH = {
           "sourceIds": [
             "S10"
           ]
+        },
+        {
+          "label": "Maruti Suzuki Manesar",
+          "value": "300 kW captive industrial pilot",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "S27"
+          ]
         }
       ],
       "authorities": [],
@@ -302,7 +316,8 @@ window.GREEN_HYDROGEN_WATCH = {
         "S09",
         "S10",
         "S11",
-        "S12"
+        "S12",
+        "S27"
       ]
     },
     {
@@ -311,7 +326,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Demand & Offtake",
       "instrument": "agreement",
       "stage": "operational",
-      "stageNote": "Firm equipment orders, supply contracts and technology licences are emerging beside government allocations.",
+      "stageNote": "Firm equipment orders, supply contracts, technology licences, finance approvals and competitive derivative-offtake awards are emerging beside government allocations.",
       "summary": "The strongest company signals now specify a counterparty, instrument and scale. MoUs remain visible only when clearly labelled and decision-relevant.",
       "parameters": [
         {
@@ -354,7 +369,9 @@ window.GREEN_HYDROGEN_WATCH = {
         "S14",
         "S18",
         "S19",
-        "S20"
+        "S20",
+        "S29",
+        "S30"
       ]
     },
     {
@@ -420,6 +437,54 @@ window.GREEN_HYDROGEN_WATCH = {
     }
   ],
   "events": [
+    {
+      "id": "evt-amgreen-h2global-asian-lot",
+      "trackId": "commercial-orders",
+      "date": "2026-09-30",
+      "title": "AM Green wins H2Global's Asian green-ammonia lot",
+      "detail": "AM Green reported selection as sole winner of H2Global's Asian lot. Hintco is to purchase green ammonia for ten years for a stated minimum contract value of €585 million, with first deliveries to Germany expected in 2029 from Kakinada Phase 2.",
+      "significance": "This is a competitive award and long-term derivative-offtake commitment. The announcement does not disclose contracted volume or a per-tonne price, so the value must not be converted into an ammonia or hydrogen price.",
+      "sourceIds": [
+        "S30"
+      ],
+      "editionId": "2026-10-01"
+    },
+    {
+      "id": "evt-maruti-manesar-pilot-commissioned",
+      "trackId": "operating-projects",
+      "date": "2026-09-24",
+      "title": "Maruti Suzuki commissions 300 kW Manesar hydrogen pilot",
+      "detail": "Maruti Suzuki reported commissioning a 300 kW green-hydrogen electrolyser pilot at Manesar, Haryana. It uses otherwise unutilised site solar generation; the hydrogen is stored and blended with natural gas as manufacturing process fuel.",
+      "significance": "This is company-reported commissioning of an operating industrial pilot, not a SIGHT award, a firm external offtake contract or evidence of mission-scale supply.",
+      "sourceIds": [
+        "S27"
+      ],
+      "editionId": "2026-10-01"
+    },
+    {
+      "id": "evt-seci-mode2a-tranche2-ammonia-rfs",
+      "trackId": "ammonia-procurement",
+      "date": "2026-09-24",
+      "title": "SECI opens 54,000-tonnes/year green-ammonia procurement",
+      "detail": "SECI issued a request for selection under SIGHT Mode 2A Tranche II for production and supply of 54,000 MTPA of green ammonia in India through cost-based competitive bidding. The online bid deadline was 27 October 2026.",
+      "significance": "This is an open procurement, not an award or a discovered tariff. It must not be added to the existing ammonia-auction price ledger until a public result identifies the contracted volume and price.",
+      "sourceIds": [
+        "S28"
+      ],
+      "editionId": "2026-10-01"
+    },
+    {
+      "id": "evt-amgreen-adb-finance-approval",
+      "trackId": "commercial-orders",
+      "date": "2026-09-09",
+      "title": "ADB approves financing for AM Green's planned Kakinada project",
+      "detail": "ADB's project record lists four approved loans totalling US$130 million for AM Green's planned Kakinada green-ammonia project. It records two 547,500-tonnes/year phases, with scheduled commissioning dates of 31 March 2029 and 31 March 2030.",
+      "significance": "This is finance approval for a planned project, not proof that construction has started or that the facility is operating. The stated capacity remains planned project scope.",
+      "sourceIds": [
+        "S29"
+      ],
+      "editionId": "2026-10-01"
+    },
     {
       "id": "evt-bhel-hystar-pem-tie-up",
       "trackId": "foreign-participation",
@@ -521,39 +586,6 @@ window.GREEN_HYDROGEN_WATCH = {
   ],
   "watch": [
     {
-      "id": "watch-em-t1-scd",
-      "trackId": "sight-electrolyser-awards",
-      "condition": "Tranche-I factories meet, miss or revise August 2026 completion dates",
-      "register": "SECI NGHM award table; company commissioning releases",
-      "nextCheck": "2026-08-01",
-      "why": "The first SIGHT manufacturing deadline is the earliest hard conversion test for 1,500 MW/year of awarded capacity.",
-      "sourceIds": [
-        "S01"
-      ]
-    },
-    {
-      "id": "watch-kakinada-production",
-      "trackId": "commercial-orders",
-      "condition": "AM Green confirms mechanical completion, commissioning or first production",
-      "register": "AM Green and John Cockerill project disclosures",
-      "nextCheck": "2026-08-01",
-      "why": "The 1.3 GW equipment order and stated FID make Kakinada a material execution signal; scheduled production is not operating output.",
-      "sourceIds": [
-        "S18"
-      ]
-    },
-    {
-      "id": "watch-bhel-hystar-implementation",
-      "trackId": "foreign-participation",
-      "condition": "BHEL or Hystar discloses the Indian manufacturing site, capacity, contractual technology scope, order book, construction or commissioning milestone",
-      "register": "BHEL and Hystar official releases; BHEL investor and tender disclosures",
-      "nextCheck": "2026-10-01",
-      "why": "The August agreement states a phased manufacturing intention but gives no plant, capacity, timing or firm-order evidence.",
-      "sourceIds": [
-        "S24"
-      ]
-    },
-    {
       "id": "watch-ammonia-gapa",
       "trackId": "ammonia-procurement",
       "condition": "Green Ammonia Purchase Agreements or scheduled supply dates become public",
@@ -578,6 +610,17 @@ window.GREEN_HYDROGEN_WATCH = {
       ]
     },
     {
+      "id": "watch-em-t1-scd",
+      "trackId": "sight-electrolyser-awards",
+      "condition": "Tranche-I factories meet, miss or revise August 2026 completion dates",
+      "register": "SECI NGHM award table; company commissioning releases",
+      "nextCheck": "2026-11-01",
+      "why": "The first SIGHT manufacturing deadline is the earliest hard conversion test for 1,500 MW/year of awarded capacity.",
+      "sourceIds": [
+        "S01"
+      ]
+    },
+    {
       "id": "watch-certificates",
       "trackId": "standards-certification",
       "condition": "The portal begins reporting certificates, certified volumes or registered producers",
@@ -587,6 +630,17 @@ window.GREEN_HYDROGEN_WATCH = {
       "sourceIds": [
         "S05",
         "S06"
+      ]
+    },
+    {
+      "id": "watch-kakinada-production",
+      "trackId": "commercial-orders",
+      "condition": "AM Green confirms mechanical completion, commissioning or first production",
+      "register": "AM Green and John Cockerill project disclosures",
+      "nextCheck": "2026-11-01",
+      "why": "The 1.3 GW equipment order and stated FID make Kakinada a material execution signal; scheduled production is not operating output.",
+      "sourceIds": [
+        "S18"
       ]
     },
     {
@@ -600,9 +654,67 @@ window.GREEN_HYDROGEN_WATCH = {
         "S01",
         "S08"
       ]
+    },
+    {
+      "id": "watch-bhel-hystar-implementation",
+      "trackId": "foreign-participation",
+      "condition": "BHEL or Hystar discloses the Indian manufacturing site, capacity, contractual technology scope, order book, construction or commissioning milestone",
+      "register": "BHEL and Hystar official releases; BHEL investor and tender disclosures",
+      "nextCheck": "2026-11-01",
+      "why": "The August agreement states a phased manufacturing intention but gives no plant, capacity, timing or firm-order evidence.",
+      "sourceIds": [
+        "S24"
+      ]
+    },
+    {
+      "id": "watch-ammonia-mode2a-tranche2-result",
+      "trackId": "ammonia-procurement",
+      "condition": "SECI publishes a Mode 2A Tranche II award, selected producer, contracted quantity, Green Ammonia Purchase Agreement or tariff",
+      "register": "SECI tender record SECI000282 and tender-result notices",
+      "nextCheck": "2026-11-01",
+      "why": "The 54,000-MTPA tender is an open competition. A bid document is not a price, award or supply contract.",
+      "sourceIds": [
+        "S28"
+      ]
     }
   ],
   "sources": [
+    {
+      "id": "S30",
+      "title": "AM Green selected in H2Global's Asian lot",
+      "publisher": "AM Green",
+      "date": "2026-09-30",
+      "url": "https://www.businesswire.com/news/home/20260930707955/en/AM-Green-Named-Winner-of-Asian-Lot-in-H2Global-Auction-Funded-by-German-Government",
+      "class": "primary-official",
+      "num": 1
+    },
+    {
+      "id": "S28",
+      "title": "RfS for 54,000 MTPA green ammonia under SIGHT Mode 2A Tranche II",
+      "publisher": "Solar Energy Corporation of India",
+      "date": "2026-09-24",
+      "url": "https://www.seci.co.in/tender-details/Ymp1",
+      "class": "primary-official",
+      "num": 2
+    },
+    {
+      "id": "S27",
+      "title": "Maruti Suzuki commissions 300 kW green-hydrogen pilot at Manesar",
+      "publisher": "Maruti Suzuki India Limited",
+      "date": "2026-09-24",
+      "url": "https://www.marutisuzuki.com/corporate/media/press-releases/2026/september/maruti-suzuki-commissions-its-first-green-hydrogen-plant-at-its-manesar-facility-in-haryana",
+      "class": "primary-official",
+      "num": 3
+    },
+    {
+      "id": "S29",
+      "title": "ADB financing approved for AM Green's Kakinada green-ammonia project",
+      "publisher": "Asian Development Bank",
+      "date": "2026-09-09",
+      "url": "https://www.adb.org/projects/58517-001/main",
+      "class": "primary-official",
+      "num": 4
+    },
     {
       "id": "S24",
       "title": "BHEL enters strategic PEM-electrolyser tie-up with Hystar",
@@ -610,7 +722,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-13",
       "url": "https://www.bhel.com/bhel-enters-strategic-tie-hystar-norway-pem-electrolyser-systems",
       "class": "primary-official",
-      "num": 1
+      "num": 5
     },
     {
       "id": "S25",
@@ -619,7 +731,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-11",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2297571&lang=1&reg=3",
       "class": "primary-official",
-      "num": 2
+      "num": 6
     },
     {
       "id": "S26",
@@ -628,7 +740,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-03",
       "url": "https://seci.co.in/tender-details/YmRx",
       "class": "primary-official",
-      "num": 3
+      "num": 7
     },
     {
       "id": "S01",
@@ -637,7 +749,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-20",
       "url": "https://www.seci.co.in/nghm",
       "class": "primary-official",
-      "num": 4
+      "num": 8
     },
     {
       "id": "S22",
@@ -646,7 +758,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-02",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2280506&lang=1&reg=48",
       "class": "primary-official",
-      "num": 5
+      "num": 9
     },
     {
       "id": "S06",
@@ -655,7 +767,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-06-17",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274212&lang=1&reg=3",
       "class": "primary-official",
-      "num": 6
+      "num": 10
     },
     {
       "id": "S21",
@@ -664,7 +776,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-05-28",
       "url": "https://www.ohmium.com/press-release/ohmium-and-insolare-collaborate-to-deliver-a-multi-application-green-hydrogen-project-for-nlc-india-limited",
       "class": "primary-official",
-      "num": 7
+      "num": 11
     },
     {
       "id": "S08",
@@ -673,7 +785,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-24",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244663&lang=1&reg=3",
       "class": "primary-official",
-      "num": 8
+      "num": 12
     },
     {
       "id": "S07",
@@ -682,7 +794,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-02-27",
       "url": "https://mnre.gov.in/en/notice/green-ammonia-standard-for-india/",
       "class": "primary-official",
-      "num": 9
+      "num": 13
     },
     {
       "id": "S14",
@@ -691,7 +803,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-08-18",
       "url": "https://www.iocl.com/uploads/ConcallTranscriptQ1FY25-26.pdf",
       "class": "primary-official",
-      "num": 10
+      "num": 14
     },
     {
       "id": "S11",
@@ -700,7 +812,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-23",
       "url": "https://www.adani.com/newsroom/media-releases/adani-commissions-indias-first-off-grid-green-hydrogen-pilot-plant-of-5-mw-capacity",
       "class": "primary-official",
-      "num": 11
+      "num": 15
     },
     {
       "id": "S10",
@@ -709,7 +821,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-19",
       "url": "https://ntpc.co.in/media/press-releases/ntpc-hands-over-five-hydrogen-fuel-cell-buses-leh-administration",
       "class": "primary-official",
-      "num": 12
+      "num": 16
     },
     {
       "id": "S13",
@@ -718,7 +830,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-05-30",
       "url": "https://iocl.com/NewsDetails/59411",
       "class": "primary-official",
-      "num": 13
+      "num": 17
     },
     {
       "id": "S05",
@@ -727,7 +839,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-04-29",
       "url": "https://mnre.gov.in/en/notice/green-hydrogen-certification-scheme-of-india/",
       "class": "primary-official",
-      "num": 14
+      "num": 18
     },
     {
       "id": "S15",
@@ -736,7 +848,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-01-07",
       "url": "https://ntpc.co.in/media/press-releases/pm-lay-foundation-stone-ntpc-green-energy-limited-green-hydrogen-hub-project",
       "class": "primary-official",
-      "num": 15
+      "num": 19
     },
     {
       "id": "S18",
@@ -745,7 +857,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-10-30",
       "url": "https://johncockerill.com/en/press-and-news/news/am-green-entrusts-john-cockerill-with-indias-largest-electrolyzer-order-for-its-green-ammonia-complex-one-of-the-worlds-largest/",
       "class": "primary-official",
-      "num": 16
+      "num": 20
     },
     {
       "id": "S03",
@@ -754,7 +866,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-30",
       "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/jul/doc2024730360201.pdf",
       "class": "primary-official",
-      "num": 17
+      "num": 21
     },
     {
       "id": "S16",
@@ -763,7 +875,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-19",
       "url": "https://www.ohmium.com/press-release/ohmium-launches-newest-pem-electrolyzer-gigafactory",
       "class": "primary-official",
-      "num": 18
+      "num": 22
     },
     {
       "id": "S09",
@@ -772,7 +884,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-24",
       "url": "https://www.gailonline.com/PressRelease24052024.html",
       "class": "primary-official",
-      "num": 19
+      "num": 23
     },
     {
       "id": "S20",
@@ -781,7 +893,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-21",
       "url": "https://nelhydrogen.com/press-release/nel-asa-has-signed-a-licensing-agreement-with-reliance/",
       "class": "primary-official",
-      "num": 20
+      "num": 24
     },
     {
       "id": "S04",
@@ -790,7 +902,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-08-19",
       "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1950421&lang=2&reg=48",
       "class": "primary-official",
-      "num": 21
+      "num": 25
     },
     {
       "id": "S17",
@@ -799,7 +911,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-03-22",
       "url": "https://www.larsentoubro.com/pressreleases/2023/2023-03-22-lt-signs-agreement-with-mcphy-for-electrolyzer-manufacturing",
       "class": "primary-official",
-      "num": 22
+      "num": 26
     },
     {
       "id": "S19",
@@ -808,7 +920,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-02-02",
       "url": "https://johncockerill.com/en/press-and-news/news/john-cockerill-records-indias-largest-140mw-electrolysers-order-from-greenko-for-the-first-indian-green-ammonia-plant/",
       "class": "primary-official",
-      "num": 23
+      "num": 27
     },
     {
       "id": "S02",
@@ -817,7 +929,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-01-04",
       "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1888545&lang=2&reg=48",
       "class": "primary-official",
-      "num": 24
+      "num": 28
     },
     {
       "id": "S12",
@@ -826,7 +938,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2022-08-20",
       "url": "https://www.larsentoubro.com/pressreleases/2022/2022-08-20-lt-commissions-green-hydrogen-plant-at-its-manufacturing-complex-in-hazira",
       "class": "primary-official",
-      "num": 25
+      "num": 29
     }
   ],
   "market": {
@@ -1432,6 +1544,18 @@ window.GREEN_HYDROGEN_WATCH = {
         "sourceIds": [
           "S21"
         ]
+      },
+      {
+        "company": "Maruti Suzuki",
+        "activity": "Captive green-hydrogen process-fuel pilot",
+        "stage": "Operating",
+        "location": "Manesar, Haryana",
+        "scale": "300 kW electrolyser pilot",
+        "date": "2026-09-24",
+        "note": "Company-reported commissioning. Hydrogen from site solar is stored and blended with natural gas for manufacturing process fuel; no annual output or external offtake is disclosed.",
+        "sourceIds": [
+          "S27"
+        ]
       }
     ],
     "commercialMoves": [
@@ -1519,22 +1643,46 @@ window.GREEN_HYDROGEN_WATCH = {
         "sourceIds": [
           "S24"
         ]
+      },
+      {
+        "company": "AM Green",
+        "counterparty": "Asian Development Bank",
+        "instrument": "Project finance approval",
+        "subject": "Kakinada green-ammonia project",
+        "scale": "US$130 million approved across four loans; 1.095 MTPA planned in two phases",
+        "date": "2026-09-09",
+        "note": "Finance approval for a planned project. The ADB record gives scheduled commissioning in 2029 and 2030; it is not construction or operating evidence.",
+        "sourceIds": [
+          "S29"
+        ]
+      },
+      {
+        "company": "AM Green",
+        "counterparty": "Hintco / H2Global",
+        "instrument": "Competitive offtake award",
+        "subject": "Asian-lot green-ammonia supply to Germany",
+        "scale": "10 years; minimum €585 million contract value; volume undisclosed",
+        "date": "2026-09-30",
+        "note": "AM Green reports first deliveries expected in 2029 from Kakinada Phase 2. Contract value is not a per-tonne ammonia price or a hydrogen price.",
+        "sourceIds": [
+          "S30"
+        ]
       }
     ]
   },
   "derived": {
-    "generatedAt": "2026-09-19T11:07:36Z",
-    "latestEditionId": "2026-09-01",
+    "generatedAt": "2026-10-01T10:13:27Z",
+    "latestEditionId": "2026-10-01",
     "counts": {
       "tracks": 8,
-      "events": 8,
-      "watch": 7,
-      "sources": 25,
+      "events": 12,
+      "watch": 8,
+      "sources": 29,
       "productionAwards": 19,
       "electrolyserAwards": 21,
       "ammoniaAuctions": 13,
-      "assets": 6,
-      "commercialMoves": 7
+      "assets": 7,
+      "commercialMoves": 9
     }
   }
 };
