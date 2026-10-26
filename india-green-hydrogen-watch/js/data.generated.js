@@ -3,12 +3,17 @@ window.GREEN_HYDROGEN_WATCH = {
   "site": {
     "title": "India Green Hydrogen Watch",
     "byline": "Curated by Dr. Vasundhara Sen",
-    "strapline": "India has built an award book. Delivery is the next test.",
+    "strapline": "Is India’s green-hydrogen push turning awards into working plants?",
     "disclaimer": "Public-source intelligence and clearly labelled analysis. Not investment, legal or policy advice.",
-    "footerNote": "Baseline stocktake · 20 July 2026. Next edition: 1 August 2026.",
-    "methodNote": "Awards, targets, orders, construction and operating assets are counted separately. No unsupported capacity enters the public record."
+    "footerNote": "Monthly flow edition · 1 November 2026 (research cut 26 October). Next edition: 1 December 2026.",
+    "methodNote": "Awards, signed buyers, construction and operating plants are counted separately, each in its own unit. A figure without a public source does not appear."
   },
   "editions": [
+    {
+      "id": "2026-11-01",
+      "label": "Monthly flow · 1 Nov 2026",
+      "note": "Covers October 2026 up to a research cut on 26 October, in which we found no new award, commissioning or contract. Adds items earlier editions missed: ammonia purchase agreements reported from March, JSW’s plant running under a SIGHT award since November 2025, the named refinery developers, a press-reported smaller award book, and the passing of every Tranche I electrolyser deadline."
+    },
     {
       "id": "2026-10-01",
       "label": "Monthly flow · 1 Oct 2026",
@@ -32,12 +37,12 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Policy & Missions",
       "instrument": "mission",
       "stage": "operational",
-      "stageNote": "₹19,744 crore outlay; 5 MMT/year production-capacity target by 2030.",
-      "summary": "The policy stack is no longer the missing layer. The execution test now sits with award conversion, demand contracts and delivered projects.",
+      "stageNote": "₹19,744 crore outlay; a target of 5 million tonnes/year of production capacity by 2030.",
+      "summary": "The Mission’s targets, money and rules are all published. What the record does not yet show is the awards turning into plants and buyers.",
       "parameters": [
         {
           "label": "2030 production-capacity target",
-          "value": "At least 5 MMT/year",
+          "value": "At least 5 million tonnes/year",
           "confidence": "confirmed",
           "sourceIds": [
             "S02"
@@ -66,6 +71,14 @@ window.GREEN_HYDROGEN_WATCH = {
           "sourceIds": [
             "S03"
           ]
+        },
+        {
+          "label": "Mission spending to date",
+          "value": "₹292 crore as of 6 Aug 2026",
+          "confidence": "reported",
+          "sourceIds": [
+            "S33"
+          ]
         }
       ],
       "authorities": [
@@ -84,12 +97,12 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Supply & Infrastructure",
       "instrument": "scheme",
       "stage": "concluded",
-      "stageNote": "The Mode 1 award book remains 862,000 tonnes/year; a separate Mode 2B refinery allocation totals 30 KTPA. Neither figure is operating output.",
-      "summary": "The award book is meaningful but must not be read as operating output. The next evidence is site finalisation, financing, construction and commissioning.",
+      "stageNote": "SECI's table lists 862,000 tonnes/year of Mode 1 awards; a press-reported parliamentary reply of August 2026 gives 756,100. A separate Mode 2B refinery allocation totals 30,000 tonnes/year. One award, JSW's, is partly operating.",
+      "summary": "The awards add up to 17% of the 2030 target, but only JSW’s plant is running. The first deadline, for Tranche I, is 2 February 2027.",
       "parameters": [
         {
           "label": "Tranche I",
-          "value": "412,000 t/year · SCD Feb 2027",
+          "value": "412,000 t/year · due Feb 2027",
           "confidence": "confirmed",
           "sourceIds": [
             "S01"
@@ -97,7 +110,7 @@ window.GREEN_HYDROGEN_WATCH = {
         },
         {
           "label": "Tranche II",
-          "value": "450,000 t/year · SCD Feb–Mar 2028",
+          "value": "450,000 t/year · due Feb–Mar 2028",
           "confidence": "confirmed",
           "sourceIds": [
             "S01"
@@ -105,11 +118,19 @@ window.GREEN_HYDROGEN_WATCH = {
         },
         {
           "label": "Share of 2030 target",
-          "value": "17.2% awarded, not operating",
+          "value": "17.2% awarded; 3,800 t/year of it operating",
           "confidence": "confirmed",
           "sourceIds": [
             "S01",
             "S02"
+          ]
+        },
+        {
+          "label": "Award book, as reported (Aug 2026)",
+          "value": "756,100 t/year · 16 companies (parliamentary reply, press-reported)",
+          "confidence": "reported",
+          "sourceIds": [
+            "S33"
           ]
         }
       ],
@@ -129,12 +150,12 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Supply & Infrastructure",
       "instrument": "scheme",
       "stage": "concluded",
-      "stageNote": "3,000 MW/year awarded across two manufacturing tranches.",
-      "summary": "The first major deadline arrives in August 2026. Factory commissioning and eligible domestic value addition—not allocations—will show whether the manufacturing programme is landing.",
+      "stageNote": "3,000 MW/year awarded across two tranches. All eight Tranche I factories (1,500 MW/year) passed their scheduled dates in August 2026; 30 MW/year of commissioning is documented.",
+      "summary": "The first deadline passed in August 2026 with 30 of 1,500 MW/year commissioned on the record. Factory commissioning records, or extensions, are the next evidence.",
       "parameters": [
         {
           "label": "Tranche I",
-          "value": "1,500 MW/year · SCD Aug 2026",
+          "value": "1,500 MW/year · due Aug 2026",
           "confidence": "confirmed",
           "sourceIds": [
             "S01"
@@ -142,7 +163,7 @@ window.GREEN_HYDROGEN_WATCH = {
         },
         {
           "label": "Tranche II",
-          "value": "1,500 MW/year · SCD Mar 2027",
+          "value": "1,500 MW/year · due Mar 2027",
           "confidence": "confirmed",
           "sourceIds": [
             "S01"
@@ -154,6 +175,14 @@ window.GREEN_HYDROGEN_WATCH = {
           "confidence": "confirmed",
           "sourceIds": [
             "S03"
+          ]
+        },
+        {
+          "label": "SIGHT incentives released",
+          "value": "None shown as released for manufacturing or production as of 3 Dec 2025 (₹4,440 cr and ₹5,533.98 cr sanctioned)",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "S31"
           ]
         }
       ],
@@ -172,8 +201,8 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Demand & Offtake",
       "instrument": "tender",
       "stage": "concluded",
-      "stageNote": "724,000 tonnes/year across 13 concluded fertiliser-site contracts; a separate 54,000-tonnes/year Mode 2A Tranche II tender opened in September 2026.",
-      "summary": "Ammonia is India’s clearest public price-discovery market for a green-hydrogen derivative. The 13 contracts are comparable within this tender—not a general hydrogen price index.",
+      "stageNote": "724,000 tonnes/year auctioned across 13 fertiliser sites; agreements signed from 30 March 2026 cover 670,000 (press-reported total). A 54,000-tonnes/year Tranche II tender opened in September 2026.",
+      "summary": "These auctions give contract-by-contract public prices for a green-hydrogen product, the only such series in this tracker. The prices compare within this programme; they do not set a price for hydrogen itself.",
       "parameters": [
         {
           "label": "Annual requirement",
@@ -206,6 +235,15 @@ window.GREEN_HYDROGEN_WATCH = {
           "sourceIds": [
             "S01"
           ]
+        },
+        {
+          "label": "Under purchase agreements",
+          "value": "670,000 t/year · 11 units (of 724,000 · 13 auctioned)",
+          "confidence": "reported",
+          "sourceIds": [
+            "S33",
+            "S32"
+          ]
         }
       ],
       "authorities": [
@@ -224,7 +262,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "instrument": "standard",
       "stage": "operational",
       "stageNote": "Hydrogen and ammonia emissions thresholds are notified; the hydrogen certification portal launched in June 2026.",
-      "summary": "Definitions have moved into an operating certification architecture. Certificate issuance and market recognition are now the evidence to track.",
+      "summary": "The thresholds and the certification portal are in place. No certificate has been reported yet; the first ones will show how much certified output exists.",
       "parameters": [
         {
           "label": "Green hydrogen threshold",
@@ -267,9 +305,17 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Supply & Infrastructure",
       "instrument": "tracking",
       "stage": "operational",
-      "stageNote": "Five unambiguously operating examples are tracked separately from awards and announced hubs.",
-      "summary": "Publicly evidenced operating production remains pilot-scale. These projects validate applications; they do not yet demonstrate mission-scale output.",
+      "stageNote": "Six operating plants are tracked, one of them (JSW Vijayanagar) built under a SIGHT award. A press report, which names no source, puts capacity commissioned under the Mission at about 8,000 tonnes/year.",
+      "summary": "Apart from JSW’s 3,800 tonnes/year, the plants with a public record are pilots of a few megawatts. None is near the scale of the awards.",
       "parameters": [
+        {
+          "label": "JSW Energy Vijayanagar",
+          "value": "3,800 t/year · supplies JSW Steel",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "S34"
+          ]
+        },
         {
           "label": "GAIL Vijaipur",
           "value": "10 MW PEM · 4.3 t/day",
@@ -295,19 +341,27 @@ window.GREEN_HYDROGEN_WATCH = {
           ]
         },
         {
+          "label": "Maruti Suzuki Manesar",
+          "value": "300 kW captive industrial pilot",
+          "confidence": "confirmed",
+          "sourceIds": [
+            "S27"
+          ]
+        },
+        {
           "label": "NTPC Leh",
-          "value": "80 kg/day · five fuel-cell buses",
+          "value": "Five fuel-cell buses handed over",
           "confidence": "confirmed",
           "sourceIds": [
             "S10"
           ]
         },
         {
-          "label": "Maruti Suzuki Manesar",
-          "value": "300 kW captive industrial pilot",
-          "confidence": "confirmed",
+          "label": "Commissioned under the Mission, press report",
+          "value": "About 8,000 t/year to Feb 2026 (report names no source)",
+          "confidence": "reported",
           "sourceIds": [
-            "S27"
+            "S45"
           ]
         }
       ],
@@ -326,8 +380,8 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Demand & Offtake",
       "instrument": "agreement",
       "stage": "operational",
-      "stageNote": "Firm equipment orders, supply contracts, technology licences, finance approvals and competitive derivative-offtake awards are emerging beside government allocations.",
-      "summary": "The strongest company signals now specify a counterparty, instrument and scale. MoUs remain visible only when clearly labelled and decision-relevant.",
+      "stageNote": "Equipment orders, supply contracts, technology licences, finance approvals and export offtake awards, recorded alongside the government awards.",
+      "summary": "The deals here name a counterparty, an instrument and a size. Memoranda of understanding appear only where they matter to a decision, and are labelled.",
       "parameters": [
         {
           "label": "IndianOil Panipat",
@@ -340,7 +394,7 @@ window.GREEN_HYDROGEN_WATCH = {
         },
         {
           "label": "AM Green / John Cockerill",
-          "value": "1.3 GW electrolyser order · FID stated",
+          "value": "1.3 GW electrolyser order · investment decision stated",
           "confidence": "confirmed",
           "sourceIds": [
             "S18"
@@ -380,12 +434,12 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "International Linkages",
       "instrument": "tracking",
       "stage": "operational",
-      "stageNote": "Capital equipment, technology licensing, strategic technology tie-ups and export offtake are the clearest entry routes.",
-      "summary": "Foreign participation is already commercial, but not homogeneous: an operating factory, a licence, a signed technology tie-up, an equipment order and an offtake agreement imply different levels of commitment and execution evidence.",
+      "stageNote": "Foreign firms enter through equipment, technology licences, tie-ups and export offtake.",
+      "summary": "Foreign firms take part through a factory, licences, a technology tie-up, equipment orders and export offtake. Each commits a firm to a different degree, and the record shows different amounts of delivery for each.",
       "parameters": [
         {
           "label": "Ohmium",
-          "value": "2 GW/year India PEM factory; expandable to 4 GW/year",
+          "value": "2 GW/year India PEM factory, as the company states it; expandable to 4 GW/year",
           "confidence": "confirmed",
           "sourceIds": [
             "S16"
@@ -410,10 +464,11 @@ window.GREEN_HYDROGEN_WATCH = {
         },
         {
           "label": "McPhy",
-          "value": "Binding alkaline technology licence to L&T",
+          "value": "Binding alkaline technology licence to L&T; McPhy entered liquidation in July 2025",
           "confidence": "confirmed",
           "sourceIds": [
-            "S17"
+            "S17",
+            "S38"
           ]
         },
         {
@@ -486,6 +541,21 @@ window.GREEN_HYDROGEN_WATCH = {
       "editionId": "2026-10-01"
     },
     {
+      "id": "evt-em-t1-scd-passed",
+      "trackId": "sight-electrolyser-awards",
+      "date": "2026-08-28",
+      "title": "All Tranche I electrolyser deadlines have passed",
+      "detail": "The eight Tranche I manufacturing awards (1,500 MW/year) had scheduled commissioning dates of 9, 10 and 28 August 2026. An exchange filing shows Advait commissioned a 30 MW/year Phase I assembly line in March 2026; we read it as part of Advait’s 100 MW/year award. Reliance’s annual report says its electrolyser factory is “progressing as planned”. We found no official commissioning record and no extension notice.",
+      "significance": "The first deadline for the manufacturing awards: 30 MW/year of commissioning is documented against 1,500 MW/year due.",
+      "sourceIds": [
+        "S01",
+        "S35",
+        "S39"
+      ],
+      "editionId": "2026-11-01",
+      "analysis": true
+    },
+    {
       "id": "evt-bhel-hystar-pem-tie-up",
       "trackId": "foreign-participation",
       "date": "2026-08-13",
@@ -496,6 +566,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "S24"
       ],
       "editionId": "2026-09-01"
+    },
+    {
+      "id": "evt-mode1-book-756kt",
+      "trackId": "sight-production-awards",
+      "date": "2026-08-12",
+      "title": "Award book reported at 756,100 tonnes/year across 16 companies",
+      "detail": "A written parliamentary reply, as reported by Business Standard on 12 August 2026, gave 756,100 tonnes/year of SIGHT green-hydrogen production capacity awarded to 16 companies, against 862,000 tonnes/year to 18 companies on SECI's award table. The same report gave Mission spending of ₹292 crore as of 6 August 2026.",
+      "significance": "Press-reported. If it holds, 105,900 tonnes/year has left the award book; no document we have opened names which awards. The itemised ledger keeps SECI's 862,000 until an official list appears.",
+      "sourceIds": [
+        "S33",
+        "S31",
+        "S08"
+      ],
+      "editionId": "2026-11-01",
+      "confidence": "reported"
     },
     {
       "id": "evt-refinery-mode2b-awards",
@@ -547,6 +632,21 @@ window.GREEN_HYDROGEN_WATCH = {
       "editionId": "2026-07-20"
     },
     {
+      "id": "evt-gapa-gasa-signed-670kt",
+      "trackId": "ammonia-procurement",
+      "date": "2026-03-30",
+      "title": "Ammonia purchase agreements signed from 30 March; 670,000 tonnes/year reported under agreement by August",
+      "detail": "NTPC Renewable Energy’s release says it signed its 70,000 tonnes/year agreement with SECI on 30 March 2026, to supply Krishana Phoschem at Meghnagar. Other suppliers’ agreements were reported in the press in March and April. A parliamentary reply, as reported in August, put the total under agreement at 670,000 tonnes/year for 11 fertiliser units, against 724,000 tonnes/year auctioned for 13.",
+      "significance": "Signed agreements are the buyer stage for these auctions. None of the suppliers has a public record of construction, and 54,000 tonnes/year of the auctioned volume has no public agreement.",
+      "sourceIds": [
+        "S32",
+        "S33"
+      ],
+      "editionId": "2026-11-01",
+      "confidence": "reported",
+      "analysis": true
+    },
+    {
       "id": "evt-mission-progress",
       "trackId": "sight-production-awards",
       "date": "2026-03-24",
@@ -572,6 +672,31 @@ window.GREEN_HYDROGEN_WATCH = {
       "editionId": "2026-07-20"
     },
     {
+      "id": "evt-mode2b-developers-named",
+      "trackId": "sight-production-awards",
+      "date": "2025-12-03",
+      "title": "Parliament names the Mode 2B refinery developers",
+      "detail": "MNRE's Lok Sabha reply lists L&T Energy Greentech for 10,000 tonnes/year at Panipat (commissioning December 2027) and Ocior Energy for 5,000 tonnes/year each at the Visakh refinery (March 2028) and Bina refinery (April 2028).",
+      "significance": "The 1 September edition noted that the government’s release did not name the developers; this reply names the developers for three of the four refineries. A February 2026 press report names NeuEN Green for Numaligarh; the reply does not list it.",
+      "sourceIds": [
+        "S31"
+      ],
+      "editionId": "2026-11-01"
+    },
+    {
+      "id": "evt-jsw-vijayanagar-commissioned",
+      "trackId": "operating-projects",
+      "date": "2025-11-11",
+      "title": "JSW reports a plant running under its SIGHT production award",
+      "detail": "JSW Energy reported commissioning a green-hydrogen plant beside JSW Steel’s Vijayanagar works that supplies 3,800 tonnes/year to the steel plant under a seven-year agreement. JSW Steel is a group company. JSW says the plant is part of its SIGHT allocation.",
+      "significance": "JSW says the plant is part of its SIGHT allocation; it is the only award in this tracker with a commissioning record. JSW’s award is 6,500 tonnes/year on SECI’s table (its own release says 6,800). No certified output has been published.",
+      "sourceIds": [
+        "S34",
+        "S31"
+      ],
+      "editionId": "2026-11-01"
+    },
+    {
       "id": "evt-amgreen-order",
       "trackId": "commercial-orders",
       "date": "2024-10-30",
@@ -586,38 +711,16 @@ window.GREEN_HYDROGEN_WATCH = {
   ],
   "watch": [
     {
-      "id": "watch-ammonia-gapa",
-      "trackId": "ammonia-procurement",
-      "condition": "Green Ammonia Purchase Agreements or scheduled supply dates become public",
-      "register": "SECI tender results and award documents",
-      "nextCheck": "2026-10-15",
-      "why": "Signed agreements and supply dates show whether discovered tariffs are becoming deliverable contracts.",
-      "sourceIds": [
-        "S01"
-      ]
-    },
-    {
-      "id": "watch-panipat-delivery",
-      "trackId": "commercial-orders",
-      "condition": "IndianOil or L&T reports construction and commissioning milestones at Panipat",
-      "register": "IndianOil disclosures; L&T project releases",
-      "nextCheck": "2026-10-15",
-      "why": "The 25-year, 10,000-tonne/year contract is a high-value test of refinery demand moving into physical supply.",
-      "sourceIds": [
-        "S13",
-        "S14",
-        "S25"
-      ]
-    },
-    {
       "id": "watch-em-t1-scd",
       "trackId": "sight-electrolyser-awards",
-      "condition": "Tranche-I factories meet, miss or revise August 2026 completion dates",
+      "condition": "SECI or MNRE publishes commissioning records, revised dates or extensions for the eight Tranche I factories, all past their August 2026 dates",
       "register": "SECI NGHM award table; company commissioning releases",
-      "nextCheck": "2026-11-01",
-      "why": "The first SIGHT manufacturing deadline is the earliest hard conversion test for 1,500 MW/year of awarded capacity.",
+      "nextCheck": "2026-12-01",
+      "why": "1,500 MW/year was due by 28 August 2026; 30 MW/year of commissioning is documented and no extension notice has been found.",
       "sourceIds": [
-        "S01"
+        "S01",
+        "S35",
+        "S31"
       ]
     },
     {
@@ -625,11 +728,24 @@ window.GREEN_HYDROGEN_WATCH = {
       "trackId": "standards-certification",
       "condition": "The portal begins reporting certificates, certified volumes or registered producers",
       "register": "MNRE certification portal and scheme notices",
-      "nextCheck": "2026-11-01",
-      "why": "Certificate issuance would turn an operating framework into measurable market evidence.",
+      "nextCheck": "2026-12-01",
+      "why": "Certificates would give the first count of certified green hydrogen produced in India.",
       "sourceIds": [
         "S05",
         "S06"
+      ]
+    },
+    {
+      "id": "watch-panipat-delivery",
+      "trackId": "commercial-orders",
+      "condition": "IndianOil or L&T reports construction and commissioning milestones at Panipat",
+      "register": "IndianOil disclosures; L&T project releases",
+      "nextCheck": "2026-12-01",
+      "why": "A refinery supply contract of 10,000 tonnes/year for 25 years, due in December 2027. Construction milestones would move it from signed buyer to being built.",
+      "sourceIds": [
+        "S13",
+        "S14",
+        "S25"
       ]
     },
     {
@@ -637,8 +753,8 @@ window.GREEN_HYDROGEN_WATCH = {
       "trackId": "commercial-orders",
       "condition": "AM Green confirms mechanical completion, commissioning or first production",
       "register": "AM Green and John Cockerill project disclosures",
-      "nextCheck": "2026-11-01",
-      "why": "The 1.3 GW equipment order and stated FID make Kakinada a material execution signal; scheduled production is not operating output.",
+      "nextCheck": "2026-12-01",
+      "why": "AM Green has ordered 1.3 GW of electrolysers and says it has taken its investment decision. Neither is production; a commissioning statement would be.",
       "sourceIds": [
         "S18"
       ]
@@ -648,8 +764,8 @@ window.GREEN_HYDROGEN_WATCH = {
       "trackId": "ammonia-procurement",
       "condition": "An official, contract-specific hydrogen price table becomes public",
       "register": "SECI, MNRE and refinery procurement awards",
-      "nextCheck": "2026-11-01",
-      "why": "India has transparent ammonia tariff discovery, but no comparable official hydrogen price series suitable for a headline trend.",
+      "nextCheck": "2026-12-01",
+      "why": "Ammonia has published auction prices. Hydrogen has only press-reported refinery prices, which are not enough for a price series.",
       "sourceIds": [
         "S01",
         "S08"
@@ -660,8 +776,8 @@ window.GREEN_HYDROGEN_WATCH = {
       "trackId": "foreign-participation",
       "condition": "BHEL or Hystar discloses the Indian manufacturing site, capacity, contractual technology scope, order book, construction or commissioning milestone",
       "register": "BHEL and Hystar official releases; BHEL investor and tender disclosures",
-      "nextCheck": "2026-11-01",
-      "why": "The August agreement states a phased manufacturing intention but gives no plant, capacity, timing or firm-order evidence.",
+      "nextCheck": "2026-12-01",
+      "why": "The August agreement describes manufacturing in phases but names no plant, capacity, date or firm order.",
       "sourceIds": [
         "S24"
       ]
@@ -671,11 +787,48 @@ window.GREEN_HYDROGEN_WATCH = {
       "trackId": "ammonia-procurement",
       "condition": "SECI publishes a Mode 2A Tranche II award, selected producer, contracted quantity, Green Ammonia Purchase Agreement or tariff",
       "register": "SECI tender record SECI000282 and tender-result notices",
-      "nextCheck": "2026-11-01",
-      "why": "The 54,000-MTPA tender is an open competition. A bid document is not a price, award or supply contract.",
+      "nextCheck": "2026-12-01",
+      "why": "Bids were due to open on 30 October 2026. Until SECI publishes a result there is no price, award or contract to record.",
       "sourceIds": [
         "S28"
       ]
+    },
+    {
+      "id": "watch-ammonia-unsigned-54kt",
+      "trackId": "ammonia-procurement",
+      "condition": "SECI or MNRE states which Tranche I ammonia lots have no purchase agreement",
+      "register": "SECI tender SECI000282; PIB/Parliament replies",
+      "nextCheck": "2026-12-01",
+      "why": "724,000 tonnes/year auctioned less 670,000 under agreement leaves 54,000, the same volume as the Tranche II tender. That link is our inference until an official document states it.",
+      "sourceIds": [
+        "S33",
+        "S01"
+      ]
+    },
+    {
+      "id": "watch-mode1-book-reconcile",
+      "trackId": "sight-production-awards",
+      "condition": "An official list shows which awards make up 756,100 t/year, or a cancellation/surrender notice appears",
+      "register": "SECI NGHM page; NGHM SIGHT portal; Parliament replies (winter session)",
+      "nextCheck": "2026-12-01",
+      "why": "The itemised list still shows SECI’s 19 awards for 862,000 tonnes/year. If the smaller total holds, some of those awards are no longer live.",
+      "sourceIds": [
+        "S01",
+        "S33"
+      ]
+    },
+    {
+      "id": "watch-ammonia-gapa",
+      "trackId": "ammonia-procurement",
+      "condition": "Green Ammonia Purchase Agreements or scheduled supply dates become public",
+      "register": "SECI tender results and award documents",
+      "nextCheck": "2026-10-15",
+      "why": "Signed agreements and supply dates show whether discovered tariffs are becoming deliverable contracts.",
+      "sourceIds": [
+        "S01"
+      ],
+      "closedOn": "2026-03-30",
+      "outcome": "Met: NTPC Renewable Energy’s agreement, signed on 30 March 2026, is confirmed by its release; other suppliers’ agreements were reported in the press from 31 March to 13 April."
     }
   ],
   "sources": [
@@ -725,13 +878,22 @@ window.GREEN_HYDROGEN_WATCH = {
       "num": 5
     },
     {
+      "id": "S33",
+      "title": "Govt spends Rs 292 crore under National Green Hydrogen Mission so far: MNRE",
+      "publisher": "Business Standard",
+      "date": "2026-08-12",
+      "url": "https://www.business-standard.com/industry/news/govt-spends-292-crore-under-national-green-hydrogen-mission-so-far-mnre-126081201853_1.html",
+      "class": "secondary-press",
+      "num": 6
+    },
+    {
       "id": "S25",
       "title": "SIGHT Mode 2B refinery-linked green-hydrogen allocations",
       "publisher": "Press Information Bureau / Ministry of New and Renewable Energy",
       "date": "2026-08-11",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2297571&lang=1&reg=3",
       "class": "primary-official",
-      "num": 6
+      "num": 7
     },
     {
       "id": "S26",
@@ -740,7 +902,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-03",
       "url": "https://seci.co.in/tender-details/YmRx",
       "class": "primary-official",
-      "num": 7
+      "num": 8
     },
     {
       "id": "S01",
@@ -749,7 +911,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-20",
       "url": "https://www.seci.co.in/nghm",
       "class": "primary-official",
-      "num": 8
+      "num": 9
     },
     {
       "id": "S22",
@@ -758,7 +920,16 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-02",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2280506&lang=1&reg=48",
       "class": "primary-official",
-      "num": 9
+      "num": 10
+    },
+    {
+      "id": "S39",
+      "title": "Annual Report 2025-26: Making significant strides towards a net carbon zero future",
+      "publisher": "Reliance Industries Limited",
+      "date": "2026-06-30",
+      "url": "https://www.ril.com/ar2025-26/making-significant-strides-towards-a-net-carbon-zero-future.html",
+      "class": "primary-official",
+      "num": 11
     },
     {
       "id": "S06",
@@ -767,7 +938,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-06-17",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274212&lang=1&reg=3",
       "class": "primary-official",
-      "num": 10
+      "num": 12
     },
     {
       "id": "S21",
@@ -776,7 +947,61 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-05-28",
       "url": "https://www.ohmium.com/press-release/ohmium-and-insolare-collaborate-to-deliver-a-multi-application-green-hydrogen-project-for-nlc-india-limited",
       "class": "primary-official",
-      "num": 11
+      "num": 13
+    },
+    {
+      "id": "S41",
+      "title": "InSolare Energy and SCC Infrastructure sign green ammonia purchase agreements",
+      "publisher": "World Fertilizer",
+      "date": "2026-04-13",
+      "url": "https://www.worldfertilizer.com/environment/13042026/insolare-energy-and-scc-infrastructure-sign-green-ammonia-purchase-agreements/",
+      "class": "secondary-press",
+      "num": 14
+    },
+    {
+      "id": "S44",
+      "title": "Jakson Green consortium signs 85,000 tpa green ammonia purchase agreement with SECI",
+      "publisher": "pv magazine India",
+      "date": "2026-04-06",
+      "url": "https://www.pv-magazine-india.com/2026/04/06/jakson-green-consortium-signs-85000-tpa-green-ammonia-purchase-agreement-with-seci/",
+      "class": "secondary-press",
+      "num": 15
+    },
+    {
+      "id": "S42",
+      "title": "TrueRE Oriana Power signs INR 3,135 crore green ammonia offtake agreement with SECI",
+      "publisher": "pv magazine India",
+      "date": "2026-04-01",
+      "url": "https://www.pv-magazine-india.com/2026/04/01/truere-oriana-power-signs-inr-3135-crore-green-ammonia-offtake-agreement-with-seci",
+      "class": "secondary-press",
+      "num": 16
+    },
+    {
+      "id": "S43",
+      "title": "ACME Group signs long-term offtake agreement with SECI for 370,000 tpa green ammonia capacity",
+      "publisher": "pv magazine India",
+      "date": "2026-03-31",
+      "url": "https://www.pv-magazine-india.com/2026/03/31/acme-group-signs-long-term-offtake-agreement-with-seci-for-370000-tpa-green-ammonia-capacity",
+      "class": "secondary-press",
+      "num": 17
+    },
+    {
+      "id": "S32",
+      "title": "NTPC REL signed Green Ammonia Purchase Agreement (GAPA) with SECI",
+      "publisher": "NTPC Green Energy Limited",
+      "date": "2026-03-31",
+      "url": "https://ngel.in/public/media_library/1/e43d09aedf.pdf",
+      "class": "primary-official",
+      "num": 18
+    },
+    {
+      "id": "S45",
+      "title": "India commissions 8,000 TPA green hydrogen capacity till Feb 2026, aims for 5 MMT by 2030",
+      "publisher": "Energetica India",
+      "date": "2026-03-26",
+      "url": "https://www.energetica-india.net/news/india-commissions-8000-tpa-green-hydrogen-capacity-till-feb-2026-aims-for-5-mmt-by-2030",
+      "class": "secondary-press",
+      "num": 19
     },
     {
       "id": "S08",
@@ -785,7 +1010,16 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-24",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244663&lang=1&reg=3",
       "class": "primary-official",
-      "num": 12
+      "num": 20
+    },
+    {
+      "id": "S35",
+      "title": "Regulation 30 intimation: inauguration of Phase I (30 MW) alkaline electrolyser assembly facility",
+      "publisher": "Advait Energy Transitions Limited (NSE/BSE filing)",
+      "date": "2026-03-13",
+      "url": "https://nsearchives.nseindia.com/corporate/ADVAITENERGY_13032026170409_SEintimations.pdf",
+      "class": "primary-official",
+      "num": 21
     },
     {
       "id": "S07",
@@ -794,7 +1028,34 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-02-27",
       "url": "https://mnre.gov.in/en/notice/green-ammonia-standard-for-india/",
       "class": "primary-official",
-      "num": 13
+      "num": 22
+    },
+    {
+      "id": "S46",
+      "title": "NeuEN Green wins 10,000 MTPA green hydrogen project at Numaligarh Refinery",
+      "publisher": "Mercom India",
+      "date": "2026-02-17",
+      "url": "https://mercomindia.com/neuen-green-wins-10000-mtpa-green-hydrogen-project-at-numaligarh-refinery",
+      "class": "secondary-press",
+      "num": 23
+    },
+    {
+      "id": "S31",
+      "title": "Lok Sabha Unstarred Question No. 669: Projects under National Green Hydrogen Mission (answer and annexures I-V)",
+      "publisher": "Ministry of New and Renewable Energy / Lok Sabha",
+      "date": "2025-12-03",
+      "url": "https://sansad.in/getFile/loksabhaquestions/annex/186/AU669_KMk7i8.pdf?source=pqals",
+      "class": "primary-official",
+      "num": 24
+    },
+    {
+      "id": "S34",
+      "title": "Commissioning of Green Hydrogen plant (Vijayanagar)",
+      "publisher": "JSW Energy Limited",
+      "date": "2025-11-11",
+      "url": "https://www.jswenergy.in/newsroom/press-release/commissioning-of-green-hydrogen-plant",
+      "class": "primary-official",
+      "num": 25
     },
     {
       "id": "S14",
@@ -803,7 +1064,25 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-08-18",
       "url": "https://www.iocl.com/uploads/ConcallTranscriptQ1FY25-26.pdf",
       "class": "primary-official",
-      "num": 14
+      "num": 26
+    },
+    {
+      "id": "S40",
+      "title": "L&T Energy GreenTech to Establish India's Largest Green Hydrogen Plant",
+      "publisher": "Larsen & Toubro",
+      "date": "2025-07-21",
+      "url": "https://www.larsentoubro.com/pressreleases/2025-07-21-lt-energy-greentech-to-establish-india-s-largest-green-hydrogen-plant/",
+      "class": "primary-official",
+      "num": 27
+    },
+    {
+      "id": "S38",
+      "title": "McPhy Energy: John Cockerill Hydrogen appointed as buyer of the majority of McPhy's activities; proceedings converted into judicial liquidation",
+      "publisher": "McPhy Energy S.A. (regulatory notice via MFN)",
+      "date": "2025-07-08",
+      "url": "https://mfn.se/all/a/mcphy-energy-s-a/mcphy-energy-john-cockerill-hydrogen-appointed-as-the-buyer-of-the-majority-of-mcphys-activities-including-the-belfort-gigafactory-judicial-reorganization-proceedings-converted-into-judicial-liquidation-trading-suspension-51ab7cd4",
+      "class": "primary-official",
+      "num": 28
     },
     {
       "id": "S11",
@@ -812,7 +1091,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-23",
       "url": "https://www.adani.com/newsroom/media-releases/adani-commissions-indias-first-off-grid-green-hydrogen-pilot-plant-of-5-mw-capacity",
       "class": "primary-official",
-      "num": 15
+      "num": 29
     },
     {
       "id": "S10",
@@ -821,7 +1100,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-19",
       "url": "https://ntpc.co.in/media/press-releases/ntpc-hands-over-five-hydrogen-fuel-cell-buses-leh-administration",
       "class": "primary-official",
-      "num": 16
+      "num": 30
     },
     {
       "id": "S13",
@@ -830,7 +1109,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-05-30",
       "url": "https://iocl.com/NewsDetails/59411",
       "class": "primary-official",
-      "num": 17
+      "num": 31
     },
     {
       "id": "S05",
@@ -839,7 +1118,16 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-04-29",
       "url": "https://mnre.gov.in/en/notice/green-hydrogen-certification-scheme-of-india/",
       "class": "primary-official",
-      "num": 18
+      "num": 32
+    },
+    {
+      "id": "S37",
+      "title": "PM lays foundation stone, inaugurates development works worth over Rs. 2 Lakh Crore in Visakhapatnam, Andhra Pradesh",
+      "publisher": "Prime Minister's Office",
+      "date": "2025-01-08",
+      "url": "https://www.pmindia.gov.in/en/news_updates/pm-lays-foundation-stone-inaugurates-development-works-worth-over-rs-2-lakh-crore-in-visakhapatnam-andhra-pradesh/",
+      "class": "primary-official",
+      "num": 33
     },
     {
       "id": "S15",
@@ -848,7 +1136,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-01-07",
       "url": "https://ntpc.co.in/media/press-releases/pm-lay-foundation-stone-ntpc-green-energy-limited-green-hydrogen-hub-project",
       "class": "primary-official",
-      "num": 19
+      "num": 34
     },
     {
       "id": "S18",
@@ -857,7 +1145,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-10-30",
       "url": "https://johncockerill.com/en/press-and-news/news/am-green-entrusts-john-cockerill-with-indias-largest-electrolyzer-order-for-its-green-ammonia-complex-one-of-the-worlds-largest/",
       "class": "primary-official",
-      "num": 20
+      "num": 35
     },
     {
       "id": "S03",
@@ -866,7 +1154,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-30",
       "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/jul/doc2024730360201.pdf",
       "class": "primary-official",
-      "num": 21
+      "num": 36
     },
     {
       "id": "S16",
@@ -875,7 +1163,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-19",
       "url": "https://www.ohmium.com/press-release/ohmium-launches-newest-pem-electrolyzer-gigafactory",
       "class": "primary-official",
-      "num": 22
+      "num": 37
     },
     {
       "id": "S09",
@@ -884,7 +1172,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-24",
       "url": "https://www.gailonline.com/PressRelease24052024.html",
       "class": "primary-official",
-      "num": 23
+      "num": 38
     },
     {
       "id": "S20",
@@ -893,7 +1181,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-21",
       "url": "https://nelhydrogen.com/press-release/nel-asa-has-signed-a-licensing-agreement-with-reliance/",
       "class": "primary-official",
-      "num": 24
+      "num": 39
     },
     {
       "id": "S04",
@@ -902,7 +1190,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-08-19",
       "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1950421&lang=2&reg=48",
       "class": "primary-official",
-      "num": 25
+      "num": 40
     },
     {
       "id": "S17",
@@ -911,7 +1199,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-03-22",
       "url": "https://www.larsentoubro.com/pressreleases/2023/2023-03-22-lt-signs-agreement-with-mcphy-for-electrolyzer-manufacturing",
       "class": "primary-official",
-      "num": 26
+      "num": 41
     },
     {
       "id": "S19",
@@ -920,7 +1208,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-02-02",
       "url": "https://johncockerill.com/en/press-and-news/news/john-cockerill-records-indias-largest-140mw-electrolysers-order-from-greenko-for-the-first-indian-green-ammonia-plant/",
       "class": "primary-official",
-      "num": 27
+      "num": 42
     },
     {
       "id": "S02",
@@ -929,7 +1217,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-01-04",
       "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1888545&lang=2&reg=48",
       "class": "primary-official",
-      "num": 28
+      "num": 43
     },
     {
       "id": "S12",
@@ -938,7 +1226,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2022-08-20",
       "url": "https://www.larsentoubro.com/pressreleases/2022/2022-08-20-lt-commissions-green-hydrogen-plant-at-its-manufacturing-complex-in-hazira",
       "class": "primary-official",
-      "num": 29
+      "num": 44
     }
   ],
   "market": {
@@ -950,7 +1238,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-1",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -959,7 +1252,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-2",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -968,7 +1266,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-3",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -977,7 +1280,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-4",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -986,7 +1294,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-5",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -995,7 +1308,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-6",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -1004,7 +1322,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-7",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -1013,7 +1336,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-8",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T1",
@@ -1022,7 +1350,33 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-9",
+        "evidence": [
+          {
+            "stage": "operating",
+            "value": 3800,
+            "unit": "t/yr",
+            "date": "2025-11-11",
+            "basis": "official",
+            "text": "JSW Energy commissioned a plant at Vijayanagar that supplies 3,800 t/yr to group company JSW Steel under a seven-year agreement.",
+            "sourceIds": [
+              "S34"
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "JSW Energy’s release gives its allocation as 6,800 t/yr; SECI and the Lok Sabha reply give 6,500.",
+            "sourceIds": [
+              "S34",
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 3800,
+        "status": "part-operating"
       },
       {
         "tranche": "T1",
@@ -1031,7 +1385,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-02-02",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-10",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1040,7 +1399,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-11",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1049,7 +1413,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-12",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1058,7 +1427,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-13",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1067,7 +1441,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-14",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1076,7 +1455,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-03-01",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-15",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply gives the scheduled date as February 2028; SECI gives 1 March 2028.",
+            "sourceIds": [
+              "S31",
+              "S01"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1085,7 +1478,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-16",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1094,7 +1492,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-17",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1103,7 +1506,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-18",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1112,7 +1520,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2028-02-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "productionAwards-19",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       }
     ],
     "electrolyserAwards": [
@@ -1124,7 +1537,22 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-09",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-1",
+        "evidence": [
+          {
+            "stage": "claim",
+            "date": "2026-06-30",
+            "basis": "official",
+            "text": "Reliance’s annual report says its electrolyser factory is “progressing as planned”, with no capacity or date.",
+            "sourceIds": [
+              "S39"
+            ]
+          }
+        ],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T1",
@@ -1134,7 +1562,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-09",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-2",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T1",
@@ -1144,7 +1577,23 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-10",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-3",
+        "evidence": [
+          {
+            "stage": "claim",
+            "date": "2025-07-08",
+            "basis": "official",
+            "text": "L&T’s technology partner McPhy entered liquidation in July 2025; its technology passed to John Cockerill. Whether L&T’s licence stands is not public.",
+            "sourceIds": [
+              "S38",
+              "S17"
+            ]
+          }
+        ],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T1",
@@ -1154,7 +1603,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-09",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-4",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T1",
@@ -1164,7 +1618,22 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-09",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-5",
+        "evidence": [
+          {
+            "stage": "claim",
+            "date": "2024-07-19",
+            "basis": "official",
+            "text": "Ohmium launched a PEM factory at Doddaballapura in 2024 and states 2 GW/yr of capacity. We have found no record tying it to the SIGHT award’s commissioning.",
+            "sourceIds": [
+              "S16"
+            ]
+          }
+        ],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T1",
@@ -1174,7 +1643,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-09",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-6",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T1",
@@ -1184,7 +1658,32 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-09",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-7",
+        "evidence": [
+          {
+            "stage": "operating",
+            "value": 30,
+            "unit": "MW/yr",
+            "date": "2026-03-13",
+            "basis": "official",
+            "text": "Advait commissioned a 30 MW/yr Phase I assembly line in March 2026 (exchange filing). The filing does not mention the SIGHT award; linking the line to it is our reading.",
+            "sourceIds": [
+              "S35"
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 names Advait GreenEnergy for this award.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 30,
+        "status": "part-operating-late"
       },
       {
         "tranche": "T1",
@@ -1194,7 +1693,20 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2026-08-28",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-8",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 names Matrix Gas and Renewables for this award.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "overdue"
       },
       {
         "tranche": "T2",
@@ -1204,7 +1716,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-9",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1214,7 +1731,20 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-10",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 shows one 300 MW/yr Newage award in place of SECI’s two rows.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1224,7 +1754,20 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-11",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 shows one 300 MW/yr Newage award in place of SECI’s two rows.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1234,7 +1777,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-12",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1244,7 +1792,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-13",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1254,7 +1807,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-14",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1264,7 +1822,20 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-15",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 names Greenovate Hydrogen for this award.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1274,7 +1845,20 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-16",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 shows one 101.5 MW/yr award to Adani New Industries in place of SECI’s two rows.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1284,7 +1868,20 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-17",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Lok Sabha reply of 3 December 2025 shows one 101.5 MW/yr award to Adani New Industries in place of SECI’s two rows.",
+            "sourceIds": [
+              "S31"
+            ],
+            "correction": false
+          }
+        ],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1294,7 +1891,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-18",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1304,7 +1906,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-19",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1314,7 +1921,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-20",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       },
       {
         "tranche": "T2",
@@ -1324,7 +1936,12 @@ window.GREEN_HYDROGEN_WATCH = {
         "scd": "2027-03-26",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "electrolyserAwards-21",
+        "evidence": [],
+        "notes": [],
+        "operatingValue": 0,
+        "status": "due"
       }
     ],
     "ammoniaAuctions": [
@@ -1337,7 +1954,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-07-31",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-1",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-31",
+            "basis": "press",
+            "text": "ACME’s agreements for 370,000 t/yr across its six lots were reported signed.",
+            "sourceIds": [
+              "S43"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "Krishana Phoschem",
@@ -1348,7 +1979,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-08-18",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-2",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-30",
+            "basis": "official",
+            "text": "NTPC REL signed a purchase agreement on 30 March 2026.",
+            "sourceIds": [
+              "S32"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-official"
       },
       {
         "buyer": "Madhya Bharat Agro Products",
@@ -1359,7 +2004,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-08-18",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-3",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-04-01",
+            "basis": "press",
+            "text": "Oriana Power’s agreement was reported signed.",
+            "sourceIds": [
+              "S42"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "Madhya Bharat Agro Products",
@@ -1370,7 +2029,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-08-18",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-4",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-04-13",
+            "basis": "press",
+            "text": "InSolare and SCC Infrastructure’s agreements were reported signed.",
+            "sourceIds": [
+              "S41"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "GNFC",
@@ -1381,7 +2054,11 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-08-22",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-5",
+        "evidence": [],
+        "notes": [],
+        "status": "no-agreement-found"
       },
       {
         "buyer": "Coromandel International",
@@ -1392,7 +2069,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-08-22",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-6",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-04-06",
+            "basis": "press",
+            "text": "The Jakson Green consortium’s agreement was reported signed.",
+            "sourceIds": [
+              "S44"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "Coromandel International",
@@ -1403,7 +2094,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-7",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-31",
+            "basis": "press",
+            "text": "ACME’s agreements for 370,000 t/yr across its six lots were reported signed.",
+            "sourceIds": [
+              "S43"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "IFFCO",
@@ -1414,7 +2119,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-8",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-31",
+            "basis": "press",
+            "text": "ACME’s agreements for 370,000 t/yr across its six lots were reported signed.",
+            "sourceIds": [
+              "S43"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "IFFCO",
@@ -1425,7 +2144,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-9",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-31",
+            "basis": "press",
+            "text": "ACME’s agreements for 370,000 t/yr across its six lots were reported signed.",
+            "sourceIds": [
+              "S43"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "Paradeep Phosphates",
@@ -1436,7 +2169,21 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-10",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-31",
+            "basis": "press",
+            "text": "ACME’s agreements for 370,000 t/yr across its six lots were reported signed.",
+            "sourceIds": [
+              "S43"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted-press"
       },
       {
         "buyer": "Indorama India",
@@ -1447,7 +2194,29 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-11",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-03-31",
+            "basis": "press",
+            "text": "ACME’s agreements for 370,000 t/yr across its six lots were reported signed.",
+            "sourceIds": [
+              "S43"
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "A press report names India Potash as the Haldia buyer.",
+            "sourceIds": [
+              "S43"
+            ],
+            "correction": false
+          }
+        ],
+        "status": "contracted-press"
       },
       {
         "buyer": "Mangalore Chemicals & Fertilizers",
@@ -1458,7 +2227,29 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-12",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2026-04-13",
+            "basis": "press",
+            "text": "InSolare and SCC Infrastructure’s agreements were reported signed.",
+            "sourceIds": [
+              "S41"
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "text": "A press report names Paradeep Phosphates as the buyer; Mangalore Chemicals & Fertilizers has merged into Paradeep Phosphates.",
+            "sourceIds": [
+              "S41"
+            ],
+            "correction": false
+          }
+        ],
+        "status": "contracted-press"
       },
       {
         "buyer": "Madras Fertilizers",
@@ -1469,7 +2260,11 @@ window.GREEN_HYDROGEN_WATCH = {
         "loaDate": "2025-09-04",
         "sourceIds": [
           "S01"
-        ]
+        ],
+        "id": "ammoniaAuctions-13",
+        "evidence": [],
+        "notes": [],
+        "status": "no-agreement-found"
       }
     ],
     "assets": [
@@ -1483,7 +2278,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Captive initial use; later retail distribution described as planned.",
         "sourceIds": [
           "S09"
-        ]
+        ],
+        "id": "assets-1",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "Adani New Industries",
@@ -1495,7 +2293,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Company-reported commissioning.",
         "sourceIds": [
           "S11"
-        ]
+        ],
+        "id": "assets-2",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "L&T",
@@ -1507,19 +2308,36 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "380 kW alkaline installed at commissioning; PEM phase described for later.",
         "sourceIds": [
           "S12"
-        ]
+        ],
+        "id": "assets-3",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "NTPC",
         "activity": "Hydrogen mobility",
         "stage": "Operating",
         "location": "Leh, Ladakh",
-        "scale": "80 kg/day · five buses",
+        "scale": "Five fuel-cell buses handed over",
         "date": "2025-06-19",
         "note": "Station launched in November 2024; buses handed over in June 2025.",
         "sourceIds": [
           "S10"
-        ]
+        ],
+        "id": "assets-4",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "Correction: earlier editions gave this plant’s output as 80 kg/day. NTPC’s release does not state an output figure.",
+            "sourceIds": [
+              "S10"
+            ],
+            "correction": true
+          }
+        ],
+        "original": {
+          "scale": "80 kg/day · five buses"
+        }
       },
       {
         "company": "NTPC Green Energy",
@@ -1531,6 +2349,17 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Foundation stone is public evidence; stated capacity is project scope, not operating output.",
         "sourceIds": [
           "S15"
+        ],
+        "id": "assets-5",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "The Prime Minister’s Office confirms the foundation stone was laid on 8 January 2025. We have found no later construction evidence.",
+            "sourceIds": [
+              "S37"
+            ],
+            "correction": false
+          }
         ]
       },
       {
@@ -1540,10 +2369,24 @@ window.GREEN_HYDROGEN_WATCH = {
         "location": "Neyveli, Tamil Nadu",
         "scale": "4 MW · up to 700 t/year estimate",
         "date": "2026-05-28",
-        "note": "Track award, construction and commissioning separately.",
+        "note": "A supplier’s announcement of a project with NLC India.",
         "sourceIds": [
           "S21"
-        ]
+        ],
+        "id": "assets-6",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "No award, construction or commissioning record has been found for this project.",
+            "sourceIds": [
+              "S21"
+            ],
+            "correction": false
+          }
+        ],
+        "original": {
+          "note": "Track award, construction and commissioning separately."
+        }
       },
       {
         "company": "Maruti Suzuki",
@@ -1555,7 +2398,40 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Company-reported commissioning. Hydrogen from site solar is stored and blended with natural gas for manufacturing process fuel; no annual output or external offtake is disclosed.",
         "sourceIds": [
           "S27"
-        ]
+        ],
+        "id": "assets-7",
+        "evidence": [],
+        "notes": []
+      },
+      {
+        "company": "JSW Energy",
+        "activity": "Captive green hydrogen for steel DRI",
+        "stage": "Operating",
+        "location": "Vijayanagar, Karnataka",
+        "scale": "3,800 t/year H2",
+        "date": "2025-11-11",
+        "note": "Company-reported commissioning. JSW says the plant is part of its SIGHT Tranche I award; it supplies group company JSW Steel under a seven-year agreement.",
+        "sourceIds": [
+          "S34"
+        ],
+        "id": "assets-8",
+        "evidence": [],
+        "notes": []
+      },
+      {
+        "company": "Advait Greenergy",
+        "activity": "Alkaline electrolyser assembly",
+        "stage": "Operating",
+        "location": "Gujarat",
+        "scale": "30 MW/year Phase I",
+        "date": "2026-03-13",
+        "note": "Exchange filing. Phase I of a facility planned to grow to 100 MW and then 300 MW a year; the SIGHT award is for 100 MW a year.",
+        "sourceIds": [
+          "S35"
+        ],
+        "id": "assets-9",
+        "evidence": [],
+        "notes": []
       }
     ],
     "commercialMoves": [
@@ -1570,7 +2446,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "sourceIds": [
           "S13",
           "S14"
-        ]
+        ],
+        "id": "commercialMoves-1",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "AM Green",
@@ -1582,7 +2461,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Supplier says FID was reached in August 2024; scheduled production is not operating output.",
         "sourceIds": [
           "S18"
-        ]
+        ],
+        "id": "commercialMoves-2",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "Greenko",
@@ -1594,7 +2476,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Firm supplier order; project delivery remains a separate milestone.",
         "sourceIds": [
           "S19"
-        ]
+        ],
+        "id": "commercialMoves-3",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "Reliance Industries",
@@ -1606,7 +2491,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Reliance may also manufacture for captive global use under the agreement.",
         "sourceIds": [
           "S20"
-        ]
+        ],
+        "id": "commercialMoves-4",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "L&T",
@@ -1618,6 +2506,17 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "A concrete technology arrangement; not proof of a named factory's operating capacity.",
         "sourceIds": [
           "S17"
+        ],
+        "id": "commercialMoves-5",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "McPhy entered liquidation in July 2025, and its technology passed to John Cockerill. Whether L&T’s licence stands is not public.",
+            "sourceIds": [
+              "S38"
+            ],
+            "correction": false
+          }
         ]
       },
       {
@@ -1630,7 +2529,10 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Company announcement; delivery milestones remain to be verified.",
         "sourceIds": [
           "S21"
-        ]
+        ],
+        "id": "commercialMoves-6",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "BHEL",
@@ -1642,19 +2544,36 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "Signed collaboration. It is not described as a technology licence, commissioned factory, SIGHT award or firm equipment order.",
         "sourceIds": [
           "S24"
-        ]
+        ],
+        "id": "commercialMoves-7",
+        "evidence": [],
+        "notes": []
       },
       {
         "company": "AM Green",
         "counterparty": "Asian Development Bank",
         "instrument": "Project finance approval",
         "subject": "Kakinada green-ammonia project",
-        "scale": "US$130 million approved across four loans; 1.095 MTPA planned in two phases",
+        "scale": "US$130 million approved across four loans; 1.095 million tonnes a year planned in two phases",
         "date": "2026-09-09",
         "note": "Finance approval for a planned project. The ADB record gives scheduled commissioning in 2029 and 2030; it is not construction or operating evidence.",
         "sourceIds": [
           "S29"
-        ]
+        ],
+        "id": "commercialMoves-8",
+        "evidence": [],
+        "notes": [
+          {
+            "text": "ADB gives the planned output as 1.095 MTPA, meaning million tonnes of ammonia a year.",
+            "sourceIds": [
+              "S29"
+            ],
+            "correction": false
+          }
+        ],
+        "original": {
+          "scale": "US$130 million approved across four loans; 1.095 MTPA planned in two phases"
+        }
       },
       {
         "company": "AM Green",
@@ -1666,23 +2585,378 @@ window.GREEN_HYDROGEN_WATCH = {
         "note": "AM Green reports first deliveries expected in 2029 from Kakinada Phase 2. Contract value is not a per-tonne ammonia price or a hydrogen price.",
         "sourceIds": [
           "S30"
-        ]
+        ],
+        "id": "commercialMoves-9",
+        "evidence": [],
+        "notes": []
+      },
+      {
+        "company": "ACME Cleantech",
+        "counterparty": "IHI Corporation; Mitsubishi Gas Chemical",
+        "instrument": "Export offtake agreements",
+        "subject": "Green ammonia to Japan; green methanol from Paradip",
+        "scale": "405,000 t/year ammonia (IHI); 100,000 t/year methanol, 10 years (MGC)",
+        "date": "2026-07-02",
+        "note": "The government’s release says Japan’s contract-for-difference support scheme backs the IHI agreement. Ammonia and methanol are counted separately.",
+        "sourceIds": [
+          "S22"
+        ],
+        "id": "commercialMoves-10",
+        "evidence": [],
+        "notes": []
+      },
+      {
+        "company": "NTPC Renewable Energy",
+        "counterparty": "SECI (for Krishana Phoschem)",
+        "instrument": "Green Ammonia Purchase Agreement",
+        "subject": "Meghnagar green ammonia supply",
+        "scale": "70,000 t/year",
+        "date": "2026-03-30",
+        "note": "Confirmed by NTPC Renewable Energy’s own release. The release gives neither the term nor the date supply starts.",
+        "sourceIds": [
+          "S32"
+        ],
+        "id": "commercialMoves-11",
+        "evidence": [],
+        "notes": []
+      }
+    ],
+    "refineryAwards": [
+      {
+        "refinery": "IndianOil Panipat",
+        "location": "Panipat, Haryana",
+        "developer": "L&T Energy Greentech",
+        "capacity": 10000,
+        "scd": "2027-12-31",
+        "scdLabel": "December 2027",
+        "sourceIds": [
+          "S31",
+          "S25",
+          "S13"
+        ],
+        "id": "refineryAwards-1",
+        "evidence": [
+          {
+            "stage": "contracted",
+            "date": "2025-05-30",
+            "basis": "official",
+            "text": "IndianOil signed a 25-year build-own-operate supply contract with L&T Energy Greentech; its earnings call puts completion about two years out.",
+            "sourceIds": [
+              "S13",
+              "S14"
+            ]
+          }
+        ],
+        "notes": [],
+        "status": "contracted"
+      },
+      {
+        "refinery": "HPCL Visakh",
+        "location": "Visakhapatnam, Andhra Pradesh",
+        "developer": "Ocior Energy",
+        "capacity": 5000,
+        "scd": "2028-03-31",
+        "scdLabel": "March 2028",
+        "sourceIds": [
+          "S31",
+          "S25"
+        ],
+        "id": "refineryAwards-2",
+        "evidence": [],
+        "notes": [],
+        "status": "awarded"
+      },
+      {
+        "refinery": "BPCL Bina",
+        "location": "Bina, Madhya Pradesh",
+        "developer": "Ocior Energy",
+        "capacity": 5000,
+        "scd": "2028-04-30",
+        "scdLabel": "April 2028",
+        "sourceIds": [
+          "S31",
+          "S25"
+        ],
+        "id": "refineryAwards-3",
+        "evidence": [],
+        "notes": [],
+        "status": "awarded"
+      },
+      {
+        "refinery": "Numaligarh Refinery",
+        "location": "Numaligarh, Assam",
+        "developer": "NeuEN Green (press-reported)",
+        "capacity": 10000,
+        "scd": "",
+        "scdLabel": "Not stated",
+        "sourceIds": [
+          "S25",
+          "S46"
+        ],
+        "id": "refineryAwards-4",
+        "evidence": [],
+        "notes": [],
+        "status": "awarded"
       }
     ]
   },
+  "pipeline": {
+    "question": "Is India’s green-hydrogen push turning awards into working plants?",
+    "stageLabels": {
+      "awarded": "Awarded",
+      "contracted": "Signed buyer",
+      "building": "Being built",
+      "operating": "Operating"
+    },
+    "stageDefinitions": {
+      "awarded": "A named public allocation: SECI's award table or letter of award, or a ministry statement of awarded capacity.",
+      "contracted": "A signed agreement that binds a buyer: a purchase, offtake or supply agreement. Memoranda of understanding, term sheets and selected-bidder notices do not count.",
+      "building": "Physical work stated by the owner, a lender or a government body. A finance approval or investment decision alone does not count.",
+      "operating": "Commissioning, inauguration or production stated by the owner or the government. No certified output under the national certification scheme has been published yet."
+    },
+    "ladders": [
+      {
+        "id": "mode1",
+        "title": "Hydrogen production awards",
+        "instrument": "SIGHT Mode 1 production incentive",
+        "unit": "t/yr",
+        "unitLong": "tonnes of hydrogen a year",
+        "stages": [
+          {
+            "stage": "awarded",
+            "value": 862000,
+            "basis": "official",
+            "sourceIds": [
+              "S01",
+              "S31"
+            ],
+            "note": "19 awards to 18 companies on SECI's table",
+            "caveat": {
+              "text": "A parliamentary reply reported by the press in August 2026 put the award book at 756,100 tonnes a year across 16 companies. We have found no official list of which awards dropped out, and are checking.",
+              "value": 756100,
+              "sourceIds": [
+                "S33"
+              ]
+            }
+          },
+          {
+            "stage": "contracted",
+            "value": 3800,
+            "basis": "official",
+            "sourceIds": [
+              "S34"
+            ],
+            "note": "JSW Energy’s seven-year agreement to supply group company JSW Steel. ACME’s agreement to ship ammonia to Japan’s IHI is for export, and the record does not tie it to an award."
+          },
+          {
+            "stage": "building",
+            "value": null,
+            "basis": "official",
+            "sourceIds": [],
+            "note": "No award has a public record of work on site with a stated capacity. AM Green has ordered electrolysers and won loans for Kakinada; neither is a record of physical work, and the record does not tie that plant to a single award.",
+            "display": "None found"
+          },
+          {
+            "stage": "operating",
+            "value": 3800,
+            "basis": "official",
+            "sourceIds": [
+              "S34"
+            ],
+            "note": "JSW Energy, Vijayanagar: a plant that supplies 3,800 t/yr, part of a 6,500 t/yr award"
+          }
+        ]
+      },
+      {
+        "id": "mode2b",
+        "title": "Refinery hydrogen supply",
+        "instrument": "SIGHT Mode 2B refinery procurement",
+        "unit": "t/yr",
+        "unitLong": "tonnes of hydrogen a year",
+        "stages": [
+          {
+            "stage": "awarded",
+            "value": 30000,
+            "basis": "official",
+            "sourceIds": [
+              "S25",
+              "S31"
+            ],
+            "note": "Four refineries"
+          },
+          {
+            "stage": "contracted",
+            "value": 10000,
+            "basis": "official",
+            "sourceIds": [
+              "S13",
+              "S14"
+            ],
+            "note": "IndianOil Panipat: 25-year supply contract with L&T Energy Greentech"
+          },
+          {
+            "stage": "building",
+            "value": null,
+            "basis": "official",
+            "sourceIds": [],
+            "note": "IndianOil says Panipat is on track for December 2027; we have not seen a record of physical work.",
+            "display": "None found"
+          },
+          {
+            "stage": "operating",
+            "value": 0,
+            "basis": "official",
+            "sourceIds": [],
+            "note": "First supply due December 2027",
+            "display": "0"
+          }
+        ]
+      },
+      {
+        "id": "ammonia",
+        "title": "Green ammonia for fertiliser plants",
+        "instrument": "SIGHT Mode 2A auctions",
+        "unit": "t/yr",
+        "unitLong": "tonnes of ammonia a year",
+        "stages": [
+          {
+            "stage": "awarded",
+            "value": 724000,
+            "basis": "official",
+            "sourceIds": [
+              "S01",
+              "S08"
+            ],
+            "note": "13 fertiliser sites"
+          },
+          {
+            "stage": "contracted",
+            "value": 670000,
+            "basis": "press",
+            "sourceIds": [
+              "S33",
+              "S32"
+            ],
+            "note": "11 sites, ten-year agreements. NTPC Renewable Energy’s 70,000, signed on 30 March 2026, is confirmed by its own release; the total is press-reported."
+          },
+          {
+            "stage": "building",
+            "value": null,
+            "basis": "official",
+            "sourceIds": [],
+            "note": "Press reports work at AM Green’s Kakinada plant, built for export and is outside these auctions. None of the seven suppliers across the 13 lots has a public record of construction.",
+            "display": "None found"
+          },
+          {
+            "stage": "operating",
+            "value": 0,
+            "basis": "official",
+            "sourceIds": [],
+            "note": "No green ammonia plant operating",
+            "display": "0"
+          }
+        ]
+      },
+      {
+        "id": "electrolyser",
+        "title": "Electrolyser factories",
+        "instrument": "SIGHT manufacturing incentive",
+        "unit": "MW/yr",
+        "unitLong": "megawatts of electrolysers a year",
+        "stages": [
+          {
+            "stage": "awarded",
+            "value": 3000,
+            "basis": "official",
+            "sourceIds": [
+              "S01",
+              "S08"
+            ],
+            "note": "21 awards; 1,500 due Aug 2026, 1,500 due Mar 2027"
+          },
+          {
+            "stage": "contracted",
+            "value": 1500,
+            "basis": "official",
+            "sourceIds": [
+              "S01"
+            ],
+            "note": "Tranche I capacity whose scheduled date has passed",
+            "label": "Due by now",
+            "inStrip": false
+          },
+          {
+            "stage": "building",
+            "value": null,
+            "basis": "official",
+            "sourceIds": [
+              "S39"
+            ],
+            "note": "Reliance says its factory is “progressing as planned”; no capacity or date given",
+            "display": "Not stated"
+          },
+          {
+            "stage": "operating",
+            "value": 30,
+            "basis": "official",
+            "sourceIds": [
+              "S35"
+            ],
+            "note": "An exchange filing for Advait’s 30 MW/yr Phase I line; we read it as part of Advait’s 100 MW/yr award"
+          }
+        ]
+      }
+    ],
+    "context": [
+      {
+        "label": "Mission target for 2030",
+        "value": "5,000,000 t/yr of hydrogen",
+        "basis": "official",
+        "sourceIds": [
+          "S02"
+        ]
+      },
+      {
+        "label": "Green hydrogen commissioned under the Mission, as reported",
+        "value": "About 8,000 t/yr (to February 2026)",
+        "basis": "press",
+        "sourceIds": [
+          "S45"
+        ],
+        "note": "From a press report that names no source. We have found no government text for this figure."
+      },
+      {
+        "label": "Production and manufacturing incentives paid",
+        "value": "None shown as released (3 December 2025)",
+        "basis": "official",
+        "sourceIds": [
+          "S31",
+          "S33"
+        ],
+        "note": "Against ₹4,440 crore sanctioned for manufacturing and ₹5,533.98 crore for production. A press report gives ₹292 crore spent across the whole Mission by August 2026; that figure is not broken down into incentives."
+      }
+    ],
+    "doNotAdd": [
+      "Tonnes of hydrogen, tonnes of ammonia and megawatts of factory capacity are never added together.",
+      "Mode 1 production awards and Mode 2B refinery supply are different schemes; some developers hold both.",
+      "Electrolyser factory capacity (MW a year) is not the same as electrolysers ordered or installed (MW)."
+    ]
+  },
   "derived": {
-    "generatedAt": "2026-10-01T10:13:27Z",
-    "latestEditionId": "2026-10-01",
+    "generatedAt": "2026-10-26T10:44:32Z",
+    "latestEditionId": "2026-11-01",
+    "asOf": "2026-11-01",
     "counts": {
       "tracks": 8,
-      "events": 12,
-      "watch": 8,
-      "sources": 29,
+      "events": 17,
+      "watch": 10,
+      "sources": 44,
       "productionAwards": 19,
       "electrolyserAwards": 21,
       "ammoniaAuctions": 13,
-      "assets": 7,
-      "commercialMoves": 9
+      "assets": 9,
+      "commercialMoves": 11,
+      "refineryAwards": 4
     }
   }
 };

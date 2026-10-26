@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Policy &amp; sources — India Green Hydrogen Watch</title>
+    <meta name="description" content="The policies, schemes and standards behind India's green-hydrogen awards, what to watch next, and every public source this tracker cites." />
+    <link rel="stylesheet" href="css/watch.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to policy and sources</a>
+
+    <header class="masthead">
+      <div class="wordmark">
+        <span class="wordmark-title">India Green Hydrogen Watch</span>
+        <span class="wordmark-by">Curated by Dr. Vasundhara Sen</span>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="index.html">Overview</a>
+        <a href="awards.html">Awards</a>
+        <a href="plants.html">Plants &amp; deals</a>
+        <a href="policy.html" aria-current="page">Policy &amp; sources</a>
+      </nav>
+      <p class="as-of">Edition of <time id="as-of"></time></p>
+    </header>
+
+    <main id="main">
+      <header class="page-head">
+        <h1>Policy &amp; sources</h1>
+        <p class="lede">The schemes, standards and markets behind the awards, each with its current state and a dated trail of changes. Then what we are watching for, the editions so far, and every source cited.</p>
+      </header>
+
+      <div class="with-toc">
+        <nav class="toc" aria-label="On this page">
+          <a href="#topics">Topics</a>
+          <a href="#watching">What we are watching</a>
+          <a href="#editions">Editions</a>
+          <a href="#sources">Sources</a>
+        </nav>
+
+        <div class="toc-body">
+          <section class="section" id="topics" aria-labelledby="topics-title">
+            <h2 id="topics-title">Topics</h2>
+            <p class="section-note">Each topic’s summary is the curator’s reading of the cited records, marked Analysis. Figures listed under it are facts from the sources, marked where only the press reports them.</p>
+            <div id="topic-list"></div>
+          </section>
+
+          <section class="section" id="watching" aria-labelledby="watching-title">
+            <h2 id="watching-title">What we are watching</h2>
+            <p class="section-note">The next piece of evidence that would change a stage, where it would appear, and when we will look again.</p>
+            <div id="watch-list"></div>
+          </section>
+
+          <section class="section" id="editions" aria-labelledby="editions-title">
+            <h2 id="editions-title">Editions</h2>
+            <p class="section-note">A dated baseline in July 2026, then one edition on the first of each month. Earlier editions’ records are kept; a later change is added as a new dated record.</p>
+            <ol class="timeline" id="edition-list"></ol>
+          </section>
+
+          <section class="section" id="sources" aria-labelledby="sources-title">
+            <h2 id="sources-title">Sources</h2>
+            <p class="section-note" id="sources-note"></p>
+            <div class="source-controls">
+              <label class="search">
+                <span>Search sources</span>
+                <input type="search" id="source-search" placeholder="Publisher, title or year" />
+              </label>
+              <div class="switch" role="group" aria-label="Kind of source" id="kind-switch"></div>
+            </div>
+            <p class="dir-count" id="source-count" aria-live="polite"></p>
+            <table class="dir-list source-table">
+              <thead>
+                <tr><th scope="col">Source</th><th scope="col">Publisher</th><th scope="col">Date</th><th scope="col">Kind</th><th scope="col">Cited for</th></tr>
+              </thead>
+              <tbody id="source-body"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="colophon">
+      <p class="credits">Built by Ashish Kulkarni (<a href="https://lfe.econforeverybody.com" rel="noreferrer">lfe.econforeverybody.com</a>) with Claude (<a href="https://claude.ai" rel="noreferrer">claude.ai</a>).</p>
+      <p>How the figures are counted: <a href="method.html">Method</a>.</p>
+      <p>Curated by Dr. Vasundhara Sen. An agent drafts each update; a person approves it before it is published. <span id="generated"></span></p>
+    </footer>
+
+    <noscript><p class="noscript">This page draws every topic and source from its data file using JavaScript. Turn JavaScript on to see them.</p></noscript>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/policy.js"></script>
+  </body>
+</html>

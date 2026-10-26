@@ -1,109 +1,65 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A source-linked stock and flow tracker for India's green hydrogen market.">
-    <meta name="color-scheme" content="dark light">
-    <title>India Green Hydrogen Watch — Dr. Vasundhara Sen</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230c1411'/%3E%3Cpath%20d='M32%2011c10%2014%2018%2023%2018%2033a18%2018%200%200%201-36%200c0-10%208-19%2018-33Z'%20fill='%239bc18f'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India Green Hydrogen Watch</title>
+    <meta name="description" content="Is India's green-hydrogen push turning awards into working plants? Awards, signed buyers, construction and operating plants from public records, curated by Dr. Vasundhara Sen." />
+    <link rel="stylesheet" href="css/watch.css" />
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
-    <header class="masthead shell">
-      <a class="portfolio-link" href="../index.html" aria-label="Return to Dr. Vasundhara Sen's website"><span aria-hidden="true">VS</span> Dr. Vasundhara Sen</a>
-      <div class="masthead-row">
-        <div>
-          <p class="eyebrow">Independent public-source intelligence</p>
-          <h1 id="title">India Green Hydrogen Watch</h1>
-          <p class="byline" id="byline"></p>
-        </div>
-        <div class="tools">
-          <label>Edition <select id="edition"></select></label>
-          <button class="theme" id="theme" type="button" aria-label="Toggle colour theme">Light</button>
-        </div>
+    <a class="skip-link" href="#main">Skip to the overview</a>
+
+    <header class="masthead">
+      <div class="wordmark">
+        <span class="wordmark-title">India Green Hydrogen Watch</span>
+        <span class="wordmark-by">Curated by Dr. Vasundhara Sen</span>
       </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="awards.html">Awards</a>
+        <a href="plants.html">Plants &amp; deals</a>
+        <a href="policy.html">Policy &amp; sources</a>
+      </nav>
+      <p class="as-of">Edition of <time id="as-of"></time></p>
     </header>
 
-    <nav class="nav shell" aria-label="Dashboard views">
-      <button class="active" data-view="brief">Brief</button>
-      <button data-view="projects">Projects</button>
-      <button data-view="awards">Award book</button>
-      <button data-view="prices">Prices</button>
-      <button data-view="orders">Orders &amp; entrants</button>
-      <button data-view="watch">Watchlist</button>
-      <button data-view="sources">Sources</button>
-    </nav>
-
-    <main id="main" class="shell">
-      <section id="view-brief" class="view active">
-        <div class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow" id="edition-label"></p>
-            <h2 id="strapline"></h2>
-            <p id="edition-note" class="lede"></p>
-          </div>
-          <div id="metrics" class="metrics"></div>
-        </div>
-
-        <section class="section read-section">
-          <div class="section-head"><p class="eyebrow">Vasundhara's current read</p><h3>Four signals</h3></div>
-          <div id="signals" class="signals"></div>
-        </section>
-
-        <section class="section">
-          <div class="section-head"><p class="eyebrow">Recent evidence in the baseline</p><h3>What moved</h3></div>
-          <div id="events" class="event-list"></div>
-        </section>
-
-        <section class="section">
-          <div class="section-head"><p class="eyebrow">Coverage map</p><h3>Eight live dossiers</h3></div>
-          <div id="track-grid" class="track-grid"></div>
-        </section>
+    <main id="main">
+      <section class="answer" aria-labelledby="question">
+        <h1 id="question"></h1>
+        <p class="answer-key" id="answer-key"></p>
+        <ul class="strip-key" id="strip-key" aria-label="Bar colours"></ul>
+        <div class="ladders" id="ladders"></div>
+        <dl class="context" id="context"></dl>
       </section>
 
-      <section id="view-projects" class="view">
-        <header class="view-head"><p class="eyebrow">Physical delivery</p><h2>Projects by evidence stage</h2><p class="lede">Operating assets, construction signals and supplier announcements stay separate.</p></header>
-        <div class="legend"><span><i class="dot operating"></i>Operating</span><span><i class="dot construction"></i>Construction signal</span><span><i class="dot announced"></i>Supplier announcement</span></div>
-        <div id="asset-list" class="record-list"></div>
+      <section class="section" aria-labelledby="changes-title">
+        <h2 id="changes-title"></h2>
+        <p class="section-note" id="edition-note"></p>
+        <ul class="signal-list" id="change-list"></ul>
       </section>
 
-      <section id="view-awards" class="view">
-        <header class="view-head"><p class="eyebrow">Government allocation</p><h2>The SIGHT award book</h2><p class="lede">Sortable allocations with scheduled completion dates. An award is not a commissioned plant.</p></header>
-        <div class="award-switch" role="group" aria-label="Award table">
-          <button class="active" data-award="production">Hydrogen production</button>
-          <button data-award="electrolyser">Electrolyser manufacturing</button>
-        </div>
-        <div id="award-summary" class="book-summary"></div>
-        <div class="table-wrap"><table><thead id="award-head"></thead><tbody id="award-body"></tbody></table></div>
-      </section>
-
-      <section id="view-prices" class="view">
-        <header class="view-head"><p class="eyebrow">Contract-specific price discovery</p><h2>Green ammonia auction book</h2><p class="lede">₹/kg of ammonia delivered to named fertiliser sites. These are not hydrogen-equivalent prices.</p></header>
-        <div id="price-band" class="price-band"></div>
-        <div class="price-bars" id="price-bars"></div>
-        <div class="table-wrap"><table><thead><tr><th>Buyer / site</th><th>Winner</th><th>Volume t/y</th><th>₹/kg NH₃</th></tr></thead><tbody id="price-body"></tbody></table></div>
-      </section>
-
-      <section id="view-orders" class="view">
-        <header class="view-head"><p class="eyebrow">Company movement</p><h2>Orders, licences and entrants</h2><p class="lede">Each record names the commercial instrument. Orders, licences and project collaborations are not interchangeable.</p></header>
-        <div id="order-list" class="record-list"></div>
-      </section>
-
-      <section id="view-watch" class="view">
-        <header class="view-head"><p class="eyebrow">Forward view</p><h2>What would change the read?</h2><p class="lede">Six observable tripwires for the next edition.</p></header>
-        <div id="watchlist" class="watch-grid"></div>
-      </section>
-
-      <section id="view-sources" class="view">
-        <header class="view-head sources-head"><div><p class="eyebrow">Citation ledger</p><h2>Open the evidence</h2><p class="lede" id="method-note"></p></div><input id="source-search" type="search" placeholder="Filter sources" aria-label="Filter sources"></header>
-        <div id="source-list" class="source-list"></div>
+      <section class="section" aria-labelledby="deadlines-title">
+        <h2 id="deadlines-title">Scheduled dates</h2>
+        <p class="section-note">When each group of awards is due to be running, and what the public record shows so far. Dates are SECI’s, except the refinery projects, whose dates come from the Lok Sabha reply of 3 December 2025.</p>
+        <table class="dir-list deadline-table">
+          <thead><tr><th scope="col">Due</th><th scope="col">Awards</th><th scope="col" class="num">Capacity</th><th scope="col">What the record shows</th></tr></thead>
+          <tbody id="deadline-body"></tbody>
+        </table>
       </section>
     </main>
 
-    <footer class="shell"><span id="footer-note"></span><span id="disclaimer"></span></footer>
+    <footer class="colophon">
+      <p class="credits">Built by Ashish Kulkarni (<a href="https://lfe.econforeverybody.com" rel="noreferrer">lfe.econforeverybody.com</a>) with Claude (<a href="https://claude.ai" rel="noreferrer">claude.ai</a>).</p>
+      <p id="scope-note"></p>
+      <p>How the figures are counted: <a href="method.html">Method</a>.</p>
+      <p>Curated by Dr. Vasundhara Sen. An agent drafts each update; a person approves it before it is published. <span id="generated"></span></p>
+    </footer>
+
+    <noscript><p class="noscript">This page draws every figure from its data file using JavaScript. Turn JavaScript on to see the overview.</p></noscript>
+
     <script src="js/data.generated.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/overview.js"></script>
   </body>
 </html>
