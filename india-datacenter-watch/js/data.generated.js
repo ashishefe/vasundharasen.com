@@ -3903,7 +3903,7 @@ window.INDIA_DC_WATCH = {
   ],
   "regionalCheckedAt": "2026-09-29",
   "derived": {
-    "generatedAt": "2026-09-29T11:10:36+00:00",
+    "generatedAt": "2026-10-26T03:23:01+00:00",
     "statusOrder": {
       "operational": 0,
       "under_construction": 1,
@@ -4920,5 +4920,6 @@ window.INDIA_DC_WATCH = {
         "quantumChanged": []
       }
     }
-  }
+  },
+  "projectSummaries": {}
 };

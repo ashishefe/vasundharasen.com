@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Policy &amp; sources · India Datacenter Watch</title>
+    <meta name="description" content="The rules that shape where India's data centres can draw power, each tied to its government instrument, and every source the tracker cites." />
+    <link rel="stylesheet" href="css/watch.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the rules</a>
+
+    <header class="masthead">
+      <div class="wordmark">
+        <span class="wordmark-title">India Datacenter Watch</span>
+        <span class="wordmark-by">Curated by Dr. Vasundhara Sen</span>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Projects</a>
+        <a href="map.html">Map</a>
+        <a href="policy.html" aria-current="page">Policy &amp; sources</a>
+      </nav>
+      <p class="as-of">Updated <time id="as-of"></time></p>
+    </header>
+
+    <main id="main">
+      <header class="page-head">
+        <h1>Policy &amp; sources</h1>
+        <p class="lede" id="lede"></p>
+      </header>
+
+      <div class="with-toc">
+        <nav class="toc" aria-label="On this page">
+          <a href="#rules">Rules</a>
+          <a href="#clean-power">Clean power</a>
+          <a href="#uptime">Uptime definitions</a>
+          <a href="#beyond-india">Beyond India</a>
+          <a href="#sources">Sources</a>
+        </nav>
+
+        <div class="toc-body">
+          <section class="section" id="rules" aria-labelledby="rules-title">
+            <h2 id="rules-title">Rules</h2>
+            <p class="section-note" id="rules-note"></p>
+            <div class="controls">
+              <div class="switch" role="group" aria-label="Track" id="track-switch"></div>
+            </div>
+            <div id="rules-list"></div>
+          </section>
+
+          <section class="section" id="clean-power" aria-labelledby="clean-title">
+            <h2 id="clean-title">Clean power</h2>
+            <p class="section-note">How the tracked projects say they will be powered, from no plan on the public record up to round-the-clock clean supply. How much a renewable claim is worth depends on how the power is bought and matched.</p>
+            <div class="bars" id="firmness-bars"></div>
+            <p class="section-note" id="firmness-note"></p>
+            <h3 class="group-head">Green open access</h3>
+            <div id="open-access"></div>
+            <h3 class="group-head" style="margin-top:1.6rem">What the cloud companies have promised</h3>
+            <p class="section-note">These are company-wide targets. None is a plan for a particular Indian site.</p>
+            <div id="standards-list"></div>
+          </section>
+
+          <section class="section" id="uptime" aria-labelledby="uptime-title">
+            <h2 id="uptime-title">Uptime definitions</h2>
+            <p class="section-note">How public bodies define availability: procurement terms, certification floors and state commitments. None is a rule every data centre must meet.</p>
+            <div id="uptime-list"></div>
+          </section>
+
+          <section class="section" id="beyond-india" aria-labelledby="beyond-title">
+            <h2 id="beyond-title">Beyond India</h2>
+            <p class="section-note" id="beyond-note"></p>
+            <div class="beyond-grid" id="beyond-list"></div>
+          </section>
+
+          <section class="section" id="sources" aria-labelledby="sources-title">
+            <h2 id="sources-title">Sources</h2>
+            <p class="section-note" id="sources-note"></p>
+            <div class="source-controls">
+              <label class="search">
+                <span>Search sources</span>
+                <input type="search" id="source-search" placeholder="Publisher, title or year" />
+              </label>
+              <div class="switch" role="group" aria-label="Kind of source" id="kind-switch"></div>
+            </div>
+            <p class="dir-count" id="source-count" aria-live="polite"></p>
+            <table class="dir-list source-table">
+              <thead>
+                <tr><th scope="col">Source</th><th scope="col">Publisher</th><th scope="col">Date</th><th scope="col">Kind</th><th scope="col">Cited for</th></tr>
+              </thead>
+              <tbody id="source-body"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="colophon">
+      <p class="credits">Built by Ashish Kulkarni (<a href="https://lfe.econforeverybody.com" rel="noreferrer">lfe.econforeverybody.com</a>) with Claude (<a href="https://claude.ai" rel="noreferrer">claude.ai</a>).</p>
+      <p>How the figures are counted: <a href="method.html">Method</a>.</p>
+      <p>Curated by Dr. Vasundhara Sen. An agent drafts each update; a person approves it before it is published. <span id="generated"></span></p>
+    </footer>
+
+    <noscript><p class="noscript">This page draws every rule and source from its data file using JavaScript. Turn JavaScript on to see them.</p></noscript>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/policy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects · India Datacenter Watch</title>
+    <meta name="description" content="Every data-centre project tracked by India Datacenter Watch, with its stage, location, grid filings and announced IT load." />
+    <link rel="stylesheet" href="css/watch.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the projects</a>
+
+    <header class="masthead">
+      <div class="wordmark">
+        <span class="wordmark-title">India Datacenter Watch</span>
+        <span class="wordmark-by">Curated by Dr. Vasundhara Sen</span>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="index.html">Overview</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="map.html">Map</a>
+        <a href="policy.html">Policy &amp; sources</a>
+      </nav>
+      <p class="as-of">Updated <time id="as-of"></time></p>
+    </header>
+
+    <main id="main">
+      <header class="page-head">
+        <h1>Projects</h1>
+        <p class="lede" id="lede"></p>
+      </header>
+
+      <section class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="visually-hidden">All tracked projects</h2>
+        <div class="dir-controls">
+          <p class="dir-count" id="dir-count"></p>
+          <div class="controls">
+            <div class="switch" role="group" aria-label="Stage">
+              <button type="button" data-stage="all" aria-pressed="true">All</button>
+              <button type="button" data-stage="operational" aria-pressed="false">Operational</button>
+              <button type="button" data-stage="under_construction" aria-pressed="false">Building</button>
+              <button type="button" data-stage="announced" aria-pressed="false">Announced</button>
+              <button type="button" data-stage="mou_speculative" aria-pressed="false">MoU</button>
+            </div>
+            <div class="switch" role="group" aria-label="View">
+              <button type="button" data-view="cards" aria-pressed="true">Cards</button>
+              <button type="button" data-view="list" aria-pressed="false">List</button>
+            </div>
+          </div>
+        </div>
+        <ul class="cards" id="cards"></ul>
+        <table class="dir-list is-hidden" id="list">
+          <thead>
+            <tr><th scope="col">Project</th><th scope="col">Stage</th><th scope="col">State</th><th scope="col" class="num">Filed MW</th><th scope="col" class="num">Granted MW</th><th scope="col" class="num">Announced IT MW</th></tr>
+          </thead>
+          <tbody id="list-body"></tbody>
+        </table>
+        <p class="section-note" id="bar-note" style="margin-top:1rem"></p>
+        <p><button type="button" class="text-button" id="projects-csv">Download all projects (CSV)</button> <span class="dir-count">Grid filings with no project record are in the <a href="method.html#register">register download</a>.</span></p>
+      </section>
+
+      <section class="section" aria-labelledby="filings-title">
+        <h2 id="filings-title">Grid filings with no project record yet</h2>
+        <p class="section-note">These applicants appear on a grid register, but no announcement in this tracker ties them to a named project. Each has its own page with the filing’s details.</p>
+        <ul class="cards" id="filing-cards"></ul>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <p class="credits">Built by Ashish Kulkarni (<a href="https://lfe.econforeverybody.com" rel="noreferrer">lfe.econforeverybody.com</a>) with Claude (<a href="https://claude.ai" rel="noreferrer">claude.ai</a>).</p>
+      <p id="scope-note"></p>
+      <p>How the figures are counted: <a href="method.html">Method</a>.</p>
+      <p>Curated by Dr. Vasundhara Sen. An agent drafts each update; a person approves it before it is published. <span id="generated"></span></p>
+    </footer>
+
+    <noscript><p class="noscript">This page draws every figure from its data file using JavaScript. Turn JavaScript on to see the projects.</p></noscript>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/india-geo.generated.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/projects.js"></script>
+  </body>
+</html>

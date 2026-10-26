@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Method · India Datacenter Watch</title>
+    <meta name="description" content="How India Datacenter Watch counts: grid filings versus announced load, the full register of filings, and how the two measures reconcile." />
+    <link rel="stylesheet" href="css/watch.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the method</a>
+
+    <header class="masthead">
+      <div class="wordmark">
+        <span class="wordmark-title">India Datacenter Watch</span>
+        <span class="wordmark-by">Curated by Dr. Vasundhara Sen</span>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Projects</a>
+        <a href="map.html">Map</a>
+        <a href="policy.html">Policy &amp; sources</a>
+      </nav>
+      <p class="as-of">Updated <time id="as-of"></time></p>
+    </header>
+
+    <main id="main">
+      <header class="page-head">
+        <h1>Method</h1>
+        <p class="lede" id="lede"></p>
+      </header>
+
+      <div class="with-toc">
+        <nav class="toc" aria-label="On this page">
+          <a href="#counting">How we count</a>
+          <a href="#bridge">Filings against announcements</a>
+          <a href="#market">The wider market</a>
+          <a href="#timing">When the power is due</a>
+          <a href="#register">The register</a>
+          <a href="#delivery">Transmission</a>
+        </nav>
+
+        <div class="toc-body">
+          <section class="section" id="counting" aria-labelledby="counting-title">
+            <h2 id="counting-title">How we count</h2>
+            <dl class="terms" id="terms"></dl>
+          </section>
+
+          <section class="section" id="bridge" aria-labelledby="bridge-title">
+            <h2 id="bridge-title">Filings against announcements</h2>
+            <p class="section-note">The same build-out, measured two ways. A filing is what a developer asked the grid for: the whole site’s draw, including cooling and room to grow. Announced IT load is what companies say their servers will use. So filings can run well ahead of announcements without either being wrong.</p>
+            <div class="bars" id="bridge-bars"></div>
+            <table class="dir-list bridge-table">
+              <thead><tr><th scope="col">Project</th><th scope="col" class="num">Filings</th><th scope="col" class="num">Announced IT MW</th><th scope="col" class="num">Filed MW</th><th scope="col" class="num">Granted MW</th></tr></thead>
+              <tbody id="bridge-body"></tbody>
+            </table>
+            <p class="section-note" id="bridge-unlinked" style="margin-top:1rem"></p>
+          </section>
+
+          <section class="section" id="market" aria-labelledby="market-title">
+            <h2 id="market-title">The wider market</h2>
+            <p class="section-note">This tracker follows the largest public projects. These figures describe the whole Indian market and grid, from market reports, government statements and some secondary summaries (each entry names its source and how good it is), so the tracked projects can be read against them. They measure different things and are not added to any tracker total.</p>
+            <h3 class="group-head">Estimates of India’s capacity, newest first</h3>
+            <div id="baseline-list"></div>
+            <h3 class="group-head" style="margin-top:1.6rem">Where analysts expect it to go</h3>
+            <p class="section-note">Forecasts of total data-centre capacity across India, for every kind of use, AI included.</p>
+            <div class="bars" id="forecast-bars"></div>
+            <h3 class="group-head" style="margin-top:1.6rem">The grid it plugs into</h3>
+            <dl class="terms" id="grid-terms"></dl>
+          </section>
+
+          <section class="section" id="timing" aria-labelledby="timing-title">
+            <h2 id="timing-title">When the power is due</h2>
+            <p class="section-note" id="timing-note"></p>
+            <table class="dir-list timing-table">
+              <thead><tr><th scope="col">By the end of</th><th scope="col" class="num">Granted MW</th><th scope="col" class="num">Dated by the register, MW</th><th scope="col" class="num">Including estimated dates, MW</th></tr></thead>
+              <tbody id="timing-body"></tbody>
+            </table>
+          </section>
+
+          <section class="section" id="register" aria-labelledby="register-title">
+            <h2 id="register-title">The register</h2>
+            <p class="section-note" id="register-note"></p>
+            <p><button type="button" class="text-button" id="register-csv">Download the register (CSV)</button></p>
+            <div id="register-list"></div>
+          </section>
+
+          <section class="section" id="delivery" aria-labelledby="delivery-title">
+            <h2 id="delivery-title">Transmission</h2>
+            <p class="section-note">A grant is only useful if the lines and substations to carry the power get built. These are the transmission packages the filings depend on.</p>
+            <div id="delivery-list"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="colophon">
+      <p class="credits">Built by Ashish Kulkarni (<a href="https://lfe.econforeverybody.com" rel="noreferrer">lfe.econforeverybody.com</a>) with Claude (<a href="https://claude.ai" rel="noreferrer">claude.ai</a>).</p>
+      <p id="scope-note"></p>
+      <p>Curated by Dr. Vasundhara Sen. An agent drafts each update; a person approves it before it is published. <span id="generated"></span></p>
+    </footer>
+
+    <noscript><p class="noscript">This page draws every figure from its data file using JavaScript. Turn JavaScript on to see it.</p></noscript>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/method.js"></script>
+  </body>
+</html>
