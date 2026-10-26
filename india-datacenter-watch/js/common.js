@@ -196,6 +196,23 @@
     return `<div class="power"><div class="power-row"><span class="power-label">Filed</span>${filed}</div>${itRow}</div>`;
   }
 
+  // ---- weakly evidenced filings -------------------------------------------
+  // A filing whose record carries an evidenceCaveat counts in the totals but
+  // rests on weaker evidence than a register entry (Oct 2026: Lodha's second
+  // 1,500 MW). Every page that shows the filed total says so, in the same words.
+  const caveatedFilings = activeFilings.filter((c) => c.evidenceCaveat);
+  const caveatMw = caveatedFilings.reduce((t, c) => t + (c.quantumMW || 0), 0);
+  function totalCaveat(total) {
+    if (!caveatedFilings.length) return "";
+    const what = caveatedFilings.map((c) => {
+      const p = c.linkedProjectId && projectsById.get(c.linkedProjectId);
+      return `${mw(c.quantumMW)} MW for ${p ? p.name.replace(/, ([^,]+)$/, " ($1)") : c.operator || c.applicant}`;
+    }).join("; ");
+    const one = caveatedFilings.length === 1;
+    return `${one ? "One filing" : `${caveatedFilings.length} filings`} in this total, ${what}, ${one ? "comes" : "come"} from a press report; we have found no utility or regulator record for ${one ? "it" : "them"} yet and are checking. Without ${one ? "it" : "them"}, the filed total would be ${mw(total - caveatMw)} MW.`;
+  }
+  const projectCaveatMw = (projectId) => caveatedFilings.filter((c) => c.linkedProjectId === projectId).reduce((t, c) => t + (c.quantumMW || 0), 0);
+
   // ---- sources and downloads ---------------------------------------------
   const tierKind = { primary: "Government record", official: "Company page", secondary: "Press or reference" };
   // A spreadsheet file. A leading = + - @ would make a spreadsheet run the
@@ -234,5 +251,6 @@
     qs, qsa, cssVar, uniq, esc, mw, pct, formatDate, monthName, shortMonth, stageColor, swatch, sourceLinks, sourceLink,
     flowDateKind, projectFilings, projectFigures, unlinkedFilings, filingFigures, projectHref, filingHref, sortedProjects,
     mapStates, locatorMap, ringSmallStates, renderMasthead, scaleMaxima, powerBars, tierKind, downloadCsv,
+    caveatedFilings, caveatMw, totalCaveat, projectCaveatMw,
   };
 })();

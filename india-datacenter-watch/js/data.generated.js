@@ -3347,7 +3347,8 @@ window.INDIA_DC_WATCH = {
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "not approved",
-      "approvedPowerFlowEnd": "not approved"
+      "approvedPowerFlowEnd": "not approved",
+      "evidenceCaveat": "Reported by the trade press in June 2026 as further capacity under consideration. We have not yet found a utility or regulator record for this 1,500 MW, and are checking."
     },
     {
       "id": "conn-vizag-mega",
@@ -3903,7 +3904,7 @@ window.INDIA_DC_WATCH = {
   ],
   "regionalCheckedAt": "2026-09-29",
   "derived": {
-    "generatedAt": "2026-10-26T03:23:01+00:00",
+    "generatedAt": "2026-10-26T03:46:43+00:00",
     "statusOrder": {
       "operational": 0,
       "under_construction": 1,

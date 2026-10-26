@@ -2,7 +2,7 @@
   if (!window.DCW) return;
   const {
     data, stageLabels, GRANTED, activeFilings, qs, qsa, esc, mw, swatch, sourceLinks, flowDateKind,
-    projectFigures, filingFigures, projectHref, filingHref, mapStates, renderMasthead,
+    projectFigures, filingFigures, projectHref, filingHref, mapStates, renderMasthead, totalCaveat,
   } = window.DCW;
 
   const geo = window.INDIA_GEO_PATHS;
@@ -163,6 +163,7 @@
         <tbody>${body}</tbody>
         <tfoot><tr><th scope="row">All tracked</th><td class="num" data-label="Filed">${mw(totalFiled())}</td><td class="num" data-label="Granted">${mw(totalGranted())}</td><td class="num" data-label="Announced IT">${mw(totalAnnounced())}</td><td></td></tr></tfoot>
       </table>
+      ${totalCaveat(totalFiled()) ? `<p class="panel-note"><strong>Caveat:</strong> ${esc(totalCaveat(totalFiled()))}</p>` : ""}
       ${totalAnnounced() !== rows.reduce((t, b) => t + b.announced, 0) ? `<p class="panel-note">The announced total includes ${mw(totalAnnounced() - rows.reduce((t, b) => t + b.announced, 0))} MW from projects not tied to one state, listed below.</p>` : ""}
       <p class="panel-note">“Filed vs state peak” sets the megawatts filed against the state’s peak demand as given in each cited source. The peaks come from different dates, so open a state to see which one is used. Read it as a sense of scale: a filing is the most a site may draw, usually reached in phases over years.</p>
       ${offMapItems || spanning ? `<h3>Not counted in any one state</h3><ul class="plain-list">${spanning}${offMapItems}</ul>` : ""}`;
@@ -184,7 +185,7 @@
     const status = closed ? "closed; kept as history" : GRANTED.has(c.status) ? "granted" : "applied, under process";
     const kind = flowDateKind(c);
     const flow = closed ? "" : c.powerFlowStart ? ` · power flow ${esc(c.powerFlowStart)} (${esc(kind)})` : " · power-flow date not published";
-    return `<li><div><a href="${esc(href)}">${esc(c.operator || c.applicant)}</a><span>${mw(f.filedMw)} MW · ${esc(status)}${flow}</span></div></li>`;
+    return `<li><div><a href="${esc(href)}">${esc(c.operator || c.applicant)}</a><span>${mw(f.filedMw)} MW · ${esc(status)}${flow}</span>${c.evidenceCaveat && !closed ? `<span class="caveat"><strong>Caveat:</strong> ${esc(c.evidenceCaveat)}</span>` : ""}</div></li>`;
   }
 
   function statePanel(name) {
@@ -192,15 +193,16 @@
     const share = peakShare(b);
     const peak = b.peak && !/proxy/i.test(b.peak.fy || "") ? b.peak : null;
     const proxy = b.peak && !peak ? b.peak : null;
+    const checking = b.filings.filter((c) => c.evidenceCaveat).reduce((t, c) => t + (c.quantumMW || 0), 0);
     const figures = [
-      `<div>${b.filed ? `<dt>${mw(b.filed)}<small>MW</small></dt>` : '<dt class="none">none in this tracker</dt>'}<dd>filed with the grid${b.filed ? `: ${mw(b.granted)} MW granted, ${mw(b.filed - b.granted)} MW applied` : ""}</dd></div>`,
+      `<div>${b.filed ? `<dt>${mw(b.filed)}<small>MW</small></dt>` : '<dt class="none">none in this tracker</dt>'}<dd>filed with the grid${b.filed ? `: ${mw(b.granted)} MW granted, ${mw(b.filed - b.granted)} MW applied` : ""}${checking ? `; ${mw(checking)} MW of it press-reported and still being checked` : ""}</dd></div>`,
       `<div>${b.announced ? `<dt>${mw(b.announced)}<small>MW</small></dt>` : '<dt class="none">none disclosed</dt>'}<dd>announced IT load${b.mou ? `, plus ${mw(b.mou)} MW at MoU stage, outside the headline` : ""}</dd></div>`,
       peak && peak.peakMW
         ? `<div><dt>${mw(peak.peakMW)}<small>MW</small></dt><dd>state peak demand, as given in the source (${esc(peak.fy || "date not stated")}) ${sourceLinks(peak.sourceIds)}</dd></div>`
         : `<div><dt class="none">${proxy ? "no separate figure" : "not in the data"}</dt><dd>state peak demand${proxy ? `: ${esc(proxy.note || "no single state grid")}` : ""}</dd></div>`,
     ].join("");
     let shareLine = "";
-    if (share !== null) shareLine = `<p class="share-line">The filings add up to <strong>${share}%</strong> of that peak. Read that as a sense of scale: a filing is the most a site may draw, usually reached in phases.${peak.note ? ` The source also notes: ${esc(peak.note)}` : ""}</p>`;
+    if (share !== null) shareLine = `<p class="share-line">The filings add up to <strong>${share}%</strong> of that peak. Read that as a sense of scale: a filing is the most a site may draw, usually reached in phases.${peak.note ? ` The source also notes: ${esc(peak.note)}` : ""}${checking ? ` The share counts the ${mw(checking)} MW still being checked; without it, it would be ${((b.filed - checking) / peak.peakMW * 100).toFixed(1)}%.` : ""}</p>`;
     else if (proxy && b.filed) shareLine = '<p class="share-line">With no separate state grid to compare against, no share of peak is shown.</p>';
     const projects = b.projects.map(projectItem).join("");
     const filings = b.filings.map((c) => filingItem(c, false)).join("") + b.closed.map((c) => filingItem(c, true)).join("");
@@ -251,7 +253,7 @@
     const top = withFiling.slice(0, 2);
     const topShare = totalFiled() ? Math.round((top.reduce((s, b) => s + b.filed, 0) / totalFiled()) * 100) : 0;
     qs("#lede").textContent = withFiling.length
-      ? `The ${mw(totalFiled())} MW filed with the grid sits in ${withFiling.length} ${withFiling.length === 1 ? "state" : "states"}${offMap().some((b) => b.filed) ? " on the map, plus filings the map cannot place" : ""}; ${top.map((b) => b.name).join(" and ")} hold ${topShare}% of it. Select a state to see its projects, its filings, and how the filed load compares with the state’s peak demand.`
+      ? `The ${mw(totalFiled())} MW filed with the grid sits in ${withFiling.length} ${withFiling.length === 1 ? "state" : "states"}${offMap().some((b) => b.filed) ? " on the map, plus filings the map cannot place" : ""}; ${top.map((b) => b.name).join(" and ")} hold ${topShare}% of it. Select a state to see its projects, its filings, and how the filed load compares with the state’s peak demand. ${totalCaveat(totalFiled())}`
       : "No grid filing is in this tracker yet.";
     renderNote();
   }

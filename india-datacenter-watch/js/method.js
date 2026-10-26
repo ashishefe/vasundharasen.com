@@ -2,7 +2,7 @@
   if (!window.DCW) return;
   const {
     data, D, stageLabels, activeFilings, sourceMap, qs, esc, mw, formatDate, monthName,
-    sourceLinks, flowDateKind, projectHref, filingHref, renderMasthead, downloadCsv,
+    sourceLinks, flowDateKind, projectHref, filingHref, renderMasthead, downloadCsv, caveatMw, totalCaveat,
   } = window.DCW;
 
   const conn = D.connectivity.summary;
@@ -25,7 +25,7 @@
     const firstSnap = ((D.snapshotHistory || [])[0] || {}).month;
     const terms = [
       ["Filed with the grid",
-        `Megawatts a developer has asked a grid utility to supply. Filings to the inter-state grid sit on the central connectivity register (CTUIL); connections within a state appear in state utilities’ and regulators’ records. Each filing links to the record or report it comes from. The tracker holds ${plural(conn.count, "active filing")} for ${mw(conn.totalMW)} MW. A filing is the most a site may draw, usually reached in phases over years.`],
+        `Megawatts a developer has asked a grid utility to supply. Filings to the inter-state grid sit on the central connectivity register (CTUIL); connections within a state appear in state utilities’ and regulators’ records. Each filing links to the record or report it comes from. The tracker holds ${plural(conn.count, "active filing")} for ${mw(conn.totalMW)} MW. A filing is the most a site may draw, usually reached in phases over years.${caveatMw ? ` <strong>Caveat:</strong> ${esc(totalCaveat(conn.totalMW))}` : ""}`],
       ["Granted and applied",
         `Granted means the utility has approved the connection; a signed agreement or a commissioned link also counts as granted. Applied means it is still under process. Today ${mw(conn.grantedMW)} MW is granted and ${mw(conn.appliedMW)} MW applied. ${conn.closedCount ? `${plural(conn.closedCount, "closed filing")} ${conn.closedCount === 1 ? "is" : "are"} listed as history and not counted.` : ""}`],
       ["Announced IT load",
@@ -64,7 +64,7 @@
       <span class="bridge-label">${esc(label)}</span>
       <span class="bar-track">${v ? `<span class="bar-seg" style="width:${(v / max) * 100}%;background:${color}"></span>` : ""}</span>
       <span class="bar-value">${mw(v)} MW</span>
-    </div>`).join("") + `<p class="section-note" style="margin-top:.6rem">${t.commissionedMw ? "" : "No filing in the tracker has reached commissioning yet. "}${(recon.unlinked || []).length ? `The filed bar includes ${mw((recon.unlinked || []).reduce((s, u) => s + (u.quantumMW || 0), 0))} MW from filings with no project record, listed under the table.` : ""}</p>`;
+    </div>`).join("") + `<p class="section-note" style="margin-top:.6rem">${t.commissionedMw ? "" : "No filing in the tracker has reached commissioning yet. "}${(recon.unlinked || []).length ? `The filed bar includes ${mw((recon.unlinked || []).reduce((s, u) => s + (u.quantumMW || 0), 0))} MW from filings with no project record, listed under the table.` : ""}${caveatMw ? ` ${esc(totalCaveat(t.filedMw))}` : ""}</p>`;
     const dash = '<span class="power-none">—</span>';
     qs("#bridge-body").innerHTML = recon.projects.map((r) => `<tr>
       <td class="list-name"><a href="${esc(projectHref(r.projectId))}">${esc(r.name)}</a><span>${esc(r.state || "")}</span></td>
@@ -121,7 +121,8 @@
     const undatedMw = undated.reduce((t, c) => t + (c.quantumMW || 0), 0);
     qs("#timing-note").textContent =
       `Cumulative megawatts due to start flowing by each year, by the date each filing gives. Read the right-hand column with care: most of it rests on estimated dates, which give only a year. ` +
-      (undated.length ? `${plural(undated.length, "filing")} (${mw(undatedMw)} MW) ${undated.length === 1 ? "has" : "have"} no published date and ${undated.length === 1 ? "is" : "are"} not in this table.` : "");
+      (undated.length ? `${plural(undated.length, "filing")} (${mw(undatedMw)} MW) ${undated.length === 1 ? "has" : "have"} no published date and ${undated.length === 1 ? "is" : "are"} not in this table.` : "") +
+      (caveatMw ? ` The columns include the ${mw(caveatMw)} MW still being checked (see How we count).` : "");
     if (!fwd.length) { qs("#timing-body").innerHTML = '<tr><td colspan="4">No filing has a power-flow date yet.</td></tr>'; return; }
     qs("#timing-body").innerHTML = fwd.map((f) => `<tr>
       <td>${esc(f.year)}</td>
@@ -171,7 +172,8 @@
       ].filter(([, v]) => v);
       return `<article class="filing-card${c.status === "closed" ? " is-closed" : ""}">
         <h3><a href="${esc(filingLink(c))}">${esc(c.operator || c.applicant)}</a></h3>
-        <p class="rule-meta">${mw(c.quantumMW)} MW · ${esc(STATUS_WORDS[c.status] || c.status)}</p>
+        <p class="rule-meta">${mw(c.quantumMW)} MW · ${esc(STATUS_WORDS[c.status] || c.status)}${c.evidenceCaveat ? "; press-reported, being checked" : ""}</p>
+        ${c.evidenceCaveat ? `<p class="caveat"><strong>Caveat:</strong> ${esc(c.evidenceCaveat)}</p>` : ""}
         <dl class="facts">${facts.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
         <p class="rule-sources">${sourceLinks(c.sourceIds)}</p>
       </article>`;

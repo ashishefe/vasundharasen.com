@@ -1,7 +1,7 @@
 (function () {
   if (!window.DCW) return;
   const {
-    data, D, STAGES, stageLabels, projectsById, sourceMap, connById, GRANTED, activeFilings,
+    data, D, STAGES, stageLabels, projectsById, sourceMap, connById, GRANTED, activeFilings, caveatMw, totalCaveat, projectCaveatMw,
     qs, qsa, cssVar, uniq, esc, mw, pct, formatDate, monthName, shortMonth, stageColor, sourceLinks,
     projectHref, filingHref, renderMasthead,
   } = window.DCW;
@@ -29,7 +29,8 @@
           { mw: r.filedMw - r.grantedMw, pale: true, label: "applied" },
         ],
         total: r.filedMw,
-        note: r.filingCount > 1 ? `${r.filingCount} filings` : "1 filing",
+        note: (r.filingCount > 1 ? `${r.filingCount} filings` : "1 filing") +
+          (projectCaveatMw(r.projectId) ? `; ${mw(projectCaveatMw(r.projectId))} MW press-reported, being checked` : ""),
       };
     });
     recon.unlinked.forEach((u) => {
@@ -86,7 +87,7 @@
     // Four figures, each with its comparison, then one strip that sets filed,
     // granted and announced load on a common scale.
     const figures = [
-      { value: mw(conn.totalMW), unit: "MW", label: `asked of the grid, in ${conn.count} active filings` },
+      { value: mw(conn.totalMW), unit: "MW", label: `asked of the grid, in ${conn.count} active filings${caveatMw ? `; ${mw(caveatMw)} MW of it still being checked (see the note below)` : ""}` },
       { value: mw(conn.grantedMW), unit: "MW", label: `granted: ${pct(conn.grantedMW, conn.totalMW)}% of what is filed. ${commissioned ? `${mw(commissioned)} MW commissioned` : "None commissioned in this tracker yet"}` },
       topTwo.length ? { value: String(topShare), unit: "%", label: `of filed megawatts in ${topTwo.map(([n]) => n).join(" and ")}` } : null,
       { value: mw(D.headlineKnownCapacityMw), unit: "MW", label: `announced IT load, servers only, at ${known} headline projects` },
@@ -110,7 +111,7 @@
           <span class="strip-seg announced" style="width:${w(D.headlineKnownCapacityMw)}"><span>${mw(D.headlineKnownCapacityMw)}</span></span>
         </span>
       </div>
-      <p class="strip-note">Megawatts, on one scale. A filing covers the whole site’s draw, cooling included; announced load covers the servers alone. Each filing links to the register entry, order or report it comes from.</p>`;
+      <p class="strip-note">Megawatts, on one scale. A filing covers the whole site’s draw, cooling included; announced load covers the servers alone. Each filing links to the register entry, order or report it comes from.${caveatMw ? ` <strong>Caveat:</strong> ${esc(totalCaveat(conn.totalMW))}` : ""}</p>`;
   }
 
   // ---- ranking: snapshot --------------------------------------------------
@@ -136,6 +137,7 @@
     const total = rows.reduce((s, r) => s + r.total, 0);
     if (state.measure === "filed") {
       qs("#ranking-total").innerHTML = `Total <strong>${mw(total)} MW</strong> filed: ${mw(conn.grantedMW)} MW granted, ${mw(conn.appliedMW)} MW applied.` +
+        (caveatMw ? ` ${esc(totalCaveat(total))}` : "") +
         (conn.closedCount ? ` ${conn.closedCount} closed ${conn.closedCount === 1 ? "filing" : "filings"} (${mw(conn.byStatusMw.closed)} MW) ${conn.closedCount === 1 ? "is" : "are"} kept as history and left out.` : "");
       // Any filing, closed included, takes a project off the "no filing" list.
       const linked = new Set((data.connectivity || []).map((c) => c.linkedProjectId).filter(Boolean));

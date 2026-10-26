@@ -4,6 +4,7 @@
     data, stageLabels, firmnessLabels, GRANTED, projectsById, sourceMap, connById, summaries,
     qs, uniq, esc, mw, formatDate, swatch, sourceLinks, flowDateKind, projectFilings, projectFigures, filingFigures,
     projectHref, filingHref, sortedProjects, locatorMap, ringSmallStates, renderMasthead, scaleMaxima, powerBars,
+    projectCaveatMw,
   } = window.DCW;
 
   const max = scaleMaxima();
@@ -86,7 +87,8 @@
   // ---- filings table ------------------------------------------------------
   function filingsHtml(filings) {
     if (!filings.length) return '<p class="empty">No grid filing for this project is in the tracker yet. Large loads usually appear first on the national CTUIL register or a state regulator’s docket.</p>';
-    const statusText = (c) => (c.status === "closed" ? "Closed, kept as history" : c.status === "applied" ? "Applied, under process" : c.status.charAt(0).toUpperCase() + c.status.slice(1));
+    const statusText = (c) => (c.status === "closed" ? "Closed, kept as history" : c.status === "applied" ? "Applied, under process" : c.status.charAt(0).toUpperCase() + c.status.slice(1)) +
+      (c.evidenceCaveat ? "; press-reported, being checked" : "");
     const flow = (c) => {
       const kind = flowDateKind(c);
       if (kind === "not published") return '<span class="est">not published</span>';
@@ -100,7 +102,7 @@
         <td>${esc(statusText(c))}</td>
         <td>${flow(c)}</td>
         <td>${esc(c.substation || c.state || "")}</td>
-        <td>${esc(c.applicationRef || "")}${sourceLinks(c.sourceIds)}</td>
+        <td>${esc(c.applicationRef || "")}${sourceLinks(c.sourceIds)}${c.evidenceCaveat ? `<span class="caveat"><strong>Caveat:</strong> ${esc(c.evidenceCaveat)}</span>` : ""}</td>
       </tr>`).join("")}</tbody>
     </table>`;
   }
@@ -157,7 +159,7 @@
         </section>
         <aside aria-label="Key figures">
           <dl class="key-figures">
-            ${figure(f.filedMw || null, f.filedMw ? `filed with the grid, in ${f.filingCount} active ${f.filingCount === 1 ? "filing" : "filings"}` : "no grid filing in this tracker", "No filing")}
+            ${figure(f.filedMw || null, f.filedMw ? `filed with the grid, in ${f.filingCount} active ${f.filingCount === 1 ? "filing" : "filings"}${projectCaveatMw(p.id) ? `; ${mw(projectCaveatMw(p.id))} MW of it press-reported and still being checked (see the filings below)` : ""}` : "no grid filing in this tracker", "No filing")}
             ${figure(f.filedMw ? f.grantedMw : null, f.filedMw ? "granted so far" : "nothing to grant yet", "None")}
             ${figure(f.itLoadMw, f.itLoadMw === null ? "IT load not disclosed" : "announced IT load" + (f.inHeadline ? "" : ", outside the headline"), "Not disclosed")}
           </dl>

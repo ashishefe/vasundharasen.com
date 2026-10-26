@@ -419,3 +419,6 @@ button { font: inherit; color: inherit; }
 .colophon .credits { grid-column: 2; grid-row: 1 / span 3; }
 @media (max-width: 760px) { .colophon { grid-template-columns: 1fr; } .colophon .credits { grid-column: 1; grid-row: auto; } }
 @media print { .ranking-notes { position: static; max-height: none; } .legend-inline { display: none !important; } }
+/* A filing that counts in the totals but rests on weaker evidence. */
+.caveat { display: block; margin-top: .35rem; padding-left: .6rem; border-left: 2px solid var(--st-an); color: var(--ink); font-size: .9rem; }
+p.caveat { margin: .4rem 0 0; max-width: 46rem; }
