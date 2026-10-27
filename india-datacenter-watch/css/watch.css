@@ -1,4 +1,8 @@
-/* India Datacenter Watch — shared styles. Light, editorial; matches vasundharasen.com. */
+/* Shared styles for India Datacenter Watch, India Green Hydrogen Watch and India Energy Regulation Watch.
+   Light, editorial; the same family as vasundharasen.com.
+   THIS IS THE MASTER COPY. Edit it here, then run:  python3 shared/sync_styles.py
+   which copies it to each tracker's css/watch.css (each tracker stays self-contained).
+   site/scripts/assemble_site.py refuses to build if a copy has drifted from this file. */
 @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 300 900; font-display: swap; src: url('../fonts/fraunces-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 300 900; font-display: swap; src: url('../fonts/fraunces-italic.woff2') format('woff2'); }
 @font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 200 800; font-display: swap; src: url('../fonts/newsreader-normal.woff2') format('woff2'); }
@@ -38,6 +42,8 @@ button { font: inherit; color: inherit; }
 .wordmark { display: flex; flex-direction: column; line-height: 1.2; }
 .wordmark-title { font-family: var(--display); font-size: 1.2rem; font-weight: 560; }
 .wordmark-by { color: var(--ink-soft); font-size: .9rem; }
+.wordmark-by a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: .18em; }
+.wordmark-by a:hover { color: var(--ink); text-decoration-color: currentColor; }
 .tabs { display: flex; flex-wrap: wrap; gap: .2rem 1.6rem; }
 .tabs a, .tabs span { font-size: 1rem; text-decoration: none; padding: .2rem 0; }
 .tabs a { color: var(--ink); }
@@ -423,17 +429,152 @@ button { font: inherit; color: inherit; }
 .caveat { display: block; margin-top: .35rem; padding-left: .6rem; border-left: 2px solid var(--st-an); color: var(--ink); font-size: .9rem; }
 p.caveat { margin: .4rem 0 0; max-width: 46rem; }
 
-/* ===== Three-view overview (shared with India Energy Regulation Watch; copied 2026-10-27) ===== */
+
+/* ===== Stage colours, award statuses, evidence lists (hydrogen; also used by regulation) ===== */
+/* Stage shades: one green, light to dark, from awarded to operating. */
 :root { --sg-awarded: #dfe8e1; --sg-contracted: #9dbdab; --sg-building: #5c8f77; --sg-operating: #1f5141; --warn: #a9741f; }
 .preview-bar { margin: 0; padding: .45rem var(--gutter); background: var(--ink); color: var(--paper); font-size: .9rem; }
+.answer-key { margin: 1rem 0 0; max-width: 46rem; color: var(--ink-soft); }
+.ladders { display: grid; gap: clamp(1.6rem, 3vw, 2.4rem); margin-top: clamp(1.6rem, 3vw, 2.6rem); }
+.ladder { border-top: 1px solid var(--ink); padding-top: .9rem; }
+.ladder-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem 1.2rem; }
+.ladder-head h2 { margin: 0; font-family: var(--display); font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 470; letter-spacing: -.015em; }
+.ladder-head p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+.ladder-strip { position: relative; height: .9rem; margin: .8rem 0 1rem; background: var(--paper-deep); border-radius: 2px; overflow: hidden; }
+.ladder-seg { position: absolute; left: 0; top: 0; bottom: 0; }
+.seg-awarded { background: var(--sg-awarded); }
+.seg-contracted { background: var(--sg-contracted); }
+.seg-building { background: var(--sg-building); }
+.seg-operating { background: var(--sg-operating); }
+.stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem clamp(1rem, 2.5vw, 2.5rem); margin: 0; }
+.stage { padding-left: .7rem; border-left: 4px solid var(--sg-awarded); }
+.stage-contracted { border-left-color: var(--sg-contracted); }
+.stage-building { border-left-color: var(--sg-building); }
+.stage-operating { border-left-color: var(--sg-operating); }
+.stage dt { font-family: var(--display); font-size: clamp(1.55rem, 2.3vw, 2.2rem); font-weight: 420; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.stage dt small { font-family: var(--text); font-size: .9rem; letter-spacing: 0; color: var(--ink-soft); margin-left: .25rem; }
+.stage dt .none { font-family: var(--text); font-size: 1.05rem; font-style: italic; letter-spacing: 0; color: var(--ink-soft); }
+.stage dd { margin: .45rem 0 0; font-size: .92rem; line-height: 1.35; }
+.stage dd strong { font-weight: 600; margin-right: .35rem; }
+.share { color: var(--ink-soft); font-size: .86rem; white-space: nowrap; }
+.stage-note { display: block; margin-top: .2rem; color: var(--ink-soft); }
+.stage .sources { margin-top: .25rem; font-size: .82rem; }
+.stage .caveat { font-size: .86rem; }
+.context { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem clamp(1rem, 2.5vw, 2.5rem); margin: clamp(1.8rem, 3vw, 2.6rem) 0 0; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.context dt { font-family: var(--display); font-size: 1.2rem; font-weight: 480; line-height: 1.2; }
+.context dd { margin: .3rem 0 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.35; }
+.signal-list p.analysis { padding-left: .8rem; border-left: 2px solid var(--rule); }
+.deadline-table { max-width: 64rem; }
+.deadline-table tr.is-past td:first-child { color: var(--warn); }
+/* Award status: text always carries the meaning; the colour only repeats it. */
+.status { display: inline-block; padding: .05rem .45rem; border-radius: 3px; font-size: .84rem; line-height: 1.4; border: 1px solid var(--rule); white-space: nowrap; }
+.status-good { border-color: var(--sg-building); color: var(--sg-operating); }
+.status-warn { border-color: var(--warn); color: #7a5214; }
+.status-neutral { color: var(--ink-soft); }
+.evidence { list-style: none; margin: .35rem 0 0; padding: 0; font-size: .88rem; color: var(--ink-soft); }
+.evidence li { margin-top: .25rem; padding-left: .6rem; border-left: 2px solid var(--rule); }
+.evidence li.correction { border-left-color: var(--warn); color: var(--ink); }
+.evidence .sources { display: inline; margin: 0; font-size: .82rem; }
+@media (max-width: 960px) {
+  .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .context { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .status { white-space: normal; }
+  .stages { grid-template-columns: 1fr; gap: .8rem; }
+  .deadline-table tr { grid-template-columns: 1fr auto; }
+}
+@media print { .ladder-seg, .stage { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .preview-bar { display: none; } .ladder { break-inside: avoid; } }
+.award-table { max-width: 78rem; }
+.award-table td.status-cell { min-width: 16rem; max-width: 30rem; }
+.award-table .list-name strong { font-weight: 600; }
+.award-table .list-name .sources { font-size: .8rem; }
+.award-table tfoot th, .award-table tfoot td { padding: .6rem .6rem .6rem 0; border-top: 1px solid var(--ink); text-align: left; font-weight: 600; }
+.award-table tfoot td.num { text-align: right; }
+.price-cell { position: relative; min-width: 7rem; font-variant-numeric: tabular-nums; }
+.price-bar { display: block; height: .45rem; margin-bottom: .2rem; background: var(--sg-contracted); border-radius: 1px; }
+.page-head .text-button { margin-top: .6rem; }
+@media (max-width: 620px) {
+  .award-table td[data-label]:not(.num)::before { content: attr(data-label) ": "; color: var(--ink-soft); font-size: .84rem; }
+  .award-table td.status-cell { grid-column: 1 / -1; min-width: 0; }
+  .award-table tfoot tr { display: grid; grid-template-columns: 1fr auto; gap: .2rem .8rem; padding: .7rem 0; }
+  .award-table tfoot th, .award-table tfoot td { border: 0; padding: 0; }
+  .price-bar { display: none; }
+}
+@media print { .price-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+.items { list-style: none; margin: 0; padding: 0; max-width: 64rem; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) 15rem; gap: .5rem clamp(1rem, 3vw, 3rem); padding: 1rem 0 1.1rem; border-top: 1px solid var(--rule); }
+.item h3 { margin: 0; font-family: var(--display); font-size: 1.15rem; font-weight: 520; line-height: 1.25; }
+.item h3 .with { font-family: var(--text); font-weight: 400; color: var(--ink-soft); font-size: 1rem; }
+.item-sub { display: block; margin-top: .15rem; font-family: var(--text); font-size: .92rem; font-weight: 400; color: var(--ink-soft); }
+.item p { margin: .4rem 0 0; max-width: 44rem; }
+.item-facts { margin: 0; font-size: .92rem; }
+.item-facts div { padding: .3rem 0; border-top: 1px solid var(--rule); }
+.item-facts div:first-child { border-top: 0; padding-top: 0; }
+.item-facts dt { color: var(--ink-soft); font-size: .84rem; }
+.item-facts dd { margin: .05rem 0 0; }
+.section > h2 .count { font-family: var(--text); font-size: 1rem; color: var(--ink-soft); font-weight: 400; margin-left: .3rem; }
+@media (max-width: 760px) { .item { grid-template-columns: 1fr; } .item-facts { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; } .item-facts div { border-top: 0; padding: 0; } }
+@media print { .item { break-inside: avoid; } }
+.params { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .1rem 1.5rem; margin: .7rem 0 0; font-size: .93rem; }
+.params div { padding: .4rem 0; border-top: 1px solid var(--rule); }
+.params dt { color: var(--ink-soft); font-size: .84rem; }
+.params dd { margin: .05rem 0 0; }
+.params .sources { display: inline; font-size: .8rem; }
+.trail { margin-top: .8rem; }
 .trail summary { cursor: pointer; color: var(--green); font-size: .95rem; }
-.not-counted { max-width: 64rem; }
-.not-counted li { padding: .7rem 0; border-top: 1px solid var(--rule); }
-.not-counted li strong { font-weight: 600; }
-.not-counted .bar-sub { max-width: 52rem; }
-.forward-bars { max-width: 52rem; }
-.focus-panel .ranking { padding-left: 0; padding-right: 0; border-bottom: 0; }
-.focus-panel .changes { padding-left: 0; padding-right: 0; }
+.trail .timeline { margin-top: .5rem; }
+.trail .timeline p.analysis { padding-left: .8rem; border-left: 2px solid var(--rule); }
+.rule.is-closed { opacity: .8; }
+.switch .count { color: inherit; opacity: .7; font-size: .85em; }
+@media (max-width: 620px) { .params { grid-template-columns: 1fr; } }
+@media print { .trail { display: block; } .trail > * { display: block; } }
+.steps { margin: 0 0 1rem; padding-left: 1.3rem; max-width: 50rem; }
+.steps li { margin-bottom: .6rem; }
+.rules-list { max-width: 50rem; }
+.rules-list li { padding: .55rem 0; border-top: 1px solid var(--rule); }
+.terms dt .status { font-weight: 400; }
+.strip-key { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; margin: .9rem 0 0; padding: 0; list-style: none; color: var(--ink-soft); font-size: .88rem; }
+.strip-key li { display: inline-flex; align-items: center; gap: .4rem; }
+.strip-key .swatch { border: 1px solid var(--rule); }
+/* A press-reported stage is hatched so it never reads as an official figure. */
+.seg-press { background-image: repeating-linear-gradient(135deg, transparent 0 4px, rgba(247, 243, 234, .75) 4px 7px); }
+.strip-key .seg-press { background-color: var(--sg-contracted); }
+
+
+/* ===== Regulation pages: topics, rule board ===== */
+.answer > .answer-figures { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem clamp(1rem, 2.5vw, 2.5rem); margin-top: clamp(1.8rem, 3.5vw, 3rem); }
+.event-rule { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .5rem; margin-top: .35rem; font-size: .9rem; color: var(--ink-soft); }
+p.correction { margin: .45rem 0 0; padding-left: .7rem; border-left: 2px solid var(--warn); font-size: .92rem; }
+.board-table { max-width: 78rem; margin-top: .4rem; }
+.board-table td:nth-child(2) { min-width: 13rem; max-width: 22rem; }
+.board-table td:nth-child(4) { max-width: 20rem; }
+.board-table .list-name strong { font-weight: 600; }
+.board-table .list-name .sources { font-size: .8rem; }
+.group-head a { color: var(--ink); text-decoration: none; }
+.group-head a:hover { color: var(--green); text-decoration: underline; }
+#changes-note { max-width: 52rem; }
+@media (max-width: 960px) { .answer > .answer-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) {
+  .answer > .answer-figures { grid-template-columns: 1fr; }
+  .board-table td[data-label]::before { content: attr(data-label) ": "; color: var(--ink-soft); font-size: .84rem; }
+  .board-table td { grid-column: 1 / -1; }
+  .board-table td:nth-child(2) { min-width: 0; }
+}
+.topic h2 { margin: .2rem 0 .6rem; font-family: var(--display); font-size: clamp(1.45rem, 2.2vw, 2rem); font-weight: 430; letter-spacing: -.02em; scroll-margin-top: 1rem; }
+.topic > p { max-width: 50rem; margin: .4rem 0 0; }
+.topic .analysis { padding-left: .9rem; border-left: 2px solid var(--rule); color: var(--ink-soft); }
+.topic-state { font-size: 1.05rem; }
+.topic .group-head { margin-top: 1.4rem; }
+.topic-rules { list-style: none; margin: .4rem 0 0; padding: 0; max-width: 64rem; }
+.topic-rules li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: .4rem 2rem; padding: .7rem 0; border-top: 1px solid var(--rule); }
+.topic-rules strong { font-weight: 600; }
+.topic-rules .sources { font-size: .8rem; }
+.topic .rule h4 { margin: 0; font-family: var(--display); font-size: 1.08rem; font-weight: 500; }
+@media (max-width: 760px) { .topic-rules li { grid-template-columns: 1fr; } }
+
+
+/* ===== Three-view overview (all three trackers) ===== */
 /* ---- Overview: three views (flow, stock, next) ------------------------------- */
 :root { --st-force: #1f5141; --st-pend: #9a6b12; --st-end: #6f6a5e; }
 .focus-head { padding-bottom: 0; border-bottom: 1px solid var(--ink); }
@@ -616,6 +757,25 @@ p.caveat { margin: .4rem 0 0; max-width: 46rem; }
   .strip-list { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; }
 }
 
+/* ===== Tracker-only adjustments to the three-view overview (after the shared rules, so they win) ===== */
+/* Datacenter Watch */
+.preview-bar { margin: 0; padding: .45rem var(--gutter); background: var(--ink); color: var(--paper); font-size: .9rem; }
+.trail summary { cursor: pointer; color: var(--green); font-size: .95rem; }
+.not-counted { max-width: 64rem; }
+.not-counted li { padding: .7rem 0; border-top: 1px solid var(--rule); }
+.not-counted li strong { font-weight: 600; }
+.not-counted .bar-sub { max-width: 52rem; }
+.forward-bars { max-width: 52rem; }
+.focus-panel .ranking { padding-left: 0; padding-right: 0; border-bottom: 0; }
+.focus-panel .changes { padding-left: 0; padding-right: 0; }
 .graphic > .answer-figures { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem clamp(1rem, 2.5vw, 2.5rem); margin-top: 0; }
 @media (max-width: 960px) { .graphic > .answer-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .graphic > .answer-figures { grid-template-columns: 1fr; } }
+
+/* Green Hydrogen Watch */
+.focus-panel > .answer-key, .focus-panel > .strip-key { max-width: 72rem; }
+.focus-panel .ladders { max-width: 76rem; }
+[data-tracker="hydrogen"] .focus-panel .section { padding-left: 0; padding-right: 0; }
+[data-tracker="hydrogen"] .focus-num { white-space: nowrap; }
+@media (max-width: 760px) { [data-tracker="hydrogen"] .focus-num { white-space: normal; font-size: 1.5rem; } }
+

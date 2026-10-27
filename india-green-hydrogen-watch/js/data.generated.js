@@ -3050,15 +3050,19 @@ window.GREEN_HYDROGEN_WATCH = {
             "stage": "building",
             "value": null,
             "basis": "official",
-            "sourceIds": [],
-            "note": "IndianOil says Panipat is on track for December 2027; we have not seen a record of physical work.",
+            "sourceIds": [
+              "S31"
+            ],
+            "note": "Parliament's December 2025 reply gives December 2027 for commissioning; we have not seen a record of physical work.",
             "display": "None found"
           },
           {
             "stage": "operating",
             "value": 0,
             "basis": "official",
-            "sourceIds": [],
+            "sourceIds": [
+              "S31"
+            ],
             "note": "First supply due December 2027",
             "display": "0"
           }
@@ -3095,8 +3099,10 @@ window.GREEN_HYDROGEN_WATCH = {
             "stage": "building",
             "value": null,
             "basis": "official",
-            "sourceIds": [],
-            "note": "Press reports work at AM Green’s Kakinada plant, built for export and is outside these auctions. None of the seven suppliers across the 13 lots has a public record of construction.",
+            "sourceIds": [
+              "S29"
+            ],
+            "note": "None of the seven suppliers across the 13 lots has a public record of construction. AM Green's Kakinada plant, which has ADB financing, is outside these auctions.",
             "display": "None found"
           },
           {
@@ -3195,7 +3201,7 @@ window.GREEN_HYDROGEN_WATCH = {
     ]
   },
   "derived": {
-    "generatedAt": "2026-10-27T15:14:01Z",
+    "generatedAt": "2026-10-27T16:03:13Z",
     "latestEditionId": "2026-11-01",
     "asOf": "2026-11-01",
     "counts": {
