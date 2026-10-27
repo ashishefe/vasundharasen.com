@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>India Green Hydrogen Watch</title>
     <meta name="description" content="Is India's green-hydrogen push turning awards into working plants? Awards, signed buyers, construction and operating plants from public records, curated by Dr. Vasundhara Sen." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/watch.css" />
   </head>
   <body>
@@ -25,27 +26,50 @@
     </header>
 
     <main id="main">
-      <section class="answer" aria-labelledby="question">
-        <h1 id="question"></h1>
+      <section class="answer focus-head" aria-labelledby="question">
+        <h1 id="question">Is India’s green-hydrogen push turning awards into working plants?</h1>
+        <div class="focus-tabs" role="tablist" aria-label="Choose a view" id="focus-tabs">
+          <button type="button" role="tab" id="tab-month" aria-controls="panel-month" data-view="this-month">
+            <span class="focus-name">This month</span><span class="focus-num" id="num-month"></span><span class="focus-count" id="count-month"></span>
+          </button>
+          <button type="button" role="tab" id="tab-stand" aria-controls="panel-stand" data-view="where-things-stand">
+            <span class="focus-name">Where things stand</span><span class="focus-num" id="num-stand"></span><span class="focus-count" id="count-stand"></span>
+          </button>
+          <button type="button" role="tab" id="tab-next" aria-controls="panel-next" data-view="whats-next">
+            <span class="focus-name">What’s next</span><span class="focus-num" id="num-next"></span><span class="focus-count" id="count-next"></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="focus-panel" role="tabpanel" id="panel-month" aria-labelledby="tab-month" data-title="This month: what changed">
+        <figure class="graphic" id="graphic-month"></figure>
+        <div class="brief" id="brief-month"></div>
+        <section class="section" aria-labelledby="changes-title">
+          <h2 id="changes-title"></h2>
+          <p class="section-note" id="edition-note"></p>
+          <ul class="signal-list" id="change-list"></ul>
+        </section>
+      </section>
+
+      <section class="focus-panel" role="tabpanel" id="panel-stand" aria-labelledby="tab-stand" data-title="Where things stand" hidden>
         <p class="answer-key" id="answer-key"></p>
         <ul class="strip-key" id="strip-key" aria-label="Bar colours"></ul>
         <div class="ladders" id="ladders"></div>
         <dl class="context" id="context"></dl>
+        <div class="brief" id="brief-stand"></div>
       </section>
 
-      <section class="section" aria-labelledby="changes-title">
-        <h2 id="changes-title"></h2>
-        <p class="section-note" id="edition-note"></p>
-        <ul class="signal-list" id="change-list"></ul>
-      </section>
-
-      <section class="section" aria-labelledby="deadlines-title">
-        <h2 id="deadlines-title">Scheduled dates</h2>
-        <p class="section-note">When each group of awards is due to be running, and what the public record shows so far. Dates are SECI’s, except the refinery projects, whose dates come from the Lok Sabha reply of 3 December 2025.</p>
-        <table class="dir-list deadline-table">
-          <thead><tr><th scope="col">Due</th><th scope="col">Awards</th><th scope="col" class="num">Capacity</th><th scope="col">What the record shows</th></tr></thead>
-          <tbody id="deadline-body"></tbody>
-        </table>
+      <section class="focus-panel" role="tabpanel" id="panel-next" aria-labelledby="tab-next" data-title="What’s next" hidden>
+        <figure class="graphic" id="graphic-next"></figure>
+        <div class="brief" id="brief-next"></div>
+        <section class="section" aria-labelledby="deadlines-title">
+          <h2 id="deadlines-title">Scheduled dates</h2>
+          <p class="section-note">When each group of awards is due to be running, and what the public record shows so far. Dates are SECI’s, except the refinery projects, whose dates come from the Lok Sabha reply of 3 December 2025.</p>
+          <table class="dir-list deadline-table">
+            <thead><tr><th scope="col">Due</th><th scope="col">Awards</th><th scope="col" class="num">Capacity</th><th scope="col">What the record shows</th></tr></thead>
+            <tbody id="deadline-body"></tbody>
+          </table>
+        </section>
       </section>
     </main>
 
@@ -61,5 +85,6 @@
     <script src="js/data.generated.js"></script>
     <script src="js/common.js"></script>
     <script src="js/overview.js"></script>
+    <script src="js/views.js"></script>
   </body>
 </html>

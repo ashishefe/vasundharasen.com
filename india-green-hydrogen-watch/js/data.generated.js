@@ -8,11 +8,263 @@ window.GREEN_HYDROGEN_WATCH = {
     "footerNote": "Monthly flow edition · 1 November 2026 (research cut 26 October). Next edition: 1 December 2026.",
     "methodNote": "Awards, signed buyers, construction and operating plants are counted separately, each in its own unit. A figure without a public source does not appear."
   },
+  "briefs": {
+    "editionId": "2026-11-01",
+    "curatorApproved": false,
+    "flow": [
+      {
+        "rank": "lead",
+        "headline": "October brought no new award, plant or contract",
+        "fact": "Research to 26 Oct found no new award, commissioning, purchase agreement, certificate or standard in October. Bids for SECI's second green-ammonia tender, for 54,000 tonnes a year, were due to open on 30 Oct. This edition instead adds five items earlier editions missed.",
+        "soWhat": "The award book changes little from month to month; the next evidence to watch is delivery, plants, factories and supply agreements against awards already made.",
+        "refs": [
+          {
+            "type": "link",
+            "href": "policy.html#editions",
+            "label": "This edition’s note"
+          }
+        ]
+      },
+      {
+        "rank": "major",
+        "headline": "Every first-round electrolyser factory is past its date",
+        "fact": "The eight Tranche I factory awards, 1,500 MW a year, were due between 9 and 28 Aug 2026. An exchange filing shows Advait commissioned a 30 MW-a-year line, which the tracker reads as part of its award. No commissioning record or extension notice was found for the rest.",
+        "soWhat": "Without commissioning records or a published extension, it is unclear how much Indian-made electrolyser supply the production awards can count on.",
+        "refs": [
+          {
+            "type": "event",
+            "id": "evt-em-t1-scd-passed"
+          },
+          {
+            "type": "ladder",
+            "id": "electrolyser"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#electrolyser",
+            "label": "Factory awards"
+          }
+        ],
+        "trackId": "sight-electrolyser-awards"
+      },
+      {
+        "rank": "major",
+        "headline": "Purchase agreements cover most of the auctioned ammonia",
+        "fact": "Purchase agreements for 670,000 of the 724,000 tonnes a year auctioned were reported by August 2026; NTPC Renewable Energy's 70,000 tonnes, signed on 30 Mar 2026, is confirmed by its own release. No supplying plant has a public record of construction.",
+        "soWhat": "The ammonia auctions were designed around fertiliser plants as buyers, so signed agreements came early: 93% of the volume (press-reported), against 0.4% of the hydrogen production awards, which carry no buyer by design. Supply now depends on plants being built.",
+        "refs": [
+          {
+            "type": "event",
+            "id": "evt-gapa-gasa-signed-670kt"
+          },
+          {
+            "type": "ladder",
+            "id": "ammonia"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#ammonia",
+            "label": "Ammonia lots"
+          }
+        ],
+        "trackId": "ammonia-procurement"
+      },
+      {
+        "rank": "minor",
+        "headline": "The award book may be smaller than SECI's table shows",
+        "fact": "A parliamentary reply, reported by the press in August 2026, put production awards at 756,100 tonnes a year across 16 companies, against 862,000 on SECI's table.",
+        "soWhat": "If the reply is confirmed, about 106,000 tonnes a year has left the book; no document the tracker opened names which awards.",
+        "refs": [
+          {
+            "type": "event",
+            "id": "evt-mode1-book-756kt"
+          },
+          {
+            "type": "ladder",
+            "id": "mode1"
+          }
+        ],
+        "trackId": "sight-production-awards"
+      },
+      {
+        "rank": "minor",
+        "headline": "Refinery supply developers named",
+        "fact": "A Lok Sabha reply of 3 Dec 2025 names the developers for three of the four refinery projects.",
+        "soWhat": "That reply officially names suppliers for 20,000 of the scheme's 30,000 tonnes a year; the press names a developer for the rest, at Numaligarh.",
+        "refs": [
+          {
+            "type": "event",
+            "id": "evt-mode2b-developers-named"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#refinery",
+            "label": "Refinery projects"
+          }
+        ],
+        "trackId": "sight-production-awards"
+      },
+      {
+        "rank": "minor",
+        "headline": "JSW's plant is the only production award with a commissioning record",
+        "fact": "JSW Energy reported in Nov 2025 a plant at Vijayanagar that supplies 3,800 tonnes a year to group company JSW Steel, and says it is part of its SIGHT award.",
+        "soWhat": "It is the only production award in this tracker with a commissioning record.",
+        "refs": [
+          {
+            "type": "event",
+            "id": "evt-jsw-vijayanagar-commissioned"
+          },
+          {
+            "type": "link",
+            "href": "plants.html",
+            "label": "Plants"
+          }
+        ],
+        "trackId": "operating-projects"
+      }
+    ],
+    "stock": [
+      {
+        "rank": "lead",
+        "headline": "Awards are far ahead of working plants",
+        "fact": "Production awards: 862,000 tonnes of hydrogen a year, of which 3,800 operates. Refinery supply: 30,000 awarded, 10,000 under contract, none operating. Ammonia: 724,000 tonnes a year auctioned, 670,000 with a buyer (press-reported), none operating. Electrolyser factories: 3,000 MW a year awarded, 30 operating.",
+        "soWhat": "Most of the programme exists as awards and agreements. Beyond JSW's plant and Advait's factory line, which operate, none of the awards has a public record of physical work with a stated capacity.",
+        "refs": [
+          {
+            "type": "ladder",
+            "id": "mode1"
+          },
+          {
+            "type": "ladder",
+            "id": "mode2b"
+          },
+          {
+            "type": "ladder",
+            "id": "ammonia"
+          },
+          {
+            "type": "ladder",
+            "id": "electrolyser"
+          }
+        ]
+      },
+      {
+        "rank": "major",
+        "headline": "No incentive payments shown",
+        "fact": "A Lok Sabha reply showed no SIGHT incentive released for production or manufacturing as of 3 Dec 2025. A press report gives ₹292 crore spent across the whole Mission by August 2026, not broken down into incentives.",
+        "soWhat": "The production incentive is paid per kilogram of hydrogen produced, so with almost nothing operating, little would have fallen due.",
+        "refs": [
+          {
+            "type": "link",
+            "href": "policy.html#mission-architecture",
+            "label": "Incentive ceilings"
+          },
+          {
+            "type": "link",
+            "href": "method.html#press",
+            "label": "Press-reported figures"
+          }
+        ],
+        "trackId": "mission-architecture"
+      },
+      {
+        "rank": "major",
+        "headline": "Ammonia is furthest along in signed buyers",
+        "fact": "93% of the auctioned ammonia volume has a reported buyer agreement; the prices discovered ran from ₹49.75 to ₹64.74 a kilogram.",
+        "soWhat": "These auctions give the only contract-by-contract public prices for a green-hydrogen product in this tracker.",
+        "refs": [
+          {
+            "type": "ladder",
+            "id": "ammonia"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#ammonia",
+            "label": "Ammonia lots and prices"
+          }
+        ],
+        "trackId": "ammonia-procurement"
+      }
+    ],
+    "next": [
+      {
+        "rank": "lead",
+        "headline": "The first production awards are due on 2 Feb 2027",
+        "fact": "Tranche I's ten production awards, 412,000 tonnes a year, are due to be running on 2 Feb 2027. One, JSW's, is partly operating; none of the others has a public record of construction with a stated capacity.",
+        "soWhat": "That date will show how much of the first tranche runs on time.",
+        "refs": [
+          {
+            "type": "ladder",
+            "id": "mode1"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#production",
+            "label": "Production awards"
+          }
+        ],
+        "date": "2027-02-02",
+        "trackId": "sight-production-awards"
+      },
+      {
+        "rank": "major",
+        "headline": "Second-round factories are due on 26 Mar 2027",
+        "fact": "Thirteen Tranche II electrolyser factory awards, 1,500 MW a year, are due on 26 Mar 2027.",
+        "soWhat": "With the first round past its dates and little commissioned, this round will show whether domestic factory capacity is arriving.",
+        "refs": [
+          {
+            "type": "ladder",
+            "id": "electrolyser"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#electrolyser",
+            "label": "Factory awards"
+          }
+        ],
+        "date": "2027-03-26",
+        "trackId": "sight-electrolyser-awards"
+      },
+      {
+        "rank": "major",
+        "headline": "Result of the second ammonia tender",
+        "fact": "Bids for SECI's 54,000-tonnes-a-year green-ammonia tender were due to open on 30 Oct 2026, after this edition's research cut.",
+        "soWhat": "A result would add the first new ammonia price since the 2025 auctions.",
+        "refs": [
+          {
+            "type": "link",
+            "href": "policy.html#watching",
+            "label": "What we are watching"
+          }
+        ],
+        "trackId": "ammonia-procurement"
+      },
+      {
+        "rank": "minor",
+        "headline": "Refinery supply is due to start in December 2027",
+        "fact": "IndianOil's Panipat contract, 10,000 tonnes a year, is due in December 2027; Ocior's two 5,000-tonne projects follow in March and April 2028.",
+        "soWhat": "These would be the first green hydrogen supplied into Indian refineries under the scheme.",
+        "refs": [
+          {
+            "type": "ladder",
+            "id": "mode2b"
+          },
+          {
+            "type": "link",
+            "href": "awards.html#refinery",
+            "label": "Refinery projects"
+          }
+        ],
+        "trackId": "sight-production-awards"
+      }
+    ]
+  },
   "editions": [
     {
       "id": "2026-11-01",
       "label": "Monthly flow · 1 Nov 2026",
-      "note": "Covers October 2026 up to a research cut on 26 October, in which we found no new award, commissioning or contract. Adds items earlier editions missed: ammonia purchase agreements reported from March, JSW’s plant running under a SIGHT award since November 2025, the named refinery developers, a press-reported smaller award book, and the passing of every Tranche I electrolyser deadline."
+      "note": "Covers October 2026 up to a research cut on 26 October, in which we found no new award, commissioning or contract. Adds items earlier editions missed: ammonia purchase agreements reported from March, JSW’s plant running under a SIGHT award since November 2025, the named refinery developers, a press-reported smaller award book, and the passing of every Tranche I electrolyser deadline.",
+      "researchCut": "2026-10-26"
     },
     {
       "id": "2026-10-01",
@@ -2943,7 +3195,7 @@ window.GREEN_HYDROGEN_WATCH = {
     ]
   },
   "derived": {
-    "generatedAt": "2026-10-26T10:44:32Z",
+    "generatedAt": "2026-10-27T15:14:01Z",
     "latestEditionId": "2026-11-01",
     "asOf": "2026-11-01",
     "counts": {

@@ -51,7 +51,7 @@
   const items = data.events.filter((e) => e.editionId === edition.id);
   qs("#change-list").innerHTML = items.length ? items.map((e) => {
     const track = G.trackMap.get(e.trackId);
-    return `<li>
+    return `<li id="${esc(e.id)}">
       <span class="signal-date">${formatDate(e.date)}${track ? ` · <a href="policy.html#${esc(track.id)}">${esc(track.title)}</a>` : ""}</span>
       <strong>${esc(e.title)}</strong>${e.confidence === "reported" ? tag("Press-reported") : ""}
       <p>${esc(e.detail)}</p>
