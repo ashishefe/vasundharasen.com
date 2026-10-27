@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sources — India Energy Regulation Watch</title>
+    <meta name="description" content="Every public source India Energy Regulation Watch cites, and what each one supports." />
+    <link rel="stylesheet" href="css/watch.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the sources</a>
+
+    <header class="masthead">
+      <div class="wordmark">
+        <span class="wordmark-title">India Energy Regulation Watch</span>
+        <span class="wordmark-by">Curated by Dr. Vasundhara Sen</span>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="index.html">Overview</a>
+        <a href="topics.html">Topics</a>
+        <a href="sources.html" aria-current="page">Sources</a>
+      </nav>
+      <p class="as-of">Edition of <time id="as-of"></time></p>
+    </header>
+
+    <main id="main">
+      <header class="page-head">
+        <h1>Sources</h1>
+        <p class="lede" id="sources-note"></p>
+      </header>
+      <section class="section" aria-label="Source list">
+        <div class="source-controls">
+          <label class="search">
+            <span>Search sources</span>
+            <input type="search" id="source-search" placeholder="Publisher, title or year" />
+          </label>
+          <div class="switch" role="group" aria-label="Kind of source" id="kind-switch"></div>
+        </div>
+        <p class="dir-count" id="source-count" aria-live="polite"></p>
+        <table class="dir-list source-table">
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Publisher</th><th scope="col">Date</th><th scope="col">Kind</th><th scope="col">Cited for</th></tr>
+          </thead>
+          <tbody id="source-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <p class="credits">Built by Ashish Kulkarni (<a href="https://lfe.econforeverybody.com" rel="noreferrer">lfe.econforeverybody.com</a>) with Claude (<a href="https://claude.ai" rel="noreferrer">claude.ai</a>).</p>
+      <p>How rules are counted and corrected: <a href="method.html">Method</a>.</p>
+      <p>Curated by Dr. Vasundhara Sen. An agent drafts each update; a person approves it before it is published. <span id="generated"></span></p>
+    </footer>
+
+    <noscript><p class="noscript">This page draws every source from its data file using JavaScript. Turn JavaScript on to see them.</p></noscript>
+
+    <script src="js/data.generated.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sources.js"></script>
+  </body>
+</html>
