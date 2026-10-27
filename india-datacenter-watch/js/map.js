@@ -34,7 +34,7 @@
   });
   (data.connectivity || []).forEach((c) => {
     const b = bucket(toMap(c.state || "Unspecified"));
-    if (c.status === "closed") { b.closed.push(c); return; }
+    if (!DCW.isCounted(c)) { b.closed.push(c); return; }
     b.filings.push(c);
     b.filed += c.quantumMW || 0;
     if (GRANTED.has(c.status)) b.granted += c.quantumMW || 0;
@@ -182,7 +182,7 @@
   function filingItem(c, closed) {
     const f = filingFigures(c);
     const href = c.linkedProjectId ? projectHref(c.linkedProjectId) : filingHref(c.id);
-    const status = closed ? "closed; kept as history" : GRANTED.has(c.status) ? "granted" : "applied, under process";
+    const status = closed ? DCW.filingStatusWord(c).toLowerCase() : GRANTED.has(c.status) ? "granted" : "applied, under process";
     const kind = flowDateKind(c);
     const flow = closed ? "" : c.powerFlowStart ? ` · power flow ${esc(c.powerFlowStart)} (${esc(kind)})` : " · power-flow date not published";
     return `<li><div><a href="${esc(href)}">${esc(c.operator || c.applicant)}</a><span>${mw(f.filedMw)} MW · ${esc(status)}${flow}</span>${c.evidenceCaveat && !closed ? `<span class="caveat"><strong>Caveat:</strong> ${esc(c.evidenceCaveat)}</span>` : ""}</div></li>`;

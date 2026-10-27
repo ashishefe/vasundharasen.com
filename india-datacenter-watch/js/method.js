@@ -7,7 +7,7 @@
 
   const conn = D.connectivity.summary;
   const recon = D.reconciliation;
-  const STATUS_WORDS = { granted: "granted", agreement: "granted, agreement signed", commissioned: "commissioned", applied: "applied, under process", closed: "closed; kept as history" };
+  const STATUS_WORDS = { granted: "granted", agreement: "granted, agreement signed", commissioned: "commissioned", applied: "applied, under process", closed: "closed; kept as history", under_consideration: "under consideration; not counted" };
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
   const notPub = (v) => (v === undefined || v === null || v === "" ? "not published" : String(v));
   const filingLink = (c) => (c.linkedProjectId ? projectHref(c.linkedProjectId) : filingHref(c.id));
@@ -27,7 +27,7 @@
       ["Filed with the grid",
         `Megawatts a developer has asked a grid utility to supply. Filings to the inter-state grid sit on the central connectivity register (CTUIL); connections within a state appear in state utilities’ and regulators’ records. Each filing links to the record or report it comes from. The tracker holds ${plural(conn.count, "active filing")} for ${mw(conn.totalMW)} MW. A filing is the most a site may draw, usually reached in phases over years.${caveatMw ? ` <strong>Caveat:</strong> ${esc(totalCaveat(conn.totalMW))}` : ""}`],
       ["Granted and applied",
-        `Granted means the utility has approved the connection; a signed agreement or a commissioned link also counts as granted. Applied means it is still under process. Today ${mw(conn.grantedMW)} MW is granted and ${mw(conn.appliedMW)} MW applied. ${conn.closedCount ? `${plural(conn.closedCount, "closed filing")} ${conn.closedCount === 1 ? "is" : "are"} listed as history and not counted.` : ""}`],
+        `Granted means the utility has approved the connection; a signed agreement or a commissioned link also counts as granted. Applied means it is still under process. Today ${mw(conn.grantedMW)} MW is granted and ${mw(conn.appliedMW)} MW applied. ${conn.closedCount ? `${plural(conn.closedCount, "closed filing")} ${conn.closedCount === 1 ? "is" : "are"} listed as history and not counted.` : ""}${conn.underConsiderationMW ? ` ${mw(conn.underConsiderationMW)} MW that a utility or regulator record describes only as under consideration, with no application found, is shown but not counted.` : ""}`],
       ["Announced IT load",
         `The power a company says its servers will use (or, for a site already running, do use), from its own release or the press. ${disclosed} of ${data.projects.length} projects give a figure. It covers the servers alone, without cooling, so it does not compare like for like with a filing.`],
       ["The headline",
@@ -151,10 +151,10 @@
     return `${s} to ${e}`;
   }
   const registerRows = () => [...activeFilings].sort((a, b) => (b.quantumMW || 0) - (a.quantumMW || 0))
-    .concat((data.connectivity || []).filter((c) => c.status === "closed"));
+    .concat((data.connectivity || []).filter((c) => !DCW.isCounted(c)));
   function renderRegister() {
     qs("#register-note").textContent =
-      `Every grid filing in the tracker, largest first, with what the register says about it. ${plural(activeFilings.length, "active filing")}: ${mw((conn.byTier || {})["ISTS"] || 0)} MW on the inter-state grid and ${mw((conn.byTier || {})["intra-state"] || 0)} MW within states${(data.connectivity || []).length > activeFilings.length ? "; closed filings come last" : ""}. Each links to its own page.`;
+      `Every grid filing in the tracker, largest first, with what the register says about it. ${plural(activeFilings.length, "active filing")}: ${mw((conn.byTier || {})["ISTS"] || 0)} MW on the inter-state grid and ${mw((conn.byTier || {})["intra-state"] || 0)} MW within states${(data.connectivity || []).length > activeFilings.length ? "; closed and under-consideration filings come last" : ""}. Each links to its own page.`;
     qs("#register-list").innerHTML = registerRows().map((c) => {
       const kind = flowDateKind(c);
       const facts = [
@@ -170,7 +170,7 @@
         ["Delivery", deliveryWords(c)],
         ["Last checked", c.lastVerified ? formatDate(c.lastVerified) : ""],
       ].filter(([, v]) => v);
-      return `<article class="filing-card${c.status === "closed" ? " is-closed" : ""}">
+      return `<article class="filing-card${!DCW.isCounted(c) ? " is-closed" : ""}">
         <h3><a href="${esc(filingLink(c))}">${esc(c.operator || c.applicant)}</a></h3>
         <p class="rule-meta">${mw(c.quantumMW)} MW · ${esc(STATUS_WORDS[c.status] || c.status)}${c.evidenceCaveat ? "; press-reported, being checked" : ""}</p>
         ${c.evidenceCaveat ? `<p class="caveat"><strong>Caveat:</strong> ${esc(c.evidenceCaveat)}</p>` : ""}

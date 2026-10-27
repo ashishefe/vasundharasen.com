@@ -28,7 +28,11 @@
   const projectsById = new Map(data.projects.map((p) => [p.id, p]));
   const sourceMap = new Map((data.sources || []).map((s) => [s.id, s]));
   const connById = new Map((data.connectivity || []).map((c) => [c.id, c]));
-  const activeFilings = (data.connectivity || []).filter((c) => c.status !== "closed");
+  // Mirrors INACTIVE_STATUSES in scripts/build_dashboard.py: kept on the record, never counted.
+  const UNCOUNTED = new Set(["closed", "under_consideration"]);
+  const isCounted = (c) => !UNCOUNTED.has(c.status);
+  const filingStatusWord = (c) => ({ closed: "Closed, kept as history", under_consideration: "Under consideration, not counted", applied: "Applied, under process", granted: "Granted", agreement: "Granted, agreement signed", commissioned: "Commissioned" }[c.status] || c.status);
+  const activeFilings = (data.connectivity || []).filter(isCounted);
   // Approved summaries ship in the data bundle. Drafts live in a separate file
   // that only the private review sheet loads; public pages never see them.
   const summaries = { ...(window.INDIA_DC_SUMMARY_DRAFTS || {}), ...(data.projectSummaries || {}) };
@@ -251,6 +255,6 @@
     qs, qsa, cssVar, uniq, esc, mw, pct, formatDate, monthName, shortMonth, stageColor, swatch, sourceLinks, sourceLink,
     flowDateKind, projectFilings, projectFigures, unlinkedFilings, filingFigures, projectHref, filingHref, sortedProjects,
     mapStates, locatorMap, ringSmallStates, renderMasthead, scaleMaxima, powerBars, tierKind, downloadCsv,
-    caveatedFilings, caveatMw, totalCaveat, projectCaveatMw,
+    caveatedFilings, caveatMw, totalCaveat, projectCaveatMw, UNCOUNTED, isCounted, filingStatusWord,
   };
 })();

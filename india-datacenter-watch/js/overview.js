@@ -80,7 +80,8 @@
     const states = Object.entries(conn.byStateMw || {})
       .filter(([name]) => name && name !== "Unspecified")
       .sort((a, b) => b[1] - a[1]);
-    const topTwo = states.slice(0, 2);
+    // Two largest states; a tie for second place takes in the tied state too.
+    const topTwo = states.filter(([, v], i) => i < 2 || (states[1] && v === states[1][1]));
     const topShare = pct(topTwo.reduce((s, [, v]) => s + v, 0), conn.totalMW);
     const commissioned = recon.totals.commissionedMw || 0;
     const known = data.projects.filter((p) => p.includeInHeadline !== false && typeof p.capacity?.itLoadMw === "number").length;
@@ -89,7 +90,7 @@
     const figures = [
       { value: mw(conn.totalMW), unit: "MW", label: `asked of the grid, in ${conn.count} active filings${caveatMw ? `; ${mw(caveatMw)} MW of it still being checked (see the note below)` : ""}` },
       { value: mw(conn.grantedMW), unit: "MW", label: `granted: ${pct(conn.grantedMW, conn.totalMW)}% of what is filed. ${commissioned ? `${mw(commissioned)} MW commissioned` : "None commissioned in this tracker yet"}` },
-      topTwo.length ? { value: String(topShare), unit: "%", label: `of filed megawatts in ${topTwo.map(([n]) => n).join(" and ")}` } : null,
+      topTwo.length ? { value: String(topShare), unit: "%", label: `of filed megawatts in ${topTwo.map(([n]) => n).join(topTwo.length > 2 ? ", " : " and ").replace(/, ([^,]+)$/, " and $1")}` } : null,
       { value: mw(D.headlineKnownCapacityMw), unit: "MW", label: `announced IT load, servers only, at ${known} headline projects` },
     ].filter(Boolean);
     qs("#answer-figures").innerHTML = figures
@@ -208,7 +209,8 @@
       const first = h.months[0];
       qs("#ranking-sub").textContent = first
         ? `Measured: total filed megawatts at each monthly snapshot since measurement began in ${monthName(first)}.` +
-          (h.missing.length ? ` No snapshot was taken in ${h.missing.map(monthName).join(", ")}, so that month is blank.` : "")
+          (h.missing.length ? ` No snapshot was taken in ${h.missing.map(monthName).join(" and ").replace(/ and (?=.* and )/g, ", ")}, so ${h.missing.length === 1 ? "that month is" : "those months are"} blank.` : "") +
+          (conn.underConsiderationMW ? ` From November 2026, ${mw(conn.underConsiderationMW)} MW described only as under consideration is no longer counted, so the total falls by that amount even though new filings were added.` : "")
         : "No monthly snapshots have been captured yet.";
     } else {
       const tl = D.timeline || [];
@@ -294,8 +296,9 @@
     (cl.mwChanged || []).forEach((p) => projLine(p, "IT load revised", `${mwOr(p.from)} to ${mwOr(p.to)}`));
     const cc = cl.connectivity || {};
     const connLine = (r, kind, detail) => items.push({ kind, title: r.operator || r.id, detail, ids: connById.get(r.id)?.sourceIds });
-    (cc.added || []).forEach((r) => connLine(r, "New grid filing", `${mwOr(r.quantumMW)}, ${r.status}${r.tier ? ", " + r.tier : ""}`));
-    (cc.statusChanged || []).forEach((r) => connLine(r, "Filing status changed", `${r.from} to ${r.to}`));
+    (cc.added || []).forEach((r) => connLine(r, "New grid filing", `${mwOr(r.quantumMW)}, ${window.DCW.filingStatusWord({ status: r.status }).toLowerCase()}${r.tier ? ", " + r.tier : ""}`));
+    const word = (st) => window.DCW.filingStatusWord({ status: st }).toLowerCase();
+    (cc.statusChanged || []).forEach((r) => connLine(r, "Filing status changed", `${word(r.from)} to ${word(r.to)}`));
     (cc.quantumChanged || []).forEach((r) => connLine(r, "Filed megawatts revised", `${mwOr(r.from)} to ${mwOr(r.to)}`));
     (cc.removed || []).forEach((r) => connLine(r, "Filing removed", mwOr(r.quantumMW)));
     (cl.removed || []).forEach((p) => projLine(p, "Project removed", ""));
@@ -308,7 +311,7 @@
     const signals = (data.monthlySignals || [])
       // By event date: on or after the previous snapshot, or within this month
       // when there is none. Late finds dated earlier do not show here.
-      .filter((s) => (since ? s.date >= since : s.date.slice(0, 7) === asOf.slice(0, 7)) && s.date <= asOf)
+      .filter((s) => (since ? s.date > since : s.date.slice(0, 7) === asOf.slice(0, 7)) && s.date <= asOf)
       .sort((a, b) => b.date.localeCompare(a.date));
     qs("#signals-title").textContent = "In filings, orders and the press";
     qs("#signal-list").innerHTML = signals.length

@@ -50,7 +50,7 @@
     });
     // Expected power flow, one line per date and confidence.
     const flows = new Map();
-    filings.filter((c) => c.status !== "closed" && c.powerFlowStart).forEach((c) => {
+    filings.filter((c) => DCW.isCounted(c) && c.powerFlowStart).forEach((c) => {
       const kind = flowDateKind(c);
       const key = c.powerFlowStart + "|" + kind;
       const prev = flows.get(key) || { date: c.powerFlowStart, kind, mw: 0, ids: [] };
@@ -87,7 +87,7 @@
   // ---- filings table ------------------------------------------------------
   function filingsHtml(filings) {
     if (!filings.length) return '<p class="empty">No grid filing for this project is in the tracker yet. Large loads usually appear first on the national CTUIL register or a state regulator’s docket.</p>';
-    const statusText = (c) => (c.status === "closed" ? "Closed, kept as history" : c.status === "applied" ? "Applied, under process" : c.status.charAt(0).toUpperCase() + c.status.slice(1)) +
+    const statusText = (c) => DCW.filingStatusWord(c) +
       (c.evidenceCaveat ? "; press-reported, being checked" : "");
     const flow = (c) => {
       const kind = flowDateKind(c);
@@ -200,7 +200,7 @@
   function renderFiling(c) {
     const f = filingFigures(c);
     document.title = `${c.operator || c.applicant} · India Datacenter Watch`;
-    const status = c.status === "closed" ? "Closed, kept as history"
+    const status = !DCW.isCounted(c) ? DCW.filingStatusWord(c)
       : GRANTED.has(c.status) ? c.status.charAt(0).toUpperCase() + c.status.slice(1)
       : "Applied, under process";
     qs("#main").innerHTML = `

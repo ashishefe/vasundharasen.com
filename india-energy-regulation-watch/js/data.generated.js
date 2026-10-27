@@ -3445,7 +3445,7 @@ window.ENERGY_REG_WATCH = {
     }
   ],
   "derived": {
-    "generatedAt": "2026-10-27T10:54:58Z",
+    "generatedAt": "2026-10-27T11:11:13Z",
     "latestEditionId": "2026-11-01",
     "previousEditionId": "2026-09-19",
     "ruleBuckets": {
@@ -3465,7 +3465,8 @@ window.ENERGY_REG_WATCH = {
       "moved": [],
       "added": [],
       "removed": []
-    }
+    },
+    "changesThisEdition": 6
   },
   "briefs": {
     "editionId": "2026-11-01",

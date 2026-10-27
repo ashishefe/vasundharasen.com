@@ -1,11 +1,12 @@
 window.INDIA_DC_WATCH = {
   "meta": {
     "title": "India AI Datacenter Power Demand & Policy Watch",
-    "asOf": "2026-09-19",
+    "asOf": "2026-11-01",
     "audience": "Monthly intelligence brief for regulatory and energy-policy review",
     "scopeNote": "This starter dataset tracks major hyperscaler, AI, and large third-party datacenter signals. It is not yet a verified census of every colocation facility in India.",
     "methodNote": "Headline counts use the curated project registry below. National baseline metrics are shown separately when a credible market-level source exists.",
-    "nextRefresh": "2026-10-01"
+    "nextRefresh": "2026-12-01",
+    "researchCut": "2026-10-27"
   },
   "exchangeRates": {
     "usdInrAssumption": 85,
@@ -80,51 +81,6 @@ window.INDIA_DC_WATCH = {
     }
   ],
   "projects": [
-    {
-      "id": "anant-raj-haryana-operational",
-      "name": "Anant Raj Cloud Haryana campuses",
-      "status": "operational",
-      "operator": "Anant Raj Cloud",
-      "constructionLead": "Anant Raj / internal development",
-      "hyperscaler": "Not disclosed",
-      "customerType": "Third-party / enterprise cloud and datacenter capacity",
-      "location": {
-        "city": "Manesar and Panchkula",
-        "state": "Haryana",
-        "cluster": "North India"
-      },
-      "value": {
-        "display": "Operational value not disclosed",
-        "usdBillion": null,
-        "basis": "Operational capacity announcement"
-      },
-      "capacity": {
-        "itLoadMw": 28,
-        "powerDrawMw": 28,
-        "powerDrawNote": "Reported IT load; total facility draw likely higher and not disclosed",
-        "computeGw": null,
-        "computeNote": "Compute capacity not publicly disclosed"
-      },
-      "power": {
-        "source": "Grid supply; site-specific renewable procurement not disclosed",
-        "detail": "Power source should be refreshed from company filings or PPA disclosures.",
-        "confidence": "low",
-        "firmnessTier": "grid"
-      },
-      "timeline": "28 MW operational after Panchkula launch and Manesar scale-up in 2025",
-      "stageConfidence": "high",
-      "includeInHeadline": true,
-      "tags": [
-        "north-india-load",
-        "enterprise-cloud",
-        "firm-power"
-      ],
-      "sourceIds": [
-        "anant-panchkula-toi-2025"
-      ],
-      "notes": "Combined operational IT load across Manesar and Panchkula.",
-      "lastVerified": "2026-06-23"
-    },
     {
       "id": "aws-hyderabad-region",
       "name": "AWS Asia Pacific (Hyderabad) Region",
@@ -216,6 +172,52 @@ window.INDIA_DC_WATCH = {
       ],
       "notes": "Treat as a cloud-region row rather than a single named facility.",
       "lastVerified": "2026-06-23"
+    },
+    {
+      "id": "anant-raj-haryana-operational",
+      "name": "Anant Raj Cloud Haryana campuses",
+      "status": "operational",
+      "operator": "Anant Raj Cloud",
+      "constructionLead": "Anant Raj / internal development",
+      "hyperscaler": "Not disclosed",
+      "customerType": "Third-party / enterprise cloud and datacenter capacity",
+      "location": {
+        "city": "Manesar and Panchkula",
+        "state": "Haryana",
+        "cluster": "North India"
+      },
+      "value": {
+        "display": "Operational value not disclosed",
+        "usdBillion": null,
+        "basis": "Operational capacity announcement"
+      },
+      "capacity": {
+        "itLoadMw": null,
+        "powerDrawMw": 28,
+        "powerDrawNote": "The Machine Maker (7 Aug 2025) reports 28 MW of installed data-centre capacity, including cloud services, from a company event. The company has not said how much of that is IT load, so the tracker no longer counts it as IT load.",
+        "computeGw": null,
+        "computeNote": "Compute capacity not publicly disclosed"
+      },
+      "power": {
+        "source": "Grid supply; site-specific renewable procurement not disclosed",
+        "detail": "Power source should be refreshed from company filings or PPA disclosures.",
+        "confidence": "low",
+        "firmnessTier": "grid"
+      },
+      "timeline": "28 MW operational after Panchkula launch and Manesar scale-up in 2025",
+      "stageConfidence": "high",
+      "includeInHeadline": true,
+      "tags": [
+        "north-india-load",
+        "enterprise-cloud",
+        "firm-power"
+      ],
+      "sourceIds": [
+        "anant-panchkula-toi-2025",
+        "src-tmm-anantraj-2025"
+      ],
+      "notes": "The Times of India source covers the 7 MW Panchkula launch only; the 28 MW figure comes from The Machine Maker.",
+      "lastVerified": "2026-10-27"
     },
     {
       "id": "google-delhi-region",
@@ -354,6 +356,51 @@ window.INDIA_DC_WATCH = {
       ],
       "notes": "One of Microsoft's three operational India cloud clusters referenced in 2025 reporting.",
       "lastVerified": "2026-06-23"
+    },
+    {
+      "id": "azure-south-central-india",
+      "name": "Microsoft Azure India South Central Region (Hyderabad)",
+      "status": "operational",
+      "operator": "Microsoft Azure",
+      "constructionLead": "Not publicly disclosed",
+      "hyperscaler": "Microsoft",
+      "customerType": "Hyperscaler-owned cloud region",
+      "location": {
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "cluster": "Hyderabad"
+      },
+      "value": {
+        "display": "Region-level value not disclosed; part of Microsoft's USD 17.5B India plan for 2026-29",
+        "usdBillion": null,
+        "basis": "Counted under the Microsoft India expansion row"
+      },
+      "capacity": {
+        "itLoadMw": null,
+        "powerDrawMw": null,
+        "powerDrawNote": "Region capacity and facility draw not disclosed",
+        "computeGw": null,
+        "computeNote": "Compute capacity not disclosed"
+      },
+      "power": {
+        "source": "Not disclosed for the region",
+        "detail": "Microsoft says it has signed more than 1,000 MW of power purchase agreements in India, more than 630 MW of them operating; it does not tie them to this region.",
+        "confidence": "low",
+        "firmnessTier": "undisclosed"
+      },
+      "timeline": "Generally available 6 Aug 2026, with three availability zones",
+      "stageConfidence": "high",
+      "includeInHeadline": true,
+      "tags": [
+        "cloud-region",
+        "hyperscaler",
+        "telangana-load-growth"
+      ],
+      "sourceIds": [
+        "src-msft-hyd-region-2026"
+      ],
+      "notes": "Split out of the Microsoft India expansion row once Microsoft announced the region live.",
+      "lastVerified": "2026-10-27"
     },
     {
       "id": "azure-south-india",
@@ -741,7 +788,7 @@ window.INDIA_DC_WATCH = {
       "id": "hypervault-telangana",
       "name": "HyperVault AI Data Center, Telangana",
       "status": "announced",
-      "operator": "HyperVault (TCS 51% / TPG 49%)",
+      "operator": "HyperVault (a TCS subsidiary)",
       "constructionLead": "TCS",
       "hyperscaler": "Not disclosed",
       "customerType": "AI data-centre build-out",
@@ -751,24 +798,24 @@ window.INDIA_DC_WATCH = {
         "cluster": "Hyderabad"
       },
       "value": {
-        "display": "~INR 18,000 cr TCS+TPG JV; ~1 GW build-out",
-        "usdBillion": 2.1,
-        "basis": "TCS-TPG JV (Mar 2026)"
+        "display": "Up to INR 70,000 crore announced for a campus of up to 1 GW (a ceiling; not counted in the value total)",
+        "usdBillion": null,
+        "basis": "Upper figure announced in Sep 2026, as reported by Indian Infrastructure; left out of the value total because it is a ceiling"
       },
       "capacity": {
         "itLoadMw": null,
-        "powerDrawMw": 450,
-        "powerDrawNote": "450 MW ISTS GNA connectivity applied at CTUIL (Maheshwaram); part of a reported ~1 GW build-out.",
+        "powerDrawMw": 1550,
+        "powerDrawNote": "1,550 MW of ISTS GNA applied at CTUIL (Maheshwaram), in two applications; HyperVault describes a campus of up to 1 GW.",
         "computeGw": null,
         "computeNote": "Not disclosed"
       },
       "power": {
-        "source": "ISTS grid — CTUIL GNA application under process",
-        "detail": "450 MW bulk-consumer ISTS GNA application (CERC GNA Reg 17.1(iii)), app 2200003810, filed 24 Jun 2026.",
+        "source": "ISTS grid; two CTUIL GNA applications under process",
+        "detail": "Bulk-consumer ISTS GNA applications 2200003810 (450 MW, 24 Jun 2026) and 2200004386 (1,100 MW, 25 Sep 2026). SECI signed an MoU on 14 Sep 2026 to help with captive renewables, land and transmission for HyperVault's Telangana sites; it gives no MW.",
         "confidence": "medium",
         "firmnessTier": "undisclosed"
       },
-      "timeline": "TCS-TPG JV Mar 2026; CTUIL GNA application Jun 2026; ~1 GW build-out",
+      "timeline": "CTUIL GNA applications Jun and Sep 2026; up to 1 GW campus announced Sep 2026",
       "stageConfidence": "medium",
       "includeInHeadline": true,
       "tags": [
@@ -779,10 +826,14 @@ window.INDIA_DC_WATCH = {
         "ai-load"
       ],
       "sourceIds": [
-        "src-ctuil-gna-portal"
+        "src-ctuil-gna-portal",
+        "src-ctuil-live-2026-10-27",
+        "src-ii-hypervault-2026-09",
+        "src-rw-seci-hypervault-2026"
       ],
-      "notes": "Surfaced via the CTUIL GNA register — not previously in the press-tracked registry. Demonstrates the connectivity source catching projects press missed.",
-      "lastVerified": "2026-06-30"
+      "notes": "The tracker first found HyperVault through the CTUIL register in June 2026. Its ownership is taken from a press report (Indian Infrastructure), not a company filing.",
+      "lastVerified": "2026-10-27",
+      "parentCompany": "TCS, per Indian Infrastructure"
     },
     {
       "id": "lt-kanchipuram-tn",
@@ -862,7 +913,7 @@ window.INDIA_DC_WATCH = {
         "confidence": "low",
         "firmnessTier": "undisclosed"
       },
-      "timeline": "Announced January 2025; fourth India cluster reported as in the works",
+      "timeline": "USD 3B announced January 2025; USD 17.5B for 2026-29 announced 9 Dec 2025; India South Central (Hyderabad) region live 6 Aug 2026",
       "stageConfidence": "medium",
       "includeInHeadline": true,
       "tags": [
@@ -873,10 +924,11 @@ window.INDIA_DC_WATCH = {
       ],
       "sourceIds": [
         "microsoft-wsj-2025",
-        "src-msft-175b-2025"
+        "src-msft-175b-2025",
+        "src-msft-hyd-region-2026"
       ],
-      "notes": "New India South Central (Hyderabad) region announced — Microsoft's largest India hyperscale region (3 availability zones). Split into site rows once locations are filed.",
-      "lastVerified": "2026-06-24"
+      "notes": "The India South Central (Hyderabad) region went live on 6 Aug 2026 and now has its own row. Other sites and capacity are not disclosed.",
+      "lastVerified": "2026-10-27"
     },
     {
       "id": "tillman-ap-tdgap1",
@@ -1169,6 +1221,48 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-pib-dc-environment-2026-08"
       ]
+    },
+    {
+      "id": "signal-hypervault-1100mw-2026-09",
+      "date": "2026-09-25",
+      "type": "grid",
+      "headline": "HyperVault files a second CTUIL application, for 1,100 MW at Maheshwaram, taking its filed total to 1,550 MW.",
+      "whyItMatters": "It is the largest of the four data-centre applications added to CTUIL's register since 19 Sep. Telangana's counted filings are now 1,650 MW, about 8.9% of the state's FY2025-26 peak met of 18,548 MW.",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27",
+        "src-cea-psp-peak-2026-03"
+      ]
+    },
+    {
+      "id": "signal-ctuil-granted-sep2026",
+      "date": "2026-09-30",
+      "type": "grid",
+      "headline": "CTUIL's register of grants as on 30 Sep 2026 adds no data-centre grant.",
+      "whyItMatters": "Granted data-centre load stays at 1,457 MW: Lodha's 1,450 MW from the state utility and STT's 7 MW from CTUIL. All 4,323 MW of counted CTUIL applications are still under process.",
+      "sourceIds": [
+        "src-ctuil-reg17-sep26",
+        "src-ctuil-live-2026-10-27"
+      ]
+    },
+    {
+      "id": "signal-anvrit-panchkula-2026-10",
+      "date": "2026-10-16",
+      "type": "grid",
+      "headline": "Anvrit Data Centre applies to CTUIL for 50 MW at Panchkula, Haryana.",
+      "whyItMatters": "It is the first counted data-centre grid filing in Haryana. The register does not name the company's owner or a start date.",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ]
+    },
+    {
+      "id": "signal-aervynex-shikrapur-2026-10",
+      "date": "2026-10-21",
+      "type": "grid",
+      "headline": "Aervynex Data Centre applies to CTUIL for 100 MW at Pune New (Shikrapur).",
+      "whyItMatters": "It is the second 100 MW data-centre application near Pune since mid-September, after Vardhexa's at Talegaon on 16 Sep. Neither register entry names an owner or a start date.",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ]
     }
   ],
   "policyWatch": [
@@ -1282,14 +1376,14 @@ window.INDIA_DC_WATCH = {
       "jurisdiction": "India",
       "authority": "Central Electricity Authority (CEA), Ministry of Power",
       "title": "CEA Technical Standards for Connectivity to the Grid",
-      "instrument": "Central Electricity Authority (Technical Standards for Connectivity to the Grid) Regulations, 2007 — Amendment dated 15.10.2013 and Amendment dated 06.02.2019; 2023 applicability extended to RE developers",
+      "instrument": "Central Electricity Authority (Technical Standards for Connectivity to the Grid) Regulations, 2007, amended 15.10.2013 and 06.02.2019; 2023 applicability extended to RE developers; draft replacement Regulations, 2026, dated 31.07.2026 (status unconfirmed)",
       "reference": "Principal regs 2007 (21.02.2007); Amendment No. 12/X/STD(CONN)/GM/CEA/2018 dated 06.02.2019",
       "notifiedDate": "2007-02-21",
       "effectiveDate": "2019-02-06",
       "status": "active",
-      "dcRelevance": "Sets the technical conditions (voltage levels, protection, metering, fault-ride-through, power-quality) any new connectee — including a hyperscale datacenter taking grid connectivity at EHV — must meet to be energised. A DC's substation and switchyard design must comply with these standards before the licensee/CTU will connect it. The pairing of CEA technical standards (the…",
+      "dcRelevance": "Sets the technical conditions (voltage levels, protection, metering, fault-ride-through, power-quality) any new connectee, including a hyperscale datacenter taking grid connectivity at EHV, must meet to be energised. A DC's substation and switchyard design must comply with these standards before the licensee/CTU will connect it. A draft dated 31 Jul 2026 would replace the 2007 regulations. As Power Line reports it, the draft extends voltage and frequency ride-through rules to inverter-interfaced bulk consumers with connected loads of 50 MW and above; it does not name data centres. Comments closed on 2 Sep 2026. On 27 Oct 2026 the draft was not on CEA's draft-regulations page or among its notified regulations, so its status is unconfirmed.",
       "systemImplication": "Power-quality and harmonic-injection limits matter unusually much for DC loads (large rectifier/UPS fleets); compliance cost and lead time here is an under-appreciated friction on the pipeline.",
-      "monthlyCadence": "Recheck cea.nic.in 'Connectivity to the Grid' regulations category for any further amendment; watch for CEA planning/large-load guidance specific to datacenters.",
+      "monthlyCadence": "Check CEA's draft and notified regulations pages for the 2026 connectivity regulations. The old 'Connectivity to the Grid' category URL returned 404 on 27 Oct 2026.",
       "tags": [
         "CEA",
         "technical-standards",
@@ -1299,7 +1393,10 @@ window.INDIA_DC_WATCH = {
       ],
       "sourceIds": [
         "pol-cea-connectivity",
-        "pol-cea-connectivity-sec"
+        "pol-cea-connectivity-sec",
+        "src-cea-draft-regs-2026-10",
+        "src-powerline-cea-draft-2026",
+        "src-ksk-cea-draft-2026"
       ]
     },
     {
@@ -1391,7 +1488,7 @@ window.INDIA_DC_WATCH = {
       "notifiedDate": "2024-05-02",
       "effectiveDate": "2024-05-01",
       "status": "active",
-      "dcRelevance": "AP is the single largest tracked DC build (Vizag ~2.1 GW grid ask ≈ 15% of AP peak per the dashboard's gridContext), so APERC's GEOA terms are arguably the most load-bearing SERC instrument in the whole watch. Key DC-relevant terms: banking charge 8% of energy stored, banking capped at 30% of monthly consumption, unused energy reimbursed at 75% of latest SECI tender rate,…",
+      "dcRelevance": "Three Vizag data-centre park companies have applied to CTUIL for 2,323 MW, about 15.5% of Andhra Pradesh's peak met of 15,014 MW in April to August 2026 (CEA). That is the largest counted data-centre grid ask in any state, so APERC's open-access terms bear directly on how the Vizag cluster can buy renewable power. Key DC-relevant terms: banking charge 8% of energy stored, banking capped at 30% of monthly consumption, unused energy reimbursed at 75% of latest SECI tender rate.",
       "systemImplication": "The 30% banking cap + 75%-SECI clawback materially weakens the firmness of RE-banked supply for AP's giant DC asks — a direct input to the firmness-tier ladder for the Vizag cluster.",
       "monthlyCadence": "Track aperc.gov.in orders for amendments to banking %/cap and additional-surcharge revisions; cross-check the AP Integrated Clean Energy Policy 2024 (G.O.Ms.No.37 dated 30.10.2024) which interacts with these terms.",
       "tags": [
@@ -1403,7 +1500,9 @@ window.INDIA_DC_WATCH = {
       ],
       "sourceIds": [
         "pol-aperc-geoa",
-        "pol-aperc-geoa-sec"
+        "pol-aperc-geoa-sec",
+        "src-ctuil-live-2026-10-27",
+        "src-cea-psp-peak-2026-08"
       ]
     },
     {
@@ -1677,9 +1776,9 @@ window.INDIA_DC_WATCH = {
       "notifiedDate": "2021-04-01",
       "effectiveDate": "2021-04-01",
       "status": "watch",
-      "dcRelevance": "Chennai is a major landing point for subsea cables and a fast-growing DC market (L&T, others investing). Policy gives 100% subsidy on electricity tax (grid OR captive) for 5 years from commercial operation, industrial-tariff power, and MSME service reimbursements. Note: the policy window expires 31.03.2026 — a successor/renewal is the key thing to watch.",
-      "systemImplication": "TN couples DC growth to cable-landing geography; the 2026 expiry creates a policy cliff — whether TN renews/upgrades signals how aggressively southern states compete for AI DC load.",
-      "monthlyCadence": "Watch it.tn.gov.in for a successor Data Centre Policy (post-31.03.2026) and any AI/GCC policy with DC power provisions.",
+      "dcRelevance": "Chennai is a major landing point for subsea cables and a fast-growing DC market (L&T, others investing). Policy gives 100% subsidy on electricity tax (grid OR captive) for 5 years from commercial operation, industrial-tariff power, and MSME service reimbursements. The policy covered data centres set up from 1 Apr 2021 to 31 Mar 2026, so it no longer covers new projects. A search on 27 Oct 2026 found no successor policy.",
+      "systemImplication": "The policy lapsed for new projects on 31 Mar 2026. Whether Tamil Nadu issues a successor will show how it competes with other southern states for data-centre load.",
+      "monthlyCadence": "Watch it.tn.gov.in for a successor Data Centre Policy and for any AI or GCC policy with data-centre power terms. The ELCOT PDF link returned 404 and it.tn.gov.in returned 403 to scripts on 27 Oct 2026.",
       "tags": [
         "tamil-nadu",
         "data-centre-policy-2021",
@@ -3087,6 +3186,168 @@ window.INDIA_DC_WATCH = {
       "date": "2026-06-25",
       "type": "government planning announcement",
       "tier": "primary"
+    },
+    {
+      "id": "src-ctuil-live-2026-10-27",
+      "label": "CTUIL live GNA register, Reg. 20 tab, full pull of 240 rows, 27 Oct 2026",
+      "url": "https://www.ctuil.in/nswsapi/gna",
+      "publisher": "Central Transmission Utility of India (CTUIL)",
+      "date": "2026-10-27",
+      "type": "live grid connectivity register",
+      "tier": "primary"
+    },
+    {
+      "id": "src-ctuil-reg17-sep26",
+      "label": "CTUIL: GNA granted to entities other than STU (Reg. 17.1), as on 30.09.2026",
+      "url": "https://www.ctuil.in/uploads/assets/179300956578Approved_GNA_%20Reg%2017%20_sep26.pdf",
+      "publisher": "Central Transmission Utility of India (CTUIL)",
+      "date": "2026-09-30",
+      "type": "approved demand-side GNA register",
+      "tier": "primary"
+    },
+    {
+      "id": "src-ctuil-bidding-calendar-jun26",
+      "label": "CTUIL Bidding Calendar, June 2026 (Annex C)",
+      "url": "https://www.ctuil.in/uploads/assets/178471268829Annex%20C%20_Bidding%20Calendar%20_June%202026.pdf",
+      "publisher": "Central Transmission Utility of India (CTUIL)",
+      "date": "2026-06-30",
+      "type": "ISTS TBCB bidding calendar",
+      "tier": "primary"
+    },
+    {
+      "id": "src-tnd-vizag-spv-2026",
+      "label": "RECPDCL formally transfers Vizag green hydrogen scheme SPV to Adani Energy",
+      "url": "https://www.tndindia.com/recpcdl-formally-transfers-vizag-green-hydrogen-scheme-spv-to-adani-energy/amp/",
+      "publisher": "T&D India",
+      "date": "2026-08-17",
+      "type": "transmission",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-ael-support-properties-2022",
+      "label": "Adani Enterprises Reg. 30 disclosure: AdaniConnex MoU to acquire 100% of Support Properties Pvt Ltd from Adani Power",
+      "url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/069bcd60-c94e-4d1f-b679-99aed4e1cd97.pdf",
+      "publisher": "Adani Enterprises Ltd (BSE/NSE filing)",
+      "date": "2022-11-10",
+      "type": "company exchange filing",
+      "tier": "official"
+    },
+    {
+      "id": "src-vi-madhuvanti-2026",
+      "label": "AdaniConneX acquires Madhuvanti Build Estate for Rs 765.25 cr",
+      "url": "https://news.ventureintelligence.com/ma/adaniconnex-acquires-madhuvanti-build-estate-for-rs.765.25-cr",
+      "publisher": "Venture Intelligence",
+      "date": "2026-06-23",
+      "type": "deal report",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-cw-lodha-2026",
+      "label": "Maharashtra approves transmission for Rs 1.3 tn data centre park",
+      "url": "https://www.constructionworld.in/amp/policy-updates-and-economic-news/maharashtra-approves-transmission-for-rs-1.3-tn-data-centre-park/92929",
+      "publisher": "Construction World",
+      "date": "2026-06-10",
+      "type": "project / energy",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-cea-psp-peak-2026-08",
+      "label": "CEA Peak Power Supply Position Report (Revised), August 2026 and April to August 2026",
+      "url": "https://cea.nic.in/api/dashboardReports/download-pdf/en/1ef9831f-7906-4a6d-aa31-cf3b09734344",
+      "publisher": "Central Electricity Authority",
+      "date": "2026-08-31",
+      "type": "state and national peak demand",
+      "tier": "primary"
+    },
+    {
+      "id": "src-cea-psp-peak-2026-03",
+      "label": "CEA Peak Power Supply Position Report (Revised), March 2026 and April 2025 to March 2026",
+      "url": "https://cea.nic.in/api/dashboardReports/download-pdf/en/8f09fc11-8dad-4200-9eda-472bd5ad1f70",
+      "publisher": "Central Electricity Authority",
+      "date": "2026-03-31",
+      "type": "state and national peak demand",
+      "tier": "primary"
+    },
+    {
+      "id": "src-cea-psp-peak-2026-05",
+      "label": "CEA Peak Power Supply Position Report, May 2026",
+      "url": "https://cea.nic.in/api/dashboardReports/download-pdf/en/7b8cb243-a35d-49ce-979c-4a76264e0ab2",
+      "publisher": "Central Electricity Authority",
+      "date": "2026-05-31",
+      "type": "state and national peak demand",
+      "tier": "primary"
+    },
+    {
+      "id": "src-cea-draft-regs-2026-10",
+      "label": "CEA draft regulations page, read 27 Oct 2026 (2026 connectivity draft not listed)",
+      "url": "https://cea.nic.in/regulations/draft-regulations?lang=en",
+      "publisher": "Central Electricity Authority",
+      "date": "2026-10-27",
+      "type": "regulator listing",
+      "tier": "primary"
+    },
+    {
+      "id": "src-ksk-cea-draft-2026",
+      "label": "CEA releases draft Technical Standards for Connectivity to the Grid Regulations, 2026",
+      "url": "https://ksandk.com/newsletter/cea-draft-grid-connectivity-standards-2026/",
+      "publisher": "King Stubb & Kasiva",
+      "date": "2026-09-08",
+      "type": "law-firm newsletter",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-powerline-cea-draft-2026",
+      "label": "Getting Future Ready: CEA proposes new technical standards for grid connectivity",
+      "url": "https://powerline.net.in/2026/09/04/getting-future-ready-cea-proposes-new-technical-standards-for-grid-connectivity/",
+      "publisher": "Power Line",
+      "date": "2026-09-04",
+      "type": "policy",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-msft-hyd-region-2026",
+      "label": "Microsoft's newest India datacenter region goes live",
+      "url": "https://news.microsoft.com/source/asia/features/microsofts-newest-india-datacenter-region-goes-live-to-power-the-countrys-ai-economy-and-enable-frontier-firms/",
+      "publisher": "Microsoft (Source Asia)",
+      "date": "2026-08-06",
+      "type": "hyperscaler",
+      "tier": "official"
+    },
+    {
+      "id": "src-ii-hypervault-2026-09",
+      "label": "HyperVault plans to establish AI data centre campus in Telangana",
+      "url": "https://indianinfrastructure.com/2026/09/07/hypervault-plans-to-establish-ai-data-centre-campus-in-telangana/",
+      "publisher": "Indian Infrastructure",
+      "date": "2026-09-07",
+      "type": "project",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-rw-seci-hypervault-2026",
+      "label": "SECI signs MoU to supply clean energy to HyperVault's Telangana data centres",
+      "url": "https://renewablewatch.in/2026/09/14/seci-signs-mou-to-supply-clean-energy-to-hypervaults-telangana-data-centres/",
+      "publisher": "Renewable Watch",
+      "date": "2026-09-14",
+      "type": "clean power",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-digit-ril-agm-2026",
+      "label": "Reliance AGM 2026: from AI data centers to Jio AI apps, top announcements",
+      "url": "https://www.digit.in/news/general/reliance-agm-2026-from-ai-data-centers-to-jio-ai-apps-top-announcements.html/amp/",
+      "publisher": "Digit",
+      "date": "2026-06-19",
+      "type": "project",
+      "tier": "secondary"
+    },
+    {
+      "id": "src-tmm-anantraj-2025",
+      "label": "Anant Raj boosts data center capacity, sets Rs 1,200 cr revenue target by FY27",
+      "url": "https://themachinemaker.com/news/anant-raj-boosts-data-center-capacity-sets-%e2%82%b91200-cr-revenue-target-by-fy27/",
+      "publisher": "The Machine Maker",
+      "date": "2025-08-07",
+      "type": "project",
+      "tier": "secondary"
     }
   ],
   "firmnessLadder": [
@@ -3129,10 +3390,11 @@ window.INDIA_DC_WATCH = {
   ],
   "gridContext": {
     "nationalPeakMW": 270820,
-    "nationalPeakDate": "2026-05-21",
-    "nationalPeakNote": "All-India peak demand met on 21 May 2026 (4th straight record day; prior April 2026 record ~256 GW). RE share ~34% at peak.",
+    "nationalPeakDate": "May 2026",
+    "nationalPeakNote": "All-India peak demand met, from CEA's peak report for May 2026; CEA's April to August 2026 report gives the same figure. The reports do not give the day.",
     "nationalPeakSourceIds": [
-      "src-natl-peak-270-2026"
+      "src-cea-psp-peak-2026-05",
+      "src-cea-psp-peak-2026-08"
     ],
     "nationalPeakProjection": {
       "fy27GW": 289,
@@ -3144,62 +3406,75 @@ window.INDIA_DC_WATCH = {
     },
     "statePeakMW": {
       "Andhra Pradesh": {
-        "peakMW": 13712,
-        "fy": "FY2024-25",
-        "projectedMW": 15223,
-        "note": "Day-peak record 15,016 MW, 21 May 2026.",
+        "peakMW": 15014,
+        "fy": "April to August 2026 peak met (CEA)",
+        "note": "CEA's FY2025-26 peak met was 14,005 MW.",
         "sourceIds": [
-          "ap-state-peak"
+          "src-cea-psp-peak-2026-08",
+          "src-cea-psp-peak-2026-03"
         ]
       },
       "Maharashtra": {
-        "peakMW": 32000,
-        "fy": "Q4 FY26 record",
+        "peakMW": 32317,
+        "fy": "April to August 2026 peak met (CEA)",
+        "note": "CEA's FY2025-26 peak met was 31,128 MW.",
         "sourceIds": [
-          "state-peaks-crea"
+          "src-cea-psp-peak-2026-08",
+          "src-cea-psp-peak-2026-03"
         ]
       },
       "Telangana": {
-        "peakMW": 18139,
-        "fy": "record met",
+        "peakMW": 18548,
+        "fy": "FY2025-26 peak met (CEA)",
+        "note": "CEA's April to August 2026 peak met was 17,288 MW.",
         "sourceIds": [
-          "ts-state-peak"
+          "src-cea-psp-peak-2026-03",
+          "src-cea-psp-peak-2026-08"
         ]
       },
       "Tamil Nadu": {
-        "peakMW": 20974,
-        "fy": "18 Apr 2026",
+        "peakMW": 21402,
+        "fy": "April to August 2026 peak met (CEA)",
+        "note": "CEA's FY2025-26 peak met was 19,932 MW.",
         "sourceIds": [
-          "tn-state-peak"
+          "src-cea-psp-peak-2026-08",
+          "src-cea-psp-peak-2026-03"
         ]
       },
       "Gujarat": {
-        "peakMW": 26457,
-        "fy": "Jun 2025 all-time high",
+        "peakMW": 28833,
+        "fy": "April to August 2026 peak met (CEA)",
+        "note": "CEA's FY2025-26 peak met was 26,457 MW.",
         "sourceIds": [
-          "src-gujarat-peak-2025"
+          "src-cea-psp-peak-2026-08",
+          "src-cea-psp-peak-2026-03"
         ]
       },
       "Haryana": {
-        "peakMW": 14662,
-        "fy": "Jul 2024 record",
+        "peakMW": 16170,
+        "fy": "April to August 2026 peak met (CEA)",
+        "note": "CEA's FY2025-26 peak met was 14,084 MW.",
         "sourceIds": [
-          "hr-state-peak"
+          "src-cea-psp-peak-2026-08",
+          "src-cea-psp-peak-2026-03"
         ]
       },
       "Karnataka": {
         "peakMW": 18655,
-        "fy": "FY26 record",
+        "fy": "FY2025-26 peak met (CEA)",
+        "note": "CEA's April to August 2026 peak met was 18,478 MW.",
         "sourceIds": [
-          "ka-state-peak"
+          "src-cea-psp-peak-2026-03",
+          "src-cea-psp-peak-2026-08"
         ]
       },
-      "Delhi NCR": {
-        "peakMW": 14662,
-        "fy": "Haryana proxy",
-        "note": "NCR has no single grid; Haryana used as the host-state proxy.",
+      "Delhi": {
+        "peakMW": 8480,
+        "fy": "April to August 2026 peak met (CEA)",
+        "note": "CEA's FY2025-26 peak met was 8,442 MW.",
         "sourceIds": [
-          "hr-state-peak"
+          "src-cea-psp-peak-2026-08",
+          "src-cea-psp-peak-2026-03"
         ]
       }
     },
@@ -3308,7 +3583,9 @@ window.INDIA_DC_WATCH = {
       "applicationRef": "MERC Case No. 88 of 2026 (DDF approval, 1 Jun 2026)",
       "linkedProjectId": "lodha-palava-dc",
       "sourceIds": [
-        "src-merc-lodha-2026"
+        "src-merc-lodha-2026",
+        "src-lodha-saur-2026",
+        "src-cw-lodha-2026"
       ],
       "confidence": "high",
       "notes": "~1,450 MW connectivity granted by Maharashtra STU for the Palava DC park.",
@@ -3327,28 +3604,31 @@ window.INDIA_DC_WATCH = {
       "operator": "Macrotech Developers (Lodha)",
       "useType": "datacenter",
       "quantumMW": 1500,
-      "powerFlowStart": "2028",
+      "powerFlowStart": null,
       "tier": "intra-state",
       "utility": "MSETCL / Maharashtra STU",
       "substation": "Ambernath 400/220 kV GIS",
       "state": "Maharashtra",
-      "status": "applied",
-      "applicationRef": "Further capacity under consideration (trade press, Jun 2026)",
+      "status": "under_consideration",
+      "applicationRef": "No application record found; described as under consideration in submissions in MERC Case 88 of 2026",
       "linkedProjectId": "lodha-palava-dc",
       "sourceIds": [
-        "src-merc-lodha-2026"
+        "src-merc-lodha-2026",
+        "src-lodha-saur-2026",
+        "src-cw-lodha-2026"
       ],
       "confidence": "medium",
-      "notes": "~1,500 MW further capacity under consideration, toward ~2,950 MW by 2028.",
-      "lastVerified": "2026-07-09",
+      "notes": "Submissions in MERC Case 88 of 2026, as reported in June 2026, say an additional 1,500 MW is under consideration; the report does not say who is considering it. No application record was found on the registers the tracker could read by 27 Oct 2026.",
+      "lastVerified": "2026-10-27",
       "parentCompany": "Macrotech Developers / Lodha Group",
       "drawalState": "Maharashtra",
-      "transmissionStatus": "Additional about 1,500 MW remains under consideration; no new MERC/MSETCL approval located in this pass.",
+      "transmissionStatus": "Under consideration, as reported from MERC Case 88 submissions. Not counted in any total.",
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "not approved",
       "approvedPowerFlowEnd": "not approved",
-      "evidenceCaveat": "Reported by the trade press in June 2026 as further capacity under consideration. We have not yet found a utility or regulator record for this 1,500 MW, and are checking."
+      "evidenceCaveat": "",
+      "dateConfidence": "not_published"
     },
     {
       "id": "conn-vizag-mega",
@@ -3370,19 +3650,22 @@ window.INDIA_DC_WATCH = {
         "src-ctuil-live-2026-09-19",
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
-        "src-cmets-sr-38-pendurthi"
+        "src-cmets-sr-38-pendurthi",
+        "src-ctuil-live-2026-10-27",
+        "src-ctuil-bidding-calendar-jun26",
+        "src-tnd-vizag-spv-2026"
       ],
       "confidence": "high",
-      "notes": "ISTS bulk-consumer GNA (Reg 17.1(iii)). Power-flow year estimated from the hub's ~2028 target; exact GNA-effective date TBD.",
-      "lastVerified": "2026-09-19",
+      "notes": "ISTS bulk-consumer GNA (Reg 17.1(iii)), 11 applications, all under process on 27 Oct 2026. The 2028 power-flow year is an estimate from the hub's target; the transmission package it depends on is due about Feb 2029.",
+      "lastVerified": "2026-10-27",
       "gridDelivery": {
         "packageId": "asset-pendurthi-vizag-gh-tbcb",
-        "stationReadiness": "Pendurthi/Vizag delivery package in TBCB bidding",
+        "stationReadiness": "Pendurthi/Vizag package awarded; SPV transferred 14 Aug 2026",
         "implementationMode": "TBCB",
-        "biddingAgency": "BPC not explicit in row (RECPDCL section)",
-        "biddingAgencyNotes": "Vizag/Pendurthi row has a blank Bidding Agency cell in CTUIL's 31.05.2026 calendar; RECPDCL is only a section-level inference until confirmed by RFP/SPV notice.",
-        "biddingStatus": "RFP issued 03.02.2026; RFP bid submission scheduled 15.06.2026",
-        "plannedSpvTransfer": "2026-07-20",
+        "biddingAgency": "RECPDCL",
+        "biddingAgencyNotes": "CTUIL's June 2026 bidding calendar names RECPDCL as bidding agency in the Vizag/Pendurthi row.",
+        "biddingStatus": "SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
+        "plannedSpvTransfer": "",
         "serviceNodes": [
           "Gajuwaka / Gazuwaka existing interconnection",
           "Pendurthi (Vizag) 765/400 kV GIS proposed"
@@ -3393,12 +3676,14 @@ window.INDIA_DC_WATCH = {
           "LILO of Kalpakka - Maradam 400 kV D/c line at Pendurthi"
         ],
         "sourceIds": [
-          "src-ctuil-bidding-calendar-may26"
+          "src-ctuil-bidding-calendar-may26",
+          "src-ctuil-bidding-calendar-jun26",
+          "src-tnd-vizag-spv-2026"
         ]
       },
       "parentCompany": "AdaniConneX / Adani Infrastructure SPV; linked to Google-Adani Vizag AI hub",
       "drawalState": "Andhra Pradesh",
-      "transmissionStatus": "Pendurthi/Vizag GH-GA Phase-I transmission package remains the delivery dependency: TBCB; RFP issued 03.02.2026; bid submission scheduled 15.06.2026; SPV transfer target 20.07.2026 in the latest CTUIL bidding calendar located.",
+      "transmissionStatus": "The Pendurthi/Vizag GH-GA Phase-I transmission package is the delivery dependency. SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "not approved",
@@ -3424,19 +3709,22 @@ window.INDIA_DC_WATCH = {
         "src-ctuil-live-2026-09-19",
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
-        "src-cmets-sr-38-pendurthi"
+        "src-cmets-sr-38-pendurthi",
+        "src-ctuil-live-2026-10-27",
+        "src-ctuil-bidding-calendar-jun26",
+        "src-tnd-vizag-spv-2026"
       ],
       "confidence": "high",
-      "notes": "ISTS bulk-consumer GNA. Power-flow year estimated; exact GNA-effective date TBD.",
-      "lastVerified": "2026-09-19",
+      "notes": "ISTS bulk-consumer GNA, 8 applications, all under process on 27 Oct 2026. The 2028 power-flow year is an estimate; the transmission package it depends on is due about Feb 2029.",
+      "lastVerified": "2026-10-27",
       "gridDelivery": {
         "packageId": "asset-pendurthi-vizag-gh-tbcb",
-        "stationReadiness": "Pendurthi/Vizag delivery package in TBCB bidding",
+        "stationReadiness": "Pendurthi/Vizag package awarded; SPV transferred 14 Aug 2026",
         "implementationMode": "TBCB",
-        "biddingAgency": "BPC not explicit in row (RECPDCL section)",
-        "biddingAgencyNotes": "Vizag/Pendurthi row has a blank Bidding Agency cell in CTUIL's 31.05.2026 calendar; RECPDCL is only a section-level inference until confirmed by RFP/SPV notice.",
-        "biddingStatus": "RFP issued 03.02.2026; RFP bid submission scheduled 15.06.2026",
-        "plannedSpvTransfer": "2026-07-20",
+        "biddingAgency": "RECPDCL",
+        "biddingAgencyNotes": "CTUIL's June 2026 bidding calendar names RECPDCL as bidding agency in the Vizag/Pendurthi row.",
+        "biddingStatus": "SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
+        "plannedSpvTransfer": "",
         "serviceNodes": [
           "Gajuwaka / Gazuwaka existing interconnection",
           "Pendurthi (Vizag) 765/400 kV GIS proposed"
@@ -3447,12 +3735,14 @@ window.INDIA_DC_WATCH = {
           "LILO of Kalpakka - Maradam 400 kV D/c line at Pendurthi"
         ],
         "sourceIds": [
-          "src-ctuil-bidding-calendar-may26"
+          "src-ctuil-bidding-calendar-may26",
+          "src-ctuil-bidding-calendar-jun26",
+          "src-tnd-vizag-spv-2026"
         ]
       },
       "parentCompany": "AdaniConneX / Adani Infrastructure SPV; linked to Google-Adani Vizag AI hub",
       "drawalState": "Andhra Pradesh",
-      "transmissionStatus": "Pendurthi/Vizag GH-GA Phase-I transmission package remains the delivery dependency: TBCB; RFP issued 03.02.2026; bid submission scheduled 15.06.2026; SPV transfer target 20.07.2026 in the latest CTUIL bidding calendar located.",
+      "transmissionStatus": "The Pendurthi/Vizag GH-GA Phase-I transmission package is the delivery dependency. SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "not approved",
@@ -3478,19 +3768,22 @@ window.INDIA_DC_WATCH = {
         "src-ctuil-live-2026-09-19",
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
-        "src-cmets-sr-38-pendurthi"
+        "src-cmets-sr-38-pendurthi",
+        "src-ctuil-live-2026-10-27",
+        "src-ctuil-bidding-calendar-jun26",
+        "src-tnd-vizag-spv-2026"
       ],
       "confidence": "high",
-      "notes": "ISTS bulk-consumer GNA. Corroborated by AP environmental clearance for Rambilli. Power-flow year estimated.",
-      "lastVerified": "2026-09-19",
+      "notes": "ISTS bulk-consumer GNA, 8 applications, all under process on 27 Oct 2026. Corroborated by AP environmental clearance for Rambilli. The 2028 power-flow year is an estimate; the transmission package it depends on is due about Feb 2029.",
+      "lastVerified": "2026-10-27",
       "gridDelivery": {
         "packageId": "asset-pendurthi-vizag-gh-tbcb",
-        "stationReadiness": "Pendurthi/Vizag delivery package in TBCB bidding",
+        "stationReadiness": "Pendurthi/Vizag package awarded; SPV transferred 14 Aug 2026",
         "implementationMode": "TBCB",
-        "biddingAgency": "BPC not explicit in row (RECPDCL section)",
-        "biddingAgencyNotes": "Vizag/Pendurthi row has a blank Bidding Agency cell in CTUIL's 31.05.2026 calendar; RECPDCL is only a section-level inference until confirmed by RFP/SPV notice.",
-        "biddingStatus": "RFP issued 03.02.2026; RFP bid submission scheduled 15.06.2026",
-        "plannedSpvTransfer": "2026-07-20",
+        "biddingAgency": "RECPDCL",
+        "biddingAgencyNotes": "CTUIL's June 2026 bidding calendar names RECPDCL as bidding agency in the Vizag/Pendurthi row.",
+        "biddingStatus": "SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
+        "plannedSpvTransfer": "",
         "serviceNodes": [
           "Gajuwaka / Gazuwaka existing interconnection",
           "Pendurthi (Vizag) 765/400 kV GIS proposed"
@@ -3501,12 +3794,14 @@ window.INDIA_DC_WATCH = {
           "LILO of Kalpakka - Maradam 400 kV D/c line at Pendurthi"
         ],
         "sourceIds": [
-          "src-ctuil-bidding-calendar-may26"
+          "src-ctuil-bidding-calendar-may26",
+          "src-ctuil-bidding-calendar-jun26",
+          "src-tnd-vizag-spv-2026"
         ]
       },
       "parentCompany": "AdaniConneX / Adani Infrastructure SPV; linked to Google-Adani Vizag AI hub",
       "drawalState": "Andhra Pradesh",
-      "transmissionStatus": "Pendurthi/Vizag GH-GA Phase-I transmission package remains the delivery dependency: TBCB; RFP issued 03.02.2026; bid submission scheduled 15.06.2026; SPV transfer target 20.07.2026 in the latest CTUIL bidding calendar located.",
+      "transmissionStatus": "The Pendurthi/Vizag GH-GA Phase-I transmission package is the delivery dependency. SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
       "approvedPowerFlowStart": "not approved",
@@ -3515,7 +3810,7 @@ window.INDIA_DC_WATCH = {
     {
       "id": "conn-hypervault",
       "applicant": "HyperVault AI Data Center Ltd",
-      "operator": "HyperVault (TCS / TPG)",
+      "operator": "HyperVault (a TCS subsidiary)",
       "useType": "datacenter",
       "quantumMW": 450,
       "powerFlowStart": "2028",
@@ -3529,11 +3824,13 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
-        "src-ctuil-live-2026-09-19"
+        "src-ctuil-live-2026-09-19",
+        "src-ctuil-live-2026-10-27",
+        "src-ii-hypervault-2026-09"
       ],
       "confidence": "high",
-      "notes": "ISTS bulk-consumer GNA. Power-flow year estimated; exact GNA-effective date TBD.",
-      "lastVerified": "2026-09-19",
+      "notes": "ISTS bulk-consumer GNA, still under process on 27 Oct 2026. HyperVault filed a second application for 1,100 MW on 25 Sep 2026. Power-flow year estimated; the register gives no date.",
+      "lastVerified": "2026-10-27",
       "gridDelivery": {
         "packageId": "asset-maheshwaram-service-watch",
         "stationReadiness": "Maheshwaram service route under watch",
@@ -3547,7 +3844,7 @@ window.INDIA_DC_WATCH = {
           "src-ctuil-gna-portal"
         ]
       },
-      "parentCompany": "TCS 51% / TPG 49%",
+      "parentCompany": "TCS, per Indian Infrastructure",
       "drawalState": "Telangana",
       "transmissionStatus": "Maheshwaram service route remains under watch; no public CTUIL TBCB package located for this exact load in the latest calendar checked.",
       "requestedPowerFlowStart": "not published",
@@ -3572,11 +3869,12 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
-        "src-ctuil-live-2026-09-19"
+        "src-ctuil-live-2026-09-19",
+        "src-ctuil-live-2026-10-27"
       ],
       "confidence": "high",
       "notes": "The live CTUIL register now marks this 50 MW application CLOSED. It is retained as historical evidence but excluded from active queue totals.",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-10-27",
       "gridDelivery": {
         "packageId": "asset-maheshwaram-service-watch",
         "stationReadiness": "Maheshwaram service route under watch",
@@ -3604,32 +3902,34 @@ window.INDIA_DC_WATCH = {
       "operator": "ST Telemedia Global Data Centres",
       "useType": "datacenter",
       "quantumMW": 7,
-      "powerFlowStart": "2026-07-10",
+      "powerFlowStart": "2026-07-01",
       "tier": "intra-state",
       "utility": "CTUIL GNA-RE (drawee entity connected to intra-state network, NR)",
       "substation": "NA / not specified in approved register",
       "state": "Delhi",
       "status": "granted",
-      "applicationRef": "CTUIL GNA app 2200003433 — GRANTED in May 2026 Reg-17 approved register: GNA-RE, 7 MW, expected effective 10-07-2026",
+      "applicationRef": "CTUIL GNA app 2200003433: granted as GNA-RE, 7 MW; the Aug and Sep 2026 Reg. 17 registers give a start date of 1 Jul 2026 and an end date of 31 Mar 2035",
       "linkedProjectId": "",
       "sourceIds": [
         "src-ctuil-gna-portal",
         "src-ctuil-live-2026-07-09",
         "src-ctuil-reg17-may26",
         "src-ctuil-live-2026-09-19",
-        "src-ctuil-reg17-aug26"
+        "src-ctuil-reg17-aug26",
+        "src-ctuil-reg17-sep26",
+        "src-ctuil-live-2026-10-27"
       ],
       "confidence": "high",
-      "notes": "First DC grant in CTUIL's Reg-17 register. GNA-RE = renewable network access; register-level evidence of green drawal. Live portal still shows Under Process, so the approved register is the source of record.",
-      "lastVerified": "2026-09-19",
+      "notes": "First data-centre grant in CTUIL's Reg. 17 register. GNA-RE is network access for renewable power. The May 2026 register gave an expected date of 10 Jul 2026; the Aug and Sep registers show 7 MW effective from 1 Jul 2026. The live register marks the application Approved.",
+      "lastVerified": "2026-10-27",
       "dateConfidence": "declared",
       "drawalState": "Delhi",
       "parentCompany": "ST Telemedia Global Data Centres / ST Telemedia",
       "transmissionStatus": "Granted as GNA-RE for a drawee entity connected to the intra-state network; no dedicated transmission asset tracked.",
       "requestedPowerFlowStart": "not published",
       "requestedPowerFlowEnd": "not published",
-      "approvedPowerFlowStart": "2026-07-10",
-      "approvedPowerFlowEnd": "not published"
+      "approvedPowerFlowStart": "2026-07-01",
+      "approvedPowerFlowEnd": "2035-03-31"
     },
     {
       "id": "conn-avrenta-maheshwaram",
@@ -3647,11 +3947,12 @@ window.INDIA_DC_WATCH = {
       "applicationRef": "CTUIL GNA app 2200004325, 18 Sep 2026 (Under Process)",
       "linkedProjectId": "",
       "sourceIds": [
-        "src-ctuil-live-2026-09-19"
+        "src-ctuil-live-2026-09-19",
+        "src-ctuil-live-2026-10-27"
       ],
       "confidence": "high",
       "notes": "Live CTUIL register record; the applicant's ultimate parent and exact power-flow dates are not published in the register.",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-10-27",
       "parentCompany": "Not established from the public register",
       "drawalState": "Telangana",
       "transmissionStatus": "Under Process",
@@ -3676,11 +3977,142 @@ window.INDIA_DC_WATCH = {
       "applicationRef": "CTUIL GNA app 2200004328, 16 Sep 2026 (Under Process)",
       "linkedProjectId": "",
       "sourceIds": [
-        "src-ctuil-live-2026-09-19"
+        "src-ctuil-live-2026-09-19",
+        "src-ctuil-live-2026-10-27"
       ],
       "confidence": "high",
       "notes": "Live CTUIL register record; the applicant's ultimate parent and exact power-flow dates are not published in the register.",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-10-27",
+      "parentCompany": "Not established from the public register",
+      "drawalState": "Maharashtra",
+      "transmissionStatus": "Under Process",
+      "requestedPowerFlowStart": "not published",
+      "requestedPowerFlowEnd": "not published",
+      "approvedPowerFlowStart": "not approved",
+      "approvedPowerFlowEnd": "not approved"
+    },
+    {
+      "id": "conn-anvora-bassi",
+      "applicant": "ANVORA CLOUD SERVICES PRIVATE LIMITED",
+      "operator": "Anvora Cloud Services Private Limited",
+      "useType": "datacenter",
+      "quantumMW": 100,
+      "powerFlowStart": null,
+      "dateConfidence": "not_published",
+      "tier": "ISTS",
+      "utility": "CTUIL",
+      "substation": "BASSI",
+      "state": "Rajasthan (unconfirmed)",
+      "status": "applied",
+      "applicationRef": "CTUIL GNA app 2200004329, 16 Sep 2026 (Under Process)",
+      "linkedProjectId": "",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ],
+      "confidence": "high",
+      "notes": "The register names the connection point as Bassi but gives no state. The 400 kV Bassi substation near Jaipur, Rajasthan, is the likely point; this is unconfirmed. The register does not state the use; the tracker counts the filing as a data-centre load on the company's name. It was filed before the 19 Sep 2026 sweep, which searched applicant names for \"DATA\" and so missed it.",
+      "lastVerified": "2026-10-27",
+      "parentCompany": "Not established from the public register",
+      "drawalState": "Not stated in the register",
+      "transmissionStatus": "Under Process",
+      "requestedPowerFlowStart": "not published",
+      "requestedPowerFlowEnd": "not published",
+      "approvedPowerFlowStart": "not approved",
+      "approvedPowerFlowEnd": "not approved"
+    },
+    {
+      "id": "conn-hypervault-maheshwaram-2",
+      "applicant": "HYPERVAULT AI DATA CENTER LIMITED",
+      "operator": "HyperVault (a TCS subsidiary)",
+      "useType": "datacenter",
+      "quantumMW": 1100,
+      "powerFlowStart": null,
+      "dateConfidence": "not_published",
+      "tier": "ISTS",
+      "utility": "CTUIL",
+      "substation": "Maheshwaram Sub station",
+      "state": "Telangana",
+      "status": "applied",
+      "applicationRef": "CTUIL GNA app 2200004386, 25 Sep 2026 (Under Process)",
+      "linkedProjectId": "hypervault-telangana",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27",
+        "src-ii-hypervault-2026-09"
+      ],
+      "confidence": "high",
+      "notes": "HyperVault's second CTUIL bulk-consumer application. With the 450 MW filed on 24 Jun 2026, HyperVault has 1,550 MW under process at Maheshwaram. The register gives no power-flow date.",
+      "lastVerified": "2026-10-27",
+      "parentCompany": "TCS, per Indian Infrastructure",
+      "drawalState": "Telangana",
+      "transmissionStatus": "Under Process. No CTUIL transmission package for this load appears in the bidding calendars checked.",
+      "requestedPowerFlowStart": "not published",
+      "requestedPowerFlowEnd": "not published",
+      "approvedPowerFlowStart": "not approved",
+      "approvedPowerFlowEnd": "not approved",
+      "gridDelivery": {
+        "packageId": "asset-maheshwaram-service-watch",
+        "stationReadiness": "Maheshwaram service route under watch",
+        "implementationMode": "TBD",
+        "biddingAgency": "Not located in CTUIL bidding calendar",
+        "biddingStatus": "ISTS application under process; delivery package / STU-vs-ISTS service route still needs TGTRANSCO / CTUIL follow-up",
+        "serviceNodes": [
+          "Maheshwaram / Maheswaram substation"
+        ],
+        "sourceIds": [
+          "src-ctuil-gna-portal"
+        ]
+      }
+    },
+    {
+      "id": "conn-anvrit-panchkula",
+      "applicant": "ANVRIT DATA CENTRE PRIVATE LIMITED",
+      "operator": "Anvrit Data Centre Private Limited",
+      "useType": "datacenter",
+      "quantumMW": 50,
+      "powerFlowStart": null,
+      "dateConfidence": "not_published",
+      "tier": "ISTS",
+      "utility": "CTUIL",
+      "substation": "PANCHKULA",
+      "state": "Haryana",
+      "status": "applied",
+      "applicationRef": "CTUIL GNA app 2200004506, 16 Oct 2026 (Under Process)",
+      "linkedProjectId": "",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ],
+      "confidence": "high",
+      "notes": "Live CTUIL register record; the applicant's owner and power-flow dates are not published in the register.",
+      "lastVerified": "2026-10-27",
+      "parentCompany": "Not established from the public register",
+      "drawalState": "Haryana",
+      "transmissionStatus": "Under Process",
+      "requestedPowerFlowStart": "not published",
+      "requestedPowerFlowEnd": "not published",
+      "approvedPowerFlowStart": "not approved",
+      "approvedPowerFlowEnd": "not approved"
+    },
+    {
+      "id": "conn-aervynex-shikrapur",
+      "applicant": "AERVYNEX DATA CENTRE PRIVATE LIMITED",
+      "operator": "Aervynex Data Centre Private Limited",
+      "useType": "datacenter",
+      "quantumMW": 100,
+      "powerFlowStart": null,
+      "dateConfidence": "not_published",
+      "tier": "ISTS",
+      "utility": "CTUIL",
+      "substation": "PUNE NEW (Shikrapur)",
+      "state": "Maharashtra",
+      "status": "applied",
+      "applicationRef": "CTUIL GNA app 2200004531, 21 Oct 2026 (Under Process)",
+      "linkedProjectId": "",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ],
+      "confidence": "high",
+      "notes": "Live CTUIL register record; the applicant's owner and power-flow dates are not published in the register.",
+      "lastVerified": "2026-10-27",
       "parentCompany": "Not established from the public register",
       "drawalState": "Maharashtra",
       "transmissionStatus": "Under Process",
@@ -3694,17 +4126,19 @@ window.INDIA_DC_WATCH = {
     {
       "id": "watch-pendurthi-spv-transfer",
       "severity": "high",
-      "title": "BPC / SPV transfer for the Vizag/Pendurthi package",
-      "trigger": "CTUIL or the eventual BPC updates the Vizag Phase-I TBCB package after the 20-Jul-2026 SPV-transfer target",
-      "whyItMatters": "This is the delivery bottleneck behind the 2,323 MW Vizag connectivity queue: if the package slips, the GNA status alone will overstate serviceability.",
-      "checkWhere": "CTUIL Bidding Calendar; CTUIL Status of ISTS RTM and TBCB Projects; RECPDCL/PFCCL tender or SPV notices",
+      "title": "Vizag/Pendurthi transmission build after the SPV transfer",
+      "trigger": "CTUIL's TBCB status reports or Adani Energy Solutions disclosures show progress or slippage against completion 30 months after the 14 Aug 2026 SPV transfer (about Feb 2029)",
+      "whyItMatters": "This package is the delivery dependency for the 2,323 MW Vizag connectivity queue. The tracker estimates a 2028 power-flow year for those filings, earlier than the package's completion date.",
+      "checkWhere": "CTUIL Status of ISTS RTM and TBCB Projects; CTUIL Bidding Calendar; Adani Energy Solutions exchange filings",
       "checkUrl": "https://www.ctuil.in/bidding-calendar",
-      "nextCheck": "2026-10-15",
+      "nextCheck": "2026-12-01",
       "status": "armed",
       "sourceIds": [
-        "src-ctuil-bidding-calendar-may26"
+        "src-ctuil-bidding-calendar-may26",
+        "src-ctuil-bidding-calendar-jun26",
+        "src-tnd-vizag-spv-2026"
       ],
-      "lastChecked": "2026-09-19"
+      "lastChecked": "2026-10-27"
     },
     {
       "id": "watch-indiaai-uptime-definition",
@@ -3714,12 +4148,74 @@ window.INDIA_DC_WATCH = {
       "whyItMatters": "This is the live government definition of AI-cloud service availability. It should inform dashboard serviceability notes, but it is not the same as a universal statutory datacenter uptime mandate.",
       "checkWhere": "IndiaAI compute capacity hub; IndiaAI / MeitY RFE and empanelment documents",
       "checkUrl": "https://indiaai.gov.in/hub/indiaai-compute-capacity",
-      "nextCheck": "2026-10-31",
+      "nextCheck": "2026-12-01",
       "status": "armed",
       "sourceIds": [
         "src-indiaai-rfe-cloud-2025"
       ],
       "lastChecked": "2026-09-19"
+    },
+    {
+      "id": "watch-ctuil-oct-granted-register",
+      "severity": "high",
+      "title": "CTUIL's October 2026 register of grants",
+      "trigger": "CTUIL uploads its Reg. 17.1 granted register as on 31 Oct 2026; the September register appeared about 26 Oct, so late November is likely",
+      "whyItMatters": "It will show whether any of the 4,323 MW of counted data-centre applications at CTUIL, including Vizag and HyperVault, has been granted.",
+      "checkWhere": "CTUIL GNA pages: Reg. 17.1 granted register and the live Reg. 20 register",
+      "checkUrl": "https://www.ctuil.in/nswsapi/gna",
+      "nextCheck": "2026-11-30",
+      "status": "armed",
+      "sourceIds": [
+        "src-ctuil-reg17-sep26",
+        "src-ctuil-live-2026-10-27"
+      ],
+      "lastChecked": "2026-10-27"
+    },
+    {
+      "id": "watch-cea-connectivity-regs-2026",
+      "severity": "medium",
+      "title": "Final CEA grid-connection regulations, 2026",
+      "trigger": "CEA notifies the Technical Standards for Connectivity to the Grid Regulations, 2026, or republishes the 31 Jul 2026 draft",
+      "whyItMatters": "As reported, the draft would apply ride-through rules to inverter-interfaced bulk consumers of 50 MW and above, a class that may include large data centres. No date for final rules has been announced.",
+      "checkWhere": "CEA draft regulations and notified regulations pages",
+      "checkUrl": "https://cea.nic.in/regulations/draft-regulations?lang=en",
+      "nextCheck": "2026-12-01",
+      "status": "armed",
+      "sourceIds": [
+        "src-cea-draft-regs-2026-10",
+        "src-powerline-cea-draft-2026",
+        "src-ksk-cea-draft-2026"
+      ],
+      "lastChecked": "2026-10-27"
+    },
+    {
+      "id": "watch-reliance-jamnagar-120mw",
+      "severity": "medium",
+      "title": "Reliance's first 120 MW AI data-centre phase at Jamnagar",
+      "trigger": "Reliance reports the first 120 MW phase operating, as its 19 Jun 2026 AGM said it would be by the end of 2026 (reported by Digit)",
+      "whyItMatters": "The sources do not make clear whether this is the facility leased to Meta (168 MW). No counted grid filing in Gujarat covers it.",
+      "checkWhere": "Reliance exchange filings and results; CTUIL registers",
+      "nextCheck": "2026-12-31",
+      "status": "armed",
+      "sourceIds": [
+        "src-digit-ril-agm-2026"
+      ],
+      "lastChecked": "2026-10-27"
+    },
+    {
+      "id": "watch-ncr-grap-diesel",
+      "severity": "medium",
+      "title": "Winter pollution stages in Delhi NCR and diesel generators",
+      "trigger": "CAQM moves Delhi NCR to a higher GRAP stage this winter",
+      "whyItMatters": "CAQM Direction No. 73 sets when diesel generator sets may run in NCR, including during GRAP periods, so higher stages bear on backup power at NCR data centres.",
+      "checkWhere": "CAQM directions and GRAP orders",
+      "checkUrl": "https://caqm.nic.in/",
+      "nextCheck": "2026-11-15",
+      "status": "armed",
+      "sourceIds": [
+        "pol-caqm-dg"
+      ],
+      "lastChecked": "2026-10-27"
     }
   ],
   "personaTakeaways": [],
@@ -3728,12 +4224,12 @@ window.INDIA_DC_WATCH = {
       "id": "asset-pendurthi-vizag-gh-tbcb",
       "name": "Vizag/Pendurthi GH-GA transmission package, Phase-I",
       "state": "Andhra Pradesh / Telangana",
-      "status": "TBCB bidding",
+      "status": "SPV transferred; under construction by Adani Energy Solutions",
       "implementationMode": "TBCB",
-      "biddingAgency": "BPC not explicit in row (RECPDCL section)",
-      "biddingAgencyNotes": "The Vizag/Pendurthi row has a blank Bidding Agency cell in CTUIL's 31.05.2026 bidding calendar; it appears inside the RECPDCL section, so RECPDCL should be treated as a section-level clue, not row-level confirmation.",
-      "biddingStatus": "RFP issued 03.02.2026; RFP bid submission scheduled 15.06.2026; SPV transfer target 20.07.2026",
-      "plannedSpvTransfer": "2026-07-20",
+      "biddingAgency": "RECPDCL",
+      "biddingAgencyNotes": "CTUIL's June 2026 bidding calendar names RECPDCL as bidding agency in the Vizag/Pendurthi row.",
+      "biddingStatus": "SPV (Vizag Power Transmission Ltd) transferred to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after transfer, about 14 Feb 2029.",
+      "plannedSpvTransfer": "",
       "linkedConnectivityIds": [
         "conn-vizag-mega",
         "conn-vizag-hyperscale",
@@ -3750,9 +4246,11 @@ window.INDIA_DC_WATCH = {
       "sourceIds": [
         "src-ctuil-bidding-calendar-may26",
         "src-ctuil-bulk-consumer-margin-2025-08",
-        "src-cmets-sr-38-pendurthi"
+        "src-cmets-sr-38-pendurthi",
+        "src-ctuil-bidding-calendar-jun26",
+        "src-tnd-vizag-spv-2026"
       ],
-      "lastVerified": "2026-07-06"
+      "lastVerified": "2026-10-27"
     },
     {
       "id": "asset-maheshwaram-service-watch",
@@ -3761,20 +4259,24 @@ window.INDIA_DC_WATCH = {
       "status": "watch",
       "implementationMode": "TBD",
       "biddingAgency": "Not located in CTUIL bidding calendar",
-      "biddingStatus": "CtrlS and HyperVault CTUIL applications name Maheswaram/Maheshwaram; public delivery package and STU-vs-ISTS service route need follow-up.",
+      "biddingStatus": "HyperVault and Avrenta CTUIL applications name Maheshwaram; CtrlS's application there is closed. No public delivery package or STU-vs-ISTS service route found.",
       "linkedConnectivityIds": [
         "conn-hypervault",
+        "conn-hypervault-maheshwaram-2",
+        "conn-avrenta-maheshwaram",
         "conn-ctrls"
       ],
       "majorElements": [
-        "CtrlS: 50 MW at Maheswaram, CTUIL application under process",
-        "HyperVault: 450 MW at Maheshwaram substation, CTUIL application under process"
+        "HyperVault: 450 MW (24 Jun 2026) and 1,100 MW (25 Sep 2026) at Maheshwaram, CTUIL applications under process",
+        "Avrenta Data Centre: 100 MW at Maheshwaram, CTUIL application under process",
+        "CtrlS: 50 MW at Maheswaram, CTUIL application closed"
       ],
       "dashboardImplication": "Do not read Telangana applications as deliverable simply because a CTUIL application exists; the dashboard should keep station/service-route status visible.",
       "sourceIds": [
-        "src-ctuil-gna-portal"
+        "src-ctuil-gna-portal",
+        "src-ctuil-live-2026-10-27"
       ],
-      "lastVerified": "2026-07-06"
+      "lastVerified": "2026-10-27"
     }
   ],
   "uptimeStandards": [
@@ -3903,8 +4405,300 @@ window.INDIA_DC_WATCH = {
     }
   ],
   "regionalCheckedAt": "2026-09-29",
+  "uncountedCandidates": [
+    {
+      "id": "cand-support-properties-navi-mumbai",
+      "holder": "Support Properties Pvt Ltd",
+      "quantumMW": 1518,
+      "status": "granted",
+      "state": "Maharashtra",
+      "location": "400 kV Navi Mumbai (GIS) substation",
+      "reason": "Adani Enterprises told the exchanges in Nov 2022 that AdaniConneX had signed an MoU to buy this company, to set up infrastructure facilities; the tracker has not confirmed that the sale completed. CTUIL lists 18 grants to it with start dates between 1 Jan 2028 and 30 Nov 2030. The register does not state the use, so the tracker does not count it.",
+      "sourceIds": [
+        "src-ctuil-reg17-sep26",
+        "src-ctuil-live-2026-10-27",
+        "src-ael-support-properties-2022"
+      ]
+    },
+    {
+      "id": "cand-madhuvanti-doma",
+      "holder": "Madhuvanti Build Estate Ltd",
+      "quantumMW": 528,
+      "status": "applied",
+      "state": "Telangana",
+      "location": "LILO of 400 kV Doma-Kethireddypally (nearest substation Doma)",
+      "reason": "Venture Intelligence reported in Jun 2026 that AdaniConneX bought this company, which filed five CTUIL applications on 3 Aug 2026; the register does not state the use, so the tracker does not count it.",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27",
+        "src-vi-madhuvanti-2026"
+      ]
+    },
+    {
+      "id": "cand-chandenvalle-doma",
+      "holder": "Chandenvalle Infra Park Ltd",
+      "quantumMW": 528,
+      "status": "applied",
+      "state": "Telangana",
+      "location": "LILO of 400 kV Doma-Kethireddypally (nearest substation Doma)",
+      "reason": "It filed five CTUIL applications on 3 Aug 2026 for 528 MW at the same connection point as Madhuvanti; no public record the tracker opened names its owner or use, so it is not counted.",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ]
+    },
+    {
+      "id": "cand-reliance-jamnagar",
+      "holder": "Reliance (applications on CTUIL's register)",
+      "quantumMW": 2500,
+      "status": "applied",
+      "state": "Gujarat",
+      "location": "Jam Khambhaliya and a new substation near RIL Jamnagar",
+      "reason": "CTUIL's live register (read 27 Oct 2026) lists two sets of Reliance bulk-consumer applications at Jam Khambhaliya, each of 1,250 MW (300, 350 and 600 MW), filed in Sep 2025 and Sep 2026; they may be one request filed twice, so the 2,500 MW shown here may double-count. It also lists ten applications of 1,200 MW each at a new substation near RIL Jamnagar, filed 26 Aug 2026. None states its use, so the tracker counts none of them.",
+      "sourceIds": [
+        "src-ctuil-live-2026-10-27"
+      ]
+    }
+  ],
+  "briefs": {
+    "editionId": "2026-11-01",
+    "curatorApproved": false,
+    "flow": [
+      {
+        "rank": "lead",
+        "headline": "Data-centre companies filed 1,350 MW of new applications at CTUIL",
+        "fact": "Four applications for 1,350 MW joined CTUIL's register between 16 Sep and 21 Oct 2026, all under process. HyperVault's 1,100 MW at Maheshwaram, filed 25 Sep, is the largest; the others are Anvora Cloud Services (100 MW, Bassi), Aervynex Data Centre (100 MW, Shikrapur near Pune) and Anvrit Data Centre (50 MW, Panchkula). Active data-centre filings at CTUIL rose from 2,980 MW on 19 Sep to 4,330 MW on 27 Oct; Anvora's filing dates from 16 Sep but was missed in September.",
+        "soWhat": "None of the four is granted and none gives a date for power to flow, so the new load cannot yet be placed in a year. Three of the four applicants are 50-100 MW companies whose owners the register does not name.",
+        "refs": [
+          {
+            "type": "filing",
+            "id": "conn-hypervault-maheshwaram-2"
+          },
+          {
+            "type": "filing",
+            "id": "conn-anvora-bassi"
+          },
+          {
+            "type": "filing",
+            "id": "conn-aervynex-shikrapur"
+          },
+          {
+            "type": "filing",
+            "id": "conn-anvrit-panchkula"
+          }
+        ],
+        "date": "2026-10-27"
+      },
+      {
+        "rank": "major",
+        "headline": "HyperVault has now filed for 1,550 MW in Telangana",
+        "fact": "HyperVault filed a second CTUIL application on 25 Sep 2026, for 1,100 MW at Maheshwaram, on top of 450 MW filed on 24 Jun. In September it announced 264 acres for a campus of up to 1 GW. An MoU with SECI on clean power, reported in September, gives no MW.",
+        "soWhat": "A grid filing covers a site's whole draw, cooling included, so the 1,550 MW filed may exceed the campus's capacity of up to 1 GW. Without a megawatt figure, the SECI MoU does not show how much of the campus's power would be clean.",
+        "refs": [
+          {
+            "type": "project",
+            "id": "hypervault-telangana"
+          },
+          {
+            "type": "filing",
+            "id": "conn-hypervault-maheshwaram-2"
+          },
+          {
+            "type": "signal",
+            "id": "signal-hypervault-1100mw-2026-09"
+          }
+        ],
+        "date": "2026-09-25"
+      },
+      {
+        "rank": "major",
+        "headline": "Lodha's second 1,500 MW moves out of the totals",
+        "fact": "The tracker found no application record for the 1,500 MW that submissions in MERC Case 88 of 2026 described as under consideration. The record stays, marked under consideration, and counts in no total. The 1,450 MW grant is unchanged.",
+        "soWhat": "Counted filings are 1,500 MW lower as a result. The figure would return to the count if the utility or the regulator publishes an application or an approval.",
+        "refs": [
+          {
+            "type": "filing",
+            "id": "conn-lodha-palava-pipeline"
+          },
+          {
+            "type": "filing",
+            "id": "conn-lodha-palava-granted"
+          }
+        ]
+      },
+      {
+        "rank": "minor",
+        "headline": "No new data-centre grant in September",
+        "fact": "CTUIL's register of grants as on 30 Sep 2026 adds no data-centre grant. STT's 7 MW in Delhi, effective from 1 Jul 2026, is still the only counted CTUIL grant.",
+        "refs": [
+          {
+            "type": "signal",
+            "id": "signal-ctuil-granted-sep2026"
+          },
+          {
+            "type": "filing",
+            "id": "conn-stt"
+          }
+        ],
+        "date": "2026-09-30"
+      },
+      {
+        "rank": "minor",
+        "headline": "Microsoft's Hyderabad cloud region is live",
+        "fact": "Microsoft made its India South Central region in Hyderabad generally available on 6 Aug 2026, with three availability zones. It gave no MW. The tracker missed the date and adds the region as its own row this month.",
+        "refs": [
+          {
+            "type": "project",
+            "id": "azure-south-central-india"
+          },
+          {
+            "type": "project",
+            "id": "microsoft-india-expansion"
+          }
+        ],
+        "date": "2026-08-06"
+      }
+    ],
+    "stock": [
+      {
+        "rank": "lead",
+        "headline": "5,780 MW of data-centre load is filed with the grid; 1,457 MW is granted",
+        "fact": "Counted filings by state: Andhra Pradesh 2,323 MW applied; Maharashtra 1,650 MW (1,450 granted, 200 applied); Telangana 1,650 MW applied; Rajasthan, unconfirmed, 100 MW applied; Haryana 50 MW applied; Delhi 7 MW granted. The only grants are Lodha's 1,450 MW from the state utility and STT's 7 MW from CTUIL.",
+        "soWhat": "Of the 4,323 MW still waiting for a CTUIL decision, 3,973 MW is in Andhra Pradesh and Telangana. Andhra Pradesh's filings equal about 15% of the state's peak met in April to August 2026, and Telangana's about 9% of its FY2025-26 peak.",
+        "refs": [
+          {
+            "type": "filing",
+            "id": "conn-vizag-mega"
+          },
+          {
+            "type": "filing",
+            "id": "conn-lodha-palava-granted"
+          },
+          {
+            "type": "filing",
+            "id": "conn-hypervault-maheshwaram-2"
+          }
+        ]
+      },
+      {
+        "rank": "major",
+        "headline": "Lodha's further 1,500 MW is on the record but not counted",
+        "fact": "Press reports of MERC Case 88 put about 1,450 MW of granted load in the Ambernath region and say 1,500 MW more is under consideration. The tracker counts the 1,450 MW grant against Lodha's Palava park and keeps the 1,500 MW out of every total. The order text has not been read, because its download links on MERC's site are broken.",
+        "soWhat": "Until a utility or regulator record appears, nothing on the registers the tracker could read shows the park asking for more than 1,450 MW. Counting it would raise Maharashtra's filed figure to 3,150 MW.",
+        "refs": [
+          {
+            "type": "filing",
+            "id": "conn-lodha-palava-pipeline"
+          },
+          {
+            "type": "project",
+            "id": "lodha-palava-dc"
+          }
+        ]
+      },
+      {
+        "rank": "major",
+        "headline": "Likely data-centre loads on the registers are not counted",
+        "fact": "Support Properties holds 18 CTUIL grants for 1,518 MW at Navi Mumbai, with start dates between 1 Jan 2028 and 30 Nov 2030; Adani Enterprises said in 2022 that AdaniConneX had signed an MoU to buy the company. Madhuvanti Build Estate and Chandenvalle Infra Park each applied for 528 MW in Telangana on 3 Aug 2026. Reliance's applications near Jamnagar, which state no use, are listed with them.",
+        "soWhat": "None of these register entries states its use, so they stay out of the totals. If the Navi Mumbai grants were counted, granted data-centre access would rise from 1,457 MW to 2,975 MW.",
+        "refs": [
+          {
+            "type": "candidate",
+            "id": "cand-support-properties-navi-mumbai"
+          },
+          {
+            "type": "candidate",
+            "id": "cand-madhuvanti-doma"
+          },
+          {
+            "type": "candidate",
+            "id": "cand-chandenvalle-doma"
+          },
+          {
+            "type": "candidate",
+            "id": "cand-reliance-jamnagar"
+          }
+        ]
+      },
+      {
+        "rank": "minor",
+        "headline": "State peak demand now comes from CEA reports",
+        "fact": "Peak-demand figures for eight states and India now come from CEA's monthly peak reports for FY2025-26 and April to August 2026, taking the higher of the two for each state. Delhi has its own figure, 8,480 MW, in place of Haryana's.",
+        "refs": []
+      }
+    ],
+    "next": [
+      {
+        "rank": "lead",
+        "headline": "CTUIL's October register of grants, likely in late November",
+        "fact": "CTUIL uploaded its September register of grants about 26 Oct. If October's follows a month later, it would appear in late November. It will show whether any of the 4,323 MW of counted data-centre applications has been granted.",
+        "soWhat": "A grant to the Vizag parks or HyperVault would be the first CTUIL grant to a counted data-centre filing larger than STT's 7 MW.",
+        "refs": [
+          {
+            "type": "filing",
+            "id": "conn-vizag-mega"
+          },
+          {
+            "type": "filing",
+            "id": "conn-hypervault-maheshwaram-2"
+          }
+        ]
+      },
+      {
+        "rank": "major",
+        "headline": "Reliance aims to run its first 120 MW at Jamnagar by year end",
+        "fact": "Reliance said at its 19 Jun 2026 AGM, as reported by Digit, that the first 120 MW phase of its Jamnagar AI data centre should be operating by the end of 2026. The reports do not make clear whether this is the facility leased to Meta (168 MW).",
+        "soWhat": "No counted grid filing in Gujarat covers it. CTUIL's register lists other Reliance applications near Jamnagar with no use stated: two sets of 1,250 MW at Jam Khambhaliya, filed a year apart, and ten of 1,200 MW each at a new substation near RIL Jamnagar. The tracker counts none of them.",
+        "refs": [
+          {
+            "type": "project",
+            "id": "reliance-meta-jamnagar"
+          },
+          {
+            "type": "candidate",
+            "id": "cand-reliance-jamnagar"
+          }
+        ],
+        "date": "2026-12-31"
+      },
+      {
+        "rank": "major",
+        "headline": "Vizag transmission is due about February 2029",
+        "fact": "The company that will build the Vizag/Pendurthi transmission package passed to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after that transfer, about 14 Feb 2029.",
+        "soWhat": "The tracker estimates 2028 for power to start flowing to the three Vizag parks' 2,323 MW, and Google's reported target for operations is September 2028. Full supply over the new lines may come later than both.",
+        "refs": [
+          {
+            "type": "filing",
+            "id": "conn-vizag-mega"
+          },
+          {
+            "type": "filing",
+            "id": "conn-vizag-hyperscale"
+          },
+          {
+            "type": "filing",
+            "id": "conn-vizag-rambilli"
+          },
+          {
+            "type": "project",
+            "id": "google-vizag-ai-hub"
+          }
+        ]
+      },
+      {
+        "rank": "minor",
+        "headline": "CEA's grid-connection rules: no date for the final version",
+        "fact": "CEA's draft Technical Standards for Connectivity to the Grid Regulations, 2026, dated 31 Jul, closed for comments on 2 Sep. As reported, they would extend ride-through rules to inverter-interfaced bulk consumers of 50 MW and above. On 27 Oct the draft was on neither CEA's draft nor its notified list.",
+        "soWhat": "Large data centres may fall in that class, though the draft as reported does not name them.",
+        "refs": [
+          {
+            "type": "policy",
+            "id": "policy-cea-connectivity"
+          }
+        ]
+      }
+    ]
+  },
   "derived": {
-    "generatedAt": "2026-10-26T03:46:43+00:00",
+    "generatedAt": "2026-10-27T14:56:25+00:00",
     "statusOrder": {
       "operational": 0,
       "under_construction": 1,
@@ -3912,18 +4706,18 @@ window.INDIA_DC_WATCH = {
       "mou_speculative": 3
     },
     "counts": {
-      "operational": 8,
+      "operational": 9,
       "under_construction": 2,
       "announced": 7,
       "mou_speculative": 3
     },
     "headlineCounts": {
-      "operational": 8,
+      "operational": 9,
       "under_construction": 2,
       "announced": 7
     },
     "capacityByStatusMw": {
-      "operational": 28.0,
+      "operational": 0.0,
       "under_construction": 1000.0,
       "announced": 1271.0,
       "mou_speculative": 300.0
@@ -3931,13 +4725,13 @@ window.INDIA_DC_WATCH = {
     "valueByStatusUsdB": {
       "operational": 4.4,
       "under_construction": 30.0,
-      "announced": 28.731,
+      "announced": 26.631,
       "mou_speculative": 4.64
     },
-    "headlineKnownCapacityMw": 2299.0,
-    "headlineKnownValueUsdB": 63.131,
-    "knownCapacityProjects": 6,
-    "unknownCapacityProjects": 14,
+    "headlineKnownCapacityMw": 2271.0,
+    "headlineKnownValueUsdB": 61.031,
+    "knownCapacityProjects": 5,
+    "unknownCapacityProjects": 16,
     "stateDemand": [
       {
         "state": "Andhra Pradesh",
@@ -3966,18 +4760,9 @@ window.INDIA_DC_WATCH = {
         }
       },
       {
-        "state": "Haryana",
-        "knownItLoadMw": 28.0,
-        "projectCount": 2,
-        "byStatusMw": {
-          "operational": 28.0,
-          "mou_speculative": 0.0
-        }
-      },
-      {
         "state": "Telangana",
         "knownItLoadMw": 0.0,
-        "projectCount": 3,
+        "projectCount": 4,
         "byStatusMw": {
           "operational": 0.0,
           "announced": 0.0
@@ -3990,6 +4775,15 @@ window.INDIA_DC_WATCH = {
         "byStatusMw": {
           "operational": 0.0,
           "under_construction": 0.0
+        }
+      },
+      {
+        "state": "Haryana",
+        "knownItLoadMw": 0.0,
+        "projectCount": 2,
+        "byStatusMw": {
+          "operational": 0.0,
+          "mou_speculative": 0.0
         }
       },
       {
@@ -4019,23 +4813,27 @@ window.INDIA_DC_WATCH = {
       }
     ],
     "capacityByFirmnessMw": {
-      "grid": 28.0,
       "undisclosed": 2403.0,
+      "grid": 0.0,
       "bundled_ppa": 168.0
     },
     "countByFirmness": {
+      "undisclosed": 18,
       "grid": 2,
-      "undisclosed": 17,
       "bundled_ppa": 1
     },
     "topTags": [
       [
         "hyperscaler",
-        9
+        10
       ],
       [
         "cloud-region",
-        7
+        8
+      ],
+      [
+        "telangana-load-growth",
+        3
       ],
       [
         "gigawatt-load",
@@ -4070,10 +4868,6 @@ window.INDIA_DC_WATCH = {
         2
       ],
       [
-        "telangana-load-growth",
-        2
-      ],
-      [
         "cfe-24x7",
         2
       ],
@@ -4095,11 +4889,11 @@ window.INDIA_DC_WATCH = {
       ]
     ],
     "sourceTierMix": {
-      "primary": 43,
-      "official": 15,
-      "secondary": 67,
-      "total": 125,
-      "secondaryPct": 54
+      "primary": 50,
+      "official": 17,
+      "secondary": 76,
+      "total": 143,
+      "secondaryPct": 53
     },
     "timeline": [
       {
@@ -4165,40 +4959,40 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2025-07",
         "cumulativeProjects": 5,
-        "cumulativeKnownMw": 28.0,
-        "headlineCumulativeMw": 28.0,
+        "cumulativeKnownMw": 0.0,
+        "headlineCumulativeMw": 0.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "announced": 0.0
         }
       },
       {
         "month": "2025-08",
         "cumulativeProjects": 6,
-        "cumulativeKnownMw": 28.0,
-        "headlineCumulativeMw": 28.0,
+        "cumulativeKnownMw": 0.0,
+        "headlineCumulativeMw": 0.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "announced": 0.0
         }
       },
       {
         "month": "2025-09",
         "cumulativeProjects": 6,
-        "cumulativeKnownMw": 28.0,
-        "headlineCumulativeMw": 28.0,
+        "cumulativeKnownMw": 0.0,
+        "headlineCumulativeMw": 0.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "announced": 0.0
         }
       },
       {
         "month": "2025-10",
         "cumulativeProjects": 7,
-        "cumulativeKnownMw": 1028.0,
-        "headlineCumulativeMw": 1028.0,
+        "cumulativeKnownMw": 1000.0,
+        "headlineCumulativeMw": 1000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 0.0
         }
@@ -4206,10 +5000,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2025-11",
         "cumulativeProjects": 10,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4218,10 +5012,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2025-12",
         "cumulativeProjects": 12,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4230,10 +5024,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-01",
         "cumulativeProjects": 12,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4242,10 +5036,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-02",
         "cumulativeProjects": 12,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4254,10 +5048,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-03",
         "cumulativeProjects": 14,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4266,10 +5060,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-04",
         "cumulativeProjects": 14,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4278,10 +5072,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-05",
         "cumulativeProjects": 14,
-        "cumulativeKnownMw": 2328.0,
-        "headlineCumulativeMw": 2028.0,
+        "cumulativeKnownMw": 2300.0,
+        "headlineCumulativeMw": 2000.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1000.0,
           "mou_speculative": 300.0
@@ -4290,10 +5084,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-06",
         "cumulativeProjects": 20,
-        "cumulativeKnownMw": 2599.0,
-        "headlineCumulativeMw": 2299.0,
+        "cumulativeKnownMw": 2571.0,
+        "headlineCumulativeMw": 2271.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1271.0,
           "mou_speculative": 300.0
@@ -4302,10 +5096,10 @@ window.INDIA_DC_WATCH = {
       {
         "month": "2026-07",
         "cumulativeProjects": 20,
-        "cumulativeKnownMw": 2599.0,
-        "headlineCumulativeMw": 2299.0,
+        "cumulativeKnownMw": 2571.0,
+        "headlineCumulativeMw": 2271.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1271.0,
           "mou_speculative": 300.0
@@ -4313,11 +5107,11 @@ window.INDIA_DC_WATCH = {
       },
       {
         "month": "2026-08",
-        "cumulativeProjects": 20,
-        "cumulativeKnownMw": 2599.0,
-        "headlineCumulativeMw": 2299.0,
+        "cumulativeProjects": 21,
+        "cumulativeKnownMw": 2571.0,
+        "headlineCumulativeMw": 2271.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1271.0,
           "mou_speculative": 300.0
@@ -4325,11 +5119,35 @@ window.INDIA_DC_WATCH = {
       },
       {
         "month": "2026-09",
-        "cumulativeProjects": 20,
-        "cumulativeKnownMw": 2599.0,
-        "headlineCumulativeMw": 2299.0,
+        "cumulativeProjects": 21,
+        "cumulativeKnownMw": 2571.0,
+        "headlineCumulativeMw": 2271.0,
         "byCurrentStatusMw": {
-          "operational": 28.0,
+          "operational": 0.0,
+          "under_construction": 1000.0,
+          "announced": 1271.0,
+          "mou_speculative": 300.0
+        }
+      },
+      {
+        "month": "2026-10",
+        "cumulativeProjects": 21,
+        "cumulativeKnownMw": 2571.0,
+        "headlineCumulativeMw": 2271.0,
+        "byCurrentStatusMw": {
+          "operational": 0.0,
+          "under_construction": 1000.0,
+          "announced": 1271.0,
+          "mou_speculative": 300.0
+        }
+      },
+      {
+        "month": "2026-11",
+        "cumulativeProjects": 21,
+        "cumulativeKnownMw": 2571.0,
+        "headlineCumulativeMw": 2271.0,
+        "byCurrentStatusMw": {
+          "operational": 0.0,
           "under_construction": 1000.0,
           "announced": 1271.0,
           "mou_speculative": 300.0
@@ -4338,29 +5156,34 @@ window.INDIA_DC_WATCH = {
     ],
     "connectivity": {
       "summary": {
-        "totalMW": 5930.0,
+        "totalMW": 5780.0,
         "grantedMW": 1457.0,
-        "appliedMW": 4473.0,
+        "appliedMW": 4323.0,
         "byTier": {
-          "intra-state": 2957.0,
-          "ISTS": 2973.0
+          "intra-state": 1457.0,
+          "ISTS": 4323.0
         },
         "byStatusMw": {
           "granted": 1457.0,
-          "applied": 4473.0,
+          "under_consideration": 1500.0,
+          "applied": 4323.0,
           "closed": 50.0
         },
         "byStateMw": {
-          "Maharashtra": 3050.0,
           "Andhra Pradesh": 2323.0,
-          "Telangana": 550.0,
+          "Maharashtra": 1650.0,
+          "Telangana": 1650.0,
+          "Rajasthan (unconfirmed)": 100.0,
+          "Haryana": 50.0,
           "Delhi": 7.0
         },
-        "count": 9,
+        "count": 12,
         "closedCount": 1,
+        "underConsiderationCount": 1,
+        "underConsiderationMW": 1500.0,
         "declaredDateCount": 1,
-        "estimatedDateCount": 6,
-        "unpublishedDateCount": 2
+        "estimatedDateCount": 5,
+        "unpublishedDateCount": 6
       },
       "forward": [
         {
@@ -4377,7 +5200,7 @@ window.INDIA_DC_WATCH = {
         },
         {
           "year": "2028",
-          "cumulativeMW": 5730.0,
+          "cumulativeMW": 4230.0,
           "cumulativeGrantedMW": 1457.0,
           "cumulativeDeclaredMW": 7.0
         }
@@ -4385,21 +5208,12 @@ window.INDIA_DC_WATCH = {
     },
     "reconciliation": {
       "totals": {
-        "pressHeadlineMw": 2299.0,
-        "filedMw": 5930.0,
+        "pressHeadlineMw": 2271.0,
+        "filedMw": 5780.0,
         "grantedMw": 1457.0,
         "commissionedMw": 0
       },
       "projects": [
-        {
-          "projectId": "lodha-palava-dc",
-          "name": "Lodha Green Integrated Data Centre Park, Palava",
-          "state": "Maharashtra",
-          "pressMw": null,
-          "filedMw": 2950.0,
-          "grantedMw": 1450.0,
-          "filingCount": 2
-        },
         {
           "projectId": "google-vizag-ai-hub",
           "name": "Google Cloud India AI Hub, Visakhapatnam",
@@ -4414,8 +5228,17 @@ window.INDIA_DC_WATCH = {
           "name": "HyperVault AI Data Center, Telangana",
           "state": "Telangana",
           "pressMw": null,
-          "filedMw": 450.0,
+          "filedMw": 1550.0,
           "grantedMw": 0,
+          "filingCount": 2
+        },
+        {
+          "projectId": "lodha-palava-dc",
+          "name": "Lodha Green Integrated Data Centre Park, Palava",
+          "state": "Maharashtra",
+          "pressMw": null,
+          "filedMw": 1450.0,
+          "grantedMw": 1450.0,
           "filingCount": 1
         }
       ],
@@ -4440,37 +5263,58 @@ window.INDIA_DC_WATCH = {
           "quantumMW": 100,
           "status": "applied",
           "state": "Maharashtra"
+        },
+        {
+          "id": "conn-anvora-bassi",
+          "operator": "Anvora Cloud Services Private Limited",
+          "quantumMW": 100,
+          "status": "applied",
+          "state": "Rajasthan (unconfirmed)"
+        },
+        {
+          "id": "conn-anvrit-panchkula",
+          "operator": "Anvrit Data Centre Private Limited",
+          "quantumMW": 50,
+          "status": "applied",
+          "state": "Haryana"
+        },
+        {
+          "id": "conn-aervynex-shikrapur",
+          "operator": "Aervynex Data Centre Private Limited",
+          "quantumMW": 100,
+          "status": "applied",
+          "state": "Maharashtra"
         }
       ]
     },
     "stateShareOfPeak": [
       {
         "state": "Andhra Pradesh",
-        "peakMW": 13712,
+        "peakMW": 15014,
         "itLoadMw": 2000.0,
         "connectivityMW": 2323.0,
-        "itPctOfPeak": 14.6,
-        "connPctOfPeak": 16.9
-      },
-      {
-        "state": "Maharashtra",
-        "peakMW": 32000,
-        "itLoadMw": 0.0,
-        "connectivityMW": 3050.0,
-        "itPctOfPeak": 0.0,
-        "connPctOfPeak": 9.5
+        "itPctOfPeak": 13.3,
+        "connPctOfPeak": 15.5
       },
       {
         "state": "Telangana",
-        "peakMW": 18139,
+        "peakMW": 18548,
         "itLoadMw": 0.0,
-        "connectivityMW": 550.0,
+        "connectivityMW": 1650.0,
         "itPctOfPeak": 0.0,
-        "connPctOfPeak": 3.0
+        "connPctOfPeak": 8.9
+      },
+      {
+        "state": "Maharashtra",
+        "peakMW": 32317,
+        "itLoadMw": 0.0,
+        "connectivityMW": 1650.0,
+        "itPctOfPeak": 0.0,
+        "connPctOfPeak": 5.1
       },
       {
         "state": "Gujarat",
-        "peakMW": 26457,
+        "peakMW": 28833,
         "itLoadMw": 168.0,
         "connectivityMW": 0.0,
         "itPctOfPeak": 0.6,
@@ -4478,31 +5322,39 @@ window.INDIA_DC_WATCH = {
       },
       {
         "state": "Haryana",
-        "peakMW": 14662,
-        "itLoadMw": 28.0,
-        "connectivityMW": 0.0,
-        "itPctOfPeak": 0.2,
-        "connPctOfPeak": 0.0
+        "peakMW": 16170,
+        "itLoadMw": 0.0,
+        "connectivityMW": 50.0,
+        "itPctOfPeak": 0.0,
+        "connPctOfPeak": 0.3
+      },
+      {
+        "state": "Delhi",
+        "peakMW": 8480,
+        "itLoadMw": 0.0,
+        "connectivityMW": 7.0,
+        "itPctOfPeak": 0.0,
+        "connPctOfPeak": 0.1
       }
     ],
     "takeawayMetrics": {
-      "trackedItMw": "2,299",
+      "trackedItMw": "2,271",
       "undisclosedMw": "2,403",
-      "undisclosedPct": "92",
-      "connTotalMw": "5,930",
+      "undisclosedPct": "93",
+      "connTotalMw": "5,780",
       "connGrantedMw": "1,457",
-      "connAppliedMw": "4,473",
-      "connFilings": "9",
-      "connIstsMw": "2,973",
-      "connIntraMw": "2,957",
-      "connEstimatedDates": "6 of 9",
+      "connAppliedMw": "4,323",
+      "connFilings": "12",
+      "connIstsMw": "4,323",
+      "connIntraMw": "1,457",
+      "connEstimatedDates": "5 of 12",
       "nationalPeakGw": "271",
       "itPctOfNationalPeak": "0.8",
-      "connPctOfNationalPeak": "2.2",
+      "connPctOfNationalPeak": "2.1",
       "mouMw": "300",
       "mouCount": "3",
-      "projectCount": "20",
-      "secondarySourcePct": "54"
+      "projectCount": "21",
+      "secondarySourcePct": "53"
     },
     "snapshotHistory": [
       {
@@ -4882,27 +5734,193 @@ window.INDIA_DC_WATCH = {
           "estimatedDateCount": 6,
           "unpublishedDateCount": 2
         }
+      },
+      {
+        "month": "2026-11",
+        "asOf": "2026-11-01",
+        "generatedAt": "2026-10-27T14:56:25+00:00",
+        "headlineCounts": {
+          "operational": 9,
+          "under_construction": 2,
+          "announced": 7
+        },
+        "counts": {
+          "operational": 9,
+          "under_construction": 2,
+          "announced": 7,
+          "mou_speculative": 3
+        },
+        "capacityByStatusMw": {
+          "operational": 0.0,
+          "under_construction": 1000.0,
+          "announced": 1271.0,
+          "mou_speculative": 300.0
+        },
+        "headlineKnownCapacityMw": 2271.0,
+        "stateDemand": [
+          {
+            "state": "Andhra Pradesh",
+            "knownItLoadMw": 2300.0,
+            "projectCount": 4,
+            "byStatusMw": {
+              "under_construction": 1000.0,
+              "announced": 1000.0,
+              "mou_speculative": 300.0
+            }
+          },
+          {
+            "state": "Gujarat",
+            "knownItLoadMw": 168.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "announced": 168.0
+            }
+          },
+          {
+            "state": "Maharashtra / Tamil Nadu",
+            "knownItLoadMw": 103.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "announced": 103.0
+            }
+          },
+          {
+            "state": "Telangana",
+            "knownItLoadMw": 0.0,
+            "projectCount": 4,
+            "byStatusMw": {
+              "operational": 0.0,
+              "announced": 0.0
+            }
+          },
+          {
+            "state": "Maharashtra",
+            "knownItLoadMw": 0.0,
+            "projectCount": 5,
+            "byStatusMw": {
+              "operational": 0.0,
+              "under_construction": 0.0
+            }
+          },
+          {
+            "state": "Haryana",
+            "knownItLoadMw": 0.0,
+            "projectCount": 2,
+            "byStatusMw": {
+              "operational": 0.0,
+              "mou_speculative": 0.0
+            }
+          },
+          {
+            "state": "Delhi NCR",
+            "knownItLoadMw": 0.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "operational": 0.0
+            }
+          },
+          {
+            "state": "Tamil Nadu",
+            "knownItLoadMw": 0.0,
+            "projectCount": 2,
+            "byStatusMw": {
+              "operational": 0.0,
+              "announced": 0.0
+            }
+          },
+          {
+            "state": "Multiple",
+            "knownItLoadMw": 0.0,
+            "projectCount": 1,
+            "byStatusMw": {
+              "announced": 0.0
+            }
+          }
+        ],
+        "connectivitySummary": {
+          "totalMW": 5780.0,
+          "grantedMW": 1457.0,
+          "appliedMW": 4323.0,
+          "byTier": {
+            "intra-state": 1457.0,
+            "ISTS": 4323.0
+          },
+          "byStatusMw": {
+            "granted": 1457.0,
+            "under_consideration": 1500.0,
+            "applied": 4323.0,
+            "closed": 50.0
+          },
+          "byStateMw": {
+            "Andhra Pradesh": 2323.0,
+            "Maharashtra": 1650.0,
+            "Telangana": 1650.0,
+            "Rajasthan (unconfirmed)": 100.0,
+            "Haryana": 50.0,
+            "Delhi": 7.0
+          },
+          "count": 12,
+          "closedCount": 1,
+          "underConsiderationCount": 1,
+          "underConsiderationMW": 1500.0,
+          "declaredDateCount": 1,
+          "estimatedDateCount": 5,
+          "unpublishedDateCount": 6
+        }
       }
     ],
     "changeLog": {
-      "previousMonth": "2026-07",
-      "added": [],
+      "previousMonth": "2026-09",
+      "added": [
+        {
+          "id": "azure-south-central-india",
+          "name": "Microsoft Azure India South Central Region (Hyderabad)",
+          "status": "operational",
+          "state": "Telangana",
+          "itLoadMw": null,
+          "includeInHeadline": true,
+          "valueUsdB": null
+        }
+      ],
       "removed": [],
       "statusChanged": [],
-      "mwChanged": [],
+      "mwChanged": [
+        {
+          "id": "anant-raj-haryana-operational",
+          "name": "Anant Raj Cloud Haryana campuses",
+          "from": 28,
+          "to": null
+        }
+      ],
       "connectivity": {
         "added": [
           {
-            "id": "conn-avrenta-maheshwaram",
-            "operator": "Avrenta Data Centre Private Limited",
+            "id": "conn-anvora-bassi",
+            "operator": "Anvora Cloud Services Private Limited",
             "quantumMW": 100,
             "status": "applied",
             "tier": "ISTS",
             "powerFlowStart": null
           },
           {
-            "id": "conn-vardhexa-talegaon",
-            "operator": "Vardhexa Data Centre Private Limited",
+            "id": "conn-hypervault-maheshwaram-2",
+            "operator": "HyperVault (a TCS subsidiary)",
+            "quantumMW": 1100,
+            "status": "applied",
+            "tier": "ISTS",
+            "powerFlowStart": null
+          },
+          {
+            "id": "conn-anvrit-panchkula",
+            "operator": "Anvrit Data Centre Private Limited",
+            "quantumMW": 50,
+            "status": "applied",
+            "tier": "ISTS",
+            "powerFlowStart": null
+          },
+          {
+            "id": "conn-aervynex-shikrapur",
+            "operator": "Aervynex Data Centre Private Limited",
             "quantumMW": 100,
             "status": "applied",
             "tier": "ISTS",
@@ -4912,10 +5930,10 @@ window.INDIA_DC_WATCH = {
         "removed": [],
         "statusChanged": [
           {
-            "id": "conn-ctrls",
-            "operator": "CtrlS Datacenters (Chandanvelly campus)",
+            "id": "conn-lodha-palava-pipeline",
+            "operator": "Macrotech Developers (Lodha)",
             "from": "applied",
-            "to": "closed"
+            "to": "under_consideration"
           }
         ],
         "quantumChanged": []

@@ -33,61 +33,94 @@
     </header>
 
     <main id="main">
-      <section class="answer" aria-labelledby="question">
+      <section class="answer focus-head" aria-labelledby="question">
         <h1 id="question">Quantifying India’s data centre boom,<br /> and a grid impact assessment</h1>
-        <dl class="answer-figures" id="answer-figures"></dl>
-        <div class="scale-strip" id="scale-strip"></div>
+        <div class="focus-tabs" role="tablist" aria-label="Choose a view" id="focus-tabs">
+          <button type="button" role="tab" id="tab-month" aria-controls="panel-month" data-view="this-month">
+            <span class="focus-name">This month</span><span class="focus-num" id="num-month"></span><span class="focus-count" id="count-month"></span>
+          </button>
+          <button type="button" role="tab" id="tab-stand" aria-controls="panel-stand" data-view="where-things-stand">
+            <span class="focus-name">Where things stand</span><span class="focus-num" id="num-stand"></span><span class="focus-count" id="count-stand"></span>
+          </button>
+          <button type="button" role="tab" id="tab-next" aria-controls="panel-next" data-view="whats-next">
+            <span class="focus-name">What’s next</span><span class="focus-num" id="num-next"></span><span class="focus-count" id="count-next"></span>
+          </button>
+        </div>
       </section>
 
-      <section class="ranking" aria-labelledby="ranking-title">
-        <div class="ranking-main">
-          <div class="ranking-head">
-            <h2 id="ranking-title">Sites ranked by megawatts filed with the grid</h2>
-            <div class="controls">
-              <div class="switch" role="group" aria-label="Measure">
-                <button type="button" data-measure="filed" aria-pressed="true">Filed with the grid</button>
-                <button type="button" data-measure="announced" aria-pressed="false">Announced IT load</button>
-              </div>
-              <div class="switch" role="group" aria-label="Time">
-                <button type="button" data-time="snapshot" aria-pressed="true">Snapshot</button>
-                <button type="button" data-time="history" aria-pressed="false">Over time</button>
-              </div>
+      <section class="focus-panel" role="tabpanel" id="panel-month" aria-labelledby="tab-month" data-title="This month: what changed">
+        <figure class="graphic" id="graphic-month"></figure>
+        <div class="brief" id="brief-month"></div>
+        <section class="changes" aria-labelledby="changes-title">
+          <h2 id="changes-title"></h2>
+          <div class="changes-grid">
+            <div>
+              <h3>In the project list and grid register</h3>
+              <ul class="change-list" id="change-list"></ul>
+            </div>
+            <div>
+              <h3 id="signals-title"></h3>
+              <ul class="signal-list" id="signal-list"></ul>
             </div>
           </div>
-          <p class="ranking-sub" id="ranking-sub"></p>
-          <ul class="legend-inline" id="legend-inline" aria-hidden="true"></ul>
-          <ol class="bars" id="bars"></ol>
-          <div class="history is-hidden" id="history">
-            <div class="history-chart" id="history-chart" role="img"></div>
-          </div>
-          <p class="ranking-total" id="ranking-total"></p>
-          <p class="ranking-missing" id="ranking-missing"></p>
-        </div>
-
-        <aside class="ranking-notes" aria-label="How to read the ranking">
-          <h3 id="legend-title">Colour shows stage</h3>
-          <ul class="legend" id="legend"></ul>
-          <p class="legend-tone" id="legend-tone"></p>
-          <h3>Filed and announced load measure different things</h3>
-          <p>A grid filing is what a developer has formally asked the transmission utility for. It covers the whole site, cooling and growth room included. Announced IT load is what press and company statements disclose about the servers alone. The two do not add up and should not be compared site by site as like for like.</p>
-          <h3>Where the figures come from</h3>
-          <p>Every figure here comes from grid registers, regulator orders, company statements or press. Each site’s sources are linked under its name. We do not estimate capacity from satellite images.</p>
-          <p><button type="button" class="text-button" id="download-csv">Download this ranking (CSV)</button></p>
-        </aside>
+        </section>
       </section>
 
-      <section class="changes" aria-labelledby="changes-title">
-        <h2 id="changes-title"></h2>
-        <div class="changes-grid">
-          <div>
-            <h3>In the project list and grid register</h3>
-            <ul class="change-list" id="change-list"></ul>
+      <section class="focus-panel" role="tabpanel" id="panel-stand" aria-labelledby="tab-stand" data-title="Where things stand" hidden>
+        <figure class="graphic">
+          <dl class="answer-figures" id="answer-figures"></dl>
+          <div class="scale-strip" id="scale-strip"></div>
+        </figure>
+        <div class="brief" id="brief-stand"></div>
+        <section class="ranking" aria-labelledby="ranking-title">
+          <div class="ranking-main">
+            <div class="ranking-head">
+              <h2 id="ranking-title">Sites ranked by megawatts filed with the grid</h2>
+              <div class="controls">
+                <div class="switch" role="group" aria-label="Measure">
+                  <button type="button" data-measure="filed" aria-pressed="true">Filed with the grid</button>
+                  <button type="button" data-measure="announced" aria-pressed="false">Announced IT load</button>
+                </div>
+                <div class="switch" role="group" aria-label="Time">
+                  <button type="button" data-time="snapshot" aria-pressed="true">Snapshot</button>
+                  <button type="button" data-time="history" aria-pressed="false">Over time</button>
+                </div>
+              </div>
+            </div>
+            <p class="ranking-sub" id="ranking-sub"></p>
+            <ul class="legend-inline" id="legend-inline" aria-hidden="true"></ul>
+            <ol class="bars" id="bars"></ol>
+            <div class="history is-hidden" id="history">
+              <div class="history-chart" id="history-chart" role="img"></div>
+            </div>
+            <p class="ranking-total" id="ranking-total"></p>
+            <p class="ranking-missing" id="ranking-missing"></p>
           </div>
-          <div>
-            <h3 id="signals-title"></h3>
-            <ul class="signal-list" id="signal-list"></ul>
-          </div>
-        </div>
+          <aside class="ranking-notes" aria-label="How to read the ranking">
+            <h3 id="legend-title">Colour shows stage</h3>
+            <ul class="legend" id="legend"></ul>
+            <p class="legend-tone" id="legend-tone"></p>
+            <h3>Filed and announced load measure different things</h3>
+            <p>A grid filing is what a developer has formally asked the transmission utility for. It covers the whole site, cooling and growth room included. Announced IT load is what press and company statements disclose about the servers alone. The two do not add up and should not be compared site by site as like for like.</p>
+            <h3>Where the figures come from</h3>
+            <p>Every figure here comes from grid registers, regulator orders, company statements or press. Each site’s sources are linked under its name. We do not estimate capacity from satellite images.</p>
+            <p><button type="button" class="text-button" id="download-csv">Download this ranking (CSV)</button></p>
+          </aside>
+        </section>
+        <section class="not-counted" aria-labelledby="uncounted-title" id="not-counted">
+          <h2 id="uncounted-title">On the record, not counted</h2>
+          <p class="section-note">Loads the tracker shows but leaves out of every total, and why.</p>
+          <ul class="plain-list" id="uncounted-list"></ul>
+        </section>
+      </section>
+
+      <section class="focus-panel" role="tabpanel" id="panel-next" aria-labelledby="tab-next" data-title="What’s next" hidden>
+        <figure class="graphic" id="graphic-next"></figure>
+        <div class="brief" id="brief-next"></div>
+        <section aria-labelledby="watch-title">
+          <h2 id="watch-title" class="brief-title">What we are watching</h2>
+          <ul class="signal-list" id="watch-list"></ul>
+        </section>
       </section>
     </main>
 
@@ -104,5 +137,6 @@
     <script src="js/vendor/echarts.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/overview.js"></script>
+    <script src="js/views.js"></script>
   </body>
 </html>
