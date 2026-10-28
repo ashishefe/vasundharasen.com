@@ -1125,7 +1125,7 @@ window.INDIA_DC_WATCH = {
       "id": "signal-natl-peak-270",
       "date": "2026-05-21",
       "type": "grid",
-      "headline": "India set an all-time peak power demand record of 270.8 GW on 21 May 2026 — the 4th straight record day.",
+      "headline": "India set an all-time peak power demand record of 270.8 gigawatts (GW) on 21 May 2026, the fourth straight record day.",
       "whyItMatters": "The grid that AI datacenter load is layering onto is itself growing fast under heat stress; new firm load lands on an already record-setting peak.",
       "sourceIds": [
         "src-natl-peak-270-2026"
@@ -1146,7 +1146,7 @@ window.INDIA_DC_WATCH = {
       "date": "2026-06-10",
       "type": "hyperscaler demand",
       "headline": "Meta contracted ~925 MW of renewable PPAs (CleanMax 837 MW + Fourth Partner 88 MW) for its India / Jamnagar AI buildout.",
-      "whyItMatters": "Moves the Jamnagar project from a renewable 'signal' to contracted RE — a rare concrete clean-power data point amid mostly undisclosed plans.",
+      "whyItMatters": "The Jamnagar project's renewable energy supply has moved from an indication of intent to contracted power.",
       "sourceIds": [
         "src-meta-ppa-mercom-2026"
       ]
@@ -1166,7 +1166,7 @@ window.INDIA_DC_WATCH = {
       "date": "2026-06-15",
       "type": "supply chain",
       "headline": "Adani + Jabil announced intent to build multi-GW AI-rack and datacenter-hardware manufacturing in India.",
-      "whyItMatters": "Supply-chain localization (racks, PDUs, CDUs, transformers, thermal) — distinct from datacenter load, but shapes how fast India can build its own capacity.",
+      "whyItMatters": "Domestic production of racks, power distribution units, coolant distribution units, transformers and cooling equipment may affect how fast India can add data centre capacity. Manufacturing capacity is separate from data centre electricity demand.",
       "sourceIds": [
         "src-adani-jabil-2026"
       ]
@@ -1196,7 +1196,7 @@ window.INDIA_DC_WATCH = {
       "id": "signal-ctuil-data-queue-sep2026",
       "date": "2026-09-19",
       "type": "grid",
-      "headline": "CTUIL's live register adds two 100 MW data-centre applications and closes CtrlS's 50 MW application; active CTUIL-tracked DC load rises by a net 150 MW.",
+      "headline": "The Central Transmission Utility of India Ltd (CTUIL) live register adds two 100 megawatt (MW) data centre applications and closes CtrlS's 50 MW application; active data centre load on the CTUIL register rises by a net 150 MW.",
       "whyItMatters": "The active CTUIL data-centre queue is now 2,980 MW. The two new applicants widen the geography to Talegaon and add another Maheshwaram load, while a closed application shows why gross filings must not be treated as a live pipeline.",
       "sourceIds": [
         "src-ctuil-live-2026-09-19"
@@ -1207,7 +1207,7 @@ window.INDIA_DC_WATCH = {
       "date": "2026-08-06",
       "type": "market baseline",
       "headline": "The Government reported about 1,575 MW of installed Indian data-centre capacity, up from 375 MW in 2020.",
-      "whyItMatters": "This is an official system-wide baseline, distinct from the dashboard's project and connectivity pipeline. It also points to geographic expansion beyond the established metros.",
+      "whyItMatters": "This official system-wide baseline measures installed capacity separately from announced projects and grid connectivity filings. It also points to geographic expansion beyond the established metros.",
       "sourceIds": [
         "src-pib-dc-capacity-2026-08"
       ]
@@ -4128,7 +4128,7 @@ window.INDIA_DC_WATCH = {
       "severity": "high",
       "title": "Vizag/Pendurthi transmission build after the SPV transfer",
       "trigger": "CTUIL's TBCB status reports or Adani Energy Solutions disclosures show progress or slippage against completion 30 months after the 14 Aug 2026 SPV transfer (about Feb 2029)",
-      "whyItMatters": "This package is the delivery dependency for the 2,323 MW Vizag connectivity queue. The tracker estimates a 2028 power-flow year for those filings, earlier than the package's completion date.",
+      "whyItMatters": "The 2,323 megawatts (MW) in Vizag connectivity filings depend on this transmission package. This tracker's estimated year for power to flow to those loads is 2028, earlier than the package's completion date.",
       "checkWhere": "CTUIL Status of ISTS RTM and TBCB Projects; CTUIL Bidding Calendar; Adani Energy Solutions exchange filings",
       "checkUrl": "https://www.ctuil.in/bidding-calendar",
       "nextCheck": "2026-12-01",
@@ -4145,7 +4145,7 @@ window.INDIA_DC_WATCH = {
       "severity": "medium",
       "title": "MeitY / IndiaAI cloud-service uptime language",
       "trigger": "IndiaAI updates the RFE, empanelment SLA, STQC certification requirement, or cloud-service credit bands",
-      "whyItMatters": "This is the live government definition of AI-cloud service availability. It should inform dashboard serviceability notes, but it is not the same as a universal statutory datacenter uptime mandate.",
+      "whyItMatters": "This is the current government definition of artificial intelligence cloud-service availability. It provides a basis for assessing service availability, but does not impose a universal statutory uptime requirement on data centres.",
       "checkWhere": "IndiaAI compute capacity hub; IndiaAI / MeitY RFE and empanelment documents",
       "checkUrl": "https://indiaai.gov.in/hub/indiaai-compute-capacity",
       "nextCheck": "2026-12-01",
@@ -4511,7 +4511,7 @@ window.INDIA_DC_WATCH = {
       {
         "rank": "major",
         "headline": "Lodha's second 1,500 MW moves out of the totals",
-        "fact": "The tracker found no application record for the 1,500 MW that submissions in MERC Case 88 of 2026 described as under consideration. The record stays, marked under consideration, and counts in no total. The 1,450 MW grant is unchanged.",
+        "fact": "No application record was found in the sources reviewed for the 1,500 megawatts (MW) that submissions in Maharashtra Electricity Regulatory Commission (MERC) Case 88 of 2026 described as under consideration. The 1,500 MW remains listed as under consideration and is excluded from every total. The 1,450 MW grant is unchanged.",
         "soWhat": "Counted filings are 1,500 MW lower as a result. The figure would return to the count if the utility or the regulator publishes an application or an approval.",
         "refs": [
           {
@@ -4543,7 +4543,7 @@ window.INDIA_DC_WATCH = {
       {
         "rank": "minor",
         "headline": "Microsoft's Hyderabad cloud region is live",
-        "fact": "Microsoft made its India South Central region in Hyderabad generally available on 6 Aug 2026, with three availability zones. It gave no MW. The tracker missed the date and adds the region as its own row this month.",
+        "fact": "Microsoft made its India South Central region in Hyderabad generally available on 6 Aug 2026, with three availability zones. It disclosed no capacity in megawatts. The region has a separate entry.",
         "refs": [
           {
             "type": "project",
@@ -4581,8 +4581,8 @@ window.INDIA_DC_WATCH = {
       {
         "rank": "major",
         "headline": "Lodha's further 1,500 MW is on the record but not counted",
-        "fact": "Press reports of MERC Case 88 put about 1,450 MW of granted load in the Ambernath region and say 1,500 MW more is under consideration. The tracker counts the 1,450 MW grant against Lodha's Palava park and keeps the 1,500 MW out of every total. The order text has not been read, because its download links on MERC's site are broken.",
-        "soWhat": "Until a utility or regulator record appears, nothing on the registers the tracker could read shows the park asking for more than 1,450 MW. Counting it would raise Maharashtra's filed figure to 3,150 MW.",
+        "fact": "Press reports of Maharashtra Electricity Regulatory Commission (MERC) Case 88 put about 1,450 megawatts (MW) of granted load in the Ambernath region and say 1,500 MW more is under consideration. The 1,450 MW grant is counted against Lodha's Palava park; the 1,500 MW is excluded from every total. The order text has not been reviewed because its download links on MERC's site are broken.",
+        "soWhat": "No application or approval in the utility or regulator registers reviewed shows the park asking for more than 1,450 megawatts (MW). Counting the further 1,500 MW would raise Maharashtra's filed figure to 3,150 MW.",
         "refs": [
           {
             "type": "filing",
@@ -4646,7 +4646,7 @@ window.INDIA_DC_WATCH = {
         "rank": "major",
         "headline": "Reliance aims to run its first 120 MW at Jamnagar by year end",
         "fact": "Reliance said at its 19 Jun 2026 AGM, as reported by Digit, that the first 120 MW phase of its Jamnagar AI data centre should be operating by the end of 2026. The reports do not make clear whether this is the facility leased to Meta (168 MW).",
-        "soWhat": "No counted grid filing in Gujarat covers it. CTUIL's register lists other Reliance applications near Jamnagar with no use stated: two sets of 1,250 MW at Jam Khambhaliya, filed a year apart, and ten of 1,200 MW each at a new substation near RIL Jamnagar. The tracker counts none of them.",
+        "soWhat": "No counted grid filing in Gujarat covers it. The Central Transmission Utility of India Ltd (CTUIL) register lists other Reliance applications near Jamnagar with no use stated: two sets of 1,250 megawatts (MW) at Jam Khambhaliya, filed a year apart, and ten of 1,200 MW each at a new substation near Reliance Industries Ltd's Jamnagar site. These applications are excluded from the data centre totals.",
         "refs": [
           {
             "type": "project",
@@ -4663,7 +4663,7 @@ window.INDIA_DC_WATCH = {
         "rank": "major",
         "headline": "Vizag transmission is due about February 2029",
         "fact": "The company that will build the Vizag/Pendurthi transmission package passed to Adani Energy Solutions on 14 Aug 2026, according to REC's exchange filing as quoted by T&D India. CTUIL's June 2026 calendar sets completion 30 months after that transfer, about 14 Feb 2029.",
-        "soWhat": "The tracker estimates 2028 for power to start flowing to the three Vizag parks' 2,323 MW, and Google's reported target for operations is September 2028. Full supply over the new lines may come later than both.",
+        "soWhat": "This tracker's estimated year for power to start flowing to the three Vizag parks' 2,323 megawatts (MW) is 2028. Google's reported target for operations is September 2028. Full supply over the new lines may come later than both.",
         "refs": [
           {
             "type": "filing",
@@ -4698,7 +4698,7 @@ window.INDIA_DC_WATCH = {
     ]
   },
   "derived": {
-    "generatedAt": "2026-10-27T16:03:13+00:00",
+    "generatedAt": "2026-10-28T04:47:14+00:00",
     "statusOrder": {
       "operational": 0,
       "under_construction": 1,
