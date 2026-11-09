@@ -15,7 +15,7 @@ window.GREEN_HYDROGEN_WATCH = {
       {
         "rank": "lead",
         "headline": "October brought no new award, plant or contract",
-        "fact": "Research to 26 Oct found no new award, commissioning, purchase agreement, certificate or standard in October. Bids for SECI's second green-ammonia tender, for 54,000 tonnes a year, were due to open on 30 Oct. This edition instead adds five items earlier editions missed.",
+        "fact": "Research to 26 Oct found no new award, commissioning, purchase agreement, certificate or standard in October. Bids for SECI's second green-ammonia tender, for 54,000 tonnes a year, were due to open on 30 Oct; a late check to 31 Oct found SECI had amended the tender on 27 Oct and moved bid opening to 20 Nov. This edition instead adds five items earlier editions missed.",
         "soWhat": "The award book changes little from month to month; the next evidence to watch is delivery, plants, factories and supply agreements against awards already made.",
         "refs": [
           {
@@ -228,16 +228,21 @@ window.GREEN_HYDROGEN_WATCH = {
       {
         "rank": "major",
         "headline": "Result of the second ammonia tender",
-        "fact": "Bids for SECI's 54,000-tonnes-a-year green-ammonia tender were due to open on 30 Oct 2026, after this edition's research cut.",
+        "fact": "Bids for SECI's 54,000-tonnes-a-year green-ammonia tender (Tranche I-B, formerly Tranche II) open on 20 Nov 2026. SECI amended the tender on 27 Oct; it had been due to open on 30 Oct.",
         "soWhat": "A result would add the first new ammonia price since the 2025 auctions.",
         "refs": [
+          {
+            "type": "event",
+            "id": "evt-seci-mode2a-tranche1b-amendment"
+          },
           {
             "type": "link",
             "href": "policy.html#watching",
             "label": "What we are watching"
           }
         ],
-        "trackId": "ammonia-procurement"
+        "trackId": "ammonia-procurement",
+        "date": "2026-11-20"
       },
       {
         "rank": "minor",
@@ -453,7 +458,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Demand & Offtake",
       "instrument": "tender",
       "stage": "concluded",
-      "stageNote": "724,000 tonnes/year auctioned across 13 fertiliser sites; agreements signed from 30 March 2026 cover 670,000 (press-reported total). A 54,000-tonnes/year Tranche II tender opened in September 2026.",
+      "stageNote": "724,000 tonnes/year auctioned across 13 fertiliser sites; agreements signed from 30 March 2026 cover 670,000 (press-reported total). SECI's separate 54,000-tonnes/year Mode 2A Tranche I-B tender (formerly Tranche II) remains open, with bid opening scheduled for 20 November 2026.",
       "summary": "These auctions give contract-by-contract public prices for a green-hydrogen product, the only such series in this tracker. The prices compare within this programme; they do not set a price for hydrogen itself.",
       "parameters": [
         {
@@ -504,7 +509,8 @@ window.GREEN_HYDROGEN_WATCH = {
       ],
       "sourceIds": [
         "S01",
-        "S28"
+        "S28",
+        "S47"
       ]
     },
     {
@@ -745,6 +751,19 @@ window.GREEN_HYDROGEN_WATCH = {
   ],
   "events": [
     {
+      "id": "evt-seci-mode2a-tranche1b-amendment",
+      "trackId": "ammonia-procurement",
+      "date": "2026-10-27",
+      "title": "SECI amends the 54,000-tonnes/year ammonia procurement",
+      "detail": "SECI's Amendment-01 renames the 54,000-MTPA procurement from Mode 2A Tranche II to Mode 2A Tranche I-B. It revises the assumed production and supply start date from 20 June 2028 to 20 October 2028. SECI's tender page shows online bid submission closing on 17 November and bid opening on 20 November 2026.",
+      "significance": "This is an amended open tender, not a bid result, award, discovered tariff, purchase agreement, construction start or certification outcome.",
+      "sourceIds": [
+        "S47",
+        "S28"
+      ],
+      "editionId": "2026-11-01"
+    },
+    {
       "id": "evt-amgreen-h2global-asian-lot",
       "trackId": "commercial-orders",
       "date": "2026-09-30",
@@ -963,6 +982,18 @@ window.GREEN_HYDROGEN_WATCH = {
   ],
   "watch": [
     {
+      "id": "watch-ammonia-mode2a-tranche2-result",
+      "trackId": "ammonia-procurement",
+      "condition": "SECI publishes a Mode 2A Tranche I-B (formerly Tranche II) award, selected producer, contracted quantity, Green Ammonia Purchase Agreement or tariff",
+      "register": "SECI tender record SECI000282 and tender-result notices",
+      "nextCheck": "2026-11-21",
+      "why": "SECI amended and retitled the 54,000-MTPA tender on 27 October. The official page now gives 20 November as the bid-opening date. Until SECI publishes a result, there is no price, award or contract to record.",
+      "sourceIds": [
+        "S28",
+        "S47"
+      ]
+    },
+    {
       "id": "watch-em-t1-scd",
       "trackId": "sight-electrolyser-awards",
       "condition": "SECI or MNRE publishes commissioning records, revised dates or extensions for the eight Tranche I factories, all past their August 2026 dates",
@@ -1035,17 +1066,6 @@ window.GREEN_HYDROGEN_WATCH = {
       ]
     },
     {
-      "id": "watch-ammonia-mode2a-tranche2-result",
-      "trackId": "ammonia-procurement",
-      "condition": "SECI publishes a Mode 2A Tranche II award, selected producer, contracted quantity, Green Ammonia Purchase Agreement or tariff",
-      "register": "SECI tender record SECI000282 and tender-result notices",
-      "nextCheck": "2026-12-01",
-      "why": "Bids were due to open on 30 October 2026. Until SECI publishes a result there is no price, award or contract to record.",
-      "sourceIds": [
-        "S28"
-      ]
-    },
-    {
       "id": "watch-ammonia-unsigned-54kt",
       "trackId": "ammonia-procurement",
       "condition": "SECI or MNRE states which Tranche I ammonia lots have no purchase agreement",
@@ -1085,13 +1105,22 @@ window.GREEN_HYDROGEN_WATCH = {
   ],
   "sources": [
     {
+      "id": "S47",
+      "title": "Amendment-01 to RfS for 54,000 MTPA green ammonia under SIGHT Mode 2A",
+      "publisher": "Solar Energy Corporation of India",
+      "date": "2026-10-27",
+      "url": "https://www.seci.co.in/uploads/tenders/Amendment-01.pdf",
+      "class": "primary-official",
+      "num": 1
+    },
+    {
       "id": "S30",
       "title": "AM Green selected in H2Global's Asian lot",
       "publisher": "AM Green",
       "date": "2026-09-30",
       "url": "https://www.businesswire.com/news/home/20260930707955/en/AM-Green-Named-Winner-of-Asian-Lot-in-H2Global-Auction-Funded-by-German-Government",
       "class": "primary-official",
-      "num": 1
+      "num": 2
     },
     {
       "id": "S28",
@@ -1100,7 +1129,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-09-24",
       "url": "https://www.seci.co.in/tender-details/Ymp1",
       "class": "primary-official",
-      "num": 2
+      "num": 3
     },
     {
       "id": "S27",
@@ -1109,7 +1138,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-09-24",
       "url": "https://www.marutisuzuki.com/corporate/media/press-releases/2026/september/maruti-suzuki-commissions-its-first-green-hydrogen-plant-at-its-manesar-facility-in-haryana",
       "class": "primary-official",
-      "num": 3
+      "num": 4
     },
     {
       "id": "S29",
@@ -1118,7 +1147,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-09-09",
       "url": "https://www.adb.org/projects/58517-001/main",
       "class": "primary-official",
-      "num": 4
+      "num": 5
     },
     {
       "id": "S24",
@@ -1127,7 +1156,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-13",
       "url": "https://www.bhel.com/bhel-enters-strategic-tie-hystar-norway-pem-electrolyser-systems",
       "class": "primary-official",
-      "num": 5
+      "num": 6
     },
     {
       "id": "S33",
@@ -1136,7 +1165,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-12",
       "url": "https://www.business-standard.com/industry/news/govt-spends-292-crore-under-national-green-hydrogen-mission-so-far-mnre-126081201853_1.html",
       "class": "secondary-press",
-      "num": 6
+      "num": 7
     },
     {
       "id": "S25",
@@ -1145,7 +1174,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-11",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2297571&lang=1&reg=3",
       "class": "primary-official",
-      "num": 7
+      "num": 8
     },
     {
       "id": "S26",
@@ -1154,7 +1183,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-08-03",
       "url": "https://seci.co.in/tender-details/YmRx",
       "class": "primary-official",
-      "num": 8
+      "num": 9
     },
     {
       "id": "S01",
@@ -1163,7 +1192,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-20",
       "url": "https://www.seci.co.in/nghm",
       "class": "primary-official",
-      "num": 9
+      "num": 10
     },
     {
       "id": "S22",
@@ -1172,7 +1201,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-07-02",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2280506&lang=1&reg=48",
       "class": "primary-official",
-      "num": 10
+      "num": 11
     },
     {
       "id": "S39",
@@ -1181,7 +1210,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-06-30",
       "url": "https://www.ril.com/ar2025-26/making-significant-strides-towards-a-net-carbon-zero-future.html",
       "class": "primary-official",
-      "num": 11
+      "num": 12
     },
     {
       "id": "S06",
@@ -1190,7 +1219,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-06-17",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2274212&lang=1&reg=3",
       "class": "primary-official",
-      "num": 12
+      "num": 13
     },
     {
       "id": "S21",
@@ -1199,7 +1228,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-05-28",
       "url": "https://www.ohmium.com/press-release/ohmium-and-insolare-collaborate-to-deliver-a-multi-application-green-hydrogen-project-for-nlc-india-limited",
       "class": "primary-official",
-      "num": 13
+      "num": 14
     },
     {
       "id": "S41",
@@ -1208,7 +1237,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-04-13",
       "url": "https://www.worldfertilizer.com/environment/13042026/insolare-energy-and-scc-infrastructure-sign-green-ammonia-purchase-agreements/",
       "class": "secondary-press",
-      "num": 14
+      "num": 15
     },
     {
       "id": "S44",
@@ -1217,7 +1246,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-04-06",
       "url": "https://www.pv-magazine-india.com/2026/04/06/jakson-green-consortium-signs-85000-tpa-green-ammonia-purchase-agreement-with-seci/",
       "class": "secondary-press",
-      "num": 15
+      "num": 16
     },
     {
       "id": "S42",
@@ -1226,7 +1255,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-04-01",
       "url": "https://www.pv-magazine-india.com/2026/04/01/truere-oriana-power-signs-inr-3135-crore-green-ammonia-offtake-agreement-with-seci",
       "class": "secondary-press",
-      "num": 16
+      "num": 17
     },
     {
       "id": "S43",
@@ -1235,7 +1264,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-31",
       "url": "https://www.pv-magazine-india.com/2026/03/31/acme-group-signs-long-term-offtake-agreement-with-seci-for-370000-tpa-green-ammonia-capacity",
       "class": "secondary-press",
-      "num": 17
+      "num": 18
     },
     {
       "id": "S32",
@@ -1244,7 +1273,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-31",
       "url": "https://ngel.in/public/media_library/1/e43d09aedf.pdf",
       "class": "primary-official",
-      "num": 18
+      "num": 19
     },
     {
       "id": "S45",
@@ -1253,7 +1282,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-26",
       "url": "https://www.energetica-india.net/news/india-commissions-8000-tpa-green-hydrogen-capacity-till-feb-2026-aims-for-5-mmt-by-2030",
       "class": "secondary-press",
-      "num": 19
+      "num": 20
     },
     {
       "id": "S08",
@@ -1262,7 +1291,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-24",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244663&lang=1&reg=3",
       "class": "primary-official",
-      "num": 20
+      "num": 21
     },
     {
       "id": "S35",
@@ -1271,7 +1300,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-03-13",
       "url": "https://nsearchives.nseindia.com/corporate/ADVAITENERGY_13032026170409_SEintimations.pdf",
       "class": "primary-official",
-      "num": 21
+      "num": 22
     },
     {
       "id": "S07",
@@ -1280,7 +1309,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-02-27",
       "url": "https://mnre.gov.in/en/notice/green-ammonia-standard-for-india/",
       "class": "primary-official",
-      "num": 22
+      "num": 23
     },
     {
       "id": "S46",
@@ -1289,7 +1318,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2026-02-17",
       "url": "https://mercomindia.com/neuen-green-wins-10000-mtpa-green-hydrogen-project-at-numaligarh-refinery",
       "class": "secondary-press",
-      "num": 23
+      "num": 24
     },
     {
       "id": "S31",
@@ -1298,7 +1327,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-12-03",
       "url": "https://sansad.in/getFile/loksabhaquestions/annex/186/AU669_KMk7i8.pdf?source=pqals",
       "class": "primary-official",
-      "num": 24
+      "num": 25
     },
     {
       "id": "S34",
@@ -1307,7 +1336,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-11-11",
       "url": "https://www.jswenergy.in/newsroom/press-release/commissioning-of-green-hydrogen-plant",
       "class": "primary-official",
-      "num": 25
+      "num": 26
     },
     {
       "id": "S14",
@@ -1316,7 +1345,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-08-18",
       "url": "https://www.iocl.com/uploads/ConcallTranscriptQ1FY25-26.pdf",
       "class": "primary-official",
-      "num": 26
+      "num": 27
     },
     {
       "id": "S40",
@@ -1325,7 +1354,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-07-21",
       "url": "https://www.larsentoubro.com/pressreleases/2025-07-21-lt-energy-greentech-to-establish-india-s-largest-green-hydrogen-plant/",
       "class": "primary-official",
-      "num": 27
+      "num": 28
     },
     {
       "id": "S38",
@@ -1334,7 +1363,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-07-08",
       "url": "https://mfn.se/all/a/mcphy-energy-s-a/mcphy-energy-john-cockerill-hydrogen-appointed-as-the-buyer-of-the-majority-of-mcphys-activities-including-the-belfort-gigafactory-judicial-reorganization-proceedings-converted-into-judicial-liquidation-trading-suspension-51ab7cd4",
       "class": "primary-official",
-      "num": 28
+      "num": 29
     },
     {
       "id": "S11",
@@ -1343,7 +1372,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-23",
       "url": "https://www.adani.com/newsroom/media-releases/adani-commissions-indias-first-off-grid-green-hydrogen-pilot-plant-of-5-mw-capacity",
       "class": "primary-official",
-      "num": 29
+      "num": 30
     },
     {
       "id": "S10",
@@ -1352,7 +1381,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-06-19",
       "url": "https://ntpc.co.in/media/press-releases/ntpc-hands-over-five-hydrogen-fuel-cell-buses-leh-administration",
       "class": "primary-official",
-      "num": 30
+      "num": 31
     },
     {
       "id": "S13",
@@ -1361,7 +1390,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-05-30",
       "url": "https://iocl.com/NewsDetails/59411",
       "class": "primary-official",
-      "num": 31
+      "num": 32
     },
     {
       "id": "S05",
@@ -1370,7 +1399,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-04-29",
       "url": "https://mnre.gov.in/en/notice/green-hydrogen-certification-scheme-of-india/",
       "class": "primary-official",
-      "num": 32
+      "num": 33
     },
     {
       "id": "S37",
@@ -1379,7 +1408,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-01-08",
       "url": "https://www.pmindia.gov.in/en/news_updates/pm-lays-foundation-stone-inaugurates-development-works-worth-over-rs-2-lakh-crore-in-visakhapatnam-andhra-pradesh/",
       "class": "primary-official",
-      "num": 33
+      "num": 34
     },
     {
       "id": "S15",
@@ -1388,7 +1417,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2025-01-07",
       "url": "https://ntpc.co.in/media/press-releases/pm-lay-foundation-stone-ntpc-green-energy-limited-green-hydrogen-hub-project",
       "class": "primary-official",
-      "num": 34
+      "num": 35
     },
     {
       "id": "S18",
@@ -1397,7 +1426,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-10-30",
       "url": "https://johncockerill.com/en/press-and-news/news/am-green-entrusts-john-cockerill-with-indias-largest-electrolyzer-order-for-its-green-ammonia-complex-one-of-the-worlds-largest/",
       "class": "primary-official",
-      "num": 35
+      "num": 36
     },
     {
       "id": "S03",
@@ -1406,7 +1435,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-30",
       "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/jul/doc2024730360201.pdf",
       "class": "primary-official",
-      "num": 36
+      "num": 37
     },
     {
       "id": "S16",
@@ -1415,7 +1444,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-07-19",
       "url": "https://www.ohmium.com/press-release/ohmium-launches-newest-pem-electrolyzer-gigafactory",
       "class": "primary-official",
-      "num": 37
+      "num": 38
     },
     {
       "id": "S09",
@@ -1424,7 +1453,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-24",
       "url": "https://www.gailonline.com/PressRelease24052024.html",
       "class": "primary-official",
-      "num": 38
+      "num": 39
     },
     {
       "id": "S20",
@@ -1433,7 +1462,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2024-05-21",
       "url": "https://nelhydrogen.com/press-release/nel-asa-has-signed-a-licensing-agreement-with-reliance/",
       "class": "primary-official",
-      "num": 39
+      "num": 40
     },
     {
       "id": "S04",
@@ -1442,7 +1471,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-08-19",
       "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1950421&lang=2&reg=48",
       "class": "primary-official",
-      "num": 40
+      "num": 41
     },
     {
       "id": "S17",
@@ -1451,7 +1480,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-03-22",
       "url": "https://www.larsentoubro.com/pressreleases/2023/2023-03-22-lt-signs-agreement-with-mcphy-for-electrolyzer-manufacturing",
       "class": "primary-official",
-      "num": 41
+      "num": 42
     },
     {
       "id": "S19",
@@ -1460,7 +1489,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-02-02",
       "url": "https://johncockerill.com/en/press-and-news/news/john-cockerill-records-indias-largest-140mw-electrolysers-order-from-greenko-for-the-first-indian-green-ammonia-plant/",
       "class": "primary-official",
-      "num": 42
+      "num": 43
     },
     {
       "id": "S02",
@@ -1469,7 +1498,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2023-01-04",
       "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1888545&lang=2&reg=48",
       "class": "primary-official",
-      "num": 43
+      "num": 44
     },
     {
       "id": "S12",
@@ -1478,7 +1507,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "date": "2022-08-20",
       "url": "https://www.larsentoubro.com/pressreleases/2022/2022-08-20-lt-commissions-green-hydrogen-plant-at-its-manufacturing-complex-in-hazira",
       "class": "primary-official",
-      "num": 44
+      "num": 45
     }
   ],
   "market": {
@@ -3201,14 +3230,14 @@ window.GREEN_HYDROGEN_WATCH = {
     ]
   },
   "derived": {
-    "generatedAt": "2026-10-27T16:03:13Z",
+    "generatedAt": "2026-11-09T14:27:22Z",
     "latestEditionId": "2026-11-01",
     "asOf": "2026-11-01",
     "counts": {
       "tracks": 8,
-      "events": 17,
+      "events": 18,
       "watch": 10,
-      "sources": 44,
+      "sources": 45,
       "productionAwards": 19,
       "electrolyserAwards": 21,
       "ammoniaAuctions": 13,
