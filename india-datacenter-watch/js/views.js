@@ -36,7 +36,7 @@
   qs("#num-stand").textContent = mw(conn.totalMW);
   qs("#count-stand").textContent = `MW filed with the grid; ${mw(conn.grantedMW)} MW granted`;
   const forward = (D.connectivity.forward || []);
-  const thisYear = String(new Date().getFullYear());
+  const thisYear = (cut || data.meta.asOf || "").slice(0, 4) || String(new Date().getFullYear());
   const dueYears = forward.filter((f) => f.year >= thisYear);
   const lastDue = dueYears[dueYears.length - 1];
   qs("#num-next").textContent = lastDue ? mw(lastDue.cumulativeMW) : "—";

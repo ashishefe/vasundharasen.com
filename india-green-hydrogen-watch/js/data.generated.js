@@ -15,7 +15,7 @@ window.GREEN_HYDROGEN_WATCH = {
       {
         "rank": "lead",
         "headline": "October brought no new award, plant or contract",
-        "fact": "Research to 26 Oct found no new award, commissioning, purchase agreement, certificate or standard in October. Bids for SECI's second green-ammonia tender, for 54,000 tonnes a year, were due to open on 30 Oct; a late check to 31 Oct found SECI had amended the tender on 27 Oct and moved bid opening to 20 Nov. This edition instead adds five items earlier editions missed.",
+        "fact": "Research to 26 Oct found no new award, commissioning, purchase agreement, certificate or standard in October. Bids for SECI's second green-ammonia tender, for 54,000 tonnes a year, were due to open on 30 Oct; a late check to 31 Oct found SECI had amended the tender on 27 Oct and moved bid opening to 20 Nov. On 21 Nov, SECI's tender page gave 30 Nov. This edition instead adds five items earlier editions missed.",
         "soWhat": "The award book changes little from month to month; the next evidence to watch is delivery, plants, factories and supply agreements against awards already made.",
         "refs": [
           {
@@ -228,7 +228,7 @@ window.GREEN_HYDROGEN_WATCH = {
       {
         "rank": "major",
         "headline": "Result of the second ammonia tender",
-        "fact": "Bids for SECI's 54,000-tonnes-a-year green-ammonia tender (Tranche I-B, formerly Tranche II) open on 20 Nov 2026. SECI amended the tender on 27 Oct; it had been due to open on 30 Oct.",
+        "fact": "Bids for SECI's 54,000-tonnes-a-year green-ammonia tender (Tranche I-B, formerly Tranche II) open on 30 Nov 2026, according to SECI's tender page on 21 Nov. SECI amended the tender on 27 Oct, moving the opening from 30 Oct to 20 Nov, and has since moved it again.",
         "soWhat": "A result would add the first new ammonia price since the 2025 auctions.",
         "refs": [
           {
@@ -242,7 +242,7 @@ window.GREEN_HYDROGEN_WATCH = {
           }
         ],
         "trackId": "ammonia-procurement",
-        "date": "2026-11-20"
+        "date": "2026-11-30"
       },
       {
         "rank": "minor",
@@ -458,7 +458,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "pillar": "Demand & Offtake",
       "instrument": "tender",
       "stage": "concluded",
-      "stageNote": "724,000 tonnes/year auctioned across 13 fertiliser sites; agreements signed from 30 March 2026 cover 670,000 (press-reported total). SECI's separate 54,000-tonnes/year Mode 2A Tranche I-B tender (formerly Tranche II) remains open, with bid opening scheduled for 20 November 2026.",
+      "stageNote": "724,000 tonnes/year auctioned across 13 fertiliser sites; agreements signed from 30 March 2026 cover 670,000 (press-reported total). SECI's separate 54,000-tonnes/year Mode 2A Tranche I-B tender (formerly Tranche II) was still open on 21 November: SECI's tender page gave 25 November for online bid submission and 30 November 2026 for bid opening.",
       "summary": "These auctions give contract-by-contract public prices for a green-hydrogen product, the only such series in this tracker. The prices compare within this programme; they do not set a price for hydrogen itself.",
       "parameters": [
         {
@@ -755,7 +755,7 @@ window.GREEN_HYDROGEN_WATCH = {
       "trackId": "ammonia-procurement",
       "date": "2026-10-27",
       "title": "SECI amends the 54,000-tonnes/year ammonia procurement",
-      "detail": "SECI's Amendment-01 renames the 54,000-MTPA procurement from Mode 2A Tranche II to Mode 2A Tranche I-B. It revises the assumed production and supply start date from 20 June 2028 to 20 October 2028. SECI's tender page shows online bid submission closing on 17 November and bid opening on 20 November 2026.",
+      "detail": "SECI's Amendment-01 renames the 54,000-MTPA procurement from Mode 2A Tranche II to Mode 2A Tranche I-B. It revises the assumed production and supply start date from 20 June 2028 to 20 October 2028. After the amendment, SECI's tender page gave 17 November for online bid submission and 20 November 2026 for bid opening. On 21 November it gave 25 November and 30 November.",
       "significance": "This is an amended open tender, not a bid result, award, discovered tariff, purchase agreement, construction start or certification outcome.",
       "sourceIds": [
         "S47",
@@ -982,18 +982,6 @@ window.GREEN_HYDROGEN_WATCH = {
   ],
   "watch": [
     {
-      "id": "watch-ammonia-mode2a-tranche2-result",
-      "trackId": "ammonia-procurement",
-      "condition": "SECI publishes a Mode 2A Tranche I-B (formerly Tranche II) award, selected producer, contracted quantity, Green Ammonia Purchase Agreement or tariff",
-      "register": "SECI tender record SECI000282 and tender-result notices",
-      "nextCheck": "2026-11-21",
-      "why": "SECI amended and retitled the 54,000-MTPA tender on 27 October. The official page now gives 20 November as the bid-opening date. Until SECI publishes a result, there is no price, award or contract to record.",
-      "sourceIds": [
-        "S28",
-        "S47"
-      ]
-    },
-    {
       "id": "watch-em-t1-scd",
       "trackId": "sight-electrolyser-awards",
       "condition": "SECI or MNRE publishes commissioning records, revised dates or extensions for the eight Tranche I factories, all past their August 2026 dates",
@@ -1063,6 +1051,18 @@ window.GREEN_HYDROGEN_WATCH = {
       "why": "The August agreement describes manufacturing in phases but names no plant, capacity, date or firm order.",
       "sourceIds": [
         "S24"
+      ]
+    },
+    {
+      "id": "watch-ammonia-mode2a-tranche2-result",
+      "trackId": "ammonia-procurement",
+      "condition": "SECI publishes a Mode 2A Tranche I-B (formerly Tranche II) award, selected producer, contracted quantity, Green Ammonia Purchase Agreement or tariff",
+      "register": "SECI tender record SECI000282 and tender-result notices",
+      "nextCheck": "2026-12-01",
+      "why": "SECI amended and retitled the 54,000-MTPA tender on 27 October and has since moved bid opening again: its tender page now gives 30 November. Until SECI publishes a result, there is no price, award or contract to record.",
+      "sourceIds": [
+        "S28",
+        "S47"
       ]
     },
     {
@@ -3230,7 +3230,7 @@ window.GREEN_HYDROGEN_WATCH = {
     ]
   },
   "derived": {
-    "generatedAt": "2026-11-09T14:27:22Z",
+    "generatedAt": "2026-11-21T12:19:40Z",
     "latestEditionId": "2026-11-01",
     "asOf": "2026-11-01",
     "counts": {

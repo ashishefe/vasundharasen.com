@@ -31,9 +31,13 @@
   const now = new Date();
   const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   const today = ymd(now);
+  // Anchor the forward view to the edition's research cut so dated steps do not silently
+  // vanish mid-month while briefs.next still headlines them; dates before today are marked passed.
+  const anchor = cut || edition.id;
+  const anchorDate = new Date(anchor + "T00:00:00");
   const steps = data.rules.flatMap((r) => [r.nextStepDate ? { date: r.nextStepDate, step: r.nextStep, r } : null]
     .concat((r.moreSteps || []).map((s) => ({ date: s.date, step: s.step, r }))))
-    .filter((x) => x && x.date >= today)
+    .filter((x) => x && x.date >= anchor)
     .sort((a, b) => a.date.localeCompare(b.date));
 
   // ---- tabs --------------------------------------------------------------------
@@ -41,8 +45,9 @@
   qs("#count-month").textContent = `change${inWindow.length === 1 ? "" : "s"} between ${short(since)} and ${short(cut)}`;
   qs("#num-stand").textContent = data.rules.length;
   qs("#count-stand").textContent = `rules: ${B["in force"]} in force, ${B.pending} pending, ${B.ended} ended`;
-  qs("#num-next").textContent = steps.length;
-  qs("#count-next").textContent = `dated step${steps.length === 1 ? "" : "s"} ahead, plus rules awaited`;
+  const ahead = steps.filter((s) => s.date >= today).length;
+  qs("#num-next").textContent = ahead;
+  qs("#count-next").textContent = `dated step${ahead === 1 ? "" : "s"} ahead, plus rules awaited`;
   const VIEWS = { "this-month": "panel-month", "where-things-stand": "panel-stand", "whats-next": "panel-next" };
   function show(view, focus) {
     if (!VIEWS[view]) view = "this-month";
@@ -107,7 +112,7 @@
     const [first, ...more] = refs;
     const extra = c.rank === "minor" ? [] : more.slice(0, 2);
     const rest = c.rank === "minor" ? 0 : more.length - extra.length;
-    const meta = `${c.date ? `<time datetime="${esc(c.date)}">${formatDate(c.date)}</time> · ` : ""}${c.trackId ? `<a href="topics.html#${esc(c.trackId)}">${esc(topicShort(c.trackId))}</a>` : "Across topics"}`;
+    const meta = `${c.date ? `<time datetime="${esc(c.date)}">${formatDate(c.date)}</time>${c.date < today ? " (passed; checked in the next update)" : ""} · ` : ""}${c.trackId ? `<a href="topics.html#${esc(c.trackId)}">${esc(topicShort(c.trackId))}</a>` : "Across topics"}`;
     const links = first ? `<a href="${esc(refHref(first))}">${c.rank === "minor" ? "Details" : "Read the record"}</a>${extra.map((r) => ` · <a href="${esc(refHref(r))}" title="${esc(refLabel(r))}">${esc(shorten(refLabel(r)))}</a>`).join("")}${rest > 0 ? ` · and ${rest} more in the record` : ""}` : "";
     return `<article class="card-${esc(c.rank)}">
       <div class="card-main">
@@ -273,11 +278,13 @@
   });
 
   // ---- What's next -------------------------------------------------------------------
-  const horizon = ymd(new Date(now.getTime() + 60 * 864e5));
+  // Add calendar days, not 24-hour blocks, so a daylight-saving change cannot shift the date.
+  const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+  const horizon = ymd(addDays(anchorDate, 60));
   const soon = steps.filter((s) => s.date <= horizon);
   // A week-by-week calendar: dense dates stay readable where a single line would crowd.
-  const monday = new Date(now); monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
-  const weeks = Array.from({ length: 9 }, (_, k) => { const d = new Date(monday); d.setDate(monday.getDate() + 7 * k); return ymd(d); })
+  const monday = new Date(anchorDate); monday.setDate(anchorDate.getDate() - ((anchorDate.getDay() + 6) % 7));
+  const weeks = Array.from({ length: 10 }, (_, k) => { const d = new Date(monday); d.setDate(monday.getDate() + 7 * k); return ymd(d); })
     .filter((w) => w <= horizon);
   const weekOf = (date) => weeks.filter((w) => w <= date).pop();
   const busyWeeks = weeks.filter((w) => soon.some((x) => weekOf(x.date) === w));
@@ -288,16 +295,21 @@
     const skipped = prev ? Math.round((Date.parse(w) - Date.parse(prev)) / (7 * 864e5)) - 1 : 0;
     if (skipped > 0) { cells.push(`<div class="week-gap" title="${skipped} week${skipped === 1 ? "" : "s"} with no dated step"><span>${skipped} wk${skipped === 1 ? "" : "s"} quiet</span></div>`); cols.push("2.4rem"); }
     const items = soon.filter((x) => weekOf(x.date) === w);
-    cells.push(`<div class="week"><p class="week-head">Week of ${esc(short(w))}</p>${items.map((x) => `<a class="week-item" href="#${esc(x.r.id)}"><b>${esc(short(x.date))}</b><span class="week-rule">${esc(x.r.title)}</span><span class="week-step">${esc(x.step)}</span></a>`).join("")}</div>`);
+    cells.push(`<div class="week"><p class="week-head">Week of ${esc(short(w))}</p>${items.map((x) => `<a class="week-item${x.date < today ? " is-past" : ""}" href="#${esc(x.r.id)}"><b>${esc(short(x.date))}${x.date < today ? " · passed" : ""}</b><span class="week-rule">${esc(x.r.title)}</span><span class="week-step">${esc(x.step)}</span></a>`).join("")}</div>`);
     cols.push("minmax(0, 1fr)");
   });
+  const anyPassed = soon.some((x) => x.date < today);
   qs("#graphic-next").innerHTML = `<div class="weeks" style="grid-template-columns:${cols.join(" ")}">${cells.join("")}</div>
-    <figcaption>Weeks in the next 60 days that have a dated step, counted from today.${steps.length - soon.length ? ` ${steps.length - soon.length} more steps fall later.` : ""} Some dates are tentative; the rule list says which.</figcaption>`;
+    <figcaption>Weeks in the 60 days from this edition’s research cut (${formatDate(anchor)}) that have a dated step.${steps.length - soon.length ? ` ${steps.length - soon.length} more steps fall later.` : ""}${anyPassed ? " Muted dates have passed since this edition and will be checked in the next update." : ""} Some dates are tentative; the rule list says which.</figcaption>`;
   cards("#brief-next", briefs.next, "What is coming, and what to watch");
-  const in30 = ymd(new Date(now.getTime() + 30 * 864e5));
-  const groups = [["In the next 30 days", steps.filter((s) => s.date <= in30)], ["Later", steps.filter((s) => s.date > in30)]];
-  qs("#next-dated").innerHTML = steps.length ? groups.filter(([, list]) => list.length).map(([label, list]) => `<h3 class="group-head">${label}</h3><ol class="timeline">${list.map(({ date, step, r }) => `<li><time datetime="${esc(date)}">${formatDate(date)}</time><div><strong>${esc(step)}</strong><span class="kind"><a href="#${esc(r.id)}">${esc(r.title)}</a> · ${esc(topicName(r.trackId))}</span>${sourceLinks(r.sourceIds)}</div></li>`).join("")}</ol>`).join("") : `<p class="empty">No dated steps ahead on the public record.</p>`;
-  const undated = data.rules.filter((r) => ["draft-open", "draft-closed", "awaited", "proposed"].includes(r.status) && !r.nextStepDate && !(r.moreSteps || []).some((s) => s.date >= today));
+  const in30 = ymd(addDays(now, 30));
+  const groups = [
+    ["Due since this edition (to be checked in the next update)", steps.filter((s) => s.date < today)],
+    ["In the next 30 days", steps.filter((s) => s.date >= today && s.date <= in30)],
+    ["Later", steps.filter((s) => s.date > in30)],
+  ];
+  qs("#next-dated").innerHTML = steps.length ? groups.filter(([, list]) => list.length).map(([label, list]) => `<h3 class="group-head">${label}</h3><ol class="timeline">${list.map(({ date, step, r }) => `<li${date < today ? ' class="is-past"' : ""}><time datetime="${esc(date)}">${formatDate(date)}</time><div><strong>${esc(step)}</strong><span class="kind"><a href="#${esc(r.id)}">${esc(r.title)}</a> · ${esc(topicName(r.trackId))}</span>${sourceLinks(r.sourceIds)}</div></li>`).join("")}</ol>`).join("") : `<p class="empty">No dated steps ahead on the public record.</p>`;
+  const undated = data.rules.filter((r) => ["draft-open", "draft-closed", "awaited", "proposed"].includes(r.status) && !r.nextStepDate && !(r.moreSteps || []).some((s) => s.date >= anchor));
   qs("#next-undated").innerHTML = undated.map((r) => `<li><div class="row-flat"><span class="row-main"><strong><a href="#${esc(r.id)}">${esc(r.title)}</a></strong><span class="row-sub">${esc(topicName(r.trackId))}${r.nextStep ? ` · Next: ${esc(r.nextStep)}` : ""}</span></span><span class="row-status">${statusChip(r)}</span></div></li>`).join("");
 
   window.addEventListener("beforeprint", () => qsa(".focus-panel details").forEach((d) => { d.dataset.wasOpen = d.open; d.open = true; }));

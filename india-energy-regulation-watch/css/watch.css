@@ -735,6 +735,8 @@ p.correction { margin: .45rem 0 0; padding-left: .7rem; border-left: 2px solid v
 .week-rule { display: block; font-weight: 600; }
 .week-step { display: block; color: var(--ink-soft); font-size: .8rem; }
 .week-item:hover .week-rule { color: var(--green); text-decoration: underline; }
+.week-item.is-past { opacity: .68; }
+.timeline li.is-past { opacity: .78; }
 .weeks { grid-template-columns: repeat(var(--weeks, 4), minmax(0, 1fr)); }
 .chips button { border-radius: 3px; }
 @media (max-width: 1200px) { .weeks { grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); } }
